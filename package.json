@@ -5,7 +5,7 @@
   "scripts": {
     "prebuild": "node scripts/generate-all.mjs",
     "dev": "next dev",
-    "build": "node node_modules/.bin/next build --webpack",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,7 +15,6 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "jspdf": "^4.2.1",
-    "lightningcss-android-arm64": "^1.32.0",
     "lucide-react": "^1.25.0",
     "motion": "^12.42.2",
     "next": "^16.2.10",
