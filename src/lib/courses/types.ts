@@ -45,8 +45,8 @@ export interface InteractiveSection {
 export interface ComparisonSection {
   type: "comparison";
   title: string;                            // "var vs let vs const"
-  headers: [string, string];                // ["Feature", "var", "let", "const"]
-  rows: Array<[string, string, string, ...string[]]>;  // First col is feature name
+  headers: string[];                        // ["Feature", "var", "let", "const"]
+  rows: string[][];                         // Each row matches headers length
 }
 
 export interface ExerciseSection {
