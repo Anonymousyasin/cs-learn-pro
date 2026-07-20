@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  FileCode, Palette, Code2, Binary, Shield,
+  FileCode, Palette, Code2, Terminal, Shield,
   Clock, Star, Zap, Award, BookOpen,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,7 +10,7 @@ import { courseRegistry } from "@/lib/courses";
 import { CourseChapters } from "@/components/course/CourseChapters";
 
 const iconMap: Record<string, typeof FileCode> = {
-  FileCode, Palette, Code2, Binary, Shield,
+  FileCode, Palette, Code2, Terminal, Shield,
 };
 
 const difficultyLabel = ["", "Beginner", "Intermediate", "Advanced", "Expert", "Master"];

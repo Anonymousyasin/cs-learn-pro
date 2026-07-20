@@ -57,9 +57,17 @@ export default function SectionRenderer({ section, index }: { section: Section; 
   switch (section.type) {
     case "text":
       return (
-        <p key={index} className="leading-relaxed text-text-secondary">
-          {formatText(section.content)}
-        </p>
+        <div key={index} className="leading-relaxed text-text-secondary space-y-3">
+          {section.content.split("\n\n").filter(Boolean).map((block, bi) => {
+            if (block.startsWith("## ")) {
+              return <h3 key={bi} className="text-lg font-semibold text-text-primary pt-2">{block.replace("## ", "")}</h3>;
+            }
+            if (block.startsWith("**") || block.includes("*")) {
+              return <p key={bi}>{formatText(block)}</p>;
+            }
+            return <p key={bi}>{formatText(block)}</p>;
+          })}
+        </div>
       );
 
     case "code":
