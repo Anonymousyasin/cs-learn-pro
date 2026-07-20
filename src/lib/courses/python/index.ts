@@ -57,7 +57,8 @@ export const pythonCourse: Course = {
       { id: "python-ch1-q27", type: "match-pairs", difficulty: "medium", question: "Match each Python Introduction concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Python Introduction." }
       ],
       keyPoints: ["Python Introduction is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch2",
       courseId: "python",
       title: "Getting Started",
@@ -104,7 +105,8 @@ export const pythonCourse: Course = {
       { id: "python-ch2-q28", type: "multiple-choice", difficulty: "medium", question: "In Getting Started, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Getting Started. The other options have specific drawbacks." }
       ],
       keyPoints: ["Getting Started is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch3",
       courseId: "python",
       title: "Python Syntax",
@@ -152,7 +154,8 @@ export const pythonCourse: Course = {
       { id: "python-ch3-q29", type: "multiple-choice", difficulty: "hard", question: "In Python Syntax, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Syntax. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Syntax is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch4",
       courseId: "python",
       title: "Python Comments",
@@ -201,7 +204,8 @@ export const pythonCourse: Course = {
       { id: "python-ch4-q30", type: "multiple-choice", difficulty: "hard", question: "In Python Comments, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Comments. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Comments is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch5",
       courseId: "python",
       title: "Python Variables",
@@ -251,7 +255,8 @@ export const pythonCourse: Course = {
       { id: "python-ch5-q31", type: "multiple-choice", difficulty: "easy", question: "In Python Variables, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Variables. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Variables is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch6",
       courseId: "python",
       title: "Data Types",
@@ -302,7 +307,8 @@ export const pythonCourse: Course = {
       { id: "python-ch6-q32", type: "true-false", difficulty: "easy", question: "In Data Types, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Data Types." }
       ],
       keyPoints: ["Data Types is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch7",
       courseId: "python",
       title: "Python Numbers",
@@ -354,7 +360,8 @@ export const pythonCourse: Course = {
       { id: "python-ch7-q33", type: "true-false", difficulty: "easy", question: "In Python Numbers, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Python Numbers." }
       ],
       keyPoints: ["Python Numbers is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch8",
       courseId: "python",
       title: "Python Casting",
@@ -407,7 +414,8 @@ export const pythonCourse: Course = {
       { id: "python-ch8-q34", type: "fill-blank", difficulty: "easy", question: "In Python Casting, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Python Casting and how it fits into the broader subject." }
       ],
       keyPoints: ["Python Casting is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch9",
       courseId: "python",
       title: "Python Strings",
@@ -461,7 +469,8 @@ export const pythonCourse: Course = {
       { id: "python-ch9-q35", type: "code-order", difficulty: "easy", question: "Arrange these Python Strings steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Python Strings: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Python Strings is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch10",
       courseId: "python",
       title: "String Methods",
@@ -507,7 +516,8 @@ export const pythonCourse: Course = {
       { id: "python-ch10-q27", type: "match-pairs", difficulty: "medium", question: "Match each String Methods concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in String Methods." }
       ],
       keyPoints: ["String Methods is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch11",
       courseId: "python",
       title: "String Formatting",
@@ -554,7 +564,8 @@ export const pythonCourse: Course = {
       { id: "python-ch11-q28", type: "multiple-choice", difficulty: "medium", question: "In String Formatting, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for String Formatting. The other options have specific drawbacks." }
       ],
       keyPoints: ["String Formatting is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch12",
       courseId: "python",
       title: "Python Booleans",
@@ -602,7 +613,8 @@ export const pythonCourse: Course = {
       { id: "python-ch12-q29", type: "multiple-choice", difficulty: "hard", question: "In Python Booleans, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Booleans. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Booleans is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch13",
       courseId: "python",
       title: "Python Operators",
@@ -651,7 +663,8 @@ export const pythonCourse: Course = {
       { id: "python-ch13-q30", type: "multiple-choice", difficulty: "hard", question: "In Python Operators, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Operators. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Operators is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch14",
       courseId: "python",
       title: "Python Lists",
@@ -701,7 +714,8 @@ export const pythonCourse: Course = {
       { id: "python-ch14-q31", type: "multiple-choice", difficulty: "easy", question: "In Python Lists, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Lists. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Lists is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch15",
       courseId: "python",
       title: "List Methods",
@@ -752,7 +766,8 @@ export const pythonCourse: Course = {
       { id: "python-ch15-q32", type: "true-false", difficulty: "easy", question: "In List Methods, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of List Methods." }
       ],
       keyPoints: ["List Methods is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch16",
       courseId: "python",
       title: "List Comprehension",
@@ -804,7 +819,8 @@ export const pythonCourse: Course = {
       { id: "python-ch16-q33", type: "true-false", difficulty: "easy", question: "In List Comprehension, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of List Comprehension." }
       ],
       keyPoints: ["List Comprehension is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch17",
       courseId: "python",
       title: "Python Tuples",
@@ -857,7 +873,8 @@ export const pythonCourse: Course = {
       { id: "python-ch17-q34", type: "fill-blank", difficulty: "easy", question: "In Python Tuples, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Python Tuples and how it fits into the broader subject." }
       ],
       keyPoints: ["Python Tuples is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch18",
       courseId: "python",
       title: "Python Sets",
@@ -911,7 +928,8 @@ export const pythonCourse: Course = {
       { id: "python-ch18-q35", type: "code-order", difficulty: "easy", question: "Arrange these Python Sets steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Python Sets: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Python Sets is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch19",
       courseId: "python",
       title: "Python Dictionaries",
@@ -957,7 +975,8 @@ export const pythonCourse: Course = {
       { id: "python-ch19-q27", type: "match-pairs", difficulty: "medium", question: "Match each Python Dictionaries concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Python Dictionaries." }
       ],
       keyPoints: ["Python Dictionaries is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch20",
       courseId: "python",
       title: "If Else",
@@ -1004,7 +1023,8 @@ export const pythonCourse: Course = {
       { id: "python-ch20-q28", type: "multiple-choice", difficulty: "medium", question: "In If Else, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for If Else. The other options have specific drawbacks." }
       ],
       keyPoints: ["If Else is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch21",
       courseId: "python",
       title: "While Loops",
@@ -1052,7 +1072,8 @@ export const pythonCourse: Course = {
       { id: "python-ch21-q29", type: "multiple-choice", difficulty: "hard", question: "In While Loops, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for While Loops. The other options have specific drawbacks." }
       ],
       keyPoints: ["While Loops is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch22",
       courseId: "python",
       title: "For Loops",
@@ -1101,7 +1122,8 @@ export const pythonCourse: Course = {
       { id: "python-ch22-q30", type: "multiple-choice", difficulty: "hard", question: "In For Loops, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for For Loops. The other options have specific drawbacks." }
       ],
       keyPoints: ["For Loops is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch23",
       courseId: "python",
       title: "Python Functions",
@@ -1151,7 +1173,8 @@ export const pythonCourse: Course = {
       { id: "python-ch23-q31", type: "multiple-choice", difficulty: "easy", question: "In Python Functions, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Functions. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Functions is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch24",
       courseId: "python",
       title: "Function Parameters",
@@ -1202,7 +1225,8 @@ export const pythonCourse: Course = {
       { id: "python-ch24-q32", type: "true-false", difficulty: "easy", question: "In Function Parameters, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Function Parameters." }
       ],
       keyPoints: ["Function Parameters is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch25",
       courseId: "python",
       title: "Lambda",
@@ -1254,7 +1278,8 @@ export const pythonCourse: Course = {
       { id: "python-ch25-q33", type: "true-false", difficulty: "easy", question: "In Lambda, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Lambda." }
       ],
       keyPoints: ["Lambda is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch26",
       courseId: "python",
       title: "Python Scope",
@@ -1307,7 +1332,8 @@ export const pythonCourse: Course = {
       { id: "python-ch26-q34", type: "fill-blank", difficulty: "easy", question: "In Python Scope, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Python Scope and how it fits into the broader subject." }
       ],
       keyPoints: ["Python Scope is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch27",
       courseId: "python",
       title: "Python Modules",
@@ -1361,7 +1387,8 @@ export const pythonCourse: Course = {
       { id: "python-ch27-q35", type: "code-order", difficulty: "easy", question: "Arrange these Python Modules steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Python Modules: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Python Modules is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch28",
       courseId: "python",
       title: "Python Packages",
@@ -1407,7 +1434,8 @@ export const pythonCourse: Course = {
       { id: "python-ch28-q27", type: "match-pairs", difficulty: "medium", question: "Match each Python Packages concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Python Packages." }
       ],
       keyPoints: ["Python Packages is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch29",
       courseId: "python",
       title: "Python PIP",
@@ -1454,7 +1482,8 @@ export const pythonCourse: Course = {
       { id: "python-ch29-q28", type: "multiple-choice", difficulty: "medium", question: "In Python PIP, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python PIP. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python PIP is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch30",
       courseId: "python",
       title: "Try Except",
@@ -1502,7 +1531,8 @@ export const pythonCourse: Course = {
       { id: "python-ch30-q29", type: "multiple-choice", difficulty: "hard", question: "In Try Except, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Try Except. The other options have specific drawbacks." }
       ],
       keyPoints: ["Try Except is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch31",
       courseId: "python",
       title: "User Input",
@@ -1551,7 +1581,8 @@ export const pythonCourse: Course = {
       { id: "python-ch31-q30", type: "multiple-choice", difficulty: "hard", question: "In User Input, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for User Input. The other options have specific drawbacks." }
       ],
       keyPoints: ["User Input is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch32",
       courseId: "python",
       title: "File Handling",
@@ -1601,7 +1632,8 @@ export const pythonCourse: Course = {
       { id: "python-ch32-q31", type: "multiple-choice", difficulty: "easy", question: "In File Handling, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for File Handling. The other options have specific drawbacks." }
       ],
       keyPoints: ["File Handling is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch33",
       courseId: "python",
       title: "File Methods",
@@ -1652,7 +1684,8 @@ export const pythonCourse: Course = {
       { id: "python-ch33-q32", type: "true-false", difficulty: "easy", question: "In File Methods, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of File Methods." }
       ],
       keyPoints: ["File Methods is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch34",
       courseId: "python",
       title: "OS Module",
@@ -1704,7 +1737,8 @@ export const pythonCourse: Course = {
       { id: "python-ch34-q33", type: "true-false", difficulty: "easy", question: "In OS Module, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of OS Module." }
       ],
       keyPoints: ["OS Module is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch35",
       courseId: "python",
       title: "Python JSON",
@@ -1757,7 +1791,8 @@ export const pythonCourse: Course = {
       { id: "python-ch35-q34", type: "fill-blank", difficulty: "easy", question: "In Python JSON, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Python JSON and how it fits into the broader subject." }
       ],
       keyPoints: ["Python JSON is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch36",
       courseId: "python",
       title: "Python Dates",
@@ -1811,7 +1846,8 @@ export const pythonCourse: Course = {
       { id: "python-ch36-q35", type: "code-order", difficulty: "easy", question: "Arrange these Python Dates steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Python Dates: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Python Dates is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch37",
       courseId: "python",
       title: "Python Math",
@@ -1857,7 +1893,8 @@ export const pythonCourse: Course = {
       { id: "python-ch37-q27", type: "match-pairs", difficulty: "medium", question: "Match each Python Math concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Python Math." }
       ],
       keyPoints: ["Python Math is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch38",
       courseId: "python",
       title: "Python Regex",
@@ -1904,7 +1941,8 @@ export const pythonCourse: Course = {
       { id: "python-ch38-q28", type: "multiple-choice", difficulty: "medium", question: "In Python Regex, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Regex. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Regex is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch39",
       courseId: "python",
       title: "Python Iterators",
@@ -1952,7 +1990,8 @@ export const pythonCourse: Course = {
       { id: "python-ch39-q29", type: "multiple-choice", difficulty: "hard", question: "In Python Iterators, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Iterators. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Iterators is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch40",
       courseId: "python",
       title: "Python Generators",
@@ -2001,7 +2040,8 @@ export const pythonCourse: Course = {
       { id: "python-ch40-q30", type: "multiple-choice", difficulty: "hard", question: "In Python Generators, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Generators. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Generators is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch41",
       courseId: "python",
       title: "Python Decorators",
@@ -2051,7 +2091,8 @@ export const pythonCourse: Course = {
       { id: "python-ch41-q31", type: "multiple-choice", difficulty: "easy", question: "In Python Decorators, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Python Decorators. The other options have specific drawbacks." }
       ],
       keyPoints: ["Python Decorators is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch42",
       courseId: "python",
       title: "Python Classes",
@@ -2102,7 +2143,8 @@ export const pythonCourse: Course = {
       { id: "python-ch42-q32", type: "true-false", difficulty: "easy", question: "In Python Classes, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Python Classes." }
       ],
       keyPoints: ["Python Classes is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch43",
       courseId: "python",
       title: "Python Inheritance",
@@ -2154,7 +2196,8 @@ export const pythonCourse: Course = {
       { id: "python-ch43-q33", type: "true-false", difficulty: "easy", question: "In Python Inheritance, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Python Inheritance." }
       ],
       keyPoints: ["Python Inheritance is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch44",
       courseId: "python",
       title: "Python Polymorphism",
@@ -2207,7 +2250,8 @@ export const pythonCourse: Course = {
       { id: "python-ch44-q34", type: "fill-blank", difficulty: "easy", question: "In Python Polymorphism, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Python Polymorphism and how it fits into the broader subject." }
       ],
       keyPoints: ["Python Polymorphism is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch45",
       courseId: "python",
       title: "Itertools Module",
@@ -2261,7 +2305,8 @@ export const pythonCourse: Course = {
       { id: "python-ch45-q35", type: "code-order", difficulty: "easy", question: "Arrange these Itertools Module steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Itertools Module: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Itertools Module is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch46",
       courseId: "python",
       title: "Collections Module",
@@ -2307,7 +2352,8 @@ export const pythonCourse: Course = {
       { id: "python-ch46-q27", type: "match-pairs", difficulty: "medium", question: "Match each Collections Module concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Collections Module." }
       ],
       keyPoints: ["Collections Module is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch47",
       courseId: "python",
       title: "Virtual Environments",
@@ -2354,7 +2400,8 @@ export const pythonCourse: Course = {
       { id: "python-ch47-q28", type: "multiple-choice", difficulty: "medium", question: "In Virtual Environments, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Virtual Environments. The other options have specific drawbacks." }
       ],
       keyPoints: ["Virtual Environments is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch48",
       courseId: "python",
       title: "NumPy Intro",
@@ -2402,7 +2449,8 @@ export const pythonCourse: Course = {
       { id: "python-ch48-q29", type: "multiple-choice", difficulty: "hard", question: "In NumPy Intro, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for NumPy Intro. The other options have specific drawbacks." }
       ],
       keyPoints: ["NumPy Intro is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch49",
       courseId: "python",
       title: "Pandas Intro",
@@ -2451,7 +2499,8 @@ export const pythonCourse: Course = {
       { id: "python-ch49-q30", type: "multiple-choice", difficulty: "hard", question: "In Pandas Intro, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Pandas Intro. The other options have specific drawbacks." }
       ],
       keyPoints: ["Pandas Intro is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch50",
       courseId: "python",
       title: "Matplotlib Intro",
@@ -2501,7 +2550,8 @@ export const pythonCourse: Course = {
       { id: "python-ch50-q31", type: "multiple-choice", difficulty: "easy", question: "In Matplotlib Intro, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Matplotlib Intro. The other options have specific drawbacks." }
       ],
       keyPoints: ["Matplotlib Intro is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch51",
       courseId: "python",
       title: "SQLite",
@@ -2552,7 +2602,8 @@ export const pythonCourse: Course = {
       { id: "python-ch51-q32", type: "true-false", difficulty: "easy", question: "In SQLite, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of SQLite." }
       ],
       keyPoints: ["SQLite is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch52",
       courseId: "python",
       title: "Working with Files",
@@ -2604,7 +2655,8 @@ export const pythonCourse: Course = {
       { id: "python-ch52-q33", type: "true-false", difficulty: "easy", question: "In Working with Files, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Working with Files." }
       ],
       keyPoints: ["Working with Files is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch53",
       courseId: "python",
       title: "Python Exceptions",
@@ -2657,7 +2709,8 @@ export const pythonCourse: Course = {
       { id: "python-ch53-q34", type: "fill-blank", difficulty: "easy", question: "In Python Exceptions, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Python Exceptions and how it fits into the broader subject." }
       ],
       keyPoints: ["Python Exceptions is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch54",
       courseId: "python",
       title: "Python Testing",
@@ -2711,7 +2764,8 @@ export const pythonCourse: Course = {
       { id: "python-ch54-q35", type: "code-order", difficulty: "easy", question: "Arrange these Python Testing steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Python Testing: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Python Testing is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "python-ch55",
       courseId: "python",
       title: "Python Best Practices",
@@ -2757,5 +2811,6 @@ export const pythonCourse: Course = {
       { id: "python-ch55-q27", type: "match-pairs", difficulty: "medium", question: "Match each Python Best Practices concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Python Best Practices." }
       ],
       keyPoints: ["Python Best Practices is fundamental to Python", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },  ],
+    },
+  ],
 };

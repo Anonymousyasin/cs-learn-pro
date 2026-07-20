@@ -57,7 +57,8 @@ export const cssCourse: Course = {
       { id: "css-ch1-q27", type: "match-pairs", difficulty: "medium", question: "Match each CSS Introduction concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in CSS Introduction." }
       ],
       keyPoints: ["CSS Introduction is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch2",
       courseId: "css",
       title: "CSS Syntax",
@@ -104,7 +105,8 @@ export const cssCourse: Course = {
       { id: "css-ch2-q28", type: "multiple-choice", difficulty: "medium", question: "In CSS Syntax, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Syntax. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Syntax is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch3",
       courseId: "css",
       title: "CSS Selectors",
@@ -152,7 +154,8 @@ export const cssCourse: Course = {
       { id: "css-ch3-q29", type: "multiple-choice", difficulty: "hard", question: "In CSS Selectors, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Selectors. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Selectors is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch4",
       courseId: "css",
       title: "How To Add CSS",
@@ -201,7 +204,8 @@ export const cssCourse: Course = {
       { id: "css-ch4-q30", type: "multiple-choice", difficulty: "hard", question: "In How To Add CSS, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for How To Add CSS. The other options have specific drawbacks." }
       ],
       keyPoints: ["How To Add CSS is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch5",
       courseId: "css",
       title: "CSS Comments",
@@ -251,7 +255,8 @@ export const cssCourse: Course = {
       { id: "css-ch5-q31", type: "multiple-choice", difficulty: "easy", question: "In CSS Comments, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Comments. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Comments is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch6",
       courseId: "css",
       title: "CSS Colors",
@@ -302,7 +307,8 @@ export const cssCourse: Course = {
       { id: "css-ch6-q32", type: "true-false", difficulty: "easy", question: "In CSS Colors, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Colors." }
       ],
       keyPoints: ["CSS Colors is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch7",
       courseId: "css",
       title: "CSS Backgrounds",
@@ -354,7 +360,8 @@ export const cssCourse: Course = {
       { id: "css-ch7-q33", type: "true-false", difficulty: "easy", question: "In CSS Backgrounds, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Backgrounds." }
       ],
       keyPoints: ["CSS Backgrounds is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch8",
       courseId: "css",
       title: "CSS Borders",
@@ -407,7 +414,8 @@ export const cssCourse: Course = {
       { id: "css-ch8-q34", type: "fill-blank", difficulty: "easy", question: "In CSS Borders, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding CSS Borders and how it fits into the broader subject." }
       ],
       keyPoints: ["CSS Borders is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch9",
       courseId: "css",
       title: "CSS Margins",
@@ -461,7 +469,8 @@ export const cssCourse: Course = {
       { id: "css-ch9-q35", type: "code-order", difficulty: "easy", question: "Arrange these CSS Margins steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for CSS Margins: initialize, process, output, cleanup." }
       ],
       keyPoints: ["CSS Margins is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch10",
       courseId: "css",
       title: "CSS Padding",
@@ -507,7 +516,8 @@ export const cssCourse: Course = {
       { id: "css-ch10-q27", type: "match-pairs", difficulty: "medium", question: "Match each CSS Padding concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in CSS Padding." }
       ],
       keyPoints: ["CSS Padding is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch11",
       courseId: "css",
       title: "CSS Height/Width",
@@ -554,7 +564,8 @@ export const cssCourse: Course = {
       { id: "css-ch11-q28", type: "multiple-choice", difficulty: "medium", question: "In CSS Height/Width, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Height/Width. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Height/Width is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch12",
       courseId: "css",
       title: "CSS Box Model",
@@ -602,7 +613,8 @@ export const cssCourse: Course = {
       { id: "css-ch12-q29", type: "multiple-choice", difficulty: "hard", question: "In CSS Box Model, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Box Model. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Box Model is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch13",
       courseId: "css",
       title: "CSS Outline",
@@ -651,7 +663,8 @@ export const cssCourse: Course = {
       { id: "css-ch13-q30", type: "multiple-choice", difficulty: "hard", question: "In CSS Outline, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Outline. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Outline is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch14",
       courseId: "css",
       title: "CSS Text",
@@ -701,7 +714,8 @@ export const cssCourse: Course = {
       { id: "css-ch14-q31", type: "multiple-choice", difficulty: "easy", question: "In CSS Text, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Text. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Text is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch15",
       courseId: "css",
       title: "CSS Fonts",
@@ -752,7 +766,8 @@ export const cssCourse: Course = {
       { id: "css-ch15-q32", type: "true-false", difficulty: "easy", question: "In CSS Fonts, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Fonts." }
       ],
       keyPoints: ["CSS Fonts is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch16",
       courseId: "css",
       title: "CSS Icons",
@@ -804,7 +819,8 @@ export const cssCourse: Course = {
       { id: "css-ch16-q33", type: "true-false", difficulty: "easy", question: "In CSS Icons, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Icons." }
       ],
       keyPoints: ["CSS Icons is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch17",
       courseId: "css",
       title: "CSS Links",
@@ -857,7 +873,8 @@ export const cssCourse: Course = {
       { id: "css-ch17-q34", type: "fill-blank", difficulty: "easy", question: "In CSS Links, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding CSS Links and how it fits into the broader subject." }
       ],
       keyPoints: ["CSS Links is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch18",
       courseId: "css",
       title: "CSS Lists",
@@ -911,7 +928,8 @@ export const cssCourse: Course = {
       { id: "css-ch18-q35", type: "code-order", difficulty: "easy", question: "Arrange these CSS Lists steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for CSS Lists: initialize, process, output, cleanup." }
       ],
       keyPoints: ["CSS Lists is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch19",
       courseId: "css",
       title: "CSS Tables",
@@ -957,7 +975,8 @@ export const cssCourse: Course = {
       { id: "css-ch19-q27", type: "match-pairs", difficulty: "medium", question: "Match each CSS Tables concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in CSS Tables." }
       ],
       keyPoints: ["CSS Tables is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch20",
       courseId: "css",
       title: "CSS Display",
@@ -1004,7 +1023,8 @@ export const cssCourse: Course = {
       { id: "css-ch20-q28", type: "multiple-choice", difficulty: "medium", question: "In CSS Display, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Display. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Display is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch21",
       courseId: "css",
       title: "CSS Max-width",
@@ -1052,7 +1072,8 @@ export const cssCourse: Course = {
       { id: "css-ch21-q29", type: "multiple-choice", difficulty: "hard", question: "In CSS Max-width, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Max-width. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Max-width is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch22",
       courseId: "css",
       title: "CSS Position",
@@ -1101,7 +1122,8 @@ export const cssCourse: Course = {
       { id: "css-ch22-q30", type: "multiple-choice", difficulty: "hard", question: "In CSS Position, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Position. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Position is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch23",
       courseId: "css",
       title: "CSS Z-index",
@@ -1151,7 +1173,8 @@ export const cssCourse: Course = {
       { id: "css-ch23-q31", type: "multiple-choice", difficulty: "easy", question: "In CSS Z-index, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Z-index. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Z-index is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch24",
       courseId: "css",
       title: "CSS Overflow",
@@ -1202,7 +1225,8 @@ export const cssCourse: Course = {
       { id: "css-ch24-q32", type: "true-false", difficulty: "easy", question: "In CSS Overflow, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Overflow." }
       ],
       keyPoints: ["CSS Overflow is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch25",
       courseId: "css",
       title: "CSS Float",
@@ -1254,7 +1278,8 @@ export const cssCourse: Course = {
       { id: "css-ch25-q33", type: "true-false", difficulty: "easy", question: "In CSS Float, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Float." }
       ],
       keyPoints: ["CSS Float is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch26",
       courseId: "css",
       title: "CSS Inline-block",
@@ -1307,7 +1332,8 @@ export const cssCourse: Course = {
       { id: "css-ch26-q34", type: "fill-blank", difficulty: "easy", question: "In CSS Inline-block, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding CSS Inline-block and how it fits into the broader subject." }
       ],
       keyPoints: ["CSS Inline-block is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch27",
       courseId: "css",
       title: "CSS Align",
@@ -1361,7 +1387,8 @@ export const cssCourse: Course = {
       { id: "css-ch27-q35", type: "code-order", difficulty: "easy", question: "Arrange these CSS Align steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for CSS Align: initialize, process, output, cleanup." }
       ],
       keyPoints: ["CSS Align is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch28",
       courseId: "css",
       title: "CSS Combinators",
@@ -1407,7 +1434,8 @@ export const cssCourse: Course = {
       { id: "css-ch28-q27", type: "match-pairs", difficulty: "medium", question: "Match each CSS Combinators concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in CSS Combinators." }
       ],
       keyPoints: ["CSS Combinators is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch29",
       courseId: "css",
       title: "CSS Pseudo-classes",
@@ -1454,7 +1482,8 @@ export const cssCourse: Course = {
       { id: "css-ch29-q28", type: "multiple-choice", difficulty: "medium", question: "In CSS Pseudo-classes, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Pseudo-classes. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Pseudo-classes is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch30",
       courseId: "css",
       title: "CSS Pseudo-elements",
@@ -1502,7 +1531,8 @@ export const cssCourse: Course = {
       { id: "css-ch30-q29", type: "multiple-choice", difficulty: "hard", question: "In CSS Pseudo-elements, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Pseudo-elements. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Pseudo-elements is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch31",
       courseId: "css",
       title: "CSS Opacity",
@@ -1551,7 +1581,8 @@ export const cssCourse: Course = {
       { id: "css-ch31-q30", type: "multiple-choice", difficulty: "hard", question: "In CSS Opacity, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Opacity. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Opacity is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch32",
       courseId: "css",
       title: "Navigation Bar",
@@ -1601,7 +1632,8 @@ export const cssCourse: Course = {
       { id: "css-ch32-q31", type: "multiple-choice", difficulty: "easy", question: "In Navigation Bar, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Navigation Bar. The other options have specific drawbacks." }
       ],
       keyPoints: ["Navigation Bar is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch33",
       courseId: "css",
       title: "CSS Dropdowns",
@@ -1652,7 +1684,8 @@ export const cssCourse: Course = {
       { id: "css-ch33-q32", type: "true-false", difficulty: "easy", question: "In CSS Dropdowns, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Dropdowns." }
       ],
       keyPoints: ["CSS Dropdowns is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch34",
       courseId: "css",
       title: "Image Gallery",
@@ -1704,7 +1737,8 @@ export const cssCourse: Course = {
       { id: "css-ch34-q33", type: "true-false", difficulty: "easy", question: "In Image Gallery, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Image Gallery." }
       ],
       keyPoints: ["Image Gallery is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch35",
       courseId: "css",
       title: "Image Sprites",
@@ -1757,7 +1791,8 @@ export const cssCourse: Course = {
       { id: "css-ch35-q34", type: "fill-blank", difficulty: "easy", question: "In Image Sprites, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Image Sprites and how it fits into the broader subject." }
       ],
       keyPoints: ["Image Sprites is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch36",
       courseId: "css",
       title: "Attribute Selectors",
@@ -1811,7 +1846,8 @@ export const cssCourse: Course = {
       { id: "css-ch36-q35", type: "code-order", difficulty: "easy", question: "Arrange these Attribute Selectors steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Attribute Selectors: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Attribute Selectors is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch37",
       courseId: "css",
       title: "CSS Forms",
@@ -1857,7 +1893,8 @@ export const cssCourse: Course = {
       { id: "css-ch37-q27", type: "match-pairs", difficulty: "medium", question: "Match each CSS Forms concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in CSS Forms." }
       ],
       keyPoints: ["CSS Forms is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch38",
       courseId: "css",
       title: "CSS Counters",
@@ -1904,7 +1941,8 @@ export const cssCourse: Course = {
       { id: "css-ch38-q28", type: "multiple-choice", difficulty: "medium", question: "In CSS Counters, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Counters. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Counters is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch39",
       courseId: "css",
       title: "Website Layout",
@@ -1952,7 +1990,8 @@ export const cssCourse: Course = {
       { id: "css-ch39-q29", type: "multiple-choice", difficulty: "hard", question: "In Website Layout, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Website Layout. The other options have specific drawbacks." }
       ],
       keyPoints: ["Website Layout is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch40",
       courseId: "css",
       title: "CSS Units",
@@ -2001,7 +2040,8 @@ export const cssCourse: Course = {
       { id: "css-ch40-q30", type: "multiple-choice", difficulty: "hard", question: "In CSS Units, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Units. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Units is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch41",
       courseId: "css",
       title: "CSS Specificity",
@@ -2051,7 +2091,8 @@ export const cssCourse: Course = {
       { id: "css-ch41-q31", type: "multiple-choice", difficulty: "easy", question: "In CSS Specificity, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Specificity. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Specificity is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch42",
       courseId: "css",
       title: "CSS Important",
@@ -2102,7 +2143,8 @@ export const cssCourse: Course = {
       { id: "css-ch42-q32", type: "true-false", difficulty: "easy", question: "In CSS Important, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Important." }
       ],
       keyPoints: ["CSS Important is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch43",
       courseId: "css",
       title: "CSS Math Functions",
@@ -2154,7 +2196,8 @@ export const cssCourse: Course = {
       { id: "css-ch43-q33", type: "true-false", difficulty: "easy", question: "In CSS Math Functions, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Math Functions." }
       ],
       keyPoints: ["CSS Math Functions is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch44",
       courseId: "css",
       title: "Rounded Corners",
@@ -2207,7 +2250,8 @@ export const cssCourse: Course = {
       { id: "css-ch44-q34", type: "fill-blank", difficulty: "easy", question: "In Rounded Corners, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Rounded Corners and how it fits into the broader subject." }
       ],
       keyPoints: ["Rounded Corners is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch45",
       courseId: "css",
       title: "Border Images",
@@ -2261,7 +2305,8 @@ export const cssCourse: Course = {
       { id: "css-ch45-q35", type: "code-order", difficulty: "easy", question: "Arrange these Border Images steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Border Images: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Border Images is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch46",
       courseId: "css",
       title: "CSS Gradients",
@@ -2307,7 +2352,8 @@ export const cssCourse: Course = {
       { id: "css-ch46-q27", type: "match-pairs", difficulty: "medium", question: "Match each CSS Gradients concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in CSS Gradients." }
       ],
       keyPoints: ["CSS Gradients is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch47",
       courseId: "css",
       title: "CSS Shadows",
@@ -2354,7 +2400,8 @@ export const cssCourse: Course = {
       { id: "css-ch47-q28", type: "multiple-choice", difficulty: "medium", question: "In CSS Shadows, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Shadows. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Shadows is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch48",
       courseId: "css",
       title: "Text Effects",
@@ -2402,7 +2449,8 @@ export const cssCourse: Course = {
       { id: "css-ch48-q29", type: "multiple-choice", difficulty: "hard", question: "In Text Effects, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Text Effects. The other options have specific drawbacks." }
       ],
       keyPoints: ["Text Effects is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch49",
       courseId: "css",
       title: "2D Transforms",
@@ -2451,7 +2499,8 @@ export const cssCourse: Course = {
       { id: "css-ch49-q30", type: "multiple-choice", difficulty: "hard", question: "In 2D Transforms, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for 2D Transforms. The other options have specific drawbacks." }
       ],
       keyPoints: ["2D Transforms is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch50",
       courseId: "css",
       title: "3D Transforms",
@@ -2501,7 +2550,8 @@ export const cssCourse: Course = {
       { id: "css-ch50-q31", type: "multiple-choice", difficulty: "easy", question: "In 3D Transforms, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for 3D Transforms. The other options have specific drawbacks." }
       ],
       keyPoints: ["3D Transforms is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch51",
       courseId: "css",
       title: "CSS Transitions",
@@ -2552,7 +2602,8 @@ export const cssCourse: Course = {
       { id: "css-ch51-q32", type: "true-false", difficulty: "easy", question: "In CSS Transitions, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Transitions." }
       ],
       keyPoints: ["CSS Transitions is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch52",
       courseId: "css",
       title: "CSS Animations",
@@ -2604,7 +2655,8 @@ export const cssCourse: Course = {
       { id: "css-ch52-q33", type: "true-false", difficulty: "easy", question: "In CSS Animations, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Animations." }
       ],
       keyPoints: ["CSS Animations is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch53",
       courseId: "css",
       title: "CSS Tooltips",
@@ -2657,7 +2709,8 @@ export const cssCourse: Course = {
       { id: "css-ch53-q34", type: "fill-blank", difficulty: "easy", question: "In CSS Tooltips, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding CSS Tooltips and how it fits into the broader subject." }
       ],
       keyPoints: ["CSS Tooltips is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch54",
       courseId: "css",
       title: "Style Images",
@@ -2711,7 +2764,8 @@ export const cssCourse: Course = {
       { id: "css-ch54-q35", type: "code-order", difficulty: "easy", question: "Arrange these Style Images steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Style Images: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Style Images is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch55",
       courseId: "css",
       title: "Image Filters",
@@ -2757,7 +2811,8 @@ export const cssCourse: Course = {
       { id: "css-ch55-q27", type: "match-pairs", difficulty: "medium", question: "Match each Image Filters concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Image Filters." }
       ],
       keyPoints: ["Image Filters is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch56",
       courseId: "css",
       title: "CSS Masking",
@@ -2804,7 +2859,8 @@ export const cssCourse: Course = {
       { id: "css-ch56-q28", type: "multiple-choice", difficulty: "medium", question: "In CSS Masking, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Masking. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Masking is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch57",
       courseId: "css",
       title: "CSS Buttons",
@@ -2852,7 +2908,8 @@ export const cssCourse: Course = {
       { id: "css-ch57-q29", type: "multiple-choice", difficulty: "hard", question: "In CSS Buttons, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Buttons. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Buttons is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch58",
       courseId: "css",
       title: "CSS Pagination",
@@ -2901,7 +2958,8 @@ export const cssCourse: Course = {
       { id: "css-ch58-q30", type: "multiple-choice", difficulty: "hard", question: "In CSS Pagination, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Pagination. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Pagination is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch59",
       courseId: "css",
       title: "Multiple Columns",
@@ -2951,7 +3009,8 @@ export const cssCourse: Course = {
       { id: "css-ch59-q31", type: "multiple-choice", difficulty: "easy", question: "In Multiple Columns, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Multiple Columns. The other options have specific drawbacks." }
       ],
       keyPoints: ["Multiple Columns is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch60",
       courseId: "css",
       title: "User Interface",
@@ -3002,7 +3061,8 @@ export const cssCourse: Course = {
       { id: "css-ch60-q32", type: "true-false", difficulty: "easy", question: "In User Interface, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of User Interface." }
       ],
       keyPoints: ["User Interface is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch61",
       courseId: "css",
       title: "CSS Variables",
@@ -3054,7 +3114,8 @@ export const cssCourse: Course = {
       { id: "css-ch61-q33", type: "true-false", difficulty: "easy", question: "In CSS Variables, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Variables." }
       ],
       keyPoints: ["CSS Variables is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch62",
       courseId: "css",
       title: "CSS @property",
@@ -3107,7 +3168,8 @@ export const cssCourse: Course = {
       { id: "css-ch62-q34", type: "fill-blank", difficulty: "easy", question: "In CSS @property, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding CSS @property and how it fits into the broader subject." }
       ],
       keyPoints: ["CSS @property is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch63",
       courseId: "css",
       title: "CSS Box Sizing",
@@ -3161,7 +3223,8 @@ export const cssCourse: Course = {
       { id: "css-ch63-q35", type: "code-order", difficulty: "easy", question: "Arrange these CSS Box Sizing steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for CSS Box Sizing: initialize, process, output, cleanup." }
       ],
       keyPoints: ["CSS Box Sizing is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch64",
       courseId: "css",
       title: "CSS Media Queries",
@@ -3207,7 +3270,8 @@ export const cssCourse: Course = {
       { id: "css-ch64-q27", type: "match-pairs", difficulty: "medium", question: "Match each CSS Media Queries concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in CSS Media Queries." }
       ],
       keyPoints: ["CSS Media Queries is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch65",
       courseId: "css",
       title: "CSS Flexbox",
@@ -3254,7 +3318,8 @@ export const cssCourse: Course = {
       { id: "css-ch65-q28", type: "multiple-choice", difficulty: "medium", question: "In CSS Flexbox, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Flexbox. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Flexbox is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch66",
       courseId: "css",
       title: "CSS Grid",
@@ -3302,7 +3367,8 @@ export const cssCourse: Course = {
       { id: "css-ch66-q29", type: "multiple-choice", difficulty: "hard", question: "In CSS Grid, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Grid. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Grid is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch67",
       courseId: "css",
       title: "CSS Responsive",
@@ -3351,7 +3417,8 @@ export const cssCourse: Course = {
       { id: "css-ch67-q30", type: "multiple-choice", difficulty: "hard", question: "In CSS Responsive, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Responsive. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Responsive is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch68",
       courseId: "css",
       title: "CSS Viewport",
@@ -3401,7 +3468,8 @@ export const cssCourse: Course = {
       { id: "css-ch68-q31", type: "multiple-choice", difficulty: "easy", question: "In CSS Viewport, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for CSS Viewport. The other options have specific drawbacks." }
       ],
       keyPoints: ["CSS Viewport is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch69",
       courseId: "css",
       title: "CSS Frameworks",
@@ -3452,7 +3520,8 @@ export const cssCourse: Course = {
       { id: "css-ch69-q32", type: "true-false", difficulty: "easy", question: "In CSS Frameworks, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of CSS Frameworks." }
       ],
       keyPoints: ["CSS Frameworks is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "css-ch70",
       courseId: "css",
       title: "Advanced CSS Grid",
@@ -3504,5 +3573,6 @@ export const cssCourse: Course = {
       { id: "css-ch70-q33", type: "true-false", difficulty: "easy", question: "In Advanced CSS Grid, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Advanced CSS Grid." }
       ],
       keyPoints: ["Advanced CSS Grid is fundamental to CSS", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },  ],
+    },
+  ],
 };

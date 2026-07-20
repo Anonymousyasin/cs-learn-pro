@@ -57,7 +57,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch1-q27", type: "match-pairs", difficulty: "medium", question: "Match each JS Introduction concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in JS Introduction." }
       ],
       keyPoints: ["JS Introduction is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch2",
       courseId: "javascript",
       title: "JS Where To",
@@ -104,7 +105,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch2-q28", type: "multiple-choice", difficulty: "medium", question: "In JS Where To, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Where To. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Where To is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch3",
       courseId: "javascript",
       title: "JS Output",
@@ -152,7 +154,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch3-q29", type: "multiple-choice", difficulty: "hard", question: "In JS Output, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Output. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Output is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch4",
       courseId: "javascript",
       title: "JS Syntax",
@@ -201,7 +204,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch4-q30", type: "multiple-choice", difficulty: "hard", question: "In JS Syntax, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Syntax. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Syntax is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch5",
       courseId: "javascript",
       title: "JS Statements",
@@ -251,7 +255,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch5-q31", type: "multiple-choice", difficulty: "easy", question: "In JS Statements, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Statements. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Statements is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch6",
       courseId: "javascript",
       title: "JS Comments",
@@ -302,7 +307,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch6-q32", type: "true-false", difficulty: "easy", question: "In JS Comments, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Comments." }
       ],
       keyPoints: ["JS Comments is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch7",
       courseId: "javascript",
       title: "JS Variables",
@@ -354,7 +360,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch7-q33", type: "true-false", difficulty: "easy", question: "In JS Variables, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Variables." }
       ],
       keyPoints: ["JS Variables is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch8",
       courseId: "javascript",
       title: "JS Let",
@@ -407,7 +414,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch8-q34", type: "fill-blank", difficulty: "easy", question: "In JS Let, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding JS Let and how it fits into the broader subject." }
       ],
       keyPoints: ["JS Let is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch9",
       courseId: "javascript",
       title: "JS Const",
@@ -461,7 +469,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch9-q35", type: "code-order", difficulty: "easy", question: "Arrange these JS Const steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for JS Const: initialize, process, output, cleanup." }
       ],
       keyPoints: ["JS Const is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch10",
       courseId: "javascript",
       title: "JS Operators",
@@ -507,7 +516,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch10-q27", type: "match-pairs", difficulty: "medium", question: "Match each JS Operators concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in JS Operators." }
       ],
       keyPoints: ["JS Operators is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch11",
       courseId: "javascript",
       title: "JS Arithmetic",
@@ -554,7 +564,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch11-q28", type: "multiple-choice", difficulty: "medium", question: "In JS Arithmetic, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Arithmetic. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Arithmetic is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch12",
       courseId: "javascript",
       title: "JS Assignment",
@@ -602,7 +613,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch12-q29", type: "multiple-choice", difficulty: "hard", question: "In JS Assignment, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Assignment. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Assignment is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch13",
       courseId: "javascript",
       title: "JS Comparisons",
@@ -651,7 +663,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch13-q30", type: "multiple-choice", difficulty: "hard", question: "In JS Comparisons, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Comparisons. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Comparisons is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch14",
       courseId: "javascript",
       title: "JS Logical",
@@ -701,7 +714,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch14-q31", type: "multiple-choice", difficulty: "easy", question: "In JS Logical, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Logical. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Logical is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch15",
       courseId: "javascript",
       title: "JS Conditions",
@@ -752,7 +766,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch15-q32", type: "true-false", difficulty: "easy", question: "In JS Conditions, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Conditions." }
       ],
       keyPoints: ["JS Conditions is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch16",
       courseId: "javascript",
       title: "JS Switch",
@@ -804,7 +819,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch16-q33", type: "true-false", difficulty: "easy", question: "In JS Switch, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Switch." }
       ],
       keyPoints: ["JS Switch is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch17",
       courseId: "javascript",
       title: "JS Booleans",
@@ -857,7 +873,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch17-q34", type: "fill-blank", difficulty: "easy", question: "In JS Booleans, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding JS Booleans and how it fits into the broader subject." }
       ],
       keyPoints: ["JS Booleans is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch18",
       courseId: "javascript",
       title: "JS Loops",
@@ -911,7 +928,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch18-q35", type: "code-order", difficulty: "easy", question: "Arrange these JS Loops steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for JS Loops: initialize, process, output, cleanup." }
       ],
       keyPoints: ["JS Loops is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch19",
       courseId: "javascript",
       title: "JS For Loop",
@@ -957,7 +975,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch19-q27", type: "match-pairs", difficulty: "medium", question: "Match each JS For Loop concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in JS For Loop." }
       ],
       keyPoints: ["JS For Loop is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch20",
       courseId: "javascript",
       title: "JS While Loop",
@@ -1004,7 +1023,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch20-q28", type: "multiple-choice", difficulty: "medium", question: "In JS While Loop, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS While Loop. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS While Loop is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch21",
       courseId: "javascript",
       title: "JS Break Continue",
@@ -1052,7 +1072,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch21-q29", type: "multiple-choice", difficulty: "hard", question: "In JS Break Continue, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Break Continue. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Break Continue is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch22",
       courseId: "javascript",
       title: "JS Data Types",
@@ -1101,7 +1122,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch22-q30", type: "multiple-choice", difficulty: "hard", question: "In JS Data Types, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Data Types. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Data Types is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch23",
       courseId: "javascript",
       title: "JS Functions",
@@ -1151,7 +1173,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch23-q31", type: "multiple-choice", difficulty: "easy", question: "In JS Functions, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Functions. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Functions is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch24",
       courseId: "javascript",
       title: "JS Arrow Functions",
@@ -1202,7 +1225,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch24-q32", type: "true-false", difficulty: "easy", question: "In JS Arrow Functions, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Arrow Functions." }
       ],
       keyPoints: ["JS Arrow Functions is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch25",
       courseId: "javascript",
       title: "JS Scope",
@@ -1254,7 +1278,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch25-q33", type: "true-false", difficulty: "easy", question: "In JS Scope, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Scope." }
       ],
       keyPoints: ["JS Scope is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch26",
       courseId: "javascript",
       title: "JS Hoisting",
@@ -1307,7 +1332,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch26-q34", type: "fill-blank", difficulty: "easy", question: "In JS Hoisting, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding JS Hoisting and how it fits into the broader subject." }
       ],
       keyPoints: ["JS Hoisting is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch27",
       courseId: "javascript",
       title: "JS Strings",
@@ -1361,7 +1387,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch27-q35", type: "code-order", difficulty: "easy", question: "Arrange these JS Strings steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for JS Strings: initialize, process, output, cleanup." }
       ],
       keyPoints: ["JS Strings is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch28",
       courseId: "javascript",
       title: "JS String Methods",
@@ -1407,7 +1434,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch28-q27", type: "match-pairs", difficulty: "medium", question: "Match each JS String Methods concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in JS String Methods." }
       ],
       keyPoints: ["JS String Methods is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch29",
       courseId: "javascript",
       title: "JS String Search",
@@ -1454,7 +1482,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch29-q28", type: "multiple-choice", difficulty: "medium", question: "In JS String Search, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS String Search. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS String Search is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch30",
       courseId: "javascript",
       title: "JS Numbers",
@@ -1502,7 +1531,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch30-q29", type: "multiple-choice", difficulty: "hard", question: "In JS Numbers, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Numbers. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Numbers is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch31",
       courseId: "javascript",
       title: "JS Number Methods",
@@ -1551,7 +1581,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch31-q30", type: "multiple-choice", difficulty: "hard", question: "In JS Number Methods, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Number Methods. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Number Methods is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch32",
       courseId: "javascript",
       title: "JS Arrays",
@@ -1601,7 +1632,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch32-q31", type: "multiple-choice", difficulty: "easy", question: "In JS Arrays, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Arrays. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Arrays is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch33",
       courseId: "javascript",
       title: "JS Array Methods",
@@ -1652,7 +1684,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch33-q32", type: "true-false", difficulty: "easy", question: "In JS Array Methods, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Array Methods." }
       ],
       keyPoints: ["JS Array Methods is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch34",
       courseId: "javascript",
       title: "JS Array Search",
@@ -1704,7 +1737,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch34-q33", type: "true-false", difficulty: "easy", question: "In JS Array Search, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Array Search." }
       ],
       keyPoints: ["JS Array Search is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch35",
       courseId: "javascript",
       title: "JS Array Sort",
@@ -1757,7 +1791,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch35-q34", type: "fill-blank", difficulty: "easy", question: "In JS Array Sort, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding JS Array Sort and how it fits into the broader subject." }
       ],
       keyPoints: ["JS Array Sort is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch36",
       courseId: "javascript",
       title: "JS Array Iteration",
@@ -1811,7 +1846,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch36-q35", type: "code-order", difficulty: "easy", question: "Arrange these JS Array Iteration steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for JS Array Iteration: initialize, process, output, cleanup." }
       ],
       keyPoints: ["JS Array Iteration is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch37",
       courseId: "javascript",
       title: "JS Array Const",
@@ -1857,7 +1893,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch37-q27", type: "match-pairs", difficulty: "medium", question: "Match each JS Array Const concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in JS Array Const." }
       ],
       keyPoints: ["JS Array Const is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch38",
       courseId: "javascript",
       title: "JS Dates",
@@ -1904,7 +1941,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch38-q28", type: "multiple-choice", difficulty: "medium", question: "In JS Dates, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Dates. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Dates is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch39",
       courseId: "javascript",
       title: "JS Date Formats",
@@ -1952,7 +1990,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch39-q29", type: "multiple-choice", difficulty: "hard", question: "In JS Date Formats, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Date Formats. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Date Formats is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch40",
       courseId: "javascript",
       title: "JS Math",
@@ -2001,7 +2040,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch40-q30", type: "multiple-choice", difficulty: "hard", question: "In JS Math, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Math. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Math is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch41",
       courseId: "javascript",
       title: "JS Random",
@@ -2051,7 +2091,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch41-q31", type: "multiple-choice", difficulty: "easy", question: "In JS Random, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Random. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Random is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch42",
       courseId: "javascript",
       title: "JS Booleans Advanced",
@@ -2102,7 +2143,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch42-q32", type: "true-false", difficulty: "easy", question: "In JS Booleans Advanced, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Booleans Advanced." }
       ],
       keyPoints: ["JS Booleans Advanced is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch43",
       courseId: "javascript",
       title: "JS Type Conversion",
@@ -2154,7 +2196,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch43-q33", type: "true-false", difficulty: "easy", question: "In JS Type Conversion, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Type Conversion." }
       ],
       keyPoints: ["JS Type Conversion is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch44",
       courseId: "javascript",
       title: "JS Errors",
@@ -2207,7 +2250,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch44-q34", type: "fill-blank", difficulty: "easy", question: "In JS Errors, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding JS Errors and how it fits into the broader subject." }
       ],
       keyPoints: ["JS Errors is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch45",
       courseId: "javascript",
       title: "JS Try Catch",
@@ -2261,7 +2305,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch45-q35", type: "code-order", difficulty: "easy", question: "Arrange these JS Try Catch steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for JS Try Catch: initialize, process, output, cleanup." }
       ],
       keyPoints: ["JS Try Catch is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch46",
       courseId: "javascript",
       title: "JS This",
@@ -2307,7 +2352,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch46-q27", type: "match-pairs", difficulty: "medium", question: "Match each JS This concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in JS This." }
       ],
       keyPoints: ["JS This is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch47",
       courseId: "javascript",
       title: "JS Arrow Functions Advanced",
@@ -2354,7 +2400,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch47-q28", type: "multiple-choice", difficulty: "medium", question: "In JS Arrow Functions Advanced, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Arrow Functions Advanced. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Arrow Functions Advanced is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch48",
       courseId: "javascript",
       title: "JS Classes",
@@ -2402,7 +2449,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch48-q29", type: "multiple-choice", difficulty: "hard", question: "In JS Classes, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Classes. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Classes is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch49",
       courseId: "javascript",
       title: "JS Class Inheritance",
@@ -2451,7 +2499,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch49-q30", type: "multiple-choice", difficulty: "hard", question: "In JS Class Inheritance, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Class Inheritance. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Class Inheritance is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch50",
       courseId: "javascript",
       title: "JS Modules",
@@ -2501,7 +2550,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch50-q31", type: "multiple-choice", difficulty: "easy", question: "In JS Modules, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Modules. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Modules is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch51",
       courseId: "javascript",
       title: "JS JSON",
@@ -2552,7 +2602,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch51-q32", type: "true-false", difficulty: "easy", question: "In JS JSON, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS JSON." }
       ],
       keyPoints: ["JS JSON is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch52",
       courseId: "javascript",
       title: "JS DOM Intro",
@@ -2604,7 +2655,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch52-q33", type: "true-false", difficulty: "easy", question: "In JS DOM Intro, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS DOM Intro." }
       ],
       keyPoints: ["JS DOM Intro is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch53",
       courseId: "javascript",
       title: "JS DOM Navigation",
@@ -2657,7 +2709,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch53-q34", type: "fill-blank", difficulty: "easy", question: "In JS DOM Navigation, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding JS DOM Navigation and how it fits into the broader subject." }
       ],
       keyPoints: ["JS DOM Navigation is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch54",
       courseId: "javascript",
       title: "JS DOM Nodes",
@@ -2711,7 +2764,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch54-q35", type: "code-order", difficulty: "easy", question: "Arrange these JS DOM Nodes steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for JS DOM Nodes: initialize, process, output, cleanup." }
       ],
       keyPoints: ["JS DOM Nodes is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch55",
       courseId: "javascript",
       title: "JS DOM Collections",
@@ -2757,7 +2811,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch55-q27", type: "match-pairs", difficulty: "medium", question: "Match each JS DOM Collections concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in JS DOM Collections." }
       ],
       keyPoints: ["JS DOM Collections is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch56",
       courseId: "javascript",
       title: "JS Events",
@@ -2804,7 +2859,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch56-q28", type: "multiple-choice", difficulty: "medium", question: "In JS Events, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Events. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Events is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch57",
       courseId: "javascript",
       title: "JS Event Flow",
@@ -2852,7 +2908,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch57-q29", type: "multiple-choice", difficulty: "hard", question: "In JS Event Flow, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Event Flow. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Event Flow is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch58",
       courseId: "javascript",
       title: "JS Timing",
@@ -2901,7 +2958,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch58-q30", type: "multiple-choice", difficulty: "hard", question: "In JS Timing, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Timing. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Timing is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch59",
       courseId: "javascript",
       title: "JS Cookies",
@@ -2951,7 +3009,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch59-q31", type: "multiple-choice", difficulty: "easy", question: "In JS Cookies, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Cookies. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Cookies is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch60",
       courseId: "javascript",
       title: "JS Web APIs",
@@ -3002,7 +3061,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch60-q32", type: "true-false", difficulty: "easy", question: "In JS Web APIs, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Web APIs." }
       ],
       keyPoints: ["JS Web APIs is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch61",
       courseId: "javascript",
       title: "JS Fetch API",
@@ -3054,7 +3114,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch61-q33", type: "true-false", difficulty: "easy", question: "In JS Fetch API, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Fetch API." }
       ],
       keyPoints: ["JS Fetch API is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch62",
       courseId: "javascript",
       title: "JS Async",
@@ -3107,7 +3168,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch62-q34", type: "fill-blank", difficulty: "easy", question: "In JS Async, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding JS Async and how it fits into the broader subject." }
       ],
       keyPoints: ["JS Async is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch63",
       courseId: "javascript",
       title: "JS Promises",
@@ -3161,7 +3223,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch63-q35", type: "code-order", difficulty: "easy", question: "Arrange these JS Promises steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for JS Promises: initialize, process, output, cleanup." }
       ],
       keyPoints: ["JS Promises is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch64",
       courseId: "javascript",
       title: "JS Async Await",
@@ -3207,7 +3270,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch64-q27", type: "match-pairs", difficulty: "medium", question: "Match each JS Async Await concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in JS Async Await." }
       ],
       keyPoints: ["JS Async Await is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch65",
       courseId: "javascript",
       title: "JS Sets",
@@ -3254,7 +3318,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch65-q28", type: "multiple-choice", difficulty: "medium", question: "In JS Sets, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Sets. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Sets is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch66",
       courseId: "javascript",
       title: "JS Maps",
@@ -3302,7 +3367,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch66-q29", type: "multiple-choice", difficulty: "hard", question: "In JS Maps, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Maps. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Maps is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch67",
       courseId: "javascript",
       title: "JS Iterables",
@@ -3351,7 +3417,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch67-q30", type: "multiple-choice", difficulty: "hard", question: "In JS Iterables, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Iterables. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Iterables is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch68",
       courseId: "javascript",
       title: "JS Generators",
@@ -3401,7 +3468,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch68-q31", type: "multiple-choice", difficulty: "easy", question: "In JS Generators, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for JS Generators. The other options have specific drawbacks." }
       ],
       keyPoints: ["JS Generators is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch69",
       courseId: "javascript",
       title: "JS Best Practices",
@@ -3452,7 +3520,8 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch69-q32", type: "true-false", difficulty: "easy", question: "In JS Best Practices, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Best Practices." }
       ],
       keyPoints: ["JS Best Practices is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "javascript-ch70",
       courseId: "javascript",
       title: "JS Projects",
@@ -3504,5 +3573,6 @@ export const javascriptCourse: Course = {
       { id: "javascript-ch70-q33", type: "true-false", difficulty: "easy", question: "In JS Projects, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of JS Projects." }
       ],
       keyPoints: ["JS Projects is fundamental to JavaScript", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },  ],
+    },
+  ],
 };

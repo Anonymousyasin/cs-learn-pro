@@ -57,7 +57,8 @@ export const csCourse: Course = {
       { id: "cs-ch1-q27", type: "match-pairs", difficulty: "medium", question: "Match each Binary Numbers concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Binary Numbers." }
       ],
       keyPoints: ["Binary Numbers is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch2",
       courseId: "cs",
       title: "Logic Gates",
@@ -104,7 +105,8 @@ export const csCourse: Course = {
       { id: "cs-ch2-q28", type: "multiple-choice", difficulty: "medium", question: "In Logic Gates, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Logic Gates. The other options have specific drawbacks." }
       ],
       keyPoints: ["Logic Gates is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch3",
       courseId: "cs",
       title: "Boolean Algebra",
@@ -152,7 +154,8 @@ export const csCourse: Course = {
       { id: "cs-ch3-q29", type: "multiple-choice", difficulty: "hard", question: "In Boolean Algebra, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Boolean Algebra. The other options have specific drawbacks." }
       ],
       keyPoints: ["Boolean Algebra is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch4",
       courseId: "cs",
       title: "How Computers Work",
@@ -201,7 +204,8 @@ export const csCourse: Course = {
       { id: "cs-ch4-q30", type: "multiple-choice", difficulty: "hard", question: "In How Computers Work, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for How Computers Work. The other options have specific drawbacks." }
       ],
       keyPoints: ["How Computers Work is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch5",
       courseId: "cs",
       title: "Data Representation",
@@ -251,7 +255,8 @@ export const csCourse: Course = {
       { id: "cs-ch5-q31", type: "multiple-choice", difficulty: "easy", question: "In Data Representation, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Data Representation. The other options have specific drawbacks." }
       ],
       keyPoints: ["Data Representation is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch6",
       courseId: "cs",
       title: "Algorithms Intro",
@@ -302,7 +307,8 @@ export const csCourse: Course = {
       { id: "cs-ch6-q32", type: "true-false", difficulty: "easy", question: "In Algorithms Intro, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Algorithms Intro." }
       ],
       keyPoints: ["Algorithms Intro is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch7",
       courseId: "cs",
       title: "Algorithmic Complexity",
@@ -354,7 +360,8 @@ export const csCourse: Course = {
       { id: "cs-ch7-q33", type: "true-false", difficulty: "easy", question: "In Algorithmic Complexity, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Algorithmic Complexity." }
       ],
       keyPoints: ["Algorithmic Complexity is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch8",
       courseId: "cs",
       title: "Recursion",
@@ -407,7 +414,8 @@ export const csCourse: Course = {
       { id: "cs-ch8-q34", type: "fill-blank", difficulty: "easy", question: "In Recursion, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Recursion and how it fits into the broader subject." }
       ],
       keyPoints: ["Recursion is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch9",
       courseId: "cs",
       title: "Searching Algorithms",
@@ -461,7 +469,8 @@ export const csCourse: Course = {
       { id: "cs-ch9-q35", type: "code-order", difficulty: "easy", question: "Arrange these Searching Algorithms steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Searching Algorithms: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Searching Algorithms is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch10",
       courseId: "cs",
       title: "Bubble & Selection Sort",
@@ -507,7 +516,8 @@ export const csCourse: Course = {
       { id: "cs-ch10-q27", type: "match-pairs", difficulty: "medium", question: "Match each Bubble & Selection Sort concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Bubble & Selection Sort." }
       ],
       keyPoints: ["Bubble & Selection Sort is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch11",
       courseId: "cs",
       title: "Quick & Merge Sort",
@@ -554,7 +564,8 @@ export const csCourse: Course = {
       { id: "cs-ch11-q28", type: "multiple-choice", difficulty: "medium", question: "In Quick & Merge Sort, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Quick & Merge Sort. The other options have specific drawbacks." }
       ],
       keyPoints: ["Quick & Merge Sort is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch12",
       courseId: "cs",
       title: "Advanced Sorting",
@@ -602,7 +613,8 @@ export const csCourse: Course = {
       { id: "cs-ch12-q29", type: "multiple-choice", difficulty: "hard", question: "In Advanced Sorting, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Advanced Sorting. The other options have specific drawbacks." }
       ],
       keyPoints: ["Advanced Sorting is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch13",
       courseId: "cs",
       title: "Arrays in DSA",
@@ -651,7 +663,8 @@ export const csCourse: Course = {
       { id: "cs-ch13-q30", type: "multiple-choice", difficulty: "hard", question: "In Arrays in DSA, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Arrays in DSA. The other options have specific drawbacks." }
       ],
       keyPoints: ["Arrays in DSA is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch14",
       courseId: "cs",
       title: "Linked Lists",
@@ -701,7 +714,8 @@ export const csCourse: Course = {
       { id: "cs-ch14-q31", type: "multiple-choice", difficulty: "easy", question: "In Linked Lists, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Linked Lists. The other options have specific drawbacks." }
       ],
       keyPoints: ["Linked Lists is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch15",
       courseId: "cs",
       title: "Stacks",
@@ -752,7 +766,8 @@ export const csCourse: Course = {
       { id: "cs-ch15-q32", type: "true-false", difficulty: "easy", question: "In Stacks, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Stacks." }
       ],
       keyPoints: ["Stacks is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch16",
       courseId: "cs",
       title: "Queues",
@@ -804,7 +819,8 @@ export const csCourse: Course = {
       { id: "cs-ch16-q33", type: "true-false", difficulty: "easy", question: "In Queues, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Queues." }
       ],
       keyPoints: ["Queues is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch17",
       courseId: "cs",
       title: "Hash Tables",
@@ -857,7 +873,8 @@ export const csCourse: Course = {
       { id: "cs-ch17-q34", type: "fill-blank", difficulty: "easy", question: "In Hash Tables, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Hash Tables and how it fits into the broader subject." }
       ],
       keyPoints: ["Hash Tables is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch18",
       courseId: "cs",
       title: "Trees Intro",
@@ -911,7 +928,8 @@ export const csCourse: Course = {
       { id: "cs-ch18-q35", type: "code-order", difficulty: "easy", question: "Arrange these Trees Intro steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Trees Intro: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Trees Intro is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch19",
       courseId: "cs",
       title: "Binary Search Trees",
@@ -957,7 +975,8 @@ export const csCourse: Course = {
       { id: "cs-ch19-q27", type: "match-pairs", difficulty: "medium", question: "Match each Binary Search Trees concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Binary Search Trees." }
       ],
       keyPoints: ["Binary Search Trees is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch20",
       courseId: "cs",
       title: "Heaps",
@@ -1004,7 +1023,8 @@ export const csCourse: Course = {
       { id: "cs-ch20-q28", type: "multiple-choice", difficulty: "medium", question: "In Heaps, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Heaps. The other options have specific drawbacks." }
       ],
       keyPoints: ["Heaps is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch21",
       courseId: "cs",
       title: "Balanced Trees",
@@ -1052,7 +1072,8 @@ export const csCourse: Course = {
       { id: "cs-ch21-q29", type: "multiple-choice", difficulty: "hard", question: "In Balanced Trees, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Balanced Trees. The other options have specific drawbacks." }
       ],
       keyPoints: ["Balanced Trees is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch22",
       courseId: "cs",
       title: "Graphs",
@@ -1101,7 +1122,8 @@ export const csCourse: Course = {
       { id: "cs-ch22-q30", type: "multiple-choice", difficulty: "hard", question: "In Graphs, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Graphs. The other options have specific drawbacks." }
       ],
       keyPoints: ["Graphs is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch23",
       courseId: "cs",
       title: "Graph Traversal",
@@ -1151,7 +1173,8 @@ export const csCourse: Course = {
       { id: "cs-ch23-q31", type: "multiple-choice", difficulty: "easy", question: "In Graph Traversal, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Graph Traversal. The other options have specific drawbacks." }
       ],
       keyPoints: ["Graph Traversal is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch24",
       courseId: "cs",
       title: "Shortest Path",
@@ -1202,7 +1225,8 @@ export const csCourse: Course = {
       { id: "cs-ch24-q32", type: "true-false", difficulty: "easy", question: "In Shortest Path, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Shortest Path." }
       ],
       keyPoints: ["Shortest Path is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch25",
       courseId: "cs",
       title: "Minimum Spanning Trees",
@@ -1254,7 +1278,8 @@ export const csCourse: Course = {
       { id: "cs-ch25-q33", type: "true-false", difficulty: "easy", question: "In Minimum Spanning Trees, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of Minimum Spanning Trees." }
       ],
       keyPoints: ["Minimum Spanning Trees is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch26",
       courseId: "cs",
       title: "Dynamic Programming",
@@ -1307,7 +1332,8 @@ export const csCourse: Course = {
       { id: "cs-ch26-q34", type: "fill-blank", difficulty: "easy", question: "In Dynamic Programming, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding Dynamic Programming and how it fits into the broader subject." }
       ],
       keyPoints: ["Dynamic Programming is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch27",
       courseId: "cs",
       title: "Greedy Algorithms",
@@ -1361,7 +1387,8 @@ export const csCourse: Course = {
       { id: "cs-ch27-q35", type: "code-order", difficulty: "easy", question: "Arrange these Greedy Algorithms steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for Greedy Algorithms: initialize, process, output, cleanup." }
       ],
       keyPoints: ["Greedy Algorithms is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch28",
       courseId: "cs",
       title: "Complexity Classes",
@@ -1407,7 +1434,8 @@ export const csCourse: Course = {
       { id: "cs-ch28-q27", type: "match-pairs", difficulty: "medium", question: "Match each Complexity Classes concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in Complexity Classes." }
       ],
       keyPoints: ["Complexity Classes is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch29",
       courseId: "cs",
       title: "Bit Manipulation",
@@ -1454,7 +1482,8 @@ export const csCourse: Course = {
       { id: "cs-ch29-q28", type: "multiple-choice", difficulty: "medium", question: "In Bit Manipulation, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Bit Manipulation. The other options have specific drawbacks." }
       ],
       keyPoints: ["Bit Manipulation is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "cs-ch30",
       courseId: "cs",
       title: "Computability",
@@ -1502,5 +1531,6 @@ export const csCourse: Course = {
       { id: "cs-ch30-q29", type: "multiple-choice", difficulty: "hard", question: "In Computability, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for Computability. The other options have specific drawbacks." }
       ],
       keyPoints: ["Computability is fundamental to CS / DSA", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },  ],
+    },
+  ],
 };

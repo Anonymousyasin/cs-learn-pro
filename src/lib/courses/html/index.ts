@@ -57,7 +57,8 @@ export const htmlCourse: Course = {
       { id: "html-ch1-q27", type: "match-pairs", difficulty: "medium", question: "Match each HTML Introduction concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in HTML Introduction." }
       ],
       keyPoints: ["HTML Introduction is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch2",
       courseId: "html",
       title: "HTML Editors",
@@ -104,7 +105,8 @@ export const htmlCourse: Course = {
       { id: "html-ch2-q28", type: "multiple-choice", difficulty: "medium", question: "In HTML Editors, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Editors. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Editors is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch3",
       courseId: "html",
       title: "HTML Basics",
@@ -152,7 +154,8 @@ export const htmlCourse: Course = {
       { id: "html-ch3-q29", type: "multiple-choice", difficulty: "hard", question: "In HTML Basics, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Basics. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Basics is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch4",
       courseId: "html",
       title: "HTML Elements",
@@ -201,7 +204,8 @@ export const htmlCourse: Course = {
       { id: "html-ch4-q30", type: "multiple-choice", difficulty: "hard", question: "In HTML Elements, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Elements. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Elements is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch5",
       courseId: "html",
       title: "HTML Attributes",
@@ -251,7 +255,8 @@ export const htmlCourse: Course = {
       { id: "html-ch5-q31", type: "multiple-choice", difficulty: "easy", question: "In HTML Attributes, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Attributes. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Attributes is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch6",
       courseId: "html",
       title: "HTML Headings",
@@ -302,7 +307,8 @@ export const htmlCourse: Course = {
       { id: "html-ch6-q32", type: "true-false", difficulty: "easy", question: "In HTML Headings, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Headings." }
       ],
       keyPoints: ["HTML Headings is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch7",
       courseId: "html",
       title: "HTML Paragraphs",
@@ -354,7 +360,8 @@ export const htmlCourse: Course = {
       { id: "html-ch7-q33", type: "true-false", difficulty: "easy", question: "In HTML Paragraphs, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Paragraphs." }
       ],
       keyPoints: ["HTML Paragraphs is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch8",
       courseId: "html",
       title: "HTML Styles",
@@ -407,7 +414,8 @@ export const htmlCourse: Course = {
       { id: "html-ch8-q34", type: "fill-blank", difficulty: "easy", question: "In HTML Styles, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding HTML Styles and how it fits into the broader subject." }
       ],
       keyPoints: ["HTML Styles is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch9",
       courseId: "html",
       title: "HTML Formatting",
@@ -461,7 +469,8 @@ export const htmlCourse: Course = {
       { id: "html-ch9-q35", type: "code-order", difficulty: "easy", question: "Arrange these HTML Formatting steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for HTML Formatting: initialize, process, output, cleanup." }
       ],
       keyPoints: ["HTML Formatting is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch10",
       courseId: "html",
       title: "HTML Quotations",
@@ -507,7 +516,8 @@ export const htmlCourse: Course = {
       { id: "html-ch10-q27", type: "match-pairs", difficulty: "medium", question: "Match each HTML Quotations concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in HTML Quotations." }
       ],
       keyPoints: ["HTML Quotations is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch11",
       courseId: "html",
       title: "HTML Comments",
@@ -554,7 +564,8 @@ export const htmlCourse: Course = {
       { id: "html-ch11-q28", type: "multiple-choice", difficulty: "medium", question: "In HTML Comments, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Comments. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Comments is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch12",
       courseId: "html",
       title: "HTML Colors",
@@ -602,7 +613,8 @@ export const htmlCourse: Course = {
       { id: "html-ch12-q29", type: "multiple-choice", difficulty: "hard", question: "In HTML Colors, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Colors. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Colors is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch13",
       courseId: "html",
       title: "HTML CSS",
@@ -651,7 +663,8 @@ export const htmlCourse: Course = {
       { id: "html-ch13-q30", type: "multiple-choice", difficulty: "hard", question: "In HTML CSS, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML CSS. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML CSS is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch14",
       courseId: "html",
       title: "HTML Links",
@@ -701,7 +714,8 @@ export const htmlCourse: Course = {
       { id: "html-ch14-q31", type: "multiple-choice", difficulty: "easy", question: "In HTML Links, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Links. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Links is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch15",
       courseId: "html",
       title: "HTML Images",
@@ -752,7 +766,8 @@ export const htmlCourse: Course = {
       { id: "html-ch15-q32", type: "true-false", difficulty: "easy", question: "In HTML Images, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Images." }
       ],
       keyPoints: ["HTML Images is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch16",
       courseId: "html",
       title: "HTML Favicon",
@@ -804,7 +819,8 @@ export const htmlCourse: Course = {
       { id: "html-ch16-q33", type: "true-false", difficulty: "easy", question: "In HTML Favicon, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Favicon." }
       ],
       keyPoints: ["HTML Favicon is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch17",
       courseId: "html",
       title: "HTML Tables",
@@ -857,7 +873,8 @@ export const htmlCourse: Course = {
       { id: "html-ch17-q34", type: "fill-blank", difficulty: "easy", question: "In HTML Tables, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding HTML Tables and how it fits into the broader subject." }
       ],
       keyPoints: ["HTML Tables is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch18",
       courseId: "html",
       title: "HTML Lists",
@@ -911,7 +928,8 @@ export const htmlCourse: Course = {
       { id: "html-ch18-q35", type: "code-order", difficulty: "easy", question: "Arrange these HTML Lists steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for HTML Lists: initialize, process, output, cleanup." }
       ],
       keyPoints: ["HTML Lists is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch19",
       courseId: "html",
       title: "HTML Block & Inline",
@@ -957,7 +975,8 @@ export const htmlCourse: Course = {
       { id: "html-ch19-q27", type: "match-pairs", difficulty: "medium", question: "Match each HTML Block & Inline concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in HTML Block & Inline." }
       ],
       keyPoints: ["HTML Block & Inline is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch20",
       courseId: "html",
       title: "HTML Div",
@@ -1004,7 +1023,8 @@ export const htmlCourse: Course = {
       { id: "html-ch20-q28", type: "multiple-choice", difficulty: "medium", question: "In HTML Div, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Div. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Div is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch21",
       courseId: "html",
       title: "HTML Classes",
@@ -1052,7 +1072,8 @@ export const htmlCourse: Course = {
       { id: "html-ch21-q29", type: "multiple-choice", difficulty: "hard", question: "In HTML Classes, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Classes. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Classes is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch22",
       courseId: "html",
       title: "HTML ID",
@@ -1101,7 +1122,8 @@ export const htmlCourse: Course = {
       { id: "html-ch22-q30", type: "multiple-choice", difficulty: "hard", question: "In HTML ID, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML ID. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML ID is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch23",
       courseId: "html",
       title: "HTML Iframes",
@@ -1151,7 +1173,8 @@ export const htmlCourse: Course = {
       { id: "html-ch23-q31", type: "multiple-choice", difficulty: "easy", question: "In HTML Iframes, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Iframes. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Iframes is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch24",
       courseId: "html",
       title: "HTML JavaScript",
@@ -1202,7 +1225,8 @@ export const htmlCourse: Course = {
       { id: "html-ch24-q32", type: "true-false", difficulty: "easy", question: "In HTML JavaScript, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML JavaScript." }
       ],
       keyPoints: ["HTML JavaScript is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch25",
       courseId: "html",
       title: "HTML File Paths",
@@ -1254,7 +1278,8 @@ export const htmlCourse: Course = {
       { id: "html-ch25-q33", type: "true-false", difficulty: "easy", question: "In HTML File Paths, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML File Paths." }
       ],
       keyPoints: ["HTML File Paths is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch26",
       courseId: "html",
       title: "HTML Head Elements",
@@ -1307,7 +1332,8 @@ export const htmlCourse: Course = {
       { id: "html-ch26-q34", type: "fill-blank", difficulty: "easy", question: "In HTML Head Elements, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding HTML Head Elements and how it fits into the broader subject." }
       ],
       keyPoints: ["HTML Head Elements is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch27",
       courseId: "html",
       title: "HTML Layout",
@@ -1361,7 +1387,8 @@ export const htmlCourse: Course = {
       { id: "html-ch27-q35", type: "code-order", difficulty: "easy", question: "Arrange these HTML Layout steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for HTML Layout: initialize, process, output, cleanup." }
       ],
       keyPoints: ["HTML Layout is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch28",
       courseId: "html",
       title: "HTML Responsive",
@@ -1407,7 +1434,8 @@ export const htmlCourse: Course = {
       { id: "html-ch28-q27", type: "match-pairs", difficulty: "medium", question: "Match each HTML Responsive concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in HTML Responsive." }
       ],
       keyPoints: ["HTML Responsive is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch29",
       courseId: "html",
       title: "HTML Computercode",
@@ -1454,7 +1482,8 @@ export const htmlCourse: Course = {
       { id: "html-ch29-q28", type: "multiple-choice", difficulty: "medium", question: "In HTML Computercode, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Computercode. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Computercode is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch30",
       courseId: "html",
       title: "HTML Semantics",
@@ -1502,7 +1531,8 @@ export const htmlCourse: Course = {
       { id: "html-ch30-q29", type: "multiple-choice", difficulty: "hard", question: "In HTML Semantics, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Semantics. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Semantics is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch31",
       courseId: "html",
       title: "HTML Style Guide",
@@ -1551,7 +1581,8 @@ export const htmlCourse: Course = {
       { id: "html-ch31-q30", type: "multiple-choice", difficulty: "hard", question: "In HTML Style Guide, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Style Guide. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Style Guide is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch32",
       courseId: "html",
       title: "HTML Entities",
@@ -1601,7 +1632,8 @@ export const htmlCourse: Course = {
       { id: "html-ch32-q31", type: "multiple-choice", difficulty: "easy", question: "In HTML Entities, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Entities. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Entities is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch33",
       courseId: "html",
       title: "HTML Symbols",
@@ -1652,7 +1684,8 @@ export const htmlCourse: Course = {
       { id: "html-ch33-q32", type: "true-false", difficulty: "easy", question: "In HTML Symbols, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Symbols." }
       ],
       keyPoints: ["HTML Symbols is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch34",
       courseId: "html",
       title: "HTML Emojis",
@@ -1704,7 +1737,8 @@ export const htmlCourse: Course = {
       { id: "html-ch34-q33", type: "true-false", difficulty: "easy", question: "In HTML Emojis, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Emojis." }
       ],
       keyPoints: ["HTML Emojis is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch35",
       courseId: "html",
       title: "HTML Charset",
@@ -1757,7 +1791,8 @@ export const htmlCourse: Course = {
       { id: "html-ch35-q34", type: "fill-blank", difficulty: "easy", question: "In HTML Charset, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding HTML Charset and how it fits into the broader subject." }
       ],
       keyPoints: ["HTML Charset is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch36",
       courseId: "html",
       title: "HTML URL Encoding",
@@ -1811,7 +1846,8 @@ export const htmlCourse: Course = {
       { id: "html-ch36-q35", type: "code-order", difficulty: "easy", question: "Arrange these HTML URL Encoding steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for HTML URL Encoding: initialize, process, output, cleanup." }
       ],
       keyPoints: ["HTML URL Encoding is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch37",
       courseId: "html",
       title: "HTML vs XHTML",
@@ -1857,7 +1893,8 @@ export const htmlCourse: Course = {
       { id: "html-ch37-q27", type: "match-pairs", difficulty: "medium", question: "Match each HTML vs XHTML concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in HTML vs XHTML." }
       ],
       keyPoints: ["HTML vs XHTML is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch38",
       courseId: "html",
       title: "HTML Forms",
@@ -1904,7 +1941,8 @@ export const htmlCourse: Course = {
       { id: "html-ch38-q28", type: "multiple-choice", difficulty: "medium", question: "In HTML Forms, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Forms. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Forms is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch39",
       courseId: "html",
       title: "HTML Form Attributes",
@@ -1952,7 +1990,8 @@ export const htmlCourse: Course = {
       { id: "html-ch39-q29", type: "multiple-choice", difficulty: "hard", question: "In HTML Form Attributes, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Form Attributes. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Form Attributes is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch40",
       courseId: "html",
       title: "HTML Form Elements",
@@ -2001,7 +2040,8 @@ export const htmlCourse: Course = {
       { id: "html-ch40-q30", type: "multiple-choice", difficulty: "hard", question: "In HTML Form Elements, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Form Elements. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Form Elements is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch41",
       courseId: "html",
       title: "HTML Input Types",
@@ -2051,7 +2091,8 @@ export const htmlCourse: Course = {
       { id: "html-ch41-q31", type: "multiple-choice", difficulty: "easy", question: "In HTML Input Types, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Input Types. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Input Types is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch42",
       courseId: "html",
       title: "HTML Input Attributes",
@@ -2102,7 +2143,8 @@ export const htmlCourse: Course = {
       { id: "html-ch42-q32", type: "true-false", difficulty: "easy", question: "In HTML Input Attributes, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Input Attributes." }
       ],
       keyPoints: ["HTML Input Attributes is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch43",
       courseId: "html",
       title: "HTML Input Form Attributes",
@@ -2154,7 +2196,8 @@ export const htmlCourse: Course = {
       { id: "html-ch43-q33", type: "true-false", difficulty: "easy", question: "In HTML Input Form Attributes, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Input Form Attributes." }
       ],
       keyPoints: ["HTML Input Form Attributes is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch44",
       courseId: "html",
       title: "HTML Canvas",
@@ -2207,7 +2250,8 @@ export const htmlCourse: Course = {
       { id: "html-ch44-q34", type: "fill-blank", difficulty: "easy", question: "In HTML Canvas, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding HTML Canvas and how it fits into the broader subject." }
       ],
       keyPoints: ["HTML Canvas is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch45",
       courseId: "html",
       title: "HTML SVG",
@@ -2261,7 +2305,8 @@ export const htmlCourse: Course = {
       { id: "html-ch45-q35", type: "code-order", difficulty: "easy", question: "Arrange these HTML SVG steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for HTML SVG: initialize, process, output, cleanup." }
       ],
       keyPoints: ["HTML SVG is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch46",
       courseId: "html",
       title: "HTML Media",
@@ -2307,7 +2352,8 @@ export const htmlCourse: Course = {
       { id: "html-ch46-q27", type: "match-pairs", difficulty: "medium", question: "Match each HTML Media concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in HTML Media." }
       ],
       keyPoints: ["HTML Media is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch47",
       courseId: "html",
       title: "HTML Plugins",
@@ -2354,7 +2400,8 @@ export const htmlCourse: Course = {
       { id: "html-ch47-q28", type: "multiple-choice", difficulty: "medium", question: "In HTML Plugins, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Plugins. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Plugins is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch48",
       courseId: "html",
       title: "HTML YouTube",
@@ -2402,7 +2449,8 @@ export const htmlCourse: Course = {
       { id: "html-ch48-q29", type: "multiple-choice", difficulty: "hard", question: "In HTML YouTube, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML YouTube. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML YouTube is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch49",
       courseId: "html",
       title: "HTML Geolocation",
@@ -2451,7 +2499,8 @@ export const htmlCourse: Course = {
       { id: "html-ch49-q30", type: "multiple-choice", difficulty: "hard", question: "In HTML Geolocation, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Geolocation. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Geolocation is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch50",
       courseId: "html",
       title: "HTML Drag/Drop",
@@ -2501,7 +2550,8 @@ export const htmlCourse: Course = {
       { id: "html-ch50-q31", type: "multiple-choice", difficulty: "easy", question: "In HTML Drag/Drop, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Drag/Drop. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Drag/Drop is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch51",
       courseId: "html",
       title: "HTML Web Storage",
@@ -2552,7 +2602,8 @@ export const htmlCourse: Course = {
       { id: "html-ch51-q32", type: "true-false", difficulty: "easy", question: "In HTML Web Storage, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Web Storage." }
       ],
       keyPoints: ["HTML Web Storage is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch52",
       courseId: "html",
       title: "HTML Web Workers",
@@ -2604,7 +2655,8 @@ export const htmlCourse: Course = {
       { id: "html-ch52-q33", type: "true-false", difficulty: "easy", question: "In HTML Web Workers, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Web Workers." }
       ],
       keyPoints: ["HTML Web Workers is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch53",
       courseId: "html",
       title: "HTML SSE",
@@ -2657,7 +2709,8 @@ export const htmlCourse: Course = {
       { id: "html-ch53-q34", type: "fill-blank", difficulty: "easy", question: "In HTML SSE, the term that describes the core concept is ___.", correctAnswer: "abstraction", acceptableAnswers: ["core concept", "fundamental principle"], explanation: "This term is central to understanding HTML SSE and how it fits into the broader subject." }
       ],
       keyPoints: ["HTML SSE is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch54",
       courseId: "html",
       title: "HTML Accessibility",
@@ -2711,7 +2764,8 @@ export const htmlCourse: Course = {
       { id: "html-ch54-q35", type: "code-order", difficulty: "easy", question: "Arrange these HTML Accessibility steps in the correct order:", codeLines: ["// Step 1: Initialize", "// Step 2: Process", "// Step 3: Handle output", "// Step 4: Clean up"], correctOrder: [0, 1, 2, 3], explanation: "The correct order follows the standard workflow pattern for HTML Accessibility: initialize, process, output, cleanup." }
       ],
       keyPoints: ["HTML Accessibility is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch55",
       courseId: "html",
       title: "HTML SEO",
@@ -2757,7 +2811,8 @@ export const htmlCourse: Course = {
       { id: "html-ch55-q27", type: "match-pairs", difficulty: "medium", question: "Match each HTML SEO concept:", leftItems: ["Concept A", "Concept B", "Concept C"], rightItems: ["Description 1", "Description 2", "Description 3"], correctMatches: [[0, 0], [1, 1], [2, 2]], explanation: "Each concept pairs with its matching description based on the definitions covered in HTML SEO." }
       ],
       keyPoints: ["HTML SEO is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch56",
       courseId: "html",
       title: "HTML Performance",
@@ -2804,7 +2859,8 @@ export const htmlCourse: Course = {
       { id: "html-ch56-q28", type: "multiple-choice", difficulty: "medium", question: "In HTML Performance, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Performance. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Performance is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch57",
       courseId: "html",
       title: "HTML Security",
@@ -2852,7 +2908,8 @@ export const htmlCourse: Course = {
       { id: "html-ch57-q29", type: "multiple-choice", difficulty: "hard", question: "In HTML Security, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Security. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Security is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch58",
       courseId: "html",
       title: "HTML Templates",
@@ -2901,7 +2958,8 @@ export const htmlCourse: Course = {
       { id: "html-ch58-q30", type: "multiple-choice", difficulty: "hard", question: "In HTML Templates, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Templates. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Templates is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch59",
       courseId: "html",
       title: "HTML Microdata",
@@ -2951,7 +3009,8 @@ export const htmlCourse: Course = {
       { id: "html-ch59-q31", type: "multiple-choice", difficulty: "easy", question: "In HTML Microdata, which of the following is correct?", options: [{ id: "a", text: "Option A is the correct approach" }, { id: "b", text: "Option B is a common alternative" }, { id: "c", text: "Option C works but is not recommended" }, { id: "d", text: "Option D is incorrect" }], correctAnswer: "a", explanation: "Option A is correct because it follows the established best practices for HTML Microdata. The other options have specific drawbacks." }
       ],
       keyPoints: ["HTML Microdata is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },    {
+    },
+    {
       id: "html-ch60",
       courseId: "html",
       title: "HTML Best Practices",
@@ -3002,5 +3061,6 @@ export const htmlCourse: Course = {
       { id: "html-ch60-q32", type: "true-false", difficulty: "easy", question: "In HTML Best Practices, the primary concept always applies universally.", correctAnswer: true, explanation: "This statement is correct based on the fundamental principles of HTML Best Practices." }
       ],
       keyPoints: ["HTML Best Practices is fundamental to HTML", "Master this concept before progressing", "Practice implementation regularly", "Refer to documentation for edge cases"]
-    },  ],
+    },
+  ],
 };

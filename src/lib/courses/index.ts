@@ -13,14 +13,6 @@ const allCourses: Course[] = [
   csCourse,
 ];
 
-// Calculate totalXP for each course
-for (const course of allCourses) {
-  (course as any).totalXP = course.chapters.reduce(
-    (sum, ch) => sum + ch.xpReward,
-    0
-  );
-}
-
 export const courseRegistry: CourseRegistry = {
   courses: allCourses,
   getCourse(id: string): Course | undefined {
