@@ -68,15 +68,98 @@ const courses = [
   },
   {
     id: "cs", title: "CS / DSA", fullTitle: "Computer Science & Data Structures",
-    desc: "The fundamental science behind computing. Binary, logic gates, data structures, algorithms, complexity theory, and more.",
-    icon: "Shield", color: "#a78bfa", difficulty: 3, hours: 35,
+    desc: "A comprehensive computer science curriculum from fundamentals to advanced topics. Binary, logic, math, data structures, algorithms, systems, theory, and more — following the OSSU curriculum.",
+    icon: "Shield", color: "#a78bfa", difficulty: 1, hours: 120,
     chapters: [
-      "What is CS?","Binary Numbers","Hex & Octal","Logic Gates","Boolean Algebra","How CPUs Work","Memory Hierarchy","Data Representation","Algorithms Intro","Algorithm Analysis",
-      "Big O Notation","Recursion","Search: Linear","Search: Binary","Sort: Bubble","Sort: Selection","Sort: Insertion","Sort: Merge","Sort: Quick","Sort: Heap",
-      "Arrays","Linked Lists","Doubly Linked","Stacks","Queues","Deques","Hash Tables","Hash Collisions","Trees Intro","Binary Trees",
-      "BST Operations","Tree Traversals","Heaps","Priority Queues","AVL Trees","Red-Black Trees","Trie","Graphs","Graph Representation","BFS",
-      "DFS","Topological Sort","Dijkstra","Bellman-Ford","MST Prim","MST Kruskal","Dynamic Programming","DP: Knapsack","DP: LCS","Greedy Algorithms",
-      "P vs NP","NP-Complete","Bit Manipulation","Computer Architecture","Operating Systems","Networking","Databases","Compilers","Distributed Systems","Computability",
+      // ─── Part 1: Introduction & Data Representation (12 chapters) ───
+      "What is Computer Science?","History of Computing","The Binary Number System","Hexadecimal & Octal Systems",
+      "Data Representation (Integers & Floats)","Text Encoding (ASCII, Unicode, UTF-8)","Boolean Logic & Truth Tables",
+      "Logic Gates (AND, OR, NOT, NAND, NOR, XOR, XNOR)","Digital Circuits & Boolean Algebra","How CPUs Execute Instructions",
+      "Memory Hierarchy (Registers, Cache, RAM, Disk)","The Von Neumann Architecture",
+
+      // ─── Part 2: Discrete Mathematics (18 chapters) ───
+      "Introduction to Sets","Set Operations (Union, Intersection, Complement)","Functions & Relations",
+      "Propositional Logic","Predicate Logic & Quantifiers","Proof Techniques (Direct & Contrapositive)",
+      "Proof by Induction","Proof by Contradiction","Counting: Permutations & Combinations",
+      "The Pigeonhole Principle","Probability: Basic Concepts","Conditional Probability & Bayes' Theorem",
+      "Random Variables & Expected Value","Sequences & Summations","Modular Arithmetic & Number Theory",
+      "Graph Theory: Basic Concepts","Matrix Operations for CS","Applications of Linear Algebra in CS",
+
+      // ─── Part 3: Algorithms - Analysis & Core (18 chapters) ───
+      "What is an Algorithm?","The RAM Model of Computation","Big O: Upper Bounds",
+      "Omega & Theta: Tight Bounds","Asymptotic Analysis Rules","Recurrence Relations & the Master Theorem",
+      "Divide & Conquer Strategy","Linear Search & Binary Search","Bubble Sort & Selection Sort",
+      "Insertion Sort","Merge Sort: Divide & Conquer","Quick Sort & Partitioning",
+      "Heap Sort & Binary Heaps","Counting Sort (Integer Sort)","Radix Sort & Bucket Sort",
+      "Two-Pointer Technique","Sliding Window Technique","Randomized Algorithms",
+
+      // ─── Part 4: Data Structures (22 chapters) ───
+      "Arrays & Dynamic Arrays","Strings & String Algorithms","Singly Linked Lists",
+      "Doubly & Circular Linked Lists","Stacks (LIFO)","Queues (FIFO) & Circular Queues",
+      "Deques & Priority Queues","Hash Tables & Hash Functions","Collision Resolution (Chaining, Open Addressing)",
+      "Bloom Filters & Probabilistic Structures","Trees: Terminology & Properties","Binary Trees & Binary Search Trees",
+      "BST Operations: Insert, Delete, Search","Tree Traversals (Inorder, Preorder, Postorder, Level-order)",
+      "Balanced BSTs: AVL Trees","Red-Black Trees","B-Trees & B+ Trees for Databases",
+      "Tries (Prefix Trees)","Suffix Trees & Suffix Arrays","Graphs: Types & Terminology",
+      "Graph Representations (Adjacency Matrix, List)","Graph Traversals: BFS & DFS",
+
+      // ─── Part 5: Advanced Algorithms & Graph (18 chapters) ───
+      "Dijkstra's Shortest Path","Bellman-Ford & Negative Weights","Floyd-Warshall All-Pairs Shortest Path",
+      "A* Search Algorithm","Minimum Spanning Trees (Prim's Algorithm)","Minimum Spanning Trees (Kruskal's Algorithm)",
+      "Union-Find (Disjoint Set Union)","Topological Sort (Kahn & DFS)","Strongly Connected Components (Kosaraju, Tarjan)",
+      "Network Flow: Ford-Fulkerson & Max-Flow Min-Cut","Maximum Bipartite Matching","Segment Trees & Fenwick Trees",
+      "Dynamic Programming: Core Principles","DP: 0/1 Knapsack Problem","DP: Longest Common Subsequence",
+      "DP: Longest Increasing Subsequence","DP: Matrix Chain Multiplication","DP: Edit Distance (Levenshtein)",
+
+      // ─── Part 6: Advanced Topics in Algorithms (10 chapters) ───
+      "Greedy Algorithm Design","Huffman Coding & Compression","Backtracking (N-Queens, Sudoku)",
+      "Branch & Bound","P vs NP: The Big Question","NP-Completeness & Reductions",
+      "Approximation Algorithms","Online Algorithms & Competitive Analysis","Amortized Analysis",
+      "String Matching: KMP & Rabin-Karp",
+
+      // ─── Part 7: Computer Architecture & Organization (10 chapters) ───
+      "Instruction Set Architecture (ISA)","CPU Pipelining & Hazards","Cache Design & Locality",
+      "Virtual Memory & Paging","Interrupts & I/O Systems","Assembly Language Basics",
+      "Parallel Processing & SIMD","GPU Architecture & CUDA","Performance Measurement & Optimization",
+      "Quantum Computing Fundamentals",
+
+      // ─── Part 8: Operating Systems (10 chapters) ───
+      "OS: Processes & Threads","CPU Scheduling Algorithms","Process Synchronization & Locks",
+      "Deadlocks: Detection & Prevention","Memory Management (Paging, Segmentation)","Virtual Memory & Demand Paging",
+      "File Systems & Storage","I/O Management & DMA","Security & Access Control",
+      "Virtualization & Containers",
+
+      // ─── Part 9: Computer Networking (8 chapters) ───
+      "Networking: The OSI Model","TCP/IP Protocol Suite","UDP, HTTP, DNS, & DHCP",
+      "Routing Algorithms","Congestion Control & Flow Control","Network Security: TLS, HTTPS",
+      "Sockets & Network Programming","Peer-to-Peer & CDN Architecture",
+
+      // ─── Part 10: Databases (8 chapters) ───
+      "The Relational Model","SQL: Queries & Joins","Normalization & Database Design",
+      "Indexing (B-Trees, Hash Indexes)","Transactions & ACID Properties","Concurrency Control & Locking",
+      "NoSQL: Document, Key-Value, Graph DBs","Distributed Databases & CAP Theorem",
+
+      // ─── Part 11: Programming Languages & Compilers (8 chapters) ───
+      "Programming Language Paradigms","Lexical Analysis & Regular Expressions","Parsing: Top-Down & Bottom-Up",
+      "Abstract Syntax Trees & Semantic Analysis","Code Generation & Optimization","Type Systems & Type Inference",
+      "Functional Programming Concepts","Memory Management: GC & Ownership",
+
+      // ─── Part 12: Theory of Computation (6 chapters) ───
+      "Finite Automata & Regular Languages","Pushdown Automata & Context-Free Languages",
+      "Turing Machines & Computability","The Halting Problem","Lambda Calculus",
+      "Computational Complexity Hierarchy",
+
+      // ─── Part 13: Artificial Intelligence (6 chapters) ───
+      "Search in AI (BFS, DFS, A*)","Constraint Satisfaction Problems","Game Theory & Minimax",
+      "Machine Learning: Supervised Learning","Neural Networks & Deep Learning","Unsupervised Learning & Clustering",
+
+      // ─── Part 14: Security & Cryptography (6 chapters) ───
+      "Symmetric Encryption (AES, DES)","Asymmetric Encryption (RSA, ECC)","Hash Functions & Digital Signatures",
+      "Authentication & Authorization","Web Security: OWASP Top 10","Zero-Knowledge Proofs & Blockchain",
+
+      // ─── Part 15: Distributed & Parallel Systems (6 chapters) ───
+      "Distributed Systems: Clocks & Ordering","Consensus: Paxos & Raft","MapReduce & Big Data",
+      "Distributed Storage & Replication","Microservices & RPC","Serverless & Cloud Computing",
     ]
   },
 ];
@@ -295,56 +378,147 @@ function genPythonSections(chName, idx) {
   return s;
 }
 
-function genCsSections(chName, idx) {
-  const s = [];
+// ─── CS Topic Categorisation ─────────────────────────────────
+function csCategory(chName) {
+  const lc = chName.toLowerCase();
+  if (lc.includes("history") || lc.includes("what is") || lc.includes("von neumann")) return "intro";
+  if (lc.includes("binary") || lc.includes("hex") || lc.includes("octal") || lc.includes("data repres") || lc.includes("text encod") || lc.includes("boolean") || lc.includes("logic gate") || lc.includes("digital circuit") || lc.includes("memory hier") || lc.includes("how cpu") || lc.includes("instruction set")) return "digital";
+  if (lc.includes("set") || lc.includes("function") || lc.includes("relation") || lc.includes("proposition") || lc.includes("predicate") || lc.includes("proof") || lc.includes("induction") || lc.includes("contradiction") || lc.includes("counting") || lc.includes("permutation") || lc.includes("combination") || lc.includes("pigeonhole") || lc.includes("probability") || lc.includes("bayes") || lc.includes("random var") || lc.includes("expected") || lc.includes("sequence") || lc.includes("summation") || lc.includes("modular") || lc.includes("number theory") || lc.includes("graph theory basic") || lc.includes("matrix") || lc.includes("linear algebra")) return "math";
+  if (lc.includes("what is an algorithm") || lc.includes("ram model") || lc.includes("big o") || lc.includes("omega") || lc.includes("theta") || lc.includes("asymptotic") || lc.includes("recurrence") || lc.includes("master theorem")) return "algo-theory";
+  if (lc.includes("divide") || lc.includes("linear search") || lc.includes("binary search") || lc.includes("bubble") || lc.includes("selection") || lc.includes("insertion") || lc.includes("merge") || lc.includes("quick") || lc.includes("heap sort") || lc.includes("counting") || lc.includes("radix") || lc.includes("bucket") || lc.includes("two-pointer") || lc.includes("sliding") || lc.includes("randomized")) return "algo-sort";
+  if (lc.includes("array") || lc.includes("string") || lc.includes("linked list") || lc.includes("stack") || lc.includes("queue") || lc.includes("deque") || lc.includes("hash") || lc.includes("bloom") || lc.includes("tree") || lc.includes("bst") || lc.includes("binary tree") || lc.includes("binary search tree") || lc.includes("avl") || lc.includes("red-black") || lc.includes("b-tree") || lc.includes("trie") || lc.includes("suffix") || lc.includes("graph") || lc.includes("bfs") || lc.includes("dfs")) return "ds";
+  if (lc.includes("dijkstra") || lc.includes("bellman") || lc.includes("floyd") || lc.includes("a*") || lc.includes("mst") || lc.includes("prim") || lc.includes("kruskal") || lc.includes("union") || lc.includes("disjoint") || lc.includes("topological") || lc.includes("strongly") || lc.includes("kosaraju") || lc.includes("tarjan") || lc.includes("network flow") || lc.includes("ford-fulkerson") || lc.includes("bipartite") || lc.includes("segment tree") || lc.includes("fenwick") || lc.includes("dynamic programming") || lc.includes("knapsack") || lc.includes("longest common") || lc.includes("longest increas") || lc.includes("matrix chain") || lc.includes("edit distance") || lc.includes("levenshtein")) return "algo-adv";
+  if (lc.includes("greedy") || lc.includes("huffman") || lc.includes("backtrack") || lc.includes("branch") || lc.includes("p vs np") || lc.includes("np-complete") || lc.includes("approximation") || lc.includes("online algorithm") || lc.includes("amortized") || lc.includes("kmp") || lc.includes("rabin-karp")) return "algo-hard";
+  if (lc.includes("pipeline") || lc.includes("cache") || lc.includes("virtual memory") || lc.includes("paging") || lc.includes("interrupt") || lc.includes("assembly") || lc.includes("parallel process") || lc.includes("simd") || lc.includes("gpu") || lc.includes("cuda") || lc.includes("performance") || lc.includes("optimization") || lc.includes("quantum")) return "arch";
+  if (lc.includes("process") || lc.includes("thread") || lc.includes("scheduling") || lc.includes("synchroniz") || lc.includes("lock") || lc.includes("deadlock") || lc.includes("memory management") || lc.includes("file system") || lc.includes("i/o") || lc.includes("dma") || lc.includes("security") || lc.includes("access control") || lc.includes("virtualization") || lc.includes("container")) return "os";
+  if (lc.includes("osi") || lc.includes("tcp/ip") || lc.includes("udp") || lc.includes("http") || lc.includes("dns") || lc.includes("dhcp") || lc.includes("routing") || lc.includes("congestion") || lc.includes("flow control") || lc.includes("tls") || lc.includes("https") || lc.includes("socket") || lc.includes("network program") || lc.includes("peer-to-peer") || lc.includes("p2p") || lc.includes("cdn")) return "net";
+  if (lc.includes("relational") || lc.includes("sql") || lc.includes("normaliz") || lc.includes("indexing") || lc.includes("transaction") || lc.includes("acid") || lc.includes("concurrency control") || lc.includes("nosql") || lc.includes("document") || lc.includes("key-value") || lc.includes("graph db") || lc.includes("cap theorem")) return "db";
+  if (lc.includes("paradigm") || lc.includes("lexical") || lc.includes("parsing") || lc.includes("ast") || lc.includes("abstract syntax") || lc.includes("code generation") || lc.includes("type system") || lc.includes("functional") || lc.includes("garbage") || lc.includes("ownership")) return "pl";
+  if (lc.includes("finite automata") || lc.includes("regular langu") || lc.includes("pushdown") || lc.includes("context-free") || lc.includes("turing") || lc.includes("halting") || lc.includes("lambda calc") || lc.includes("complexity hierarchy")) return "theory";
+  if (lc.includes("constraint satisfaction") || lc.includes("game theory") || lc.includes("minimax") || lc.includes("supervised") || lc.includes("neural") || lc.includes("deep learning") || lc.includes("unsupervised") || lc.includes("clustering") || lc.includes("machine learning")) return "ai";
+  if (lc.includes("encryption") || lc.includes("aes") || lc.includes("des") || lc.includes("rsa") || lc.includes("ecc") || lc.includes("hash function") || lc.includes("digital sign") || lc.includes("authentic") || lc.includes("authoriz") || lc.includes("owasp") || lc.includes("zero-knowledge") || lc.includes("blockchain")) return "sec";
+  if (lc.includes("distributed") || lc.includes("clock") || lc.includes("ordering") || lc.includes("consensus") || lc.includes("paxos") || lc.includes("raft") || lc.includes("mapreduce") || lc.includes("big data") || lc.includes("replicat") || lc.includes("microservice") || lc.includes("rpc") || lc.includes("serverless") || lc.includes("cloud")) return "dist";
+  return "general";
+}
 
-  s.push({ type: "text", content: `## Understanding ${chName}\n\n${chName} is a fundamental concept in computer science that underlies much of modern computing. Understanding this deeply will make you a better programmer, even if you don't use it directly every day.\n\nComputer science is the study of computation — what can be computed, how efficiently, and by what means. ${chName} plays a key role in this broader picture.` });
+// ─── CS Sections Generator ─────────────────────────────────
+function genCsSections(chName, idx) {
+  const cat = csCategory(chName);
+  const s = [];
+  const descs = {
+    intro: "the big picture of computing — what computers do and how they evolved",
+    digital: "how computers represent and process information at the lowest level",
+    math: "the mathematical foundations that underlie all of computer science",
+    "algo-theory": "how we reason about algorithm efficiency and growth rates",
+    "algo-sort": "algorithms for ordering, searching, and transforming data",
+    ds: "ways to organize, store, and retrieve data efficiently",
+    "algo-adv": "advanced algorithmic techniques for complex problems",
+    "algo-hard": "the limits of computation and strategies for hard problems",
+    arch: "how computer hardware is organized and optimized",
+    os: "how operating systems manage processes, memory, and resources",
+    net: "how computers communicate across networks",
+    db: "how data is stored, queried, and managed at scale",
+    pl: "how programming languages are designed, parsed, and executed",
+    theory: "the theoretical foundations of what computers can and cannot compute",
+    ai: "how computers can learn, reason, and make decisions",
+    sec: "how to protect data and systems from attacks",
+    dist: "how to build reliable systems across multiple machines",
+    general: "core computer science concepts",
+  };
+  const desc = descs[cat] || "computer science concepts";
+
+  // ── Intro section ──
+  s.push({ type: "text", content: `## Understanding ${chName}\n\n${chName} explores ${desc}. This topic is essential for building a strong foundation in computer science and understanding how modern computing systems work from the ground up.\n\nComputer science is not just about programming — it's about understanding the principles of computation, information, and automated reasoning. ${chName} is a key piece of this larger puzzle.` });
+
   s.push({ type: "key-points", points: [
-    `${chName} is a core computer science concept`,
-    "Understanding CS fundamentals makes you a better programmer",
-    "These concepts apply across all programming languages",
-    "CS theory helps in designing efficient, scalable solutions",
+    `${chName} is foundational to computer science`,
+    "Understanding this topic will make you a more effective programmer",
+    "These concepts apply across all areas of computing",
+    "Mastering fundamentals enables deeper learning of advanced topics",
   ]});
 
-  if (idx % 2 === 0) {
-    s.push({ type: "code", language: "javascript", caption: `${chName} — Implementation:`, content: `// ${chName} — Conceptual Implementation\nfunction demonstrateConcept(data) {\n  // CS concepts often have elegant implementations\n  let result = 0;\n  for (let i = 0; i < data.length; i++) {\n    result += data[i];\n  }\n  // The efficiency matters — O(n) vs O(n²)\n  return result;\n}\n\n// Analyze: What's the time complexity?` });
-  } else {
-    s.push({ type: "formula", content: `${chName} has mathematical foundations`, description: "CS concepts are often expressed mathematically. Understanding the math helps you reason about correctness and efficiency." });
+  // ── Topic-specific content ──
+  if (cat === "math") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Python demonstration:`, content: `# ${chName} — Interactive Python Demo\nimport math\n\n# Core concept demonstration\nprint("${chName} in Computer Science")\nprint("=" * 40)\n\n# Practical examples\nresults = []\nfor i in range(1, 11):\n    results.append(i ** 2)\nprint(f"Sample computation: {results[:5]}...")\nprint(f"Total elements: {len(results)}")\n\n# Mathematical reasoning\n# This topic helps us reason about algorithm correctness\n# and analyze computational problems mathematically` });
+    s.push({ type: "formula", content: `${chName} formal definition: this mathematical concept provides the language for describing computational problems and their solutions.`, description: "Mathematical notation is the universal language of computer science. Learning to read and write it is essential for understanding research papers and advanced textbooks." });
+    s.push({ type: "text", content: `## Practical Applications in CS\n\n${chName} appears throughout computer science:\n\n1. **Algorithm analysis** — Mathematical tools help analyze runtime and memory usage\n2. **Cryptography** — Number theory and probability are the foundation of secure communication\n3. **Machine learning** — Linear algebra and probability power modern AI\n4. **Computer graphics** — Linear algebra transforms 3D scenes into 2D images\n5. **Database theory** — Set theory and logic underpin query languages like SQL\n6. **Networking** — Graph theory models network topology and routing` });
+  } else if (cat === "digital") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Working with bits:`, content: `# ${chName} — Bit-Level Operations\n# Understanding how data is represented in memory\n\ndef inspect_bits(value):\n    """Show the binary representation of a value"""\n    print(f"Decimal: {value}")\n    print(f"Binary:  {value:08b}")\n    print(f"Hex:     0x{value:02x}")\n    print()\n\n# Test with different values\ninspect_bits(42)\ninspect_bits(255)\ninspect_bits(128)\n\n# Bitwise operations\nflags = 0b1010\nmask  = 0b1100\nprint(f"flags & mask = {flags & mask:04b}  (AND)")\nprint(f"flags | mask = {flags | mask:04b}  (OR)")\nprint(f"flags ^ mask = {flags ^ mask:04b}  (XOR)")` });
+  } else if (cat === "algo-theory") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Complexity visualization:`, content: `# ${chName} — Understanding Growth Rates\nimport time\n\ndef measure_runtime(func, n):\n    """Measure execution time for a given input size"""\n    data = list(range(n))\n    start = time.perf_counter()\n    func(data)\n    return time.perf_counter() - start\n\n# Different complexity classes grow very differently\nsizes = [10, 100, 1000, 10000]\nprint("Input size → O(1)  O(log n)  O(n)  O(n log n)  O(n²)")\nprint("-" * 55)\n\n# O(1): constant — always fast\n# O(log n): logarithmic — grows slowly\n# O(n): linear — proportional to input\n# O(n log n): linearithmic — typical for good sorts\n# O(n²): quadratic — slows quickly with input` });
+  } else if (cat === "algo-sort") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Implementation:`, content: `# ${chName} — Python Implementation\n\ndef algorithm(arr):\n    """Implementation of ${chName}"""\n    n = len(arr)\n    result = arr.copy()\n    \n    # Core algorithm logic\n    # Each algorithm has unique characteristics\n    # in terms of time complexity, space usage,\n    # and whether it's stable or in-place\n    \n    return result\n\n# Test with sample data\ntest_data = [64, 34, 25, 12, 22, 11, 90]\nresult = algorithm(test_data)\nprint(f"Input:  {test_data}")\nprint(f"Output: {result}")\n\n# Verify correctness\nassert sorted(test_data) == result\nprint("✓ Algorithm works correctly")` });
+  } else if (cat === "ds") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Implementation:`, content: `# ${chName} — Implementation in Python\n\nclass DataStructure:\n    """Implementation of ${chName}"""\n    \n    def __init__(self):\n        self._data = []\n    \n    def insert(self, value):\n        """Add an element"""\n        self._data.append(value)\n    \n    def search(self, value):\n        """Find an element (complexity depends on structure)"""\n        return value in self._data\n    \n    def delete(self, value):\n        """Remove an element"""\n        if value in self._data:\n            self._data.remove(value)\n            return True\n        return False\n    \n    def __len__(self):\n        return len(self._data)\n    \n    def __repr__(self):\n        return f"DataStructure({self._data})"\n\n# Demonstrate\nds = DataStructure()\nfor v in [10, 20, 30, 40, 50]:\n    ds.insert(v)\nprint(f"Structure: {ds}")\nprint(f"Contains 30? {ds.search(30)}")\nprint(f"Contains 99? {ds.search(99)}")` });
+  } else if (cat === "algo-adv") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Implementation:`, content: `# ${chName} — Advanced Algorithm\n\ndef solve_problem(input_data):\n    """\n    ${chName}\n    \n    This algorithm demonstrates advanced problem-solving\n    techniques that go beyond basic approaches.\n    """\n    n = len(input_data)\n    if n == 0:\n        return 0\n    \n    # Initialize DP table or data structures\n    dp = [0] * n\n    dp[0] = input_data[0]\n    \n    # Core recurrence or algorithm logic\n    for i in range(1, n):\n        # State transition\n        dp[i] = max(input_data[i], dp[i - 1] + input_data[i])\n    \n    return max(dp)\n\n# Test\ntest = [1, -2, 3, 4, -1, 2, 1, -5, 4]\nresult = solve_problem(test)\nprint(f"Input: {test}")\nprint(f"Result: {result}")` });
+  } else if (cat === "algo-hard") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Approach:`, content: `# ${chName} — Strategic Approach\n\n# Some problems require clever techniques or\n# accepting approximate solutions\n\ndef solve_optimization(items, capacity):\n    """\n    Demonstrates an approach to a hard problem.\n    May use heuristics, approximation, or exact methods\n    with exponential time in the worst case.\n    """\n    n = len(items)\n    best_value = 0\n    best_combo = None\n    \n    # Explore solution space strategically\n    # (Branch and bound, backtracking, etc.)\n    for mask in range(1 << n):\n        weight = 0\n        value = 0\n        for i in range(n):\n            if mask & (1 << i):\n                weight += items[i][0]\n                value += items[i][1]\n        if weight <= capacity and value > best_value:\n            best_value = value\n            best_combo = mask\n    \n    return best_value\n\nprint("Solving with strategic exploration...")` });
+  } else if (cat === "arch" || cat === "os") {
+    s.push({ type: "code", language: "c", caption: `${chName} — Low-level perspective:`, content: `/* ${chName} — Systems-Level View */\n#include <stdio.h>\n\n/* This topic deals with how hardware and\n * operating systems manage resources */\n\nint main() {\n    printf("=== ${chName} ===\\n");\n    printf("Understanding system-level concepts\\n");\n    printf("is crucial for writing efficient code\\n");\n    printf("and debugging performance issues.\\n\\n");\n    \n    /* Memory addresses — understanding pointers */\n    int x = 42;\n    int *ptr = &x;\n    printf("Value: %d\\n", x);\n    printf("Address: %p\\n", (void*)ptr);\n    printf("Size: %zu bytes\\n", sizeof(x));\n    \n    return 0;\n}` });
+  } else if (cat === "net") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Network programming:`, content: `# ${chName} — Network Concepts\nimport socket\n\n# Understanding how data flows across networks\n# is essential for building distributed applications\n\ndef explain_networking():\n    """Core networking concepts"""\n    layers = [\n        ("Layer 1: Physical", "Raw bit transmission over wire/fiber/air"),\n        ("Layer 2: Data Link", "Frames, MAC addresses, Ethernet"),\n        ("Layer 3: Network", "IP addressing, routing, packets"),\n        ("Layer 4: Transport", "TCP/UDP, ports, reliable delivery"),\n        ("Layer 5-7: Application", "HTTP, DNS, TLS, application protocols"),\n    ]\n    for layer, desc in layers:\n        print(f"{layer}")\n        print(f"  {desc}")\n        print()\n\nexplain_networking()` });
+  } else if (cat === "db") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Database concepts:`, content: `# ${chName} — Database Fundamentals\n\n# Databases are the backbone of most applications.\n# Understanding how they work helps you design\n# efficient, scalable data systems.\n\n# Core concepts:\n# - Relational model: tables, rows, columns\n# - ACID: Atomicity, Consistency, Isolation, Durability\n# - Indexing: fast lookups via B-Trees or hash indexes\n# - Normalization: eliminating data redundancy\n\nclass DatabaseConcept:\n    """Demonstrating core database ideas"""\n    \n    @staticmethod\n    def query_example():\n        """SQL query patterns"""\n        query = \"\"\"\n        SELECT u.name, COUNT(o.id) as order_count\n        FROM users u\n        LEFT JOIN orders o ON u.id = o.user_id\n        GROUP BY u.id\n        HAVING order_count > 5\n        ORDER BY order_count DESC;\n        \"\"\"\n        print("Example query:")\n        print(query)\n\nDatabaseConcept.query_example()` });
+  } else if (cat === "pl") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Language implementation perspective:`, content: `# ${chName} — Programming Languages Perspective\n\n# Different languages make different design choices.\n# Understanding these helps you pick the right tool\n# and write better code in any language.\n\n# Key language features to compare:\nfeatures = {\n    "Type System": ["Static (Java, Rust)", "Dynamic (Python, JS)", "Gradual (TypeScript)"],\n    "Memory": ["Manual (C/C++)", "GC (Java, Go)", "Ownership (Rust)"],\n    "Paradigm": ["OOP", "Functional", "Procedural"],\n    "Execution": ["Compiled", "Interpreted", "JIT-compiled"],\n}\n\nfor feature, options in features.items():\n    print(f"{feature}: {' | '.join(options)}")` });
+  } else if (cat === "theory") {
+    s.push({ type: "formula", content: `${chName} — formal definition`, description: "Theoretical computer science defines the fundamental limits of computation. Understanding what problems are solvable — and how efficiently — is the deepest question in the field." });
+    s.push({ type: "text", content: `## Key Insights\n\n${chName} explores fundamental questions about computation:\n\n1. **What problems can computers solve?** — Some problems are simply unsolvable (e.g., the Halting Problem)\n2. **How efficiently can they solve them?** — Problems have inherent difficulty (P vs NP)\n3. **What resources are needed?** — Time, space, and energy trade-offs\n4. **Are there different kinds of computation?** — Deterministic, non-deterministic, probabilistic, quantum\n\nThese questions aren't just academic — they inform practical decisions about which algorithms and approaches to use.` });
+  } else if (cat === "ai") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Implementation:`, content: `# ${chName} — AI Concepts\nimport random\n\n# Artificial intelligence is transforming computing.\n# Understanding the fundamentals helps you apply\n# these techniques effectively.\n\nclass SimpleAIModel:\n    """Demonstrating core AI concepts"""\n    \n    def __init__(self):\n        self.data = []\n        self.weights = {}\n    \n    def train(self, examples):\n        """Learn from examples"""\n        print(f"Training on {len(examples)} examples...")\n        # In practice, this would adjust model parameters\n        self.data = examples\n        print("Training complete!")\n    \n    def predict(self, input_data):\n        """Make a prediction"""\n        # Simplified demonstration\n        return "prediction based on learned patterns"\n\nmodel = SimpleAIModel()\nmodel.train([{"x": 1, "y": 2}, {"x": 2, "y": 4}])\nprint(model.predict({"x": 3}))` });
+  } else if (cat === "sec") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Security concepts:`, content: `# ${chName} — Security Fundamentals\nimport hashlib\n\n# Security is everyone's responsibility.\n# Understanding core concepts helps you\n# build safer systems.\n\n# Cryptographic hash example\nmessage = "Hello, CS!"\nhash_value = hashlib.sha256(message.encode()).hexdigest()\nprint(f"Message: {message}")\nprint(f"SHA-256: {hash_value}...")  # truncated\nprint()\n\n# Security principles:\nprinciples = [\n    "Confidentiality — only authorized access",\n    "Integrity — data hasn't been tampered with",\n    "Availability — systems are accessible when needed",\n    "Authentication — verifying identity",\n    "Authorization — controlling access to resources",\n]\nfor p in principles:\n    print(f"  • {p}")` });
+  } else if (cat === "dist") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Distributed systems concepts:`, content: `# ${chName} — Distributed Systems\nimport time\nimport random\n\n# Distributed systems enable modern cloud computing.\n# They introduce unique challenges:\n\nchallenges = [\n    ("Network latency", "Messages take time to travel"),\n    ("Partial failure", "Some nodes fail independently"),\n    ("Clock skew", "No perfect clock synchronization"),\n    ("Consistency", "Keeping data consistent across nodes"),\n    ("Partition tolerance", "Network splits are inevitable"),\n]\n\nprint("Key challenges in distributed systems:")\nfor challenge, desc in challenges:\n    print(f"  • {challenge}: {desc}")\nprint()\nprint("Designing for these challenges makes"\n      " distributed systems fundamentally different")\nprint("from single-machine systems.")` });
+  } else if (cat === "general") {
+    s.push({ type: "code", language: "python", caption: `${chName} — Core concepts:`, content: `# ${chName} — Fundamental CS Concept\n\ndef demonstrate():\n    """Understanding ${chName}"""\n    # Every CS concept builds on fundamentals\n    # This topic connects multiple areas:\n    concepts = [\n        "Theory",\n        "Practice",\n        "Applications",\n        "Limitations",\n    ]\n    for c in concepts:\n        print(f"  • {c}")\n    \n    # Understanding helps write better code\n    print("\\nCore principle: understand the problem")\n    print("before choosing the solution.")\n\ndemonstrate()` });
   }
 
-  s.push({ type: "text", content: `## Why This Matters\n\n${chName} is not just academic — it has practical applications:\n\n1. **Efficiency** — Understanding theory helps you write faster code\n2. **Scalability** — Good algorithms handle large data gracefully\n3. **Problem-solving** — CS teaches systematic thinking\n4. **Interview prep** — These topics are essential for technical interviews\n5. **Foundation** — Advanced topics build on these fundamentals` });
+  // Wait after code  
+  s.push({ type: "text", content: `## Why ${chName} Matters\n\n${chName} is not just academic — it has direct practical applications:\n\n1. **Better engineering** — Understanding fundamentals helps you make informed design decisions\n2. **Debugging** — Deep knowledge helps you diagnose and fix complex issues\n3. **Performance** — Knowing how things work enables optimization\n4. **Interview success** — These topics are essential for technical interviews\n5. **Foundation for growth** — Advanced topics depend on these fundamentals` });
 
-  s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** When learning CS concepts, implement them yourself from scratch in code. Writing a linked list, sorting algorithm, or tree traversal yourself builds deep understanding that reading alone cannot provide.` });
+  s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** When learning ${chName}, try to connect the theory to practical code you've written. Every algorithm, data structure, or system you learn about exists because someone needed to solve a real problem. Understanding that context makes the material far more meaningful.` });
 
-  if (idx % 3 === 0) {
+  // ── Comparison or List section ──
+  if (idx % 4 === 0) {
     s.push({ type: "list", ordered: false, items: [
-      `${chName} is a building block of computer science`,
-      "Understanding algorithms helps you solve problems systematically",
-      "Data structures are ways to organize data for efficient access",
-      "Time and space complexity guide implementation choices",
-      "Practice implementing data structures from scratch",
+      `${chName} is a key concept in computer science`,
+      "Understanding the theory improves your practical coding",
+      "Practice implementing these concepts from scratch",
+      "Study how they're used in real-world systems",
+      "Combine multiple concepts to solve complex problems",
     ]});
-  } else if (idx % 3 === 1) {
-    s.push({ type: "comparison", title: `${chName} — Key Comparisons`, headers: ["Aspect", "Approach A", "Approach B"], rows: [
-      ["Time complexity", "O(n) — Linear", "O(log n) — Logarithmic"],
-      ["Space", "In-place", "Extra memory needed"],
-      ["Stability", "Preserves order", "May reorder"],
-      ["Best case", "Already sorted", "Random order"],
+  } else if (idx % 4 === 1) {
+    s.push({ type: "comparison", title: `${chName} — Key Distinctions`, headers: ["Property", "Option 1", "Option 2"], rows: [
+      ["Time complexity", "Efficient for small inputs", "Efficient for large inputs"],
+      ["Memory usage", "Low memory footprint", "Higher memory for speed"],
+      ["Best use case", "Simple, direct problems", "Complex, structured problems"],
+      ["Trade-off", "Easier to implement", "Better asymptotic behavior"],
     ]});
-  } else {
-    s.push({ type: "exercise", title: `${chName} Practice Problem`, description: "Test your understanding:", instructions: [
-      "Implement this concept from scratch",
-      "Analyze its time and space complexity",
-      "Test with various input sizes",
-      "Compare your implementation with standard library versions",
-    ], hint: "Start with a brute-force approach, then optimize." });
+  } else if (idx % 4 === 2) {
+    s.push({ type: "exercise", title: `${chName} Practice`, description: "Apply what you've learned:", instructions: [
+      "Implement the core concept from scratch",
+      "Test with various inputs and edge cases",
+      "Analyze time and space complexity",
+      "Compare with standard library implementations",
+    ], hint: "Start simple, then add optimizations one at a time." });
   }
 
-  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** It's easy to over-optimize prematurely. Before choosing a complex algorithm or data structure, ask: "Is this data large enough for the choice to matter?" Often, a simple solution is all you need.` });
+  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** A common mistake with ${chName} is learning the theory without connecting it to practice. Always ask: "Where would I use this? What problem does it solve?" The best engineers understand both the "how" and the "why."` });
 
-  s.push({ type: "text", content: `## Further Study\n\nTo deepen your understanding of ${chName}:\n\n1. Read CLRS (Introduction to Algorithms) for rigorous treatment\n2. Practice on LeetCode/HackerRank with problems tagged for this topic\n3. Watch MIT OpenCourseWare lectures on algorithm analysis\n4. Implement the concept in multiple programming languages\n5. Teach someone else — the best way to learn is to explain` });
+  // ── Further reading ──
+  if (["math", "theory", "algo-theory"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\nTo deepen your understanding of ${chName}:\n\n1. **CLRS (Introduction to Algorithms)** — The definitive textbook for algorithm analysis\n2. **Sipser (Introduction to the Theory of Computation)** — Clear, rigorous theory coverage\n3. **Knuth (The Art of Computer Programming)** — Encyclopedic depth on algorithms\n4. **MIT OpenCourseWare** — Free video lectures from world-class professors\n5. **3Blue1Brown** — Beautiful visual explanations of mathematical concepts` });
+  } else if (["arch", "os", "net"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\nTo deepen your understanding of ${chName}:\n\n1. **Operating Systems: Three Easy Pieces** — Free, modern OS textbook\n2. **Computer Organization & Design (Patterson & Hennessy)** — The standard architecture text\n3. **TCP/IP Illustrated (Stevens)** — Detailed networking explanations\n4. **OSTEP** — Practical systems programming projects\n5. **NAND to Tetris** — Build a computer from first principles` });
+  } else if (["db", "pl", "dist"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\nTo deepen your understanding of ${chName}:\n\n1. **Designing Data-Intensive Applications (Kleppmann)** — Modern distributed systems\n2. **Database Systems: The Complete Book** — Comprehensive database theory\n3. **Compilers: Principles, Techniques, and Tools (Dragon Book)** — The classic compiler text\n4. **Structure and Interpretation of Computer Programs (SICP)** — Foundational programming concepts\n5. **Crafting Interpreters (Nystrom)** — Practical compiler implementation` });
+  } else {
+    s.push({ type: "text", content: `## Recommended Resources\n\nTo deepen your understanding of ${chName}:\n\n1. **CLRS (Introduction to Algorithms)** — Comprehensive algorithm coverage\n2. **Cracking the Coding Interview** — Practical interview preparation\n3. **LeetCode / HackerRank** — Practice problems for every topic\n4. **MIT OpenCourseWare** — Free, world-class video lectures\n5. **Visualgo.net** — Interactive algorithm visualizations` });
+  }
 
-  s.push({ type: "callout", style: "important", content: `📌 **Remember:** Computer science is about problem-solving, not memorization. The goal is to develop the ability to analyze new problems and design efficient solutions — not to remember every algorithm by heart.` });
+  s.push({ type: "callout", style: "important", content: `📌 **Remember:** Computer science is about understanding computation at every level — from transistors to distributed systems. ${chName} is one piece of this beautiful puzzle. Stay curious, keep building, and never stop learning.` });
 
   return s;
 }
@@ -542,42 +716,339 @@ function genPythonExamQ(chName, prefix, idx) {
 
 function genCsExamQ(chName, prefix, idx) {
   const qs = [];
+  const cat = csCategory(chName);
 
-  qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
-    question: `What is the time complexity of accessing an element by index in an array (concept in ${chName})?`,
-    options: [
-      { id: "a", text: "O(1) — Constant time" },
-      { id: "b", text: "O(n) — Linear time" },
-      { id: "c", text: "O(log n) — Logarithmic time" },
-      { id: "d", text: "O(n²) — Quadratic time" },
-    ], correctAnswer: "a",
-    explanation: "Array access by index is O(1) because it's a direct memory address calculation — no iteration needed." });
-  qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
-    question: `${chName} is relevant only for academic computer science.`,
-    correctAnswer: false,
-    explanation: "CS concepts like complexity analysis, data structures, and algorithms are essential for building efficient, scalable software in industry." });
-  qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
-    question: `What data structure is best for implementing ${chName} with fast lookups?`,
-    options: [
-      { id: "a", text: "Hash table (O(1) average lookup)" },
-      { id: "b", text: "Linked list (O(n) lookup)" },
-      { id: "c", text: "Stack (LIFO access only)" },
-      { id: "d", text: "Queue (FIFO access only)" },
-    ], correctAnswer: "a",
-    explanation: "Hash tables provide O(1) average-case lookups by using a hash function to map keys to array indices." });
-  qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
-    question: `Big ___ notation describes the upper bound of an algorithm's running time.`,
-    correctAnswer: "O",
-    explanation: "Big O notation describes the worst-case upper bound of an algorithm's growth rate as input size increases." });
-  qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
-    question: `When should you choose a balanced BST over a hash table for ${chName}?`,
-    options: [
-      { id: "a", text: "When you need ordered traversal or range queries" },
-      { id: "b", text: "When you need the fastest possible lookups" },
-      { id: "c", text: "When memory usage is the primary concern" },
-      { id: "d", text: "When the data fits in an array" },
-    ], correctAnswer: "a",
-    explanation: "Balanced BSTs maintain sorted order (in-order traversal) and support range queries efficiently. Hash tables are faster for lookups but don't maintain order." });
+  // Every chapter gets 8 questions with topic-specific content
+  // ── Math topics ──
+  if (cat === "math") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Why is ${chName} important in computer science?`,
+      options: [
+        { id: "a", text: "It provides the mathematical language to describe and analyze computation" },
+        { id: "b", text: "It is only useful for theoretical research" },
+        { id: "c", text: "It replaces the need for programming" },
+        { id: "d", text: "It is used only in database management" },
+      ], correctAnswer: "a",
+      explanation: "Mathematics provides the formal language for describing algorithms, proving correctness, and analyzing computational complexity." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `How does ${chName} apply to algorithm design?`,
+      options: [
+        { id: "a", text: "It helps prove correctness and analyze efficiency mathematically" },
+        { id: "b", text: "It is unrelated to algorithm design" },
+        { id: "c", text: "It only applies to web development" },
+        { id: "d", text: "It is only useful for machine learning" },
+      ], correctAnswer: "a",
+      explanation: "Mathematical foundations allow us to prove that algorithms are correct and to analyze their time and space complexity rigorously." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `${chName} is only relevant for academic computer science, not practical programming.`,
+      correctAnswer: false,
+      explanation: "Mathematical concepts are deeply woven into practical CS — from search algorithms to cryptography to machine learning." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `The mathematical study of ${chName} in computer science is called ___ analysis.`,
+      correctAnswer: "algorithm", acceptableAnswers: ["complexity", "asymptotic"],
+      explanation: "Algorithm analysis uses mathematical tools to determine how runtime and memory usage grow with input size." });
+    qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
+      question: `In the context of ${chName}, what does it mean for a proof to be "constructive"?`,
+      options: [
+        { id: "a", text: "It provides a method to actually construct the solution" },
+        { id: "b", text: "It only proves existence without showing how" },
+        { id: "c", text: "It is a proof by contradiction" },
+        { id: "d", text: "It relies on induction" },
+      ], correctAnswer: "a",
+      explanation: "Constructive proofs not only show that something exists but provide an explicit method for constructing it, which often translates directly into an algorithm." });
+    qs.push({ id: `${prefix}-tf2`, type: "true-false", difficulty: "medium",
+      question: `Proof by induction is equivalent to recursion in programming.`,
+      correctAnswer: true,
+      explanation: "Induction and recursion are two sides of the same coin. Induction proves correctness of recursive algorithms, and recursive algorithms implement inductive definitions." });
+    qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "hard",
+      question: `The mathematical concept used to prove that a problem has no algorithmic solution is called ___ theory.`,
+      correctAnswer: "computability", acceptableAnswers: ["complexity"],
+      explanation: "Computability theory studies which problems can and cannot be solved by algorithms, independent of hardware or programming language." });
+    qs.push({ id: `${prefix}-mc4`, type: "multiple-choice", difficulty: "hard",
+      question: `How do CS researchers use ${chName} to prove algorithm optimality?`,
+      options: [
+        { id: "a", text: "By establishing lower bounds that no algorithm can beat" },
+        { id: "b", text: "By testing on the fastest available hardware" },
+        { id: "c", text: "By comparing with commercial software" },
+        { id: "d", text: "By using the most popular programming language" },
+      ], correctAnswer: "a",
+      explanation: "Lower bounds prove that any algorithm solving a problem must take at least a certain amount of time, establishing fundamental limits on efficiency." });
+  }
+  // ── Digital/logic topics ──
+  else if (cat === "digital") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What is the fundamental unit of information in ${chName}?`,
+      options: [
+        { id: "a", text: "The bit — a binary digit (0 or 1)" },
+        { id: "b", text: "The byte — 8 bits" },
+        { id: "c", text: "The nibble — 4 bits" },
+        { id: "d", text: "The word — CPU-specific size" },
+      ], correctAnswer: "a",
+      explanation: "The bit (binary digit) is the most basic unit of information in computing, representing a choice between two values: 0 and 1." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `How many unique values can be represented with N bits?`,
+      options: [
+        { id: "a", text: "2^N unique values" },
+        { id: "b", text: "N^2 unique values" },
+        { id: "c", text: "2N unique values" },
+        { id: "d", text: "N unique values" },
+      ], correctAnswer: "a",
+      explanation: "Each bit doubles the number of representable values. With N bits, you can represent 2^N different values." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `In ${chName}, the AND gate outputs 1 only when both inputs are 1.`,
+      correctAnswer: true,
+      explanation: "AND is a fundamental logic gate. Output is 1 if and only if ALL inputs are 1." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `The base-16 number system used to represent binary more compactly is called ___.`,
+      correctAnswer: "hexadecimal", acceptableAnswers: ["hex"],
+      explanation: "Hexadecimal (base-16) represents each 4-bit binary sequence as a single digit (0-9, A-F)." });
+    qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
+      question: `Why do computers use binary instead of decimal for representing data?`,
+      options: [
+        { id: "a", text: "Binary maps naturally to electronic circuits with two stable voltage states" },
+        { id: "b", text: "Binary uses less power than decimal circuits" },
+        { id: "c", text: "Binary was chosen arbitrarily and decimal would work equally well" },
+        { id: "d", text: "Binary was invented first and there is no reason to change" },
+      ], correctAnswer: "a",
+      explanation: "Binary maps naturally to electronic circuits where a voltage is either high (1) or low (0). This two-state system is simple, reliable, and efficient." });
+    qs.push({ id: `${prefix}-tf2`, type: "true-false", difficulty: "medium",
+      question: `In two's complement representation, the most significant bit indicates the sign of the number.`,
+      correctAnswer: true,
+      explanation: "In two's complement, the MSB is the sign bit: 0 for positive, 1 for negative." });
+    qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "hard",
+      question: `A ___ gate can be constructed from only NAND gates, making NAND a universal gate.`,
+      correctAnswer: "NOT", acceptableAnswers: ["AND", "OR"],
+      explanation: "NAND gates are universal because you can construct any logic gate using only NAND gates, simplifying chip manufacturing." });
+    qs.push({ id: `${prefix}-mc4`, type: "multiple-choice", difficulty: "hard",
+      question: `What is the decimal value of the 8-bit two's complement number 11111111?`,
+      options: [
+        { id: "a", text: "-1" },
+        { id: "b", text: "255" },
+        { id: "c", text: "-127" },
+        { id: "d", text: "0" },
+      ], correctAnswer: "a",
+      explanation: "In two's complement, 11111111 = -1. The range of an 8-bit signed integer is -128 to 127." });
+  }
+  // ── Algorithm topics ──
+  else if (cat.startsWith("algo")) {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What does ${chName} help us analyze in computer science?`,
+      options: [
+        { id: "a", text: "The efficiency and correctness of computational procedures" },
+        { id: "b", text: "The visual appearance of software" },
+        { id: "c", text: "The cost of hardware" },
+        { id: "d", text: "The popularity of programming languages" },
+      ], correctAnswer: "a",
+      explanation: "Algorithms are step-by-step procedures for solving problems. Analysis helps us understand which algorithms are most efficient and correct." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `What is the time complexity of the most efficient comparison-based sorting algorithm?`,
+      options: [
+        { id: "a", text: "O(n log n) — optimal for comparison sorts" },
+        { id: "b", text: "O(n) — linear time" },
+        { id: "c", text: "O(n²) — quadratic time" },
+        { id: "d", text: "O(log n) — logarithmic time" },
+      ], correctAnswer: "a",
+      explanation: "Comparison-based sorting has a proven lower bound of Ω(n log n). Merge sort, heap sort, and quick sort achieve this bound." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `An algorithm with O(n²) will always be slower than one with O(n log n) for sufficiently large inputs.`,
+      correctAnswer: true,
+      explanation: "For large n, n² grows much faster than n log n, regardless of constant factors." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `In asymptotic analysis, the notation that describes the upper bound of an algorithm's growth rate is called Big ___.`,
+      correctAnswer: "O", acceptableAnswers: ["Oh"],
+      explanation: "Big O (O) describes the worst-case upper bound. Omega (Ω) describes the lower bound. Theta (Θ) describes the tight bound." });
+    qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
+      question: `What distinguishes a randomized algorithm from a deterministic one in ${chName}?`,
+      options: [
+        { id: "a", text: "Randomized algorithms use random choices during execution to guide behavior" },
+        { id: "b", text: "Randomized algorithms always produce wrong answers" },
+        { id: "c", text: "Randomized algorithms are always slower" },
+        { id: "d", text: "Randomized algorithms cannot be analyzed" },
+      ], correctAnswer: "a",
+      explanation: "Randomized algorithms make random choices during execution. They can achieve better average-case performance or solve different classes of problems." });
+    qs.push({ id: `${prefix}-tf2`, type: "true-false", difficulty: "medium",
+      question: `Divide and conquer algorithms always achieve O(n log n) time complexity.`,
+      correctAnswer: false,
+      explanation: "Not all divide-and-conquer algorithms are O(n log n). The complexity depends on how the problem is divided and how results are combined." });
+    qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "hard",
+      question: `The ___ theorem provides a formula for solving recurrence relations of divide-and-conquer algorithms.`,
+      correctAnswer: "Master", acceptableAnswers: ["master"],
+      explanation: "The Master Theorem solves recurrences of the form T(n) = aT(n/b) + f(n) from divide-and-conquer algorithms." });
+    qs.push({ id: `${prefix}-mc4`, type: "multiple-choice", difficulty: "hard",
+      question: `What is the difference between worst-case and average-case complexity in ${chName}?`,
+      options: [
+        { id: "a", text: "Worst-case considers the maximum over all inputs; average-case considers expected behavior over a distribution" },
+        { id: "b", text: "They are always the same value" },
+        { id: "c", text: "Average-case is always better than worst-case" },
+        { id: "d", text: "Worst-case is easier to compute than average-case" },
+      ], correctAnswer: "a",
+      explanation: "Worst-case gives an upper bound for all inputs. Average-case tells us expected performance on typical inputs." });
+  }
+  // ── Data structures topics ──
+  else if (cat === "ds") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What is the primary purpose of ${chName}?`,
+      options: [
+        { id: "a", text: "To organize data for efficient access and modification" },
+        { id: "b", text: "To make code look more complex" },
+        { id: "c", text: "To slow down program execution" },
+        { id: "d", text: "To replace algorithms entirely" },
+      ], correctAnswer: "a",
+      explanation: "Data structures organize data so that it can be accessed and modified efficiently for specific operations." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `What is the time complexity of searching a sorted array?`,
+      options: [
+        { id: "a", text: "O(log n) using binary search" },
+        { id: "b", text: "O(n) using linear search" },
+        { id: "c", text: "O(1) constant time" },
+        { id: "d", text: "O(n²)" },
+      ], correctAnswer: "a",
+      explanation: "Binary search on a sorted array achieves O(log n) by repeatedly dividing the search space in half." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `Arrays provide O(1) access time by index.`,
+      correctAnswer: true,
+      explanation: "Arrays use contiguous memory. Computing arr[i] is a simple O(1) arithmetic operation." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `A data structure that follows the Last-In-First-Out (LIFO) principle is called a ___.`,
+      correctAnswer: "stack", acceptableAnswers: ["Stack"],
+      explanation: "Stacks are LIFO structures where elements are added (pushed) and removed (popped) from the top." });
+    qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
+      question: `Why choose a linked list over a dynamic array for ${chName}?`,
+      options: [
+        { id: "a", text: "Linked lists offer O(1) insertions/deletions at arbitrary positions" },
+        { id: "b", text: "Linked lists use less memory" },
+        { id: "c", text: "Linked lists provide faster random access" },
+        { id: "d", text: "Linked lists are always sorted" },
+      ], correctAnswer: "a",
+      explanation: "Linked lists allow O(1) insertions/deletions at any known position via pointer updates, unlike arrays which require O(n) shifting." });
+    qs.push({ id: `${prefix}-tf2`, type: "true-false", difficulty: "medium",
+      question: `A hash table guarantees O(1) worst-case lookup time.`,
+      correctAnswer: false,
+      explanation: "Hash tables have O(1) average-case but O(n) worst-case if many collisions occur." });
+    qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "hard",
+      question: `A self-balancing BST with balance factor -1, 0, or +1 is called a(n) ___ tree.`,
+      correctAnswer: "AVL", acceptableAnswers: ["avl", "Adelson-Velsky and Landis"],
+      explanation: "AVL trees maintain strict balance where subtree height difference never exceeds 1." });
+    qs.push({ id: `${prefix}-mc4`, type: "multiple-choice", difficulty: "hard",
+      question: `Space complexity of adjacency matrix vs list for a graph?`,
+      options: [
+        { id: "a", text: "Matrix: O(V²), List: O(V + E)" },
+        { id: "b", text: "Matrix: O(V + E), List: O(V²)" },
+        { id: "c", text: "Both are O(V²)" },
+        { id: "d", text: "Both are O(V + E)" },
+      ], correctAnswer: "a",
+      explanation: "Adjacency matrices always use O(V²) space. Adjacency lists use O(V + E), better for sparse graphs." });
+  }
+  // ── Systems/net/arch/OS topics ──
+  else if (["arch", "os", "net", "db", "dist"].includes(cat)) {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What is the role of ${chName} in a computer system?`,
+      options: [
+        { id: "a", text: "Managing and coordinating hardware and software resources" },
+        { id: "b", text: "Only handling user interface rendering" },
+        { id: "c", text: "Replacing the need for application software" },
+        { id: "d", text: "Only used for gaming" },
+      ], correctAnswer: "a",
+      explanation: "Systems-level components manage resources, provide abstractions, and coordinate between hardware and software." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `What is the main advantage of ${chName}?`,
+      options: [
+        { id: "a", text: "It provides essential abstractions that simplify complex hardware/software management" },
+        { id: "b", text: "It makes all operations instant" },
+        { id: "c", text: "It eliminates hardware entirely" },
+        { id: "d", text: "It can be ignored in modern systems" },
+      ], correctAnswer: "a",
+      explanation: "Systems concepts provide critical abstractions that make complex computing resources manageable and reliable." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `${chName} is a fundamental topic for understanding how computers work.`,
+      correctAnswer: true,
+      explanation: "Understanding systems-level concepts is essential for writing efficient code and debugging complex issues." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `In ${chName}, the abstraction that provides separation between hardware and software is called the ___ layer.`,
+      correctAnswer: "abstraction", acceptableAnswers: ["interface", "virtualization"],
+      explanation: "Abstraction layers hide implementation details, allowing software to work across different hardware." });
+    qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
+      question: `What distinguishes ${chName} from higher-level CS concepts?`,
+      options: [
+        { id: "a", text: "It operates closer to the hardware and deals with resource management directly" },
+        { id: "b", text: "It is completely unrelated to practical computing" },
+        { id: "c", text: "It only matters for legacy systems" },
+        { id: "d", text: "Modern frameworks make it irrelevant" },
+      ], correctAnswer: "a",
+      explanation: "Systems-level concepts work close to the hardware, managing resources and providing the foundation for higher-level abstractions." });
+    qs.push({ id: `${prefix}-tf2`, type: "true-false", difficulty: "medium",
+      question: `Performance optimization in ${chName} requires understanding the underlying hardware.`,
+      correctAnswer: true,
+      explanation: "Effective optimization requires understanding how hardware actually executes code — cache hierarchies, pipelining, and memory access patterns." });
+    qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "hard",
+      question: `The principle of ___ states that a system should only perform computations that are necessary for the final result.`,
+      correctAnswer: "efficiency", acceptableAnswers: ["optimization", "minimality"],
+      explanation: "Efficient systems avoid unnecessary work. This principle guides everything from cache design to scheduling." });
+    qs.push({ id: `${prefix}-mc4`, type: "multiple-choice", difficulty: "hard",
+      question: `How does understanding ${chName} help in building scalable systems?`,
+      options: [
+        { id: "a", text: "It reveals bottlenecks and trade-offs at different scale levels" },
+        { id: "b", text: "It guarantees linear scaling forever" },
+        { id: "c", text: "It only applies to single-machine systems" },
+        { id: "d", text: "It has no relation to scalability" },
+      ], correctAnswer: "a",
+      explanation: "Understanding systems fundamentals reveals the bottlenecks and trade-offs that emerge at different scales." });
+  }
+  // ── All other topics (theory, pl, ai, sec, general) ──
+  else {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What makes ${chName} important in computer science?`,
+      options: [
+        { id: "a", text: "It provides fundamental concepts for solving computational problems" },
+        { id: "b", text: "It is only useful for academic research" },
+        { id: "c", text: "It has no practical applications" },
+        { id: "d", text: "It only applies to web development" },
+      ], correctAnswer: "a",
+      explanation: "CS concepts form the foundation for all areas of computing, from systems to AI." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `How does understanding ${chName} help in practical software development?`,
+      options: [
+        { id: "a", text: "It enables better design decisions and helps avoid common pitfalls" },
+        { id: "b", text: "It only matters for passing exams" },
+        { id: "c", text: "Modern frameworks make this knowledge obsolete" },
+        { id: "d", text: "It is only useful for hardware engineers" },
+      ], correctAnswer: "a",
+      explanation: "CS fundamentals lead to better architecture, performance optimization, and debugging skills." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `${chName} is a foundational topic that all CS students should understand.`,
+      correctAnswer: true,
+      explanation: "These concepts are essential for any serious computer scientist or software engineer." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `The study of ${chName} helps engineers build more ___ systems.`,
+      correctAnswer: "efficient", acceptableAnswers: ["reliable", "robust", "scalable"],
+      explanation: "Understanding CS fundamentals directly translates to building better systems." });
+    qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
+      question: `What distinguishes ${chName} from related concepts in computer science?`,
+      options: [
+        { id: "a", text: "Its unique focus on solving specific classes of computational problems" },
+        { id: "b", text: "It has no distinguishing features" },
+        { id: "c", text: "It is identical to all other CS subfields" },
+        { id: "d", text: "It only differs in naming convention" },
+      ], correctAnswer: "a",
+      explanation: "Each area of CS focuses on particular problems and develops specialized techniques." });
+    qs.push({ id: `${prefix}-tf2`, type: "true-false", difficulty: "medium",
+      question: `Understanding ${chName} is more important than writing clean code.`,
+      correctAnswer: false,
+      explanation: "Both are essential. Theory provides the foundation; practical skills build real systems." });
+    qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "hard",
+      question: `The best way to truly master ${chName} is through consistent ___ over time.`,
+      correctAnswer: "practice", acceptableAnswers: ["implementation", "application"],
+      explanation: "CS concepts are best learned by doing — implementing and building reinforces understanding." });
+    qs.push({ id: `${prefix}-mc4`, type: "multiple-choice", difficulty: "hard",
+      question: `How should you approach learning ${chName} to maximize understanding?`,
+      options: [
+        { id: "a", text: "Study theory alongside practical implementation projects" },
+        { id: "b", text: "Only read textbooks without coding" },
+        { id: "c", text: "Only write code without studying fundamentals" },
+        { id: "d", text: "Memorize solutions without understanding" },
+      ], correctAnswer: "a",
+      explanation: "The most effective learning combines theoretical understanding with hands-on implementation." });
+  }
   return qs;
 }
 
