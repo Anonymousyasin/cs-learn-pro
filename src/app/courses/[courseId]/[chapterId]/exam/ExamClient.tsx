@@ -236,7 +236,7 @@ function TakingScreen({
             style={{ backgroundColor: courseColor }}
             initial={{ width: 0 }}
             animate={{ width: `${(answered / questions.length) * 100}%` }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" as const }}
           />
         </div>
         <div className="flex items-center justify-between text-xs text-text-muted">
@@ -252,7 +252,7 @@ function TakingScreen({
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -30 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
+          transition={{ duration: 0.25, ease: "easeOut" as const }}
         >
           <QuestionCard
             question={currentQ}
@@ -525,14 +525,14 @@ function AnimatedScore({ targetPercent, passed, courseColor }: { targetPercent: 
           strokeLinecap="round"
           initial={{ strokeDasharray: "0 97.9" }}
           animate={{ strokeDasharray: `${targetPercent * 0.979} 97.9` }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeOut" as const }}
         />
       </svg>
       <motion.span
         className={cn("absolute text-2xl font-bold", passed ? "text-accent-secondary" : "text-red-500")}
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
+        transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" as const }}
       >
         {displayed}%
       </motion.span>
@@ -557,13 +557,13 @@ function ResultsScreen({
       className="space-y-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" as const }}
     >
       {/* Result card */}
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
+        transition={{ duration: 0.35, ease: "easeOut" as const }}
       >
         <Card className={cn("border-2", passed ? "border-accent-secondary/30" : "border-red-500/30")}>
           <CardHeader className="text-center pb-4">
@@ -664,7 +664,7 @@ function ResultsScreen({
                   key={q.id}
                   initial={{ opacity: 0, x: correct ? 0 : -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + i * 0.08, duration: 0.3, ease: "easeOut" }}
+                  transition={{ delay: 0.5 + i * 0.08, duration: 0.3, ease: "easeOut" as const }}
                   className={cn("rounded-xl border p-4", correct ? "border-accent-secondary/20 bg-accent-secondary/[0.03]" : "border-red-500/20 bg-red-500/[0.03]")}
                 >
                   <div className="flex items-start gap-3">

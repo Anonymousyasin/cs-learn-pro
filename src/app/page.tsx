@@ -29,9 +29,9 @@ const statVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.08 * i, duration: 0.4, ease: "easeOut" },
+    transition: { delay: 0.08 * i, duration: 0.4, ease: "easeOut" as const },
   }),
-};
+} as const;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -162,7 +162,7 @@ export default function DashboardPage() {
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" as const }}
         className="relative overflow-hidden rounded-2xl border border-accent-primary/10 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-secondary/5 p-6 sm:p-8"
       >
         <div className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-accent-primary/5 blur-3xl" />
@@ -255,7 +255,7 @@ export default function DashboardPage() {
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${levelProgress * 100}%` }}
-              transition={{ duration: 0.9, ease: "easeOut", delay: 0.45 }}
+              transition={{ duration: 0.9, ease: "easeOut" as const, delay: 0.45 }}
               className="h-full rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary"
             />
             <div
@@ -296,7 +296,7 @@ export default function DashboardPage() {
                 {/* Icon with gentle pulse */}
                 <motion.div
                   animate={{ scale: [1, 1.12, 1] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" as const, delay: i * 0.3 }}
                   className={cn("mb-2 inline-flex rounded-lg p-2", stat.bg)}
                 >
                   <StatIcon className={cn("size-4", stat.color)} />
@@ -327,7 +327,7 @@ export default function DashboardPage() {
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: `${overallProgress}%` }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.65 }}
+            transition={{ duration: 1, ease: "easeOut" as const, delay: 0.65 }}
             className="h-full rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary"
           />
           <div
@@ -347,7 +347,7 @@ export default function DashboardPage() {
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.7, duration: 0.5, ease: "easeOut" }}
+            transition={{ delay: 0.7, duration: 0.5, ease: "easeOut" as const }}
           >
             <Link
               href={`/courses/${cc.course.id}/${cc.chapter.id}`}
@@ -445,7 +445,7 @@ export default function DashboardPage() {
                 key={course.id}
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.95 + i * 0.1, duration: 0.4, ease: "easeOut" }}
+                transition={{ delay: 0.95 + i * 0.1, duration: 0.4, ease: "easeOut" as const }}
                 whileHover={{ y: -5, scale: 1.02 }}
               >
                 <Link
@@ -498,7 +498,7 @@ export default function DashboardPage() {
                               animate={{
                                 strokeDashoffset: `${2 * Math.PI * 20 * (1 - pct / 100)}`,
                               }}
-                              transition={{ duration: 1, ease: "easeOut", delay: 1.1 + i * 0.1 }}
+                              transition={{ duration: 1, ease: "easeOut" as const, delay: 1.1 + i * 0.1 }}
                               style={{ stroke: accent.strokeColor }}
                             />
                           </svg>
@@ -523,7 +523,7 @@ export default function DashboardPage() {
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${pct}%` }}
-                          transition={{ duration: 0.9, ease: "easeOut", delay: 1.3 + i * 0.1 }}
+                          transition={{ duration: 0.9, ease: "easeOut" as const, delay: 1.3 + i * 0.1 }}
                           className="h-full rounded-full"
                           style={{ backgroundColor: accent.strokeColor }}
                         />

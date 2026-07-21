@@ -437,7 +437,7 @@ export default function AchievementsPage() {
                       transition={{
                         duration: 3,
                         repeat: Infinity,
-                        ease: "easeInOut",
+                        ease: "easeInOut" as const,
                       }}
                     />
                   </div>
@@ -497,7 +497,7 @@ export default function AchievementsPage() {
                           initial={{ width: 0 }}
                           whileInView={{ width: `${progressPct}%` }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 + Math.min(i * 0.03, 0.3) }}
+                          transition={{ duration: 0.8, ease: "easeOut" as const, delay: 0.1 + Math.min(i * 0.03, 0.3) }}
                         />
                       </div>
                     </div>
