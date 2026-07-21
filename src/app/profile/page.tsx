@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import {
   UserCircle, Zap, Flame, Trophy, BookOpen,
   Download, Settings, LogOut, Edit3, CheckCircle2,
@@ -19,6 +20,23 @@ import { cn } from "@/lib/utils";
 import { courseRegistry } from "@/lib/courses";
 import { loadProgress, getLevel, useProgress } from "@/lib/progress";
 import { useUser } from "@/lib/supabase-provider";
+import { jsPDF } from "jspdf";
+
+function exportProgress() {
+  const p = loadProgress();
+  const doc = new jsPDF();
+  doc.setFontSize(18);
+  doc.text("CS Learn Pro — Progress Report", 20, 30);
+  doc.setFontSize(11);
+  doc.text(`XP: ${p.xp}`, 20, 50);
+  doc.text(`Level: ${getLevel(p.xp)}`, 20, 58);
+  doc.text(`Streak: ${p.currentStreak} days`, 20, 66);
+  doc.text(`Chapters Completed: ${p.completedChapters.length}`, 20, 74);
+  doc.text(`Exams Passed: ${p.totalExamsPassed}`, 20, 82);
+  doc.text(`Lessons Completed: ${p.totalLessonsCompleted}`, 20, 90);
+  doc.text(`Generated: ${new Date().toLocaleDateString()}`, 20, 98);
+  doc.save("cs-learn-progress.pdf");
+}
 
 const totalChapters = courseRegistry.courses.reduce((s, c) => s + c.chapters.length, 0);
 
@@ -32,8 +50,9 @@ const recentBadges = [
 ];
 
 export default function ProfilePage() {
-  const { user } = useUser();
+  const { user, signOut } = useUser();
   const { progress, loaded } = useProgress(user?.id);
+  const router = useRouter();
   const [settings, setSettings] = useState({
     emailNotifications: true,
     darkMode: true,
@@ -45,6 +64,16 @@ export default function ProfilePage() {
     // Settings already initialized
   }, []);
 
+  const isAnonymous = user?.is_anonymous ?? true;
+  const displayName = user?.email
+    ? user.email.split("@")[0].replace(/[._-]/g, " ")
+    : user?.user_metadata?.name || "Learner";
+  const initials = user?.email
+    ? user.email.charAt(0).toUpperCase()
+    : user?.user_metadata?.name?.charAt(0) || "L";
+  const memberSince = user?.created_at
+    ? new Date(user.created_at).toLocaleDateString("en-US", { month: "long", year: "numeric" })
+    : "Today";
   const level = getLevel(progress.xp);
   const completedChapters = progress.completedChapters.length;
 
@@ -80,14 +109,14 @@ export default function ProfilePage() {
           <div className="flex items-start gap-4 sm:items-center flex-col sm:flex-row">
             <Avatar size="lg">
               <AvatarFallback className="bg-accent-primary-light text-accent-primary text-lg font-semibold">
-                AL
+                {initials}
               </AvatarFallback>
             </Avatar>
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2">
-                <CardTitle className="text-xl">Alex</CardTitle>
+                <CardTitle className="text-xl">{displayName}</CardTitle>
                 <Badge variant="default" className="bg-accent-primary-light text-accent-primary">
-                  Learner
+                  {isAnonymous ? "Guest" : "Learner"}
                 </Badge>
                 <Badge variant="outline" className="gap-1">
                   <Zap className="size-3" />
@@ -95,20 +124,46 @@ export default function ProfilePage() {
                 </Badge>
               </div>
               <CardDescription className="mt-1">
-                Member since July 2025 &middot; {progress.xp.toLocaleString()} total XP
+                {user?.email ? <>{user.email} &middot; </> : null}
+                Member since {memberSince} &middot; {progress.xp.toLocaleString()} total XP
               </CardDescription>
               <p className="mt-2 text-sm text-text-secondary leading-relaxed">
                 Learning HTML, CSS, JavaScript, Python, and CS fundamentals.
                 {progress.currentStreak > 1 && ` Currently on a ${progress.currentStreak}-day learning streak.`}
               </p>
             </div>
-            <Button variant="outline" size="sm" className="gap-2 shrink-0">
-              <Edit3 className="size-4" />
-              Edit
-            </Button>
+            {isAnonymous ? (
+              <Button size="sm" className="gap-2 shrink-0" onClick={() => router.push("/auth")}>
+                <Shield className="size-4" />
+                Save Progress
+              </Button>
+            ) : (
+              <Button variant="outline" size="sm" className="gap-2 shrink-0" onClick={signOut}>
+                <LogOut className="size-4" />
+                Sign Out
+              </Button>
+            )}
           </div>
         </CardHeader>
       </Card>
+
+      {/* Link Account Banner (Anonymous Users) */}
+      {isAnonymous && (
+        <Card className="border-accent-primary/20 bg-accent-primary/5">
+          <CardContent className="flex items-center gap-4 p-4">
+            <Shield className="size-8 text-accent-primary shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-text-primary">Your progress is local</p>
+              <p className="text-xs text-text-secondary">
+                Create a free account to sync across devices and never lose your progress.
+              </p>
+            </div>
+            <Button size="sm" onClick={() => router.push("/auth")}>
+              Link Account
+            </Button>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Stats Grid */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -355,11 +410,15 @@ export default function ProfilePage() {
               <CardTitle>Account</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <Button variant="outline" className="w-full justify-start gap-2">
+              <Button variant="outline" className="w-full justify-start gap-2" onClick={exportProgress}>
                 <Download className="size-4" />
                 Export Progress Data
               </Button>
-              <Button variant="outline" className="w-full justify-start gap-2 text-accent-danger hover:text-accent-danger">
+              <Button
+                variant="outline"
+                className="w-full justify-start gap-2 text-accent-danger hover:text-accent-danger"
+                onClick={signOut}
+              >
                 <LogOut className="size-4" />
                 Sign Out
               </Button>

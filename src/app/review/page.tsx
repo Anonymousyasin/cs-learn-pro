@@ -104,7 +104,7 @@ function generateCards(): CardData[] {
 // ─── Load / Save Cards ───────────────────────────────────────────
 const STORAGE_KEY = "cs-review-cards";
 
-function loadCards(): CardData[] {
+function loadCards(userId?: string): CardData[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = localStorage.getItem(STORAGE_KEY);

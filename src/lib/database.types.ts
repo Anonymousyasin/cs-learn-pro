@@ -7,6 +7,9 @@ export type Json =
   | Json[]
 
 export type Database = {
+  __InternalSupabase: {
+    PostgrestVersion: "14.5"
+  }
   public: {
     Tables: {
       completed_chapters: {
@@ -31,6 +34,7 @@ export type Database = {
           user_id?: string
           xp_earned?: number
         }
+        Relationships: []
       }
       exam_results: {
         Row: {
@@ -60,6 +64,7 @@ export type Database = {
           user_id?: string
           xp_earned?: number
         }
+        Relationships: []
       }
       profiles: {
         Row: {
@@ -98,6 +103,7 @@ export type Database = {
           updated_at?: string
           xp?: number
         }
+        Relationships: []
       }
       review_cards: {
         Row: {
@@ -139,6 +145,7 @@ export type Database = {
           updated_at?: string
           user_id?: string
         }
+        Relationships: []
       }
     }
     Views: {
