@@ -115,7 +115,14 @@ export default function AuthPage() {
       }
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Google sign-in failed";
-      toast.error(message);
+      if (message.includes("not enabled") || message.includes("Unsupported provider")) {
+        toast.error(
+          "Google OAuth not configured in Supabase. Use email/password instead, or enable Google in Supabase Dashboard → Auth → Providers.",
+          { duration: 8000 }
+        );
+      } else {
+        toast.error(message);
+      }
     }
   };
 
