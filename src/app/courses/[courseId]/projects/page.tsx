@@ -7,7 +7,6 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { courseRegistry } from "@/lib/courses";
 
 const difficultyLabel = ["", "Beginner", "Easy", "Intermediate", "Hard", "Advanced"];

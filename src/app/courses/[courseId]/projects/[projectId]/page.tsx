@@ -8,9 +8,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { courseRegistry } from "@/lib/courses";
-import type { Project } from "@/lib/courses/types";
 
 const difficultyLabel = ["", "Beginner", "Easy", "Intermediate", "Hard", "Advanced"];
 const difficultyColor = ["", "text-green-500", "text-emerald-500", "text-yellow-500", "text-orange-500", "text-red-500"];
