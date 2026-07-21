@@ -13,57 +13,245 @@ const outDir = path.join(__dirname, "..", "src", "lib", "courses");
 const courses = [
   {
     id: "html", title: "HTML", fullTitle: "HTML — The Language of the Web",
-    desc: "Master HTML from the ground up. Learn to structure web pages with semantic elements, create forms, embed media, and build accessible, well-formed documents.",
-    icon: "FileCode", color: "#f97316", difficulty: 1, hours: 40,
+    desc: "Master HTML from the ground up. Learn to structure web pages with semantic elements, create forms, embed media, and build accessible, well-formed documents — from basic tags to advanced modern APIs.",
+    icon: "FileCode", color: "#f97316", difficulty: 1, hours: 70,
     chapters: [
-      "HTML Introduction","HTML Editors","HTML Basics","HTML Elements","HTML Attributes","HTML Headings","HTML Paragraphs","HTML Styles","HTML Formatting","HTML Quotations",
-      "HTML Comments","HTML Colors","HTML CSS","HTML Links","HTML Images","HTML Favicon","HTML Tables","HTML Lists","HTML Block & Inline","HTML Div",
-      "HTML Classes","HTML ID","HTML Iframes","HTML JavaScript","HTML File Paths","HTML Head","HTML Layout","HTML Responsive","HTML Semantics","HTML Style Guide",
-      "HTML Entities","HTML Symbols","HTML Emojis","HTML Charset","HTML URL Encoding","HTML Forms","HTML Form Attributes","HTML Form Elements","HTML Input Types","HTML Input Attributes",
-      "HTML Canvas","HTML SVG","HTML Media","HTML Video","HTML Audio","HTML YouTube","HTML Drag/Drop","HTML Web Storage","HTML Web Workers","HTML SSE",
-      "HTML Accessibility","HTML SEO","HTML Performance","HTML Security","HTML Templates","HTML Microdata","HTML Best Practices","HTML APIs","HTML History","HTML What's New",
+      // ─── Part 1: HTML Basics (14 chapters) ───
+      "HTML Introduction","HTML Editors & Tools","HTML Document Structure","HTML Elements & Tags",
+      "HTML Attributes","HTML Headings & Hierarchy","HTML Paragraphs & Text","HTML Comments",
+      "HTML Formatting Elements","HTML Quotations & Citations","HTML Colors (Named, Hex, RGB)","HTML Styles (Inline CSS)",
+      "HTML Links & Hyperlinks","HTML Images & Alt Text",
+
+      // ─── Part 2: HTML Structure (14 chapters) ───
+      "HTML Lists (Ordered, Unordered, Description)","HTML Tables (Rows, Cols, Headers)","HTML Table Styling & Accessibility",
+      "HTML Divs & Spans","HTML Block & Inline Elements","HTML Classes for Styling","HTML IDs for Uniqueness",
+      "HTML Iframes & Embeds","HTML File Paths (Absolute vs Relative)","HTML Head Meta Tags","HTML Layout Elements (Header, Nav, Main)",
+      "HTML Semantic Elements (Article, Section, Aside)","HTML Style Guide & Conventions","HTML Responsive Meta Viewport",
+
+      // ─── Part 3: HTML Text & Encoding (8 chapters) ───
+      "HTML Entities & Special Characters","HTML Symbols & Icons","HTML Emojis & UTF-8","HTML Charset Declaration",
+      "HTML URL Encoding","HTML Language Attributes","HTML Bidirectional Text","HTML Code & Pre Elements",
+
+      // ─── Part 4: HTML Forms (14 chapters) ───
+      "HTML Forms Overview","HTML Form Attributes (Action, Method)","HTML Form Elements (Input, Select, Textarea)",
+      "HTML Input Types (Text, Password, Email)","HTML Input Types (Number, Range, Date)","HTML Input Types (Checkbox, Radio, File)",
+      "HTML Input Attributes (Placeholder, Required, Pattern)","HTML Select Menus & Options","HTML Textareas & Multi-line Input",
+      "HTML Form Validation (Client-Side)","HTML Form Styling & UX","HTML Fieldset & Legend","HTML Datalist & Autocomplete",
+      "HTML Form Security & Best Practices",
+
+      // ─── Part 5: HTML Graphics (8 chapters) ───
+      "HTML Canvas: Drawing Shapes","HTML Canvas: Paths & Text","HTML Canvas: Transformations & Animation",
+      "HTML SVG: Scalable Vector Graphics","HTML SVG: Shapes, Paths, Filters","HTML SVG: Animation & Interactivity",
+      "HTML MathML for Mathematical Notation","HTML Image Maps & Clickable Regions",
+
+      // ─── Part 6: HTML Media (8 chapters) ───
+      "HTML Video Element & Attributes","HTML Video: Formats, Codecs, Captions","HTML Audio Element & Attributes",
+      "HTML Embedded YouTube & Vimeo","HTML Picture Element & Responsive Images","HTML Source & Track Elements",
+      "HTML Object & Embed (Legacy Plugins)","HTML Media Events & JavaScript Control",
+
+      // ─── Part 7: HTML Web APIs (14 chapters) ───
+      "HTML Drag & Drop API","HTML Web Storage (LocalStorage, SessionStorage)","HTML Web Workers (Background Threads)",
+      "HTML Server-Sent Events (SSE)","HTML Geolocation API","HTML History API (PushState, PopState)",
+      "HTML Notification API","HTML Clipboard API","HTML Fullscreen API","HTML Page Visibility API",
+      "HTML Network Information API","HTML Battery & Device APIs","HTML Pointer Lock API","HTML Speech Synthesis & Recognition",
+
+      // ─── Part 8: HTML Advanced & Modern (14 chapters) ───
+      "HTML Templates & Slots","HTML Web Components: Custom Elements","HTML Shadow DOM",
+      "HTML Microdata & Structured Data","HTML ARIA: Roles & Properties","HTML ARIA: Live Regions & States",
+      "HTML Accessibility (WCAG Guidelines)","HTML SEO Best Practices","HTML Performance: Critical Rendering Path",
+      "HTML Progressive Web Apps (Manifest)","HTML Dialog & Modal Elements","HTML Details & Summary (Disclosure)",
+      "HTML Popover API","HTML Search & Inline Find",
+
+      // ─── Part 9: HTML Mastery (6 chapters) ───
+      "HTML Security: XSS, CSP, CORS","HTML Testing & Validation Tools","HTML Email Coding (Tables, Inline Styles)",
+      "HTML Preprocessors (Pug, Haml)","HTML Best Practices: Code Organization","HTML Future: What's New in HTML?",
     ]
   },
   {
     id: "css", title: "CSS", fullTitle: "CSS — Styling the Web",
-    desc: "From selectors to animations, learn to craft beautiful, responsive layouts with modern CSS including Flexbox, Grid, and CSS custom properties.",
-    icon: "Palette", color: "#38bdf8", difficulty: 1, hours: 45,
+    desc: "From selectors to animations, learn to craft beautiful, responsive layouts with modern CSS including Flexbox, Grid, custom properties, container queries, and design systems.",
+    icon: "Palette", color: "#38bdf8", difficulty: 1, hours: 75,
     chapters: [
-      "CSS Introduction","CSS Syntax","CSS Selectors","CSS How To Add","CSS Comments","CSS Colors","CSS Backgrounds","CSS Borders","CSS Margins","CSS Padding",
-      "CSS Height/Width","CSS Box Model","CSS Outline","CSS Text","CSS Fonts","CSS Icons","CSS Links","CSS Lists","CSS Tables","CSS Display",
-      "CSS Max-width","CSS Position","CSS Z-index","CSS Overflow","CSS Float","CSS Inline-block","CSS Align","CSS Combinators","CSS Pseudo-classes","CSS Pseudo-elements",
-      "CSS Opacity","CSS Dropdowns","CSS Image Gallery","CSS Image Sprites","CSS Attr Selectors","CSS Forms","CSS Counters","CSS Layout Float","CSS Layout Flexbox","CSS Layout Grid",
-      "CSS Units","CSS Specificity","CSS !important","CSS Math Functions","CSS Rounded Corners","CSS Border Images","CSS Gradients","CSS Shadows","CSS Text Effects","CSS 2D Transforms",
-      "CSS 3D Transforms","CSS Transitions","CSS Animations","CSS Tooltips","CSS Image Filters","CSS Masking","CSS Buttons","CSS Pagination","CSS Multi-column","CSS Variables",
-      "CSS @property","CSS Box Sizing","CSS Media Queries","CSS Responsive","CSS Viewport","CSS Frameworks","CSS Advanced Grid","CSS Container Queries","CSS Color Functions","CSS Nesting",
+      // ─── Part 1: CSS Fundamentals (14 chapters) ───
+      "CSS Introduction","CSS Syntax & Structure","CSS Selectors (Element, Class, ID)","CSS How To Add (Inline, Internal, External)",
+      "CSS Comments & Organization","CSS Colors (Named, Hex, RGB, HSL)","CSS Backgrounds & Background Images",
+      "CSS Borders (Width, Style, Color, Radius)","CSS Margins & Collapsing Margins","CSS Padding & Content Spacing",
+      "CSS Height, Width & Max-Width","CSS Box Model (Content, Padding, Border, Margin)","CSS Box Sizing (Border-Box vs Content-Box)",
+      "CSS Outline & Accessibility Focus",
+
+      // ─── Part 2: CSS Typography & Text (10 chapters) ───
+      "CSS Text Properties (Align, Decoration, Transform)","CSS Font Families & Web Safe Fonts",
+      "CSS @font-face & Web Fonts (Google Fonts)","CSS Font Size, Weight, Style & Variant",
+      "CSS Line Height & Vertical Align","CSS Text Overflow & White Space","CSS Word Break & Hyphenation",
+      "CSS Text Shadows & Effects","CSS Icons (Font Awesome, Material)","CSS Columns & Multi-column Layout",
+
+      // ─── Part 3: CSS Layout (18 chapters) ───
+      "CSS Display: Block, Inline, Inline-Block, None","CSS Position: Static, Relative, Absolute",
+      "CSS Position: Fixed & Sticky","CSS Z-Index & Stacking Context","CSS Overflow: Visible, Hidden, Scroll, Auto",
+      "CSS Float & Clear","CSS Flexbox: Container Properties","CSS Flexbox: Item Properties (Grow, Shrink, Basis)",
+      "CSS Flexbox: Alignment & Distribution","CSS Flexbox: Real-World Layouts","CSS Grid: Container & Template Columns/Rows",
+      "CSS Grid: Item Placement & Spanning","CSS Grid: Named Areas & Lines","CSS Grid: Auto Flow & Dense Packing",
+      "CSS Grid: Alignment & Gaps","CSS Grid: Responsive Layouts","CSS Grid: Subgrid Deep Dive",
+      "CSS Multi-Column Layout (Columns, Gap, Rule)",
+
+      // ─── Part 4: CSS Advanced Selectors & Effects (12 chapters) ───
+      "CSS Combinators (Descendant, Child, Sibling)","CSS Attribute Selectors (Presence, Value, Substring)",
+      "CSS Pseudo-Classes: Structural (:nth-child, :first-of-type)","CSS Pseudo-Classes: UI States (:hover, :focus, :disabled)",
+      "CSS Pseudo-Elements (::before, ::after, ::selection)","CSS Opacity & RGBA/HSLA Alpha Channels",
+      "CSS Gradients (Linear, Radial, Conic)","CSS Box Shadows & Drop Shadows","CSS Background: Size, Position, Repeat, Attachment",
+      "CSS Filter Effects (Blur, Grayscale, Brightness)","CSS Backdrop Filter (Frosted Glass Effect)","CSS Masking & Clipping (Clip-Path)",
+
+      // ─── Part 5: CSS Responsive & Modern (14 chapters) ───
+      "CSS Units: px, em, rem, vw, vh, %, ch","CSS Specificity & The Cascade","CSS !important & When to Avoid",
+      "CSS Inheritance & Initial/Unset/Inherit","CSS Custom Properties (Variables)","CSS @property: Typed Custom Properties",
+      "CSS calc(), min(), max(), clamp()","CSS Media Queries: Breakpoints","CSS Media Queries: Feature Detection",
+      "CSS Container Queries & Container Units","CSS Viewport Units (dvh, svh, lvh)","CSS Logical Properties (Inset, Margin-Block)",
+      "CSS Color Functions (color-mix, relative colors)","CSS Nesting (Native CSS Nesting)",
+
+      // ─── Part 6: CSS Animations & Transforms (10 chapters) ───
+      "CSS 2D Transforms (Translate, Rotate, Scale, Skew)","CSS 3D Transforms & Perspective",
+      "CSS Transitions: Properties & Timing Functions","CSS Transitions: Delays & Events","CSS Animations: @keyframes & Animation Properties",
+      "CSS Animation: Timing, Direction, Fill Mode","CSS Animation: Steps & Multiple Animations","CSS Scroll-Driven Animations",
+      "CSS View Transitions API","CSS Performance: Will-Change & Hardware Acceleration",
+
+      // ─── Part 7: CSS Architecture & Tools (8 chapters) ───
+      "CSS Frameworks (Tailwind, Bootstrap)","CSS Preprocessors (Sass/SCSS)","CSS Methodologies (BEM, ITCSS, SMACSS)",
+      "CSS Cascade Layers (@layer)","CSS Design Systems & Tokens","CSS Custom Properties for Theming",
+      "CSS Debugging & DevTools","CSS Best Practices: Organization & Maintainability",
+
+      // ─── Part 8: CSS Advanced Topics (8 chapters) ───
+      "CSS Forms Styling & UX","CSS Image Sprites & Optimization","CSS Counters & Numbered Lists",
+      "CSS Scroll Snap","CSS Print Stylesheets (@page)","CSS Feature Queries (@supports)",
+      "CSS Houdini: Paint API & Custom Worklets","CSS Has Selector (:has — The Parent Selector)",
     ]
   },
   {
     id: "javascript", title: "JavaScript", fullTitle: "JavaScript — Bringing Pages to Life",
-    desc: "The most versatile programming language. From variables to async/await, closures to classes, DOM manipulation to modern ES modules.",
-    icon: "Code2", color: "#eab308", difficulty: 2, hours: 55,
+    desc: "The world's most versatile programming language. From variables and closures to async/await, modules, and the complete browser API — beginner to advanced.",
+    icon: "Code2", color: "#eab308", difficulty: 2, hours: 90,
     chapters: [
-      "JS Introduction","JS Where To","JS Output","JS Syntax","JS Statements","JS Comments","JS Variables","JS Let","JS Const","JS Operators",
-      "JS Arithmetic","JS Assignment","JS Comparison","JS Logical","JS If Else","JS Switch","JS Booleans","JS Loops","JS For Loop","JS While Loop",
-      "JS Break Continue","JS Data Types","JS Functions","JS Arrow Functions","JS Scope","JS Hoisting","JS Strings","JS String Methods","JS String Search","JS Numbers",
-      "JS Number Methods","JS Arrays","JS Array Methods","JS Array Search","JS Array Sort","JS Array Iteration","JS Dates","JS Date Formats","JS Math","JS Random",
-      "JS Type Conversion","JS Destructuring","JS Spread","JS Errors","JS Try Catch","JS This","JS Classes","JS Class Inheritance","JS Static","JS Private",
-      "JS Modules","JS JSON","JS DOM Intro","JS DOM Selectors","JS DOM Manipulation","JS DOM Events","JS Event Listener","JS Event Bubbling","JS Timing","JS Cookies",
-      "JS Fetch API","JS Async","JS Promises","JS Async Await","JS Sets","JS Maps","JS Symbols","JS Iterables","JS Generators","JS Proxies",
-      "JS Best Practices","JS Performance","JS Security","JS Testing","JS Modules Advanced","JS Web APIs","JS Service Workers","JS IndexedDB","JS WebSockets","JS Modern Features",
+      // ─── Part 1: JavaScript Fundamentals (14 chapters) ───
+      "JS Introduction & History","JS Where To (Script Tags, External Files)","JS Output (Console, Alert, Document)",
+      "JS Syntax & Statements","JS Comments","JS Variables (var, let, const)","JS Data Types (Primitives, Objects)",
+      "JS Type Coercion & Conversion","JS Numbers & Number Methods","JS Strings & Template Literals",
+      "JS String Methods (Slice, Replace, Split)","JS Boolean Logic & Truthy/Falsy","JS Operators (Arithmetic, Assignment, Comparison)",
+      "JS Operator Precedence & Associativity",
+
+      // ─── Part 2: Control Flow & Functions (14 chapters) ───
+      "JS If/Else & Conditional Statements","JS Switch Statement","JS Ternary Operator",
+      "JS For Loop (Classic, For-In, For-Of)","JS While & Do-While Loops","JS Break, Continue & Labels",
+      "JS Functions: Declaration vs Expression","JS Parameters: Default, Rest, Arguments","JS Return Values & Pure Functions",
+      "JS Arrow Functions","JS Scope: Global, Function, Block","JS Hoisting (var, let, const, function)",
+      "JS Closures & Lexical Scoping","JS Immediately Invoked Function Expressions (IIFE)",
+
+      // ─── Part 3: Objects, Arrays & Collections (14 chapters) ───
+      "JS Object Literals & Properties","JS Object Methods & This","JS Constructors & The New Keyword",
+      "JS Prototypes & Prototypal Inheritance","JS Classes (ES6)","JS Class Inheritance (Extends, Super)",
+      "JS Getters, Setters & Static Methods","JS Private Fields & Methods","JS Arrays: Creation & Access",
+      "JS Array Methods: Push, Pop, Shift, Unshift, Splice","JS Array Methods: Map, Filter, Reduce, ForEach",
+      "JS Array Search: IndexOf, Find, Includes","JS Array Sort: Custom Comparators & Stability","JS Sets, Maps, WeakMaps & WeakSets",
+
+      // ─── Part 4: Advanced JavaScript (14 chapters) ───
+      "JS Destructuring: Arrays & Objects","JS Spread & Rest Operators","JS Modules: Export & Import",
+      "JS Dynamic Imports & Lazy Loading","JS Error Handling: Try, Catch, Finally","JS Custom Errors & Stack Traces",
+      "JS This Keyword: Binding & Context","JS Bind, Call & Apply","JS JSON: Parse, Stringify, Serialization",
+      "JS Symbols & Well-Known Symbols","JS Iterables & Iterators","JS Generators (Yield, Next, Delegation)",
+      "JS Proxies & Reflect API","JS Temporal API (Dates & Times)",
+
+      // ─── Part 5: Async JavaScript (12 chapters) ───
+      "JS Callbacks & Callback Hell","JS Promises: States & Chaining","JS Promise Combinators (All, Race, AllSettled, Any)",
+      "JS Async/Await: Syntax & Error Handling","JS The Event Loop (Call Stack, Task Queue)","JS Microtasks vs Macrotasks",
+      "JS Timing: setTimeout, setInterval, requestAnimationFrame","JS Timers & Closures (The Loop Problem)",
+      "JS Web Workers & Message Passing","JS Service Workers: Lifecycle & Caching","JS Service Workers: Push Notifications & Sync",
+      "JS IndexedDB: Client-Side Database",
+
+      // ─── Part 6: DOM & Browser APIs (14 chapters) ───
+      "JS DOM: Document Object Model Overview","JS DOM Selectors (QuerySelector, GetElementById)",
+      "JS DOM Manipulation (Create, Append, Remove)","JS DOM Traversal (Parent, Children, Siblings)",
+      "JS DOM Attributes & Data Attributes","JS DOM Classes (ClassList, Toggle)","JS DOM Styling (Style Property, Computed Styles)",
+      "JS Events: AddEventListener & RemoveEventListener","JS Event Object & Properties","JS Event Propagation: Bubbling & Capturing",
+      "JS Event Delegation & Performance","JS Custom Events & Dispatch","JS Form Events & Validation",
+      "JS Window, Document & Navigator Objects",
+
+      // ─── Part 7: Modern JS APIs (12 chapters) ───
+      "JS Fetch API: GET, POST, Headers","JS Fetch: Error Handling & AbortController","JS LocalStorage & SessionStorage",
+      "JS Cookies: Read, Write, Delete","JS Geolocation API","JS Canvas 2D Drawing API",
+      "JS WebSockets: Real-Time Communication","JS Intersection Observer (Lazy Loading, Infinite Scroll)",
+      "JS Mutation Observer (DOM Change Detection)","JS Resize Observer (Element Size Changes)",
+      "JS Clipboard & File APIs","JS History API: SPA Routing",
+
+      // ─── Part 8: JS Tooling & Best Practices (10 chapters) ───
+      "JS Debugging: DevTools, Breakpoints, Source Maps","JS Testing: Unit Tests with Vitest/Jest",
+      "JS Performance: Memory Leaks & Profiling","JS Security: XSS, CSRF, CSP","JS Bundlers: Webpack, Vite, ESBuild",
+      "JS Linting (ESLint) & Formatting (Prettier)","JS TypeScript: Types, Interfaces, Generics",
+      "JS Design Patterns (Module, Observer, Singleton)","JS Functional Programming (Curry, Compose, Immutability)",
+      "JS Best Practices: Code Quality & Conventions",
+
+      // ─── Part 9: Node.js & Beyond (6 chapters) ───
+      "JS Node.js: Modules (CommonJS vs ESM)","JS Node.js: File System & Path","JS Node.js: HTTP & Express Basics",
+      "JS NPM: Packages, Scripts, Semantic Versioning","JS Environment Variables & Config","JS Modern Features: What's Next in ECMAScript",
     ]
   },
   {
     id: "python", title: "Python", fullTitle: "Python — Power and Simplicity",
-    desc: "Python for everyone. Learn syntax, data structures, OOP, file handling, standard library, and essential packages.",
-    icon: "Terminal", color: "#22c55e", difficulty: 2, hours: 40,
+    desc: "Python for everyone. Learn syntax, data structures, OOP, file handling, standard library, async, testing, and essential packages — from zero to production-ready.",
+    icon: "Terminal", color: "#22c55e", difficulty: 2, hours: 80,
     chapters: [
-      "Python Intro","Python Getting Started","Python Syntax","Python Comments","Python Variables","Python Data Types","Python Numbers","Python Casting","Python Strings","Python Slicing",
-      "Python String Methods","Python Format Strings","Python Booleans","Python Operators","Python Lists","Python List Methods","Python List Comprehension","Python Tuples","Python Sets","Python Dictionaries",
-      "Python If Else","Python While","Python For","Python Functions","Python Function Args","Python Lambda","Python Scope","Python Modules","Python Import","Python PIP",
-      "Python Try Except","Python User Input","Python File Read","Python File Write","Python File Delete","Python OS Module","Python JSON","Python Dates","Python Math","Python Regex",
-      "Python Iterators","Python Generators","Python Decorators","Python Classes","Python Inheritance","Python Polymorphism","Python Magic Methods","Python Itertools","Python Collections","Python Virtual Env",
-      "Python NumPy","Python Pandas","Python Matplotlib","Python SQLite","Python CSV","Python Email","Python Threading","Python Subprocess","Python Datetime","Python Best Practices",
+      // ─── Part 1: Python Fundamentals (12 chapters) ───
+      "Python Introduction & Philosophy","Python Installation & Setup","Python Syntax & Indentation",
+      "Python Comments & Docstrings","Python Variables & Assignment","Python Data Types (int, float, str, bool, None)",
+      "Python Numbers & Math Operations","Python Type Conversion (Casting)","Python Strings: Creation & Escaping",
+      "Python String Indexing & Slicing","Python String Methods (Split, Join, Replace, Find)","Python F-Strings & Formatting",
+
+      // ─── Part 2: Control Flow & Data Structures (16 chapters) ───
+      "Python Booleans & Comparison Operators","Python Logical Operators (and, or, not)","Python If/Elif/Else & Conditional Logic",
+      "Python Match/Case (Structural Pattern Matching)","Python While Loops","Python For Loops & Range",
+      "Python Break, Continue & Else in Loops","Python Lists: Creation, Indexing, Slicing","Python List Methods (Append, Insert, Remove, Sort)",
+      "Python List Comprehension & Generator Expressions","Python Tuples: Immutable Sequences","Python Sets: Unordered Unique Collections",
+      "Python Dictionaries: Key-Value Pairs","Python Dictionary Methods & Comprehension","Python Collections Module (Deque, Counter, DefaultDict)",
+      "Python Itertools: Chain, Cycle, Combinations, Permutations",
+
+      // ─── Part 3: Functions & Modules (12 chapters) ───
+      "Python Functions: Def & Return","Python Parameters: Positional, Keyword, Default, *args, **kwargs",
+      "Python Lambda Functions","Python Scope: LEGB Rule (Local, Enclosing, Global, Built-in)",
+      "Python Global & Nonlocal Statements","Python Modules: Import & From","Python Packages & __init__.py",
+      "Python Standard Library Overview","Python PIP & Virtual Environments","Python Requirements & Dependency Management",
+      "Python __name__ == '__main__' Pattern","Python Type Hints & Annotations",
+
+      // ─── Part 4: Object-Oriented Python (14 chapters) ───
+      "Python Classes & Objects","Python __init__ & Constructor","Python Instance, Class & Static Methods",
+      "Python Attributes: Instance, Class, Private","Python Property Decorators (@property, @setter)","Python Inheritance & Super()",
+      "Python Method Overriding & MRO","Python Abstract Base Classes (ABC)","Python Dataclasses (@dataclass)",
+      "Python Magic Methods: __str__, __repr__, __len__","Python Magic Methods: __eq__, __hash__, __lt__",
+      "Python Magic Methods: __getitem__, __setitem__, __iter__","Python Operator Overloading","Python Polymorphism & Duck Typing",
+
+      // ─── Part 5: Error Handling & File I/O (10 chapters) ───
+      "Python Exceptions: Try, Except, Finally","Python Multiple Except Blocks & Exception Hierarchy",
+      "Python Raising Exceptions (Raise, Assert)","Python Custom Exception Classes","Python File Reading (Open, Read, Readlines)",
+      "Python File Writing & Appending","Python Context Managers (With Statement)","Python Contextlib & Custom Context Managers",
+      "Python Working with JSON","Python Working with CSV Files",
+
+      // ─── Part 6: Python Standard Library (14 chapters) ───
+      "Python Datetime: Dates, Times, Timedeltas","Python OS Module: Files, Paths, Environment","Python Sys Module: Arguments, Path, Exit",
+      "Python Re: Regular Expressions (Match, Search, Sub)","Python Math & Statistics Modules","Python Random: Seeds, Choices, Shuffle",
+      "Python Argparse: Building CLI Tools","Python Logging: Logger, Handler, Formatter","Python Subprocess: Running Shell Commands",
+      "Python Threading: Concurrent Execution","Python Multiprocessing: Parallel CPU Work","Python Pathlib: Modern Path Handling",
+      "Python Enum: Named Constants","Python Hashlib & HMAC: Cryptographic Hashing",
+
+      // ─── Part 7: Advanced Python (12 chapters) ───
+      "Python Decorators: Function & Class Decorators","Python Decorators with Arguments","Python Generators: Yield, Send, Throw",
+      "Python Generator Pipelines & Coroutines","Python Iterators: __iter__ & __next__","Python Descriptors: __get__, __set__, __delete__",
+      "Python Metaclasses: Type & Custom Metaclasses","Python Slots: Memory Optimization","Python Weak References & WeakRef",
+      "Python Pickle & Serialization","Python Functools: Partial, LRU Cache, Wraps","Python Typing: Generics, Union, Optional, Protocol",
+
+      // ─── Part 8: Async Python (6 chapters) ───
+      "Python Asyncio: Event Loop & Coroutines","Python Async/Await Syntax","Python Async Context Managers & Async Iterators",
+      "Python Asyncio: Tasks, Futures, Gather","Python Aiohttp: Async HTTP Client/Server","Python Async File I/O & Databases",
+
+      // ─── Part 9: Testing, Data & Best Practices (8 chapters) ───
+      "Python Unittest: TestCase, Asserts, Fixtures","Python Pytest: Functions, Fixtures, Parametrize","Python Pytest: Mocking & Monkeypatch",
+      "Python NumPy: Arrays, Operations, Broadcasting","Python Pandas: Series, DataFrames, GroupBy","Python Matplotlib: Plots, Charts, Figures",
+      "Python SQLite: Databases in Python","Python Best Practices: PEP 8, Type Hints, Documentation",
     ]
   },
   {
@@ -168,117 +356,218 @@ const courses = [
 // Each generates 10–14 sections with real educational content
 
 function genHtmlSections(chName, idx) {
-  const clean = chName.replace("HTML ", "").toLowerCase();
+  const cat = htmlCategory(chName);
   const s = [];
-  const p1 = `HTML elements form the backbone of every web page. Understanding how to properly structure content with the right tags is essential for creating accessible, well-organized documents that search engines and assistive technologies can parse effectively.`;
-  const p2 = `Modern HTML5 provides semantic elements that describe the meaning of content, not just its appearance. By using appropriate tags, you create a document outline that benefits both users and machines.`;
+  const descs = {
+    fundamentals: "the core building blocks that make HTML work — from document structure to writing your first tags",
+    elements: "individual HTML tags and how they define content meaning, from text to images to links",
+    structure: "ways to organize HTML content into meaningful page layouts using semantic and structural elements",
+    encoding: "how HTML handles text representation, special characters, and internationalization",
+    forms: "interactive elements that collect user input and send data to servers",
+    graphics: "how HTML supports drawing, vector graphics, and mathematical notation directly in the browser",
+    media: "embedding and controlling video, audio, and rich media content on web pages",
+    apis: "browser APIs accessible from HTML that enable rich client-side functionality",
+    modern: "cutting-edge HTML features including Web Components, accessibility, and modern interaction patterns",
+    mastery: "advanced best practices, security, testing, and what's coming next in HTML",
+    general: "essential HTML knowledge",
+  };
+  const desc = descs[cat] || "HTML concepts";
 
   // Intro
-  s.push({ type: "text", content: `## What is ${chName}?\n\n${chName} is a fundamental concept in web development. ${p1}\n\n${p2}` });
+  s.push({ type: "text", content: `## What is ${chName}?\n\n${chName} is an important part of web development — ${desc}. Proper use of HTML creates documents that are accessible, SEO-friendly, and maintainable.\n\nHTML5 provides semantic elements that describe the meaning of content, not just its appearance. By using appropriate tags, you create a document outline that benefits both users and machines.` });
   s.push({ type: "key-points", points: [
-    `${chName} is essential for structuring web content semantically`,
+    `${chName} plays a key role in structuring web content semantically`,
     `Proper use improves accessibility, SEO, and maintainability`,
-    `HTML5 introduced many new semantic elements`,
+    `HTML5 introduced many new semantic and interactive elements`,
   ]});
 
-  if (idx % 3 === 0) {
-    s.push({ type: "code", language: "html", caption: "Basic structure example:", content: `<!-- ${chName} — Basic Example -->\n<section>\n  <h2>${chName}</h2>\n  <p>This demonstrates the core concepts of ${chName}.</p>\n  <p>Each HTML element serves a specific purpose in document structure.</p>\n</section>` });
-  } else if (idx % 3 === 1) {
-    s.push({ type: "code", language: "html", caption: "Practical usage:", content: `<!-- ${chName} — Common Patterns -->\n<div class="container">\n  <header>\n    <h1>${chName}</h1>\n    <nav aria-label="Main navigation">\n      <ul>\n        <li><a href="#overview">Overview</a></li>\n        <li><a href="#examples">Examples</a></li>\n        ${idx > 20 ? '<li><a href="#advanced">Advanced</a></li>' : ''}\n      </ul>\n    </nav>\n  </header>\n</div>` });
+  // Topic-specific code examples
+  if (["fundamentals", "elements"].includes(cat)) {
+    s.push({ type: "code", language: "html", caption: `${chName} — Basic syntax:`, content: `<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <title>${chName} — Example</title>\n</head>\n<body>\n  <!-- Your ${chName} content goes here -->\n  <main>\n    <h1>Learning ${chName}</h1>\n    <p>This is an example of proper HTML structure.</p>\n  </main>\n</body>\n</html>` });
+  } else if (["structure", "encoding"].includes(cat)) {
+    s.push({ type: "code", language: "html", caption: `${chName} — Semantic structure:`, content: `<header role="banner">\n  <nav aria-label="Main navigation">\n    <ul>\n      <li><a href="/">Home</a></li>\n      <li><a href="/about">About</a></li>\n      <li><a href="/contact">Contact</a></li>\n    </ul>\n  </nav>\n</header>\n<main>\n  <article>\n    <h1>${chName}</h1>\n    <section>\n      <h2>Key Concepts</h2>\n      <p>Understanding these patterns improves code quality.</p>\n    </section>\n  </article>\n</main>\n<footer>\n  <p>&copy; 2026 — Built with semantic HTML</p>\n</footer>` });
+  } else if (["forms"].includes(cat)) {
+    s.push({ type: "code", language: "html", caption: `${chName} — Form example:`, content: `<form action="/submit" method="POST" novalidate>\n  <fieldset>\n    <legend>Your Details</legend>\n    <label for="name">Full Name:</label>\n    <input type="text" id="name" name="name" required minlength="2" placeholder="Enter your name">\n    \n    <label for="email">Email:</label>\n    <input type="email" id="email" name="email" required placeholder="you@example.com">\n    \n    <label for="country">Country:</label>\n    <select id="country" name="country">\n      <option value="">Select...</option>\n      <option value="us">United States</option>\n      <option value="uk">United Kingdom</option>\n    </select>\n    \n    <button type="submit">Submit</button>\n  </fieldset>\n</form>` });
+  } else if (["graphics", "media"].includes(cat)) {
+    s.push({ type: "code", language: "html", caption: `${chName} — Media element:`, content: `<figure>\n  <!-- ${chName} element -->\n  <video controls width="640" poster="thumbnail.jpg">\n    <source src="video.mp4" type="video/mp4">\n    <source src="video.webm" type="video/webm">\n    <track kind="captions" src="captions.vtt" srclang="en" label="English">\n    <p>Your browser does not support the video element.</p>\n  </video>\n  <figcaption>${chName} — A media demonstration</figcaption>\n</figure>` });
+  } else if (["apis", "modern"].includes(cat)) {
+    s.push({ type: "code", language: "html", caption: `${chName} — Modern HTML API:`, content: `<!-- ${chName} — Web Component Example -->\n<template id="my-component">\n  <style>\n    :host { display: block; padding: 1rem; border: 1px solid #ddd; }\n  </style>\n  <slot name="title">Default Title</slot>\n  <div part="content">\n    <slot></slot>\n  </div>\n</template>\n\n<my-component>\n  <span slot="title">${chName}</span>\n  <p>This uses Web Components for encapsulated, reusable HTML.</p>\n</my-component>\n\n<script>\n  class MyComponent extends HTMLElement {\n    constructor() {\n      super();\n      const template = document.getElementById('my-component');\n      this.attachShadow({ mode: 'open' })\n        .appendChild(template.content.cloneNode(true));\n    }\n  }\n  customElements.define('my-component', MyComponent);\n</script>` });
   } else {
-    s.push({ type: "code", language: "html", caption: `${chName} — Advanced usage:`, content: `<!-- ${chName} — Best Practices -->\n<article aria-labelledby="title">\n  <h2 id="title">${chName} in Practice</h2>\n  <p>When working with ${chName}, follow these patterns:</p>\n  <ul>\n    <li>Use semantic elements for clarity</li>\n    <li>Include proper ARIA attributes</li>\n    <li>Test across different browsers</li>\n    <li>Validate your HTML regularly</li>\n  </ul>\n</article>` });
+    s.push({ type: "code", language: "html", caption: `${chName} — Practical example:`, content: `<!-- ${chName} — Example -->\n<section aria-labelledby="ch-title">\n  <h2 id="ch-title">${chName}</h2>\n  <p>This demonstrates practical usage of ${chName}.</p>\n  <ul>\n    <li>Understand the syntax and structure</li>\n    <li>Apply best practices for accessibility</li>\n    <li>Test across different browsers</li>\n  </ul>\n</section>` });
   }
 
-  s.push({ type: "text", content: `## Why ${chName} Matters\n\nUnderstanding ${chName} deeply allows you to create more robust, maintainable, and accessible web pages. ${idx % 2 === 0 ? "This concept builds upon previous chapters and lays the foundation for advanced topics like responsive design and web components." : "Mastering this topic will significantly improve your development workflow and the quality of your projects."}` });
+  s.push({ type: "text", content: `## Understanding ${chName}\n\n${desc.charAt(0).toUpperCase() + desc.slice(1)}. Mastering this topic will improve your development workflow and the quality of your projects.\n\nModern web development demands a solid understanding of HTML. Every framework, from React to Vue, ultimately renders HTML. Understanding raw HTML means understanding what your framework generates.` });
 
-  s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** When working with ${chName}, always use semantic elements over generic divs. This improves accessibility, SEO, and code readability. Screen readers and search engines rely on proper HTML structure to understand your content.` });
+  // Topic-specific callouts
+  if (["fundamentals", "elements", "structure"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Always use semantic elements over generic divs. Screen readers and search engines rely on proper HTML structure to understand your content. Use <header>, <nav>, <main>, <article>, <section>, <aside>, and <footer> to define your page regions.` });
+  } else if (["forms"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Always associate labels with inputs using the "for" attribute matching the input's "id". This improves accessibility — clicking the label focuses the input. Use "fieldset" and "legend" to group related form controls.` });
+  } else if (["apis", "modern"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Web Components (Custom Elements, Shadow DOM, Templates) let you create reusable, encapsulated HTML elements. They work across all frameworks — write once, use anywhere. This is the true power of the platform.` });
+  } else {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** When working with ${chName}, keep accessibility in mind from the start. Test with keyboard navigation and screen readers. Use aria-label, aria-labelledby, and role attributes when semantic HTML alone is insufficient.` });
+  }
 
-  s.push({ type: "text", content: `## Common Patterns\n\nDevelopers commonly use ${chName} in several patterns:\n\n1. **Basic setup** — Creating the foundational structure\n2. **With attributes** — Adding metadata and configuration\n3. **Nested structures** — Building complex hierarchies\n4. **Combined with CSS** — Styling with classes and IDs\n5. **With JavaScript** — Making interactive elements` });
+  if (["fundamentals", "elements", "structure"].includes(cat)) {
+    s.push({ type: "text", content: `## Key Techniques\n\nMaster these patterns for ${chName}:\n\n1. **Proper nesting** — Elements close in the reverse order they opened\n2. **Semantic choice** — Pick the element that best describes the content\n3. **ARIA augmentation** — Add ARIA attributes where HTML semantics are insufficient\n4. **Validation** — Use the W3C HTML validator to catch errors\n5. **Progressive enhancement** — Start with core HTML, enhance with CSS/JS` });
+  } else if (["forms"].includes(cat)) {
+    s.push({ type: "text", content: `## Form Best Practices\n\nFollow these guidelines for forms:\n\n1. **Label every input** — Use proper <label> elements with "for" attributes\n2. **Provide helpful validation** — Use HTML5 validation attributes (required, pattern, min, max)\n3. **Show clear error messages** — Place errors inline near the relevant field\n4. **Use appropriate input types** — type="email", type="tel", type="url" trigger correct mobile keyboards\n5. **Design for errors** — Form submissions fail. Re-populate fields, highlight errors, keep the user's data` });
+  } else if (["graphics", "media"].includes(cat)) {
+    s.push({ type: "text", content: `## Best Practices for Embedded Content\n\nFollow these guidelines:\n\n1. **Provide fallbacks** — Always include fallback content between element tags\n2. **Use multiple formats** — Provide WebM and MP4 for video, different image resolutions\n3. **Add captions and subtitles** — Use <track> elements for accessibility\n4. **Optimize file sizes** — Compress media, use responsive images with srcset\n5. **Set dimensions** — Width and height prevent layout shifts (Cumulative Layout Shift)` });
+  } else {
+    s.push({ type: "text", content: `## Key Techniques\n\nMaster these patterns for ${chName}:\n\n1. **Read the spec** — MDN Web Docs is your best resource\n2. **Practice regularly** — Build small projects to reinforce concepts\n3. **Test across browsers** — Use BrowserStack or similar tools\n4. **Use the validator** — Run W3C validation in your build pipeline\n5. **Stay current** — HTML evolves; follow the HTML Living Standard` });
+  }
 
   if (idx % 2 === 0) {
     s.push({ type: "list", ordered: false, items: [
-      `${chName} forms the foundation of web page structure`,
-      "Always use the most specific semantic element available",
-      `Validate your ${chName} with the W3C validator regularly`,
+      `${chName} forms a key part of modern web development`,
+      `Always use the most specific semantic HTML element`,
+      `Validate your HTML with the W3C validator regularly`,
       "Keep accessibility in mind from the start",
       "Use ARIA attributes when semantic HTML alone is insufficient",
     ]});
   } else {
-    s.push({ type: "comparison", title: `${chName} — Common Approaches`, headers: ["Aspect", "Best Practice", "Avoid"], rows: [
-      ["Structure", "Semantic elements (<article>, <nav>)", "Generic divs everywhere"],
-      ["Accessibility", "ARIA labels + semantic HTML", "Only divs and spans"],
-      ["SEO", "Proper heading hierarchy", "Skipping heading levels"],
-      ["Performance", "Minimal nesting", "Deeply nested divs"],
-      ["Maintenance", "Clear class names", "Inline styles everywhere"],
+    s.push({ type: "comparison", title: `${chName} — Best Practice vs Anti-Pattern`, headers: ["Aspect", "Best Practice", "Anti-Pattern"], rows: [
+      ["Structure", "Semantic elements (<article>, <nav>)", "Generic <div> soup"],
+      ["Accessibility", "ARIA labels + semantic HTML", "No accessible naming"],
+      ["SEO", "Proper heading hierarchy", "Skipping levels (h1→h3)"],
+      ["Performance", "Minimal nesting, lazy media", "Deeply nested <div> chains"],
+      ["Validation", "Regular W3C validation", "No validation until QA"],
     ]});
   }
 
-  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** A frequent mistake with ${chName} is using generic containers when semantic alternatives exist. Always ask yourself: "Is there a more descriptive HTML element I could use here?"` });
+  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** ${["forms"].includes(cat) ? "A frequent mistake with forms is forgetting to associate labels with inputs, or using placeholder text instead of labels. Placeholders disappear when the user types, making it hard to remember what a field is for." : "A frequent mistake with ${chName} is using generic containers when semantic alternatives exist. Always ask: 'Is there a more descriptive HTML element?'"}` });
 
-  s.push({ type: "text", content: `## Best Practices\n\nFollow these guidelines for ${chName}:\n\n1. **Validate regularly** — Use the W3C validator to catch errors early\n2. **Use semantic elements** — Choose the right tag for the job\n3. **Keep it clean** — Consistent indentation and clear structure\n4. **Mobile-first** — Design for small screens, enhance for large\n5. **Progressive enhancement** — Start with core content, layer on features` });
+  // Topic-specific resources
+  if (["fundamentals", "elements", "structure"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN Web Docs: HTML** — The definitive reference for all HTML elements and attributes\n2. **HTML Living Standard (WHATWG)** — The official specification\n3. **W3C HTML Validator** — Check your markup for errors\n4. **WebAIM** — Web accessibility evaluation tools and guides\n5. **HTML5 Doctor** — Semantic HTML element flowcharts and guides` });
+  } else if (["forms"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN: HTML Forms Guide** — Comprehensive form element documentation\n2. **A11y Project: Form Accessibility** — Accessible form patterns\n3. **Smashing Magazine: Form Design** — UX best practices for forms\n4. **WebAIM: Creating Accessible Forms** — Screen reader-friendly form design\n5. **HTML Spec: Forms** — The official forms specification` });
+  } else {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN Web Docs** — The best reference for ${chName}\n2. **web.dev (Google)** — Modern HTML guides and best practices\n3. **HTML Living Standard** — The official specification\n4. **CSS-Tricks** — Practical guides and tutorials\n5. **CanIUse.com** — Browser support tables for HTML features` });
+  }
 
-  s.push({ type: "callout", style: "important", content: `📌 **Remember:** ${chName} is not just about making things look a certain way — it's about creating a meaningful document structure that communicates intent to browsers, search engines, and assistive technologies.` });
-
-  s.push({ type: "text", content: `## Practical Exercise\n\nTry applying what you've learned:\n\n1. Create an HTML document using the ${chName} concepts\n2. Add appropriate semantic elements\n3. Validate your markup with the W3C validator\n4. Test with a screen reader to verify accessibility\n5. Refactor based on the output` });
+  s.push({ type: "callout", style: "important", content: `📌 **Remember:** HTML is the foundation of the web. ${chName} is about creating meaningful document structure that communicates intent to browsers, search engines, and assistive technologies. Master the fundamentals — frameworks come and go, but HTML stays.` });
 
   return s;
 }
 
 function genCssSections(chName, idx) {
-  const clean = chName.replace("CSS ", "").toLowerCase();
+  const cat = cssCategory(chName);
   const s = [];
+  const descs = {
+    fundamentals: "the core rules of CSS — selectors, properties, values, and how the box model works",
+    typography: "how CSS controls text appearance — fonts, spacing, alignment, and visual hierarchy",
+    layout: "CSS layout systems like Flexbox and Grid that position and size elements on the page",
+    effects: "visual enhancement techniques — pseudo-classes, pseudo-elements, gradients, filters, and shadows",
+    responsive: "making designs work at every screen size using media queries, container queries, and modern units",
+    animations: "bringing interfaces to life with CSS transitions, transforms, and keyframe animations",
+    architecture: "organizing CSS at scale — methodologies, custom properties, design systems, and preprocessors",
+    advanced: "specialized CSS features like scroll snap, Houdini, print styles, and the :has() selector",
+    general: "essential CSS styling knowledge",
+  };
+  const desc = descs[cat] || "CSS concepts";
 
-  s.push({ type: "text", content: `## Understanding ${chName}\n\n${chName} is a core CSS concept that controls the visual presentation of web elements. Mastering it allows you to create polished, professional layouts that adapt to different screen sizes and devices.\n\nCSS has evolved significantly — from simple text styling to complex layout systems like Flexbox and Grid. Understanding the fundamentals is key to using modern features effectively.` });
+  s.push({ type: "text", content: `## Understanding ${chName}\n\n${chName} is ${desc}. Mastering this allows you to create polished, professional layouts that adapt to different screen sizes and devices.\n\nCSS has evolved dramatically — from simple text styling to complex layout systems like Flexbox, Grid, container queries, and cascade layers. Understanding the fundamentals is key to using modern features effectively.` });
   s.push({ type: "key-points", points: [
-    `${chName} is fundamental to web styling`,
+    `${chName} is fundamental to modern web styling`,
     `Controls how elements appear and respond to different screen sizes`,
-    `Modern CSS offers powerful tools for complex layouts`,
-    `Understanding this enables responsive, beautiful designs`,
+    `Modern CSS offers powerful tools for complex layouts and animations`,
+    `Understanding this enables responsive, accessible, beautiful designs`,
   ]});
 
-  if (idx % 3 === 0) {
-    s.push({ type: "code", language: "css", caption: "Basic syntax:", content: `/* ${chName} — Basic Example */\nselector {\n  property: value;\n}\n\n/* Practical usage */\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 1rem;\n}` });
-  } else if (idx % 3 === 1) {
-    s.push({ type: "code", language: "css", caption: `${chName} — Modern approach:`, content: `/* ${chName} with modern CSS */\n:root {\n  --primary: #38bdf8;\n  --space: 1rem;\n}\n\n.element {\n  padding: var(--space);\n  background: var(--primary);\n  border-radius: 8px;\n  transition: all 0.3s ease;\n}\n\n.element:hover {\n  transform: scale(1.05);\n  box-shadow: 0 4px 12px rgba(0,0,0,0.1);\n}` });
+  // Topic-specific code examples
+  if (["fundamentals"].includes(cat)) {
+    s.push({ type: "code", language: "css", caption: `${chName} — Basic syntax:`, content: `/* ${chName} — Basic Example */\nselector {\n  property: value;\n}\n\n/* The CSS Box Model — every element is a box */\n.box {\n  width: 300px;\n  padding: 1rem;      /* Space INSIDE the box */\n  border: 2px solid #333;  /* The edge of the box */\n  margin: 1rem;       /* Space OUTSIDE the box */\n  box-sizing: border-box;  /* Width includes padding + border */\n}` });
+  } else if (["layout"].includes(cat)) {
+    s.push({ type: "code", language: "css", caption: `${chName} — Modern layout with Grid:`, content: `/* ${chName} — Responsive Grid Layout */\n.page-layout {\n  display: grid;\n  grid-template-areas:\n    "header header"\n    "sidebar main"\n    "footer footer";\n  grid-template-columns: 250px 1fr;\n  grid-template-rows: auto 1fr auto;\n  min-height: 100vh;\n  gap: 1rem;\n}\n\n@media (max-width: 768px) {\n  .page-layout {\n    grid-template-areas:\n      "header"\n      "main"\n      "footer";\n    grid-template-columns: 1fr;\n  }\n  .sidebar { display: none; }\n}\n\nheader { grid-area: header; }\nmain   { grid-area: main; }\naside  { grid-area: sidebar; }\nfooter { grid-area: footer; }` });
+  } else if (["typography", "effects"].includes(cat)) {
+    s.push({ type: "code", language: "css", caption: `${chName} — Styling example:`, content: `/* ${chName} — Typography & Visual Effects */\n:root {\n  --font-heading: 'Inter', system-ui, sans-serif;\n  --font-body: 'Source Serif 4', Georgia, serif;\n  --scale-ratio: 1.25;  /* Major third scale */\n}\n\nbody {\n  font-family: var(--font-body);\n  font-size: 1rem;\n  line-height: 1.6;\n  color: #1a1a1a;\n}\n\nh1, h2, h3 {\n  font-family: var(--font-heading);\n  font-weight: 700;\n  line-height: 1.2;\n}\n\nh1 { font-size: calc(1rem * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio)); }\nh2 { font-size: calc(1rem * var(--scale-ratio) * var(--scale-ratio)); }\nh3 { font-size: calc(1rem * var(--scale-ratio)); }` });
+  } else if (["animations"].includes(cat)) {
+    s.push({ type: "code", language: "css", caption: `${chName} — CSS Animation example:`, content: `/* ${chName} — Keyframe Animation */\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n\n@keyframes pulse {\n  0%, 100% { transform: scale(1); }\n  50% { transform: scale(1.05); }\n}\n\n.animated-card {\n  animation: fadeInUp 0.6s ease-out both;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.animated-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 8px 24px rgba(0,0,0,0.12);\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .animated-card {\n    animation: none;\n    transition: none;\n  }\n}` });
+  } else if (["responsive"].includes(cat)) {
+    s.push({ type: "code", language: "css", caption: `${chName} — Responsive design with container queries:`, content: `/* ${chName} — Modern Responsive Design */\n/* 1. Container queries — respond to element size, not viewport */\n.card-container {\n  container-type: inline-size;\n  container-name: card;\n}\n\n@container card (min-width: 400px) {\n  .card {\n    display: flex;\n    gap: 1rem;\n  }\n  .card-image {\n    width: 200px;\n    height: auto;\n  }\n}\n\n@container card (max-width: 399px) {\n  .card {\n    display: block;\n  }\n  .card-image {\n    width: 100%;\n  }\n}\n\n/* 2. Fluid typography with clamp() */\nh1 {\n  font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem);\n}\n\n/* 3. Common breakpoints */\n@media (max-width: 640px) { /* mobile */ }\n@media (min-width: 641px) and (max-width: 1024px) { /* tablet */ }\n@media (min-width: 1025px) { /* desktop */ }` });
+  } else if (["architecture"].includes(cat)) {
+    s.push({ type: "code", language: "css", caption: `${chName} — CSS Architecture with Cascade Layers:`, content: `/* ${chName} — Cascade Layers for organized CSS */\n@layer reset, base, components, utilities;\n\n/* Reset — normalize browser defaults */\n@layer reset {\n  *, *::before, *::after {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n}\n\n/* Base — element-level styles */\n@layer base {\n  body { font-family: system-ui, sans-serif; line-height: 1.6; }\n}\n\n/* Components — reusable patterns */\n@layer components {\n  .btn { /* button styles */ }\n  .card { /* card styles */ }\n}\n\n/* Utilities — high-specificity helpers */\n@layer utilities {\n  .mt-4 { margin-top: 1rem; }\n}\n\n/* Custom properties: design tokens */\n:root {\n  --color-primary: #38bdf8;\n  --color-surface: #ffffff;\n  --space-sm: 0.5rem;\n  --space-md: 1rem;\n  --space-lg: 2rem;\n  --radius: 8px;\n}` });
   } else {
-    s.push({ type: "code", language: "css", caption: `${chName} — Advanced patterns:`, content: `/* ${chName} — Responsive Design */\n.card {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  gap: 1.5rem;\n}\n\n@media (max-width: 768px) {\n  .card {\n    grid-template-columns: 1fr;\n  }\n}\n\n@container (min-width: 400px) {\n  .card-content {\n    display: flex;\n    gap: 1rem;\n  }\n}` });
+    s.push({ type: "code", language: "css", caption: `${chName} — Example:`, content: `/* ${chName} — Practical Example */\n.element {\n  /* Your styles here */\n  \n  /* Modern CSS best practices */\n  display: block;\n  width: 100%;\n  max-width: 400px;\n  margin: 0 auto;\n  padding: 1rem;\n  \n  /* Visual design */\n  background: #f8fafc;\n  border: 1px solid #e2e8f0;\n  border-radius: 8px;\n  \n  /* Interaction */\n  transition: all 0.2s ease;\n}\n\n.element:hover {\n  border-color: #38bdf8;\n  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);\n}` });
   }
 
-  s.push({ type: "text", content: `## How ${chName} Works\n\nThe browser processes CSS in a specific order:\n\n1. **Parse** the CSS file(s) and inline styles\n2. **Build** the DOM and CSSOM trees\n3. **Match** selectors to elements\n4. **Apply** styles based on specificity and cascade\n5. **Render** the final result to the screen\n\nUnderstanding this pipeline helps debug layout issues and optimize performance.` });
+  s.push({ type: "text", content: `## How ${chName} Works\n\n${desc.charAt(0).toUpperCase() + desc.slice(1)}. The browser processes CSS through a pipeline:\n\n1. **Parse** the CSS file or inline styles\n2. **Build** the CSSOM (CSS Object Model)\n3. **Match** selectors to DOM elements\n4. **Calculate** the cascade and specificity\n5. **Apply** the winning declarations\n6. **Paint** the result to the screen\n\nUnderstanding this pipeline helps you debug styling issues and write more efficient CSS.` });
 
-  s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use browser DevTools to inspect CSS in real-time. The Styles panel shows exactly which rules apply to an element, where they come from, and which are overridden. This is invaluable for debugging layout issues.` });
+  if (["fundamentals", "typography", "layout"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use browser DevTools to inspect computed styles. The "Styles" pane shows exactly which declarations apply, which are overridden, and from which source. This is the #1 CSS debugging tool — learn to read it well.` });
+  } else if (["animations"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Always respect prefers-reduced-motion. Some users have vestibular disorders — large animations can cause nausea. Use @media (prefers-reduced-motion: reduce) to disable or minimize animations. Keep UI animations under 300ms for best UX.` });
+  } else if (["responsive"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Design mobile-first: start with the single-column layout as your base CSS, then add complexity with min-width media queries. This means every screen gets the core experience, and larger screens get progressive enhancement.` });
+  } else {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use browser DevTools to experiment with CSS in real-time. The "Computed" tab shows the final styles after the cascade. Use the ":hover" checkbox in the Styles pane to inspect hover states.` });
+  }
+
+  if (["fundamentals", "typography", "layout"].includes(cat)) {
+    s.push({ type: "text", content: `## Common Patterns\n\nMaster these patterns for ${chName}:\n\n1. **Centering** — Use flexbox or grid, not margin: auto hacks\n2. **Responsive images** — max-width: 100% on all images\n3. **Consistent spacing** — Use a spacing scale (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px)\n4. **Typography scale** — Define a type scale with consistent ratios\n5. **Color system** — Define semantic colors (primary, secondary, surface, text) as custom properties` });
+  } else if (["animations", "effects"].includes(cat)) {
+    s.push({ type: "text", content: `## Animation Performance Guidelines\n\nFollow these rules for smooth animations:\n\n1. **Animate transforms and opacity only** — These trigger compositing, not layout or paint\n2. **Avoid animating width, height, top, left** — These trigger expensive layout recalculations\n3. **Use will-change sparingly** — Only when you know an element will animate, and remove it after\n4. **Keep animations under 300ms** — Longer animations feel sluggish for UI transitions\n5. **Use requestAnimationFrame for JS animations** — Better timing than setTimeout/setInterval` });
+  } else {
+    s.push({ type: "text", content: `## Common Patterns\n\nMaster these patterns for ${chName}:\n\n1. **Build reusable utilities** — Small, focused CSS classes\n2. **Use consistent naming** — BEM, SMACSS, or utility-first (Tailwind)\n3. **Limit specificity depth** — Avoid deeply nested selectors\n4. **Comment your CSS** — Document why, not what (the code says what)\n5. **Regular audits** — Remove unused CSS, check for redundant rules` });
+  }
 
   if (idx % 2 === 0) {
     s.push({ type: "list", ordered: false, items: [
-      `${chName} controls the visual layer of web pages`,
-      "CSS specificity determines which rule takes priority",
-      "Use CSS custom properties for consistent theming",
-      "Responsive design requires media queries and flexible units",
-      "Modern CSS eliminates the need for preprocessors in many cases",
+      `${chName} is essential for modern web design`,
+      "Master the cascade and specificity rules early",
+      "Learn Flexbox before Grid (conceptual stepping stone)",
+      "Use CSS custom properties for maintainable themes",
+      "Test responsive layouts on real devices, not just DevTools",
     ]});
   } else {
-    s.push({ type: "comparison", title: `${chName} — Property Comparison`, headers: ["Property", "Purpose", "Example"], rows: [
-      ["display", "Layout behavior", "flex, grid, block, inline"],
-      ["position", "Positioning scheme", "relative, absolute, fixed"],
-      ["overflow", "Content overflow", "hidden, scroll, auto"],
-      ["visibility", "Element visibility", "visible, hidden"],
+    s.push({ type: "comparison", title: `${chName} — Modern vs Classic Approach`, headers: ["Aspect", "Modern Approach", "Classic Approach"], rows: [
+      ["Layout", "Flexbox + Grid", "Float + Clearfix"],
+      ["Responsive", "Container Queries + Clamp()", "Media queries only"],
+      ["Variables", "Custom Properties", "Preprocessor variables (Sass)"],
+      ["Colors", "OKLCH / color-mix()", "Hex codes only"],
+      ["Theming", "Light-Dark() / prefers-color-scheme", "Separate stylesheets"],
     ]});
   }
 
-  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** Overriding styles with !important creates maintenance headaches. Instead, understand specificity and use it to your advantage. A clean selector hierarchy is far more maintainable.` });
+  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** ${["layout"].includes(cat) ? "Setting width and padding without box-sizing: border-box causes unexpected overflow. Always set box-sizing: border-box on all elements — it makes width/height include padding and border." : "Forgetting the cascade — a style may not apply because a more specific selector overrides it. Check DevTools if your CSS isn't taking effect."}` });
 
-  s.push({ type: "text", content: `## Browser Compatibility\n\nWhen using ${chName}, consider:\n\n- Check caniuse.com for feature support\n- Use vendor prefixes for experimental features\n- Provide fallbacks for older browsers\n- Test on multiple browsers during development\n- Use feature queries (@supports) for progressive enhancement` });
+  s.push({ type: "text", content: `## Best Practices\n\nFollow these guidelines for ${chName}:\n\n1. **Use meaningful class names** — Follow BEM or similar naming conventions\n2. **Minimize specificity battles** — Avoid ID selectors and !important\n3. **Use CSS custom properties** — Create a design token system\n4. **Mobile-first** — Write base styles for mobile, enhance for larger screens\n5. **Audit your CSS** — Remove unused styles, use CSS stats tools` });
 
-  s.push({ type: "callout", style: "important", content: `📌 **Remember:** CSS is designed to be resilient. When a browser encounters a property it doesn't understand, it simply ignores it — your page won't break, it just won't get that specific enhancement. This makes CSS inherently forward-compatible.` });
+  // Topic-specific resources
+  if (["layout"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **CSS Grid Garden** — Interactive game to learn CSS Grid\n2. **Flexbox Froggy** — Interactive game to learn Flexbox\n3. **MDN: CSS Layout** — Comprehensive layout documentation\n4. **CSS-Tricks: A Complete Guide to Grid** — The definitive Grid reference\n5. **Layout Land (YouTube)** — Jen Simmons' layout tutorial series` });
+  } else if (["animations"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN: CSS Animations** — The official guide\n2. **Animista** — Pre-made CSS animation library\n3. **CSS-Tricks: Animation Performance** — Best practices for smooth animations\n4. **Google Web Dev: Animations Guide** — Performance-focused animation advice\n5. **Cubic Bezier Generator** — Fine-tune your animation timing functions` });
+  } else {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN Web Docs: CSS** — The definitive CSS reference\n2. **CSS-Tricks** — Practical guides, tips, and complete references\n3. **web.dev (Google): Learn CSS** — Structured CSS learning path\n4. **Smashing Magazine** — In-depth CSS articles and techniques\n5. **CanIUse.com** — Check CSS feature browser support` });
+  }
+
+  s.push({ type: "callout", style: "important", content: `📌 **Remember:** CSS is designed to be forgiving — invalid rules are silently ignored, not crashed. This makes it easy to experiment, but also easy to introduce invisible bugs. Always check your styles in multiple browsers and use linting tools like Stylelint.` });
 
   return s;
 }
 
 function genJsSections(chName, idx) {
-  const clean = chName.replace(/^JS\s+/i, "").toLowerCase();
+  const cat = jsCategory(chName);
   const s = [];
+  const descs = {
+    basics: "the foundational building blocks of JavaScript — variables, types, operators, and core syntax",
+    "control-flow": "how JavaScript controls program execution with conditionals and loops",
+    functions: "how JavaScript functions work — from declarations to closures, scope to context",
+    objects: "JavaScript's object model — prototypes, classes, collections, and inheritance",
+    advanced: "advanced JavaScript features — modules, error handling, proxies, generators, and symbol",
+    async: "asynchronous JavaScript — callbacks, promises, async/await, and the event loop",
+    dom: "how JavaScript interacts with the browser's Document Object Model",
+    "web-apis": "browser APIs accessible from JavaScript — fetch, storage, geolocation, canvas, and more",
+    tooling: "JavaScript tooling, testing, performance, and best practices for production code",
+    general: "essential JavaScript knowledge",
+  };
+  const desc = descs[cat] || "JavaScript concepts";
 
-  s.push({ type: "text", content: `## Understanding ${chName}\n\n${chName} is a core JavaScript concept that every developer must understand to write effective code. JavaScript is a dynamic, loosely-typed language that runs in the browser, on servers (Node.js), and increasingly on embedded devices.\n\nThis chapter covers the essential patterns and practices for working with ${chName} effectively in real-world projects.` });
+  s.push({ type: "text", content: `## Understanding ${chName}\n\n${chName} is ${desc}. JavaScript is a dynamic, loosely-typed language that runs in the browser, on servers (Node.js), and increasingly on embedded devices.\n\nModern JavaScript (ES6+) offers cleaner syntax and more predictable behavior. This chapter covers essential patterns and practices for working with ${chName} effectively.` });
   s.push({ type: "key-points", points: [
     `${chName} is fundamental to JavaScript development`,
     `Understanding it helps prevent common bugs and errors`,
@@ -286,24 +575,52 @@ function genJsSections(chName, idx) {
     `Master this to write more maintainable and performant code`,
   ]});
 
-  if (idx % 2 === 0) {
-    s.push({ type: "code", language: "javascript", caption: `${chName} — Basic example:`, content: `// ${chName} — Getting Started\nfunction demonstrateConcept() {\n  const data = ["learn", "code", "build"];\n  \n  // Modern array methods\n  const transformed = data\n    .map(item => item.toUpperCase())\n    .filter(item => item.length > 3);\n  \n  console.log("Result:", transformed);\n  // Output: ["LEARN", "CODE", "BUILD"]\n}\n\ndemonstrateConcept();` });
+  // Topic-specific code examples
+  if (["basics"].includes(cat)) {
+    s.push({ type: "code", language: "javascript", caption: `${chName} — Variables and types:`, content: `// ${chName} — Modern JavaScript Basics\n'use strict';\n\n// Prefer const by default, let when you need to reassign\nconst name = "JavaScript";\nlet version = 2026;\n\n// Primitive types\nconst str = "Hello";          // string\nconst num = 42;               // number\nconst bool = true;            // boolean\nconst nothing = null;         // null\nconst notDefined = undefined; // undefined\nconst sym = Symbol("id");     // symbol\nconst big = 9007199254740991n; // bigint\n\n// typeof operator\nconsole.log(typeof str);     // "string"\nconsole.log(typeof num);     // "number"\nconsole.log(typeof bool);    // "boolean"\nconsole.log(typeof null);    // "object" (legacy bug!)` });
+  } else if (["control-flow"].includes(cat)) {
+    s.push({ type: "code", language: "javascript", caption: `${chName} — Control flow:`, content: `// ${chName} — Control Flow Patterns\n\n// 1. Modern if/else with early returns\nfunction getDiscount(user) {\n  if (!user?.isActive) return 0;\n  if (user.loyaltyPoints > 1000) return 0.25;\n  if (user.loyaltyPoints > 500) return 0.15;\n  return 0.05;\n}\n\n// 2. For-of loop (ES6) — clean and readable\nconst items = ["a", "b", "c"];\nfor (const item of items) {\n  console.log(item);\n}\n\n// 3. Array iteration with forEach\nitems.forEach((item, index) => {\n  console.log(\`\${index}: \${item}\`);\n});\n\n// 4. Short-circuit evaluation\nconst name = user?.name ?? "Anonymous";` });
+  } else if (["functions"].includes(cat)) {
+    s.push({ type: "code", language: "javascript", caption: `${chName} — Functions and closures:`, content: `// ${chName} — Functions in Depth\n\n// Arrow function — concise, no own 'this'\nconst double = (n) => n * 2;\n\n// Default parameters\nfunction greet(name = "Guest") {\n  return \`Hello, \${name}!\`;\n}\n\n// Rest parameters + arrow\nconst sum = (...nums) => nums.reduce((a, b) => a + b, 0);\n\n// Closure — function remembers its scope\nfunction createCounter() {\n  let count = 0;\n  return () => ++count;\n}\nconst counter = createCounter();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2\n\n// IIFE — immediately invoked\nconst config = (() => {\n  const secret = "not exported";\n  return { mode: "production" };\n})();` });
+  } else if (["objects"].includes(cat)) {
+    s.push({ type: "code", language: "javascript", caption: `${chName} — Modern class syntax:`, content: `// ${chName} — Modern JavaScript Classes\nclass User {\n  #password; // private field\n  static #count = 0;\n\n  constructor(name, email) {\n    this.name = name;\n    this.email = email;\n    this.#password = null;\n    User.#count++;\n  }\n\n  setPassword(pw) {\n    this.#password = pw;\n  }\n\n  get hasPassword() {\n    return this.#password !== null;\n  }\n\n  static get count() {\n    return User.#count;\n  }\n}\n\nclass Admin extends User {\n  constructor(name, email, role) {\n    super(name, email);\n    this.role = role;\n  }\n}\n\nconst admin = new Admin("Alice", "alice@x.com", "admin");` });
+  } else if (["async"].includes(cat)) {
+    s.push({ type: "code", language: "javascript", caption: `${chName} — Async/await pattern:`, content: `// ${chName} — Modern Async Patterns\n\n// Sequential with error handling\nasync function fetchUserData(userId) {\n  try {\n    const response = await fetch(\`/api/users/\${userId}\`);\n    if (!response.ok) throw new Error(\`HTTP \${response.status}\`);\n    return await response.json();\n  } catch (error) {\n    console.error("Fetch failed:", error);\n    throw new Error(\"USER_FETCH_FAILED\");\n  }\n}\n\n// Parallel with Promise.all\nasync function loadDashboard(userId) {\n  const [user, posts, notifications] = await Promise.all([\n    fetchUserData(userId),\n    fetch(\`/api/users/\${userId}/posts\`).then(r => r.json()),\n    fetch(\`/api/users/\${userId}/notifications\`).then(r => r.json()),\n  ]);\n  return { user, posts, notifications };\n}` });
+  } else if (["dom", "web-apis"].includes(cat)) {
+    s.push({ type: "code", language: "javascript", caption: `${chName} — DOM and browser APIs:`, content: `// ${chName} — Browser API Pattern\n\n// Event delegation — handle events efficiently\ndocument.querySelector('.list')?.addEventListener('click', (e) => {\n  const item = e.target.closest('.list-item');\n  if (!item) return;\n  console.log('Clicked:', item.dataset.id);\n});\n\n// Intersection Observer — lazy loading\nconst observer = new IntersectionObserver((entries) => {\n  for (const entry of entries) {\n    if (entry.isIntersecting) {\n      entry.target.src = entry.target.dataset.src;\n      observer.unobserve(entry.target);\n    }\n  }\n});\ndocument.querySelectorAll('[data-src]').forEach(\n  img => observer.observe(img)\n);` });
   } else {
-    s.push({ type: "code", language: "javascript", caption: `${chName} — Practical usage:`, content: `// ${chName} — Real-World Pattern\nclass ConceptManager {\n  #privateData = new Map();\n  \n  constructor(options = {}) {\n    this.options = options;\n  }\n  \n  async initialize() {\n    const response = await fetch('/api/data');\n    const data = await response.json();\n    this.#privateData.set('loaded', data);\n    return this;\n  }\n  \n  get data() {\n    return this.#privateData.get('loaded') ?? [];\n  }\n}\n\nexport { ConceptManager };` });
+    s.push({ type: "code", language: "javascript", caption: `${chName} — Example:`, content: `// ${chName} — Practical Example\nfunction processData(input) {\n  // Guard clause for invalid input\n  if (input == null) {\n    return { success: false, error: "Invalid input" };\n  }\n  \n  try {\n    const result = transform(input);\n    return { success: true, data: result };\n  } catch (error) {\n    console.error("Processing failed:", error);\n    return { success: false, error: error.message };\n  }\n}\n\n// Usage\nconst output = processData(userInput);\nif (!output.success) {\n  showError(output.error);\n}` });
   }
 
-  s.push({ type: "text", content: `## Deep Dive into ${chName}\n\nJavaScript's treatment of ${chName} has evolved significantly. ES6 introduced cleaner syntax and more intuitive behavior. Let's explore the nuances:\n\n1. **How it works** — The engine processes this in a specific order\n2. **Edge cases** — Understanding the boundaries prevents bugs\n3. **Performance** — Some approaches are faster than others\n4. **Best practices** — Industry-standard patterns for production code` });
+  s.push({ type: "text", content: `## Deep Dive into ${chName}\n\n${desc.charAt(0).toUpperCase() + desc.slice(1)}. JavaScript's treatment of this has evolved significantly — ES6 introduced cleaner syntax and more intuitive behavior.\n\nKey aspects to understand:\n1. **How it works** — The engine processes this in a specific order\n2. **Edge cases** — Understanding the boundaries prevents bugs\n3. **Performance** — Some approaches are faster than others\n4. **Best practices** — Industry-standard patterns for production code` });
 
-  s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use the browser's debugger (F12 → Sources tab) to step through JavaScript code line by line. Set breakpoints, inspect variables, and watch the call stack. This is the single most effective way to understand how your code actually executes.` });
+  if (["basics", "control-flow", "functions"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use the browser's debugger (F12 → Sources tab) to step through JavaScript code line by line. Set breakpoints, inspect variables, and watch the call stack. This is the single most effective way to understand how your code actually executes.` });
+  } else if (["async"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Always handle promise rejections. Unhandled rejections crash Node.js processes and create silent failures in browsers. Use try/catch around await, and add a global unhandledrejection handler as a safety net.` });
+  } else if (["dom", "web-apis"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use event delegation instead of attaching listeners to individual elements. Attach one listener to a parent and use event.target to determine which child was clicked. This works for dynamically added elements and uses less memory.` });
+  } else {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Write small, pure functions that do one thing well. Test them in isolation. Use functional composition (map, filter, reduce) over imperative loops for clearer, more predictable code.` });
+  }
 
-  if (idx % 3 === 0) {
-    s.push({ type: "comparison", title: `${chName} — Approach Comparison`, headers: ["Aspect", "Old Way (ES5)", "Modern Way (ES6+)"], rows: [
+  if (["basics", "control-flow"].includes(cat)) {
+    s.push({ type: "comparison", title: `${chName} — Old vs Modern JavaScript`, headers: ["Aspect", "Old Way (ES5)", "Modern Way (ES6+)"], rows: [
       ["Declaration", "var x = 1", "let/const x = 1"],
       ["Function", "function() {}", "() => {}"],
       ["String concat", "'a' + b", "\`a \${b}\`"],
       ["Object clone", "Object.assign", "{...obj}"],
+      ["Array copy", "arr.slice()", "[...arr]"],
     ]});
-  } else if (idx % 3 === 1) {
+  } else if (["objects", "advanced"].includes(cat)) {
+    s.push({ type: "comparison", title: `${chName} — Approach Comparison`, headers: ["Aspect", "Class-based", "Prototype-based"], rows: [
+      ["Definition", "class Foo {}", "function Foo() {}"],
+      ["Inheritance", "extends", "Object.create()"],
+      ["Method", "method() {}", "Foo.prototype.method"],
+      ["Private", "#field", "WeakMap / closure"],
+      ["Static", "static method()", "Foo.method = function"],
+    ]});
+  } else {
     s.push({ type: "list", ordered: false, items: [
       `${chName} is essential for all JavaScript developers`,
       "Modern syntax reduces boilerplate and bugs",
@@ -311,55 +628,92 @@ function genJsSections(chName, idx) {
       "Avoid var in modern code — it has confusing scoping rules",
       "Use === instead of == to avoid type coercion surprises",
     ]});
-  } else {
-    s.push({ type: "exercise", title: `${chName} Practice`, description: "Apply what you've learned:", instructions: [
-      "Write a function that demonstrates this concept",
-      "Add appropriate error handling",
-      "Test with both expected and edge case inputs",
-      "Refactor to use modern JavaScript syntax",
-    ], hint: "Start simple, then add sophistication gradually." });
   }
 
-  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** JavaScript's type coercion can lead to surprising results. Always use strict equality (===) and explicit type conversion (Number(), String(), Boolean()) for predictable behavior.` });
+  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** ${["async"].includes(cat) ? "Forgetting that .forEach() does NOT work with async functions — it fires all callbacks concurrently without waiting. Use a for...of loop with await for sequential async execution, or Promise.all() for parallel." : "JavaScript's type coercion can lead to surprising results. Always use strict equality (===) and explicit type conversion (Number(), String(), Boolean()) for predictable behavior."}` });
 
-  s.push({ type: "text", content: `## Debugging Tips\n\nWhen troubleshooting ${chName}:\n\n1. Use console.log() strategically to track values\n2. Set breakpoints in the browser DevTools\n3. Watch expressions to see how values change\n4. Use the Call Stack to trace execution flow\n5. Check for undefined and null values at each step` });
+  // Topic-specific resources
+  if (["basics", "control-flow", "functions"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN: JavaScript Guide** — The definitive JavaScript reference\n2. **JavaScript: The Good Parts (Crockford)** — Classic book on JS best practices\n3. **Eloquent JavaScript (Haverbeke)** — Free online book with interactive exercises\n4. **JavaScript.info** — Modern, comprehensive JS tutorial\n5. **You Don't Know JS (Simpson)** — Deep dive into JS internals` });
+  } else if (["async"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN: Async JavaScript** — Official async/await and Promise guide\n2. **Jake Archibald: In The Loop** — Definitive talk on the event loop\n3. **JavaScript.info: Async** — Comprehensive async tutorials\n4. **Node.js Event Loop Guide** — Official Node.js event loop documentation\n5. **Promisees (Nicolas Bevacqua)** — Interactive Promise visualization tool` });
+  } else if (["dom", "web-apis"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN: Web APIs** — Complete browser API documentation\n2. **MDN: DOM Manipulation** — DOM traversal and manipulation guide\n3. **web.dev: JavaScript** — Google's modern JS best practices\n4. **CSS-Tricks: JavaScript** — Practical JS tutorials and patterns\n5. **CanIUse.com** — Check browser support for JavaScript features` });
+  } else {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **MDN Web Docs: JavaScript** — The definitive JavaScript reference\n2. **JavaScript.info** — Modern, comprehensive tutorial\n3. **TypeScript Handbook** — For static typing on top of JavaScript\n4. **Node.js Documentation** — Server-side JavaScript reference\n5. **V8 Blog** — JavaScript engine performance insights` });
+  }
 
-  s.push({ type: "callout", style: "important", content: `📌 **Remember:** JavaScript is single-threaded but asynchronous. Understanding the event loop, microtasks, and macrotasks is crucial for predicting execution order with promises, timeouts, and async/await.` });
+  s.push({ type: "callout", style: "important", content: `📌 **Remember:** JavaScript is single-threaded but asynchronous. Understanding the event loop, microtasks, and macrotasks is crucial for predicting execution order with promises, timeouts, and async/await. Always understand the runtime model before writing complex async code.` });
 
   return s;
 }
 
 function genPythonSections(chName, idx) {
-  const clean = chName.replace(/^Python\s+/i, "").toLowerCase();
+  const cat = pythonCategory(chName);
   const s = [];
+  const descs = {
+    basics: "the foundational building blocks of Python — syntax, variables, types, strings, and formatting",
+    "control-flow": "how Python controls program flow with conditionals, loops, and pattern matching",
+    "data-structures": "Python's built-in data structures — lists, tuples, sets, dicts, and the collections module",
+    functions: "how Python functions work — parameters, scope, modules, packages, and type hints",
+    oop: "object-oriented programming in Python — classes, inheritance, magic methods, and dataclasses",
+    "io-errors": "how Python handles errors and file I/O — exceptions, context managers, and serialization",
+    stdlib: "the Python standard library — datetime, OS, sys, regex, logging, threading, and more",
+    advanced: "advanced Python features — decorators, generators, descriptors, metaclasses, and functools",
+    async: "asynchronous Python with asyncio — coroutines, tasks, and async I/O",
+    "testing-data": "testing, data science libraries, and best practices in Python",
+    general: "essential Python knowledge",
+  };
+  const desc = descs[cat] || "Python concepts";
 
-  s.push({ type: "text", content: `## Understanding ${chName}\n\n${chName} is an important Python concept that helps you write cleaner, more efficient code. Python emphasizes readability and simplicity, making it an excellent language for beginners and professionals alike.\n\nThis chapter explores ${chName} with practical examples and best practices drawn from real-world Python development.` });
+  s.push({ type: "text", content: `## Understanding ${chName}\n\n${chName} is ${desc}. Python emphasizes readability and simplicity, making it an excellent language for beginners and professionals alike.\n\nPython's design philosophy is captured in the Zen of Python: "Beautiful is better than ugly. Explicit is better than implicit. Simple is better than complex." This chapter explores ${chName} following these principles.` });
   s.push({ type: "key-points", points: [
     `${chName} follows Python's philosophy of simplicity and readability`,
     "Python's design emphasizes clear, explicit code over clever tricks",
     `Mastering ${chName} helps prevent common Python pitfalls`,
-    "Apply these patterns to write more idiomatic Python",
+    "Apply these patterns to write more idiomatic, Pythonic code",
   ]});
 
-  if (idx % 2 === 0) {
-    s.push({ type: "code", language: "python", caption: `${chName} — Basic example:`, content: `# ${chName} — Getting Started\ndef demonstrate_concept(items=None):\n    \"\"\"Demonstrate this Python concept with real data.\"\"\"\n    if items is None:\n        items = ["python", "code", "learn"]\n    \n    # Use list comprehension (Pythonic)\n    result = [item.upper() for item in items if len(item) > 3]\n    \n    print(f"Result: {result}")\n    return result\n\nif __name__ == "__main__":\n    demonstrate_concept()` });
+  // Topic-specific code examples
+  if (["basics"].includes(cat)) {
+    s.push({ type: "code", language: "python", caption: `${chName} — Python basics:`, content: `# ${chName} — Python Fundamentals\n"\"\""${chName} — learning the basics of Python."\"\""\n\n# Variables — no type declaration needed\nname = "Python"\nversion = 3.13\nis_fun = True\n\n# F-strings (Python 3.6+) — clean string formatting\nprint(f"Welcome to {name} {version}!")\n\n# Type conversion\nage = "25"\nage_num = int(age)  # "25" → 25\n\n# Multiple assignment\nx, y, z = 1, 2, 3\n\n# Swap — no temp variable needed\na, b = 10, 20\na, b = b, a  # a=20, b=10\n\n# None is Python's null\nresult = None\nif result is None:\n    print("No result yet")` });
+  } else if (["control-flow"].includes(cat)) {
+    s.push({ type: "code", language: "python", caption: `${chName} — Control flow:`, content: `# ${chName} — Python Control Flow\n\n# 1. If/elif/else with 'in' operator\nstatus = "active"\nif status not in ("active", "pending"):\n    print("Account disabled")\nelif status == "active":\n    print("Welcome back!")\nelse:\n    print("Please verify your email")\n\n# 2. For loop with enumerate\nfruits = ["apple", "banana", "cherry"]\nfor i, fruit in enumerate(fruits, start=1):\n    print(f"{i}. {fruit}")\n\n# 3. While loop with else (runs if no break)\nn = 0\nwhile n < 3:\n    print(n)\n    n += 1\nelse:\n    print("Loop completed normally")\n\n# 4. Match/case (Python 3.10+)\nmatch command.split():\n    case ["quit"]: exit()\n    case ["hello", name]: print(f"Hi, {name}")\n    case _: print("Unknown command")` });
+  } else if (["data-structures"].includes(cat)) {
+    s.push({ type: "code", language: "python", caption: `${chName} — Data structures:`, content: `# ${chName} — Python Data Structures\n\n# List comprehension — Pythonic\nsquares = [x**2 for x in range(10) if x % 2 == 0]\n# [0, 4, 16, 36, 64]\n\n# Dictionary comprehension\nword_lengths = {word: len(word) for word in ["hello", "world"]}\n# {"hello": 5, "world": 5}\n\n# Set operations\na = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\nprint(a | b)  # Union: {1,2,3,4,5,6}\nprint(a & b)  # Intersection: {3,4}\nprint(a - b)  # Difference: {1,2}\n\n# Collections module\nfrom collections import Counter, defaultdict\ntext = "hello world"\nchar_count = Counter(text)\n# Counter({'l': 3, 'o': 2, 'h': 1, 'e': 1, ' ': 1, 'w': 1, 'r': 1, 'd': 1})` });
+  } else if (["functions"].includes(cat)) {
+    s.push({ type: "code", language: "python", caption: `${chName} — Functions:`, content: `# ${chName} — Python Functions\n\n# Type hints (Python 3.5+) — self-documenting code\ndef greet(name: str, greeting: str = "Hello") -> str:\n    \"\"\"Generate a greeting message.\n    \n    Args:\n        name: The person to greet\n        greeting: The greeting to use\n        \n    Returns:\n        The formatted greeting string\n    \"\"\"\n    return f"{greeting}, {name}!\"\n\n# *args — variable positional arguments\ndef sum_all(*args: int) -> int:\n    return sum(args)\n\n# **kwargs — variable keyword arguments\ndef create_user(**kwargs: str) -> dict:\n    return kwargs\n\n# Lambda — anonymous function\ndouble = lambda x: x * 2\n\n# The __name__ guard\nif __name__ == "__main__":\n    print(greet("World"))` });
+  } else if (["oop"].includes(cat)) {
+    s.push({ type: "code", language: "python", caption: `${chName} — Python OOP:`, content: `# ${chName} — Modern Python OOP\n\nfrom dataclasses import dataclass\nfrom abc import ABC, abstractmethod\n\n@dataclass\nclass Product:\n    \"\"\"Product with automatic __init__, __repr__, __eq__.\"\"\"\n    name: str\n    price: float\n    quantity: int = 0\n    \n    @property\n    def total_value(self) -> float:\n        return self.price * self.quantity\n    \n    def __str__(self) -> str:\n        return f"{self.name}: \${self.price:.2f} ({self.quantity})"\n\nclass DiscountPolicy(ABC):\n    @abstractmethod\n    def apply(self, price: float) -> float:\n        pass\n\nclass SeasonalDiscount(DiscountPolicy):\n    def apply(self, price: float) -> float:\n        return price * 0.9  # 10% off\n\nproduct = Product("Widget", 19.99, 5)\ndiscount = SeasonalDiscount()\nprint(f"Total: \${discount.apply(product.total_value):.2f}")` });
+  } else if (["io-errors"].includes(cat)) {
+    s.push({ type: "code", language: "python", caption: `${chName} — Error handling and files:`, content: `# ${chName} — Python I/O and Errors\n\n# Context manager (with statement) — auto-closes file\nwith open("data.txt", "r", encoding="utf-8") as f:\n    content = f.read()\n    \n# Write to file\nwith open("output.txt", "w", encoding="utf-8") as f:\n    f.write("Hello, World!\\n")\n\n# Custom exception\nclass ValidationError(Exception):\n    \"\"\"Raised when data validation fails.\"\"\"\n    def __init__(self, field: str, message: str):\n        self.field = field\n        self.message = message\n        super().__init__(f"{field}: {message}")\n\n# Try/except/else/finally\ntry:\n    user_data = load_user(user_id)\nexcept FileNotFoundError:\n    print("User file not found")\nexcept ValidationError as e:\n    print(f"Validation failed for {e.field}: {e.message}")\nelse:\n    print(f"Loaded user: {user_data.name}")\nfinally:\n    cleanup_resources()` });
+  } else if (["async"].includes(cat)) {
+    s.push({ type: "code", language: "python", caption: `${chName} — Async Python:`, content: `# ${chName} — Async/Await in Python\nimport asyncio\nimport aiohttp\n\nasync def fetch_url(session: aiohttp.ClientSession, url: str) -> dict:\n    \"\"\"Fetch a URL asynchronously.\"\"\"\n    async with session.get(url) as response:\n        return await response.json()\n\nasync def main():\n    urls = [\n        "https://api.example.com/users",\n        "https://api.example.com/posts",\n    ]\n    async with aiohttp.ClientSession() as session:\n        tasks = [fetch_url(session, url) for url in urls]\n        results = await asyncio.gather(*tasks)\n        for result in results:\n            print(f"Fetched {len(result)} items")\n\n# Python 3.7+ — simple entry point\nasyncio.run(main())` });
   } else {
-    s.push({ type: "code", language: "python", caption: `${chName} — Advanced usage:`, content: `# ${chName} — Production Pattern\nfrom dataclasses import dataclass\nfrom typing import Optional, List\n\n@dataclass\nclass DataProcessor:\n    name: str\n    items: List[str]\n    \n    def __post_init__(self):\n        self.processed = False\n    \n    def process(self) -> List[str]:\n        \"\"\"Process items with proper error handling.\"\"\"\n        try:\n            result = [item.strip().lower() for item in self.items]\n            self.processed = True\n            return result\n        except Exception as e:\n            print(f"Error processing: {e}")\n            return []` });
+    s.push({ type: "code", language: "python", caption: `${chName} — Example:`, content: `# ${chName} — Python Example\n\"\"\"Demonstration of ${chName} in Python.\"\"\"\n\ndef process_items(items: list) -> dict:\n    \"\"\"Process a list of items and return statistics.\"\"\"\n    if not items:\n        return {"count": 0, "unique": 0, "summary": "empty"}\n    \n    return {\n        "count": len(items),\n        "unique": len(set(items)),\n        "summary": f"Processed {len(items)} items"\n    }\n\n# Usage\nresult = process_items(["a", "b", "a", "c"])\nprint(result)  # {"count": 4, "unique": 3, ...}` });
   }
 
-  s.push({ type: "text", content: `## Pythonic Approach to ${chName}\n\nPython has specific idioms for ${chName} that experienced Python developers follow:\n\n1. **Explicit over implicit** — Code should be clear and obvious\n2. **Simple over complex** — The simplest solution is usually the best\n3. **Flat over nested** — Prefer flat structure to deep nesting\n4. **Use built-in functions** — Python's standard library is comprehensive\n5. **Follow PEP 8** — Consistent style improves readability` });
+  s.push({ type: "text", content: `## Pythonic Approach to ${chName}\n\n${desc.charAt(0).toUpperCase() + desc.slice(1)}. Python has specific idioms for this that experienced Python developers follow:\n\n1. **Explicit over implicit** — Code should be clear and obvious\n2. **Simple over complex** — The simplest solution is usually the best\n3. **Flat over nested** — Prefer flat structure to deep nesting\n4. **Use built-in functions** — Python's standard library is comprehensive\n5. **Follow PEP 8** — Consistent style improves readability` });
 
-  s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use Python's built-in help() function and docstrings to document your code. Run 'python -m pdb script.py' for the built-in debugger, or use breakpoint() (Python 3.7+) to set debug breakpoints.` });
-
-  if (idx % 2 === 0) {
-    s.push({ type: "list", ordered: false, items: [
-      `Python's ${chName} follows the principle of least surprise`,
-      "Use type hints for better code documentation and IDE support",
-      "Prefer list comprehensions over map/filter for readability",
-      "Context managers (with statements) handle resources cleanly",
-      "Write tests with pytest for reliable, maintainable code",
-    ]});
+  if (["basics", "control-flow", "data-structures"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use the Python REPL (just type 'python' in your terminal) to experiment with small code snippets. It's the fastest way to test an idea or understand how a function works. Use help() on any object to see its documentation.` });
+  } else if (["oop", "advanced"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Prefer @dataclass for simple data containers — it auto-generates __init__, __repr__, __eq__, and __hash__. Only write a full class when you need methods, inheritance, or behavior beyond data storage.` });
+  } else if (["async"].includes(cat)) {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Not everything needs to be async. Use async I/O for network and file operations. CPU-bound work should use multiprocessing or threading. Mixing sync and async requires careful design — use asyncio.to_thread() for sync functions in async code.` });
   } else {
+    s.push({ type: "callout", style: "tip", content: `💡 **Pro Tip:** Use breakpoint() (Python 3.7+) to set a debugger breakpoint. It drops you into pdb (Python Debugger) where you can inspect variables, execute code, and step through your program interactively.` });
+  }
+
+  if (["basics", "control-flow"].includes(cat)) {
+    s.push({ type: "comparison", title: `${chName} — Python Idioms`, headers: ["Anti-Pattern", "Pythonic Way", "Why"], rows: [
+      ["for i in range(len(list))", "for item in list:", "Direct iteration is cleaner"],
+      ["if x == True:", "if x:", "Implicit boolean check"],
+      ["if len(list) > 0:", "if list:", "Empty collections are falsy"],
+      ["x = x + 1", "x += 1", "Augmented assignment"],
+      ["s = 'a' + ',' + 'b'", "s = ','.join(['a','b'])", "String join is faster"],
+    ]});
+  } else if (["data-structures", "functions"].includes(cat)) {
     s.push({ type: "comparison", title: `${chName} — Python vs Other Languages`, headers: ["Feature", "Python", "JavaScript/Java"], rows: [
       ["Block scope", "Indentation", "Braces {}"],
       ["Type system", "Dynamic + type hints", "Static or dynamic"],
@@ -367,13 +721,28 @@ function genPythonSections(chName, idx) {
       ["Dictionary", "dict", "Map/HashMap"],
       ["Error handling", "try/except", "try/catch"],
     ]});
+  } else {
+    s.push({ type: "list", ordered: false, items: [
+      `Python's ${chName} follows the principle of least surprise`,
+      "Use type hints for better code documentation and IDE support",
+      "Prefer list comprehensions over map/filter for readability",
+      "Context managers (with statements) handle resources cleanly",
+      "Write tests with pytest for reliable, maintainable code",
+    ]});
   }
 
-  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** Mutable default arguments in Python functions can cause surprising behavior. Always use None as the default for mutable parameters and create a new instance inside the function body.` });
+  s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** ${["io-errors"].includes(cat) ? "Forgetting to specify encoding='utf-8' when opening files can cause UnicodeDecodeErrors on systems with different default encodings (like Windows). Always specify encoding explicitly." : "Mutable default arguments in Python functions can cause surprising behavior. Always use None as the default for mutable parameters and create a new instance inside the function body."}` });
 
-  s.push({ type: "text", content: `## Testing Your Code\n\nPython provides excellent testing tools:\n\n1. **pytest** — Modern testing framework with minimal boilerplate\n2. **unittest** — Built-in testing library (xUnit style)\n3. **doctest** — Tests embedded in docstrings\n4. **mypy** — Static type checking\n5. **pylint/flake8** — Code quality and style analysis` });
+  // Topic-specific resources
+  if (["basics", "control-flow", "data-structures"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **Python.org Official Tutorial** — The official Python tutorial\n2. **Automate the Boring Stuff with Python (Sweigart)** — Free book for beginners\n3. **Real Python** — High-quality Python tutorials and articles\n4. **Python Crash Course (Matthes)** — Project-based introduction\n5. **Pythontutor.com** — Visualize Python code execution step-by-step` });
+  } else if (["oop", "advanced"].includes(cat)) {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **Fluent Python (Ramalho)** — The definitive guide to idiomatic Python\n2. **Python Cookbook (Beazley)** — Recipes for modern Python\n3. **Effective Python (Slatkin)** — 90 specific ways to write better Python\n4. **Real Python: OOP** — Python OOP tutorials and guides\n5. **PyCon Talks (YouTube)** — Conference talks from Python experts` });
+  } else {
+    s.push({ type: "text", content: `## Recommended Resources\n\n1. **Python.org Documentation** — The official Python docs\n2. **Real Python** — Practical Python tutorials for all levels\n3. **PyPI (Python Package Index)** — Find packages for any task\n4. **PEP 8 — Style Guide** — Python's official style guidelines\n5. **Awesome Python (GitHub)** — Curated list of Python frameworks and tools` });
+  }
 
-  s.push({ type: "callout", style: "important", content: `📌 **Remember:** Python's "batteries included" philosophy means the standard library has tools for most common tasks. Before installing a third-party package, check if the standard library already provides what you need.` });
+  s.push({ type: "callout", style: "important", content: `📌 **Remember:** Python's "batteries included" philosophy means the standard library has tools for most common tasks. Before installing a third-party package, check if the standard library already provides what you need. Write simple, readable code and let Python's clarity speak for itself.` });
 
   return s;
 }
@@ -398,6 +767,67 @@ function csCategory(chName) {
   if (lc.includes("constraint satisfaction") || lc.includes("game theory") || lc.includes("minimax") || lc.includes("supervised") || lc.includes("neural") || lc.includes("deep learning") || lc.includes("unsupervised") || lc.includes("clustering") || lc.includes("machine learning")) return "ai";
   if (lc.includes("encryption") || lc.includes("aes") || lc.includes("des") || lc.includes("rsa") || lc.includes("ecc") || lc.includes("hash function") || lc.includes("digital sign") || lc.includes("authentic") || lc.includes("authoriz") || lc.includes("owasp") || lc.includes("zero-knowledge") || lc.includes("blockchain")) return "sec";
   if (lc.includes("distributed") || lc.includes("clock") || lc.includes("ordering") || lc.includes("consensus") || lc.includes("paxos") || lc.includes("raft") || lc.includes("mapreduce") || lc.includes("big data") || lc.includes("replicat") || lc.includes("microservice") || lc.includes("rpc") || lc.includes("serverless") || lc.includes("cloud")) return "dist";
+  return "general";
+}
+
+// ─── HTML Topic Categorisation ────────────────────────────────
+function htmlCategory(chName) {
+  const lc = chName.toLowerCase();
+  if (lc.includes("intro") || lc.includes("editor") || lc.includes("what is") || lc.includes("syntax") || lc.includes("document")) return "fundamentals";
+  if (lc.includes("element") || lc.includes("tag") || lc.includes("heading") || lc.includes("paragraph") || lc.includes("format") || lc.includes("quot") || lc.includes("comment") || lc.includes("color") || lc.includes("link") || lc.includes("image") || lc.includes("attrib")) return "elements";
+  if (lc.includes("list") || lc.includes("table") || lc.includes("div") || lc.includes("span") || lc.includes("block") || lc.includes("inline") || lc.includes("class") || lc.includes("id") || lc.includes("iframe") || lc.includes("layout") || lc.includes("semantic") || lc.includes("head") || lc.includes("meta") || lc.includes("path") || lc.includes("style guide")) return "structure";
+  if (lc.includes("entity") || lc.includes("symbol") || lc.includes("emoji") || lc.includes("charset") || lc.includes("url encod") || lc.includes("lang") || lc.includes("bidirectional") || lc.includes("code") || lc.includes("pre")) return "encoding";
+  if (lc.includes("form") || lc.includes("input") || lc.includes("select") || lc.includes("textarea") || lc.includes("valid") || lc.includes("fieldset") || lc.includes("legend") || lc.includes("datalist") || lc.includes("autocomplete") || lc.includes("button")) return "forms";
+  if (lc.includes("canvas") || lc.includes("svg") || lc.includes("mathml") || lc.includes("image map") || lc.includes("graphic")) return "graphics";
+  if (lc.includes("video") || lc.includes("audio") || lc.includes("youtube") || lc.includes("embed") || lc.includes("picture") || lc.includes("source") || lc.includes("track") || lc.includes("media")) return "media";
+  if (lc.includes("drag") || lc.includes("web storage") || lc.includes("worker") || lc.includes("sse") || lc.includes("geoloc") || lc.includes("history api") || lc.includes("notif") || lc.includes("clipboard") || lc.includes("fullscreen") || lc.includes("speech")) return "apis";
+  if (lc.includes("template") || lc.includes("slot") || lc.includes("web component") || lc.includes("shadow") || lc.includes("custom element") || lc.includes("microdata") || lc.includes("aria") || lc.includes("accessib") || lc.includes("seo") || lc.includes("perform") || lc.includes("pwa") || lc.includes("manifest") || lc.includes("dialog") || lc.includes("details") || lc.includes("popover") || lc.includes("search")) return "modern";
+  if (lc.includes("secur") || lc.includes("xss") || lc.includes("csp") || lc.includes("cors") || lc.includes("testing") || lc.includes("valid") || lc.includes("email") || lc.includes("pug") || lc.includes("hml") || lc.includes("future") || lc.includes("best practice") || lc.includes("what new")) return "mastery";
+  return "general";
+}
+
+// ─── CSS Topic Categorisation ─────────────────────────────────
+function cssCategory(chName) {
+  const lc = chName.toLowerCase();
+  if (lc.includes("intro") || lc.includes("syntax") || lc.includes("selector") || lc.includes("how to") || lc.includes("comment") || lc.includes("color") || lc.includes("background") || lc.includes("border") || lc.includes("margin") || lc.includes("padding") || lc.includes("height") || lc.includes("width") || lc.includes("box model") || lc.includes("box sizing") || lc.includes("outline")) return "fundamentals";
+  if (lc.includes("text") || lc.includes("font") || lc.includes("line height") || lc.includes("white space") || lc.includes("word") || lc.includes("hyphen") || lc.includes("text shadow") || lc.includes("icon") || lc.includes("column") || lc.includes("web safe")) return "typography";
+  if (lc.includes("display") || lc.includes("position") || lc.includes("z-index") || lc.includes("overflow") || lc.includes("float") || lc.includes("flexbox") || lc.includes("flex") || lc.includes("grid") || lc.includes("multi-column") || lc.includes("subgrid")) return "layout";
+  if (lc.includes("combinator") || lc.includes("attribute select") || lc.includes("pseudo-class") || lc.includes("pseudo-element") || lc.includes("opacity") || lc.includes("gradient") || lc.includes("shadow") || lc.includes("filter") || lc.includes("backdrop") || lc.includes("mask") || lc.includes("clip")) return "effects";
+  if (lc.includes("unit") || lc.includes("specificity") || lc.includes("cascade") || lc.includes("important") || lc.includes("inherit") || lc.includes("custom propert") || lc.includes("@property") || lc.includes("calc") || lc.includes("min()") || lc.includes("max()") || lc.includes("clamp") || lc.includes("media qu") || lc.includes("container qu") || lc.includes("viewport") || lc.includes("logical propert") || lc.includes("color function") || lc.includes("nesting")) return "responsive";
+  if (lc.includes("transform") || lc.includes("2d") || lc.includes("3d") || lc.includes("perspective") || lc.includes("transit") || lc.includes("animat") || lc.includes("keyframe") || lc.includes("scroll-driv") || lc.includes("view trans") || lc.includes("will-change") || lc.includes("hardware")) return "animations";
+  if (lc.includes("framework") || lc.includes("preprocessor") || lc.includes("sass") || lc.includes("methodology") || lc.includes("bem") || lc.includes("itcss") || lc.includes("layer") || lc.includes("design system") || lc.includes("theming") || lc.includes("debug") || lc.includes("best practice") || lc.includes("tool")) return "architecture";
+  if (lc.includes("form") || lc.includes("sprite") || lc.includes("counter") || lc.includes("scroll snap") || lc.includes("print") || lc.includes("feature qu") || lc.includes("houdini") || lc.includes("has select")) return "advanced";
+  return "general";
+}
+
+// ─── JavaScript Topic Categorisation ───────────────────────────
+function jsCategory(chName) {
+  const lc = chName.toLowerCase();
+  if (lc.includes("intro") || lc.includes("where to") || lc.includes("output") || lc.includes("syntax") || lc.includes("statement") || lc.includes("comment") || lc.includes("variable") || lc.includes("let") || lc.includes("const") || lc.includes("type") || lc.includes("coer") || lc.includes("number") || lc.includes("string") || lc.includes("boolean") || lc.includes("operator") || lc.includes("precedence")) return "basics";
+  if (lc.includes("if") || lc.includes("switch") || lc.includes("ternary") || lc.includes("for") || lc.includes("while") || lc.includes("loop") || lc.includes("break") || lc.includes("continue") || lc.includes("label")) return "control-flow";
+  if (lc.includes("function") || lc.includes("arrow") || lc.includes("param") || lc.includes("return") || lc.includes("scope") || lc.includes("hoist") || lc.includes("closure") || lc.includes("iife") || lc.includes("context")) return "functions";
+  if (lc.includes("object") || lc.includes("prototype") || lc.includes("class") || lc.includes("extend") || lc.includes("inherit") || lc.includes("super") || lc.includes("getter") || lc.includes("setter") || lc.includes("static") || lc.includes("private") || lc.includes("array") || lc.includes("map") || lc.includes("set") || lc.includes("weak")) return "objects";
+  if (lc.includes("destructur") || lc.includes("spread") || lc.includes("rest") || lc.includes("module") || lc.includes("import") || lc.includes("export") || lc.includes("dynamic") || lc.includes("error") || lc.includes("try") || lc.includes("catch") || lc.includes("finally") || lc.includes("this") || lc.includes("bind") || lc.includes("call") || lc.includes("apply") || lc.includes("json") || lc.includes("symbol") || lc.includes("iter") || lc.includes("generator") || lc.includes("proxy") || lc.includes("reflect") || lc.includes("temporal") || lc.includes("date")) return "advanced";
+  if (lc.includes("callb") || lc.includes("promise") || lc.includes("async") || lc.includes("await") || lc.includes("event loop") || lc.includes("microtask") || lc.includes("macrotask") || lc.includes("settimeout") || lc.includes("setinterval") || lc.includes("timing") || lc.includes("worker") || lc.includes("service worker") || lc.includes("indexeddb")) return "async";
+  if (lc.includes("dom") || lc.includes("select") || lc.includes("manipul") || lc.includes("travers") || lc.includes("attrib") || lc.includes("data") || lc.includes("style") || lc.includes("event") || lc.includes("bubb") || lc.includes("captur") || lc.includes("deleg") || lc.includes("custom event") || lc.includes("window") || lc.includes("document") || lc.includes("navigator") || lc.includes("form event")) return "dom";
+  if (lc.includes("fetch") || lc.includes("localstorage") || lc.includes("session") || lc.includes("cookie") || lc.includes("geo") || lc.includes("canvas 2d") || lc.includes("websocket") || lc.includes("intersect") || lc.includes("mutation") || lc.includes("resize") || lc.includes("clipboard") || lc.includes("file") || lc.includes("history")) return "web-apis";
+  if (lc.includes("debug") || lc.includes("test") || lc.includes("perform") || lc.includes("memory") || lc.includes("secur") || lc.includes("bundle") || lc.includes("lint") || lc.includes("prettier") || lc.includes("typescript") || lc.includes("design pattern") || lc.includes("functional") || lc.includes("best practice") || lc.includes("node") || lc.includes("express") || lc.includes("npm") || lc.includes("env") || lc.includes("future") || lc.includes("ecmascript")) return "tooling";
+  return "general";
+}
+
+// ─── Python Topic Categorisation ───────────────────────────────
+function pythonCategory(chName) {
+  const lc = chName.toLowerCase();
+  if (lc.includes("intro") || lc.includes("install") || lc.includes("setup") || lc.includes("syntax") || lc.includes("indent") || lc.includes("comment") || lc.includes("docstring") || lc.includes("variable") || lc.includes("data type") || lc.includes("number") || lc.includes("math") || lc.includes("cast") || lc.includes("type conver") || lc.includes("slicing") || lc.includes("string method") || lc.includes("f-string") || lc.includes("format")) return "basics";
+  if (lc.includes("bool") || lc.includes("compar") || lc.includes("logical") || lc.includes("if") || lc.includes("elif") || lc.includes("else") || lc.includes("match") || lc.includes("case") || lc.includes("while") || lc.includes("for") || lc.includes("range") || lc.includes("break") || lc.includes("continue")) return "control-flow";
+  if (lc.includes("list") || lc.includes("tuple") || lc.includes("set") || lc.includes("dict") || lc.includes("dictionary") || lc.includes("comprehension") || lc.includes("deque") || lc.includes("counter") || lc.includes("defaultdict") || lc.includes("itertool") || lc.includes("chain") || lc.includes("cycle") || lc.includes("permut")) return "data-structures";
+  if (lc.includes("function") || lc.includes("def") || lc.includes("return") || lc.includes("param") || lc.includes("args") || lc.includes("kwargs") || lc.includes("lambda") || lc.includes("scope") || lc.includes("global") || lc.includes("nonlocal") || lc.includes("module") || lc.includes("import") || lc.includes("package") || lc.includes("pip") || lc.includes("virtual") || lc.includes("requirement") || lc.includes("main") || lc.includes("type hint") || lc.includes("annot")) return "functions";
+  if (lc.includes("class") || lc.includes("object") || lc.includes("init") || lc.includes("constructor") || lc.includes("instance") || lc.includes("method") || lc.includes("static") || lc.includes("property") || lc.includes("inheritance") || lc.includes("super") || lc.includes("abstract") || lc.includes("dataclass") || lc.includes("magic method") || lc.includes("str") || lc.includes("repr") || lc.includes("len") || lc.includes("eq") || lc.includes("hash") || lc.includes("getitem") || lc.includes("operator overload") || lc.includes("polymorph") || lc.includes("duck")) return "oop";
+  if (lc.includes("except") || lc.includes("try") || lc.includes("raise") || lc.includes("assert") || lc.includes("file") || lc.includes("open") || lc.includes("read") || lc.includes("write") || lc.includes("context manage") || lc.includes("with") || lc.includes("json") || lc.includes("csv")) return "io-errors";
+  if (lc.includes("datetime") || lc.includes("os module") || lc.includes("sys") || lc.includes("regex") || lc.includes("regular expression") || lc.includes("standard lib") || lc.includes("random") || lc.includes("argparse") || lc.includes("log") || lc.includes("subprocess") || lc.includes("thread") || lc.includes("multiprocess") || lc.includes("pathlib") || lc.includes("enum") || lc.includes("hashlib") || lc.includes("hmac")) return "stdlib";
+  if (lc.includes("decorator") || lc.includes("generator") || lc.includes("yield") || lc.includes("send") || lc.includes("iter") || lc.includes("descriptor") || lc.includes("metaclass") || lc.includes("slot") || lc.includes("weak") || lc.includes("pickle") || lc.includes("functools") || lc.includes("lru") || lc.includes("wraps") || lc.includes("typing") || lc.includes("generic") || lc.includes("protocol")) return "advanced";
+  if (lc.includes("asyncio") || lc.includes("async") || lc.includes("await") || lc.includes("coroutine") || lc.includes("future") || lc.includes("gather") || lc.includes("aiohttp")) return "async";
+  if (lc.includes("test") || lc.includes("unitest") || lc.includes("pytest") || lc.includes("mock") || lc.includes("numpy") || lc.includes("pandas") || lc.includes("matplotlib") || lc.includes("sqlite") || lc.includes("best practice") || lc.includes("pep 8") || lc.includes("static analysis")) return "testing-data";
   return "general";
 }
 
@@ -526,191 +956,573 @@ function genCsSections(chName, idx) {
 // ─── Exam Question Generators ────────────────────────────────────
 function genHtmlExamQ(chName, prefix, idx) {
   const qs = [];
-  const clean = chName.toLowerCase();
+  const cat = htmlCategory(chName);
 
-  // MCQs about HTML
-  qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
-    question: `What is the primary purpose of ${chName} in HTML?`,
-    options: [
-      { id: "a", text: "To structure and define the meaning of web content" },
-      { id: "b", text: "To style the appearance of web pages" },
-      { id: "c", text: "To add interactivity to web pages" },
-      { id: "d", text: "To manage server-side data" },
-    ], correctAnswer: "a",
-    explanation: "HTML elements define the structure and meaning of content. CSS handles styling, JavaScript handles interactivity, and server-side code manages data." });
-  qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
-    question: `Which of the following is the correct way to use ${clean} in HTML5?`,
-    options: [
-      { id: "a", text: "Using semantic elements that describe content purpose" },
-      { id: "b", text: "Using div elements with descriptive class names" },
-      { id: "c", text: "Using table elements for layout" },
-      { id: "d", text: "Using inline styles directly on elements" },
-    ], correctAnswer: "a",
-    explanation: "HTML5 encourages semantic elements that convey meaning. Divs with classes work but lack inherent semantics. Tables should not be used for layout." });
-  qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
-    question: `The ${clean} element is a block-level element by default.`,
-    correctAnswer: true,
-    explanation: "Most HTML elements have default display values. Block-level elements start on a new line and take full width available." });
-  qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
-    question: `The HTML element used for ${clean} should have the tag name: ___`,
-    correctAnswer: "section", acceptableAnswers: ["div", "article"],
-    explanation: "Semantic elements like <section> or <article> are appropriate for grouping related content." });
+  // ── Fundamentals ──
+  if (cat === "fundamentals") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What does HTML stand for?`,
+      options: [
+        { id: "a", text: "HyperText Markup Language" },
+        { id: "b", text: "HyperText Machine Language" },
+        { id: "c", text: "Home Tool Markup Language" },
+        { id: "d", text: "HyperTool Multi Language" },
+      ], correctAnswer: "a", explanation: "HTML stands for HyperText Markup Language. It is the standard language for creating web pages and web applications." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `Which element defines the document type and HTML version?`,
+      options: [
+        { id: "a", text: "<!DOCTYPE html>" },
+        { id: "b", text: "<html>" },
+        { id: "c", text: "<head>" },
+        { id: "d", text: "<meta>" },
+      ], correctAnswer: "a", explanation: "<!DOCTYPE html> declares the document type and HTML version. It must be the first line in every HTML document." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `HTML elements can have attributes that provide additional information.`,
+      correctAnswer: true, explanation: "HTML attributes provide additional information about elements, such as id, class, src, href, and alt." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `The HTML element that contains metadata about the document is called the ___ element.`,
+      correctAnswer: "head", explanation: "The <head> element contains meta-information about the HTML document, such as title, links, and scripts." });
+  }
+  // ── Elements ──
+  else if (cat === "elements") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which HTML element is used to define a hyperlink?`,
+      options: [
+        { id: "a", text: "<a>" },
+        { id: "b", text: "<link>" },
+        { id: "c", text: "<href>" },
+        { id: "d", text: "<nav>" },
+      ], correctAnswer: "a", explanation: "The <a> (anchor) element defines a hyperlink. The href attribute specifies the URL." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `What is the correct HTML for inserting an image?`,
+      options: [
+        { id: "a", text: '<img src="image.jpg" alt="description">' },
+        { id: "b", text: '<image src="image.jpg">' },
+        { id: "c", text: '<img href="image.jpg">' },
+        { id: "d", text: '<picture src="image.jpg">' },
+      ], correctAnswer: "a", explanation: "The <img> element uses src for the image path and alt for alternative text, which is required for accessibility." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "easy",
+      question: `The HTML element for the largest heading is ___.`,
+      correctAnswer: "h1", explanation: "HTML provides six heading levels (h1 to h6), with h1 being the most important and largest." });
+  }
+  // ── Structure ──
+  else if (cat === "structure") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which HTML5 element is used for navigation links?`,
+      options: [
+        { id: "a", text: "<nav>" },
+        { id: "b", text: "<menu>" },
+        { id: "c", text: "<ul>" },
+        { id: "d", text: "<header>" },
+      ], correctAnswer: "a", explanation: "<nav> is a semantic HTML5 element for navigation links. It helps screen readers and search engines identify site navigation." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `When should you use a <div> instead of a semantic element?`,
+      options: [
+        { id: "a", text: "When no semantic element adequately describes the content" },
+        { id: "b", text: "Always — divs are more flexible" },
+        { id: "c", text: "Never — semantic elements always should be used" },
+        { id: "d", text: "When you need to apply CSS styles" },
+      ], correctAnswer: "a", explanation: "Use a <div> only when no semantic element fits. Always prefer the most descriptive semantic element. CSS can be applied to any element." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `The HTML attribute that uniquely identifies an element is called the ___ attribute.`,
+      correctAnswer: "id", acceptableAnswers: ["id attribute"], explanation: "The id attribute provides a unique identifier for an HTML element. Each id must be unique within the document." });
+  }
+  // ── Forms ──
+  else if (cat === "forms") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which attribute specifies that an input field must be filled out?`,
+      options: [
+        { id: "a", text: "required" },
+        { id: "b", text: "mandatory" },
+        { id: "c", text: "validate" },
+        { id: "d", text: "must" },
+      ], correctAnswer: "a", explanation: "The 'required' attribute specifies that an input field must be filled out before submitting the form." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `The 'placeholder' attribute should replace the <label> element for form accessibility.`,
+      correctAnswer: false, explanation: "Placeholders disappear when users type, making them unsuitable as label replacements. Always use both label (visible) and placeholder (hint)." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "hard",
+      question: `Which input type shows a date picker on mobile browsers?`,
+      options: [
+        { id: "a", text: 'type="date"' },
+        { id: "b", text: 'type="calendar"' },
+        { id: "c", text: 'type="datetime"' },
+        { id: "d", text: 'type="picker"' },
+      ], correctAnswer: "a", explanation: 'type="date" shows a native date picker on supported browsers and triggers the date keyboard on mobile devices.' });
+  }
+  // ── Media / Graphics ──
+  else if (cat === "media" || cat === "graphics") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which HTML element is used to embed video content?`,
+      options: [
+        { id: "a", text: "<video>" },
+        { id: "b", text: "<media>" },
+        { id: "c", text: "<movie>" },
+        { id: "d", text: "<embed>" },
+      ], correctAnswer: "a", explanation: "The <video> element is used to embed video content. It supports multiple source formats via <source> elements." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `The alt attribute on images is optional and mainly used for SEO.`,
+      correctAnswer: false, explanation: "The alt attribute is required for accessibility. Screen readers read it aloud, and it displays when images fail to load. It also helps SEO but its primary purpose is accessibility." });
+  }
+  // ── APIs / Modern ──
+  else if (cat === "apis" || cat === "modern") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "medium",
+      question: `Which API allows web pages to store data in the browser persistently?`,
+      options: [
+        { id: "a", text: "localStorage" },
+        { id: "b", text: "sessionStorage" },
+        { id: "c", text: "cookies" },
+        { id: "d", text: "IndexedDB" },
+      ], correctAnswer: "a", explanation: "localStorage stores data with no expiration. sessionStorage clears when the tab closes. Cookies have size limits and are sent with every request. IndexedDB is for larger structured data." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "hard",
+      question: `What is the purpose of ARIA attributes in HTML?`,
+      options: [
+        { id: "a", text: "To improve accessibility when HTML semantics are insufficient" },
+        { id: "b", text: "To add visual styling to elements" },
+        { id: "c", text: "To improve page loading performance" },
+        { id: "d", text: "To encrypt form data before submission" },
+      ], correctAnswer: "a", explanation: "ARIA (Accessible Rich Internet Applications) attributes supplement HTML semantics to make dynamic content and advanced UI controls accessible to assistive technologies." });
+  }
+  // ── General / Default ──
+  else {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What is the correct HTML for creating a ${chName}?`,
+      options: [
+        { id: "a", text: "Using the appropriate semantic HTML element" },
+        { id: "b", text: "Using a generic <div> with a class name" },
+        { id: "c", text: "Using JavaScript to create the element dynamically" },
+        { id: "d", text: "There is no correct approach in HTML" },
+      ], correctAnswer: "a", explanation: "HTML provides semantic elements for specific purposes. Always use the most appropriate element for the content." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `${chName} is only relevant for visual appearance.`,
+      correctAnswer: false, explanation: "HTML is about structure and meaning, not appearance. Visual presentation is handled by CSS." });
+  }
+
+  // Standard questions for all HTML chapters
   qs.push({ id: `${prefix}-tf2`, type: "true-false", difficulty: "medium",
-    question: `Using semantic HTML elements for ${clean} improves SEO and accessibility.`,
-    correctAnswer: true,
-    explanation: "Semantic HTML helps search engines understand page structure and assists screen readers in navigating content." });
-  qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
-    question: `What is the best practice for implementing ${clean} in a large-scale web application?`,
-    options: [
-      { id: "a", text: "Use semantic elements with ARIA attributes for accessibility" },
-      { id: "b", text: "Use only div elements styled with CSS classes" },
-      { id: "c", text: "Use iframes to isolate content sections" },
-      { id: "d", text: "Avoid using HTML — use JavaScript to render everything" },
-    ], correctAnswer: "a",
-    explanation: "Semantic HTML with ARIA attributes provides the best accessibility, SEO, and maintainability. Div-only approaches lack meaning, iframes hurt performance, and JS-only rendering excludes non-JS clients." });
-
-  // True/False questions
-  qs.push({ id: `${prefix}-tf3`, type: "true-false", difficulty: "easy",
-    question: `${chName} is only relevant for visual appearance.`,
-    correctAnswer: false,
-    explanation: "HTML is about structure and meaning, not appearance. Visual presentation is handled by CSS." });
-
-  // Fill blank
+    question: `Using semantic HTML elements improves SEO and accessibility.`,
+    correctAnswer: true, explanation: "Semantic HTML helps search engines understand page structure and assists screen readers in navigating content." });
   qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "hard",
-    question: `The recommended attribute to add to elements for ${clean} to improve accessibility is: ___`,
-    correctAnswer: "aria-label", acceptableAnswers: ["role", "aria-labelledby"],
-    explanation: "ARIA attributes like aria-label provide additional context for assistive technologies when semantic HTML alone is insufficient." });
+    question: `The attribute used to provide additional context for assistive technologies when semantic HTML is insufficient is called: ___`,
+    correctAnswer: "aria-label", acceptableAnswers: ["role", "aria-labelledby", "aria"],
+    explanation: "ARIA attributes enhance accessibility when native HTML semantics are insufficient." });
 
   return qs;
 }
 
 function genCssExamQ(chName, prefix, idx) {
   const qs = [];
-  const clean = chName.toLowerCase();
+  const cat = cssCategory(chName);
 
-  qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
-    question: `How do you apply ${chName} to an HTML element?`,
-    options: [
-      { id: "a", text: "Using CSS selectors with property-value declarations" },
-      { id: "b", text: "Using HTML attributes on the element" },
-      { id: "c", text: "Using JavaScript to modify the style object" },
-      { id: "d", text: "Using server-side configuration files" },
-    ], correctAnswer: "a",
-    explanation: "CSS uses selectors to target elements and property-value pairs to define styles. HTML attributes for styling are deprecated, and JS should not be the primary styling mechanism." });
-  qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
-    question: `${chName} styles cascade from parent to child elements.`,
-    correctAnswer: true,
-    explanation: "CSS stands for Cascading Style Sheets — styles cascade down the DOM tree from parent to child elements unless overridden." });
-  qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
-    question: `Which CSS unit is relative to the parent element's font size?`,
-    options: [
-      { id: "a", text: "em" },
-      { id: "b", text: "rem" },
-      { id: "c", text: "px" },
-      { id: "d", text: "vw" },
-    ], correctAnswer: "a",
-    explanation: "em is relative to the parent element's font size. rem is relative to the root font size. px is absolute. vw is relative to viewport width." });
-  qs.push({ id: `${prefix}-tf2`, type: "true-false", difficulty: "medium",
-    question: `${chName} using !important should be avoided when possible.`,
-    correctAnswer: true,
-    explanation: "!important overrides the natural cascade and specificity, making styles harder to debug and maintain. Better to use proper specificity." });
-  qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
-    question: `The CSS property used to control the spacing INSIDE an element (for ${clean}) is: ___`,
-    correctAnswer: "padding",
-    explanation: "Padding creates space inside an element, between its content and border. Margin creates space outside the element." });
+  // ── Fundamentals ──
+  if (cat === "fundamentals") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What does the CSS Box Model consist of?`,
+      options: [
+        { id: "a", text: "Content, Padding, Border, Margin" },
+        { id: "b", text: "Content, Margin, Padding, Outline" },
+        { id: "c", text: "Width, Height, Padding, Border" },
+        { id: "d", text: "Content, Border, Outline, Margin" },
+      ], correctAnswer: "a", explanation: "The CSS Box Model consists of content (innermost), padding (inside border), border, and margin (outside border) — in that order." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `CSS stands for Cascading Style Sheets, where styles cascade from parent to child elements.`,
+      correctAnswer: true, explanation: "CSS is Cascading Style Sheets. Styles cascade down the DOM tree from parent to child elements unless explicitly overridden." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `The CSS property box-sizing: border-box makes an element's width include its ___ and ___.`,
+      correctAnswer: "padding and border", acceptableAnswers: ["padding, border", "border and padding"],
+      explanation: "box-sizing: border-box includes padding and border in the element's total width/height, making sizing predictable." });
+  }
+  // ── Typography ──
+  else if (cat === "typography") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which CSS property changes the font of an element?`,
+      options: [
+        { id: "a", text: "font-family" },
+        { id: "b", text: "font-style" },
+        { id: "c", text: "font-weight" },
+        { id: "d", text: "text-font" },
+      ], correctAnswer: "a", explanation: "font-family specifies the typeface. font-style controls italic/normal. font-weight controls boldness." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `What is the difference between 'em' and 'rem' units?`,
+      options: [
+        { id: "a", text: "em is relative to parent font-size; rem is relative to root (html) font-size" },
+        { id: "b", text: "rem is relative to parent; em is relative to root" },
+        { id: "c", text: "Both are absolute units" },
+        { id: "d", text: "em is for fonts only; rem is for spacing only" },
+      ], correctAnswer: "a", explanation: "em is relative to the parent element's font size. rem (root em) is relative to the root <html> element's font size, avoiding compounding issues." });
+  }
+  // ── Layout ──
+  else if (cat === "layout") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which CSS property is used for creating flexible one-dimensional layouts?`,
+      options: [
+        { id: "a", text: "display: flex" },
+        { id: "b", text: "display: grid" },
+        { id: "c", text: "display: inline-block" },
+        { id: "d", text: "display: table" },
+      ], correctAnswer: "a", explanation: "Flexbox (display: flex) is designed for one-dimensional layouts (rows OR columns). Grid is for two-dimensional layouts (rows AND columns)." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `In CSS Grid, what does grid-template-columns: 1fr 2fr 1fr do?`,
+      options: [
+        { id: "a", text: "Creates 3 columns: middle one is twice as wide as the others" },
+        { id: "b", text: "Creates 3 equal-width columns" },
+        { id: "c", text: "Creates 1 column that fills 3 fractions of space" },
+        { id: "d", text: "Creates 4 columns: 1fr, 2fr, 1fr, and auto" },
+      ], correctAnswer: "a", explanation: "fr units distribute available space. 1fr 2fr 1fr creates 3 columns where the middle column gets 2x the space of the side columns." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `An element with position: absolute is positioned relative to its nearest positioned ancestor.`,
+      correctAnswer: true, explanation: "position: absolute removes the element from normal flow and positions it relative to the nearest ancestor with a position other than static." });
+  }
+  // ── Effects ──
+  else if (cat === "effects") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which pseudo-class applies styles when the user hovers over an element?`,
+      options: [
+        { id: "a", text: ":hover" },
+        { id: "b", text: ":focus" },
+        { id: "c", text: ":active" },
+        { id: "d", text: ":visited" },
+      ], correctAnswer: "a", explanation: ":hover applies when the user's pointer is over an element. :focus applies when an element receives focus. :active applies during click." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "hard",
+      question: `The CSS property that creates a frosted glass effect by blurring the background behind an element is: backdrop-___`,
+      correctAnswer: "filter", explanation: "backdrop-filter: blur(10px) creates the frosted glass effect by applying filters to the area behind an element." });
+  }
+  // ── Responsive ──
+  else if (cat === "responsive") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which CSS feature allows styles to change based on the viewport size?`,
+      options: [
+        { id: "a", text: "Media queries (@media)" },
+        { id: "b", text: "@supports" },
+        { id: "c", text: "@viewport" },
+        { id: "d", text: "@import" },
+      ], correctAnswer: "a", explanation: "Media queries allow CSS to apply styles conditionally based on viewport width, device type, or other media features." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "hard",
+      question: `What is the advantage of container queries over media queries?`,
+      options: [
+        { id: "a", text: "Container queries respond to the parent container's size, not the viewport" },
+        { id: "b", text: "Container queries are faster to render" },
+        { id: "c", text: "Container queries work on all browsers" },
+        { id: "d", text: "Container queries replace the need for media queries entirely" },
+      ], correctAnswer: "a", explanation: "Container queries let components respond to their container's size rather than the viewport. This makes components truly reusable across different contexts." });
+  }
+  // ── Animations ──
+  else if (cat === "animations") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which CSS property is used to create smooth transitions between states?`,
+      options: [
+        { id: "a", text: "transition" },
+        { id: "b", text: "animation" },
+        { id: "c", text: "transform" },
+        { id: "d", text: "translate" },
+      ], correctAnswer: "a", explanation: "The transition property enables smooth interpolation between CSS property values when a state change occurs (like hover)." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `Animating the 'width' property is more performant than animating 'transform'.`,
+      correctAnswer: false, explanation: "Animating transform (and opacity) only triggers compositing — the most efficient rendering layer. Animating width triggers layout recalculation, which is expensive." });
+  }
+  // ── General ──
+  else {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `How do you apply CSS to an HTML element?`,
+      options: [
+        { id: "a", text: "Using CSS selectors with property-value declarations" },
+        { id: "b", text: "Using HTML attributes on the element" },
+        { id: "c", text: "Using JavaScript to modify the style object" },
+        { id: "d", text: "Using server-side configuration files" },
+      ], correctAnswer: "a", explanation: "CSS uses selectors to target elements and property-value pairs to define styles." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `CSS styles cascade from parent to child elements by default.`,
+      correctAnswer: true, explanation: "CSS stands for Cascading Style Sheets — inherited properties flow down the DOM tree from parent to child." });
+  }
+
+  // Standard questions for all CSS chapters
   qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
-    question: `What is the most efficient selector for targeting elements in ${chName}?`,
+    question: `What is the best practice for organizing CSS in large projects?`,
     options: [
-      { id: "a", text: "Class selectors (.classname)" },
-      { id: "b", text: "ID selectors (#idname)" },
-      { id: "c", text: "Universal selectors (*)" },
-      { id: "d", text: "Descendant selectors (div p)" },
-    ], correctAnswer: "a",
-    explanation: "Class selectors balance specificity and reusability. IDs are too specific, universal is too broad, and descendant selectors can be slow with deep nesting." });
+      { id: "a", text: "Use a methodology like BEM with cascade layers (@layer)" },
+      { id: "b", text: "Use !important to ensure styles always apply" },
+      { id: "c", text: "Put all styles in one file without organization" },
+      { id: "d", text: "Use inline styles exclusively" },
+    ], correctAnswer: "a", explanation: "BEM (Block Element Modifier) with cascade layers provides maintainable, scalable CSS. !important creates specificity wars, inline styles bypass the cascade." });
+  qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "medium",
+    question: `The CSS at-rule that lets you define custom reusable values is called a custom ___ using the ___() function.`,
+    correctAnswer: "property; var", acceptableAnswers: ["property; var()", "property using var"],
+    explanation: "CSS custom properties (variables) are defined with --name and accessed with var(--name)." });
+
   return qs;
 }
 
 function genJsExamQ(chName, prefix, idx) {
   const qs = [];
-  const clean = chName.toLowerCase();
+  const cat = jsCategory(chName);
 
-  qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
-    question: `How do you declare a variable in modern JavaScript for ${clean}?`,
-    options: [
-      { id: "a", text: "const or let" },
-      { id: "b", text: "var" },
-      { id: "c", text: "int" },
-      { id: "d", text: "string" },
-    ], correctAnswer: "a",
-    explanation: "const and let are the modern way to declare variables in JavaScript (ES6+). var has function scoping issues, and int/string are not valid JS keywords." });
-  qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
-    question: `JavaScript is a statically-typed language when using ${clean}.`,
-    correctAnswer: false,
-    explanation: "JavaScript is dynamically-typed — variable types are determined at runtime. TypeScript adds static typing as a superset." });
-  qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
-    question: `What does === mean in JavaScript (relevant for ${clean})?`,
-    options: [
-      { id: "a", text: "Strict equality — compares value AND type" },
-      { id: "b", text: "Loose equality — compares value only" },
-      { id: "c", text: "Assignment operator" },
-      { id: "d", text: "Not equal" },
-    ], correctAnswer: "a",
-    explanation: "=== is strict equality (checks both value and type). == is loose equality (type coercion). = is assignment. !== is strict not-equal." });
-  qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
-    question: `The method to add an element to the end of an array is: ___.___()`,
-    correctAnswer: "push",
-    explanation: "array.push() adds elements to the end. pop() removes from the end. unshift() adds to the beginning. shift() removes from the beginning." });
+  // ── Basics ──
+  if (cat === "basics") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `How do you declare a variable in modern JavaScript?`,
+      options: [
+        { id: "a", text: "const or let" },
+        { id: "b", text: "var" },
+        { id: "c", text: "int" },
+        { id: "d", text: "string" },
+      ], correctAnswer: "a", explanation: "const and let are the modern way to declare variables in JavaScript (ES6+). var has function-scoping issues, and int/string are not JS keywords." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `JavaScript is a dynamically-typed language.`,
+      correctAnswer: true, explanation: "JavaScript determines variable types at runtime. TypeScript adds optional static typing on top of JavaScript." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `What does the strict equality operator (===) do?`,
+      options: [
+        { id: "a", text: "Compares value AND type without coercion" },
+        { id: "b", text: "Compares value only with type coercion" },
+        { id: "c", text: "Assigns a value to a variable" },
+        { id: "d", text: "Checks if two values are not equal" },
+      ], correctAnswer: "a", explanation: "=== is strict equality (checks both value and type). == is loose equality (coerces types before comparing)." });
+  }
+  // ── Control flow / Functions ──
+  else if (cat === "control-flow" || cat === "functions") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which loop is best for iterating over an array in modern JavaScript?`,
+      options: [
+        { id: "a", text: "for...of" },
+        { id: "b", text: "for...in" },
+        { id: "c", text: "while" },
+        { id: "d", text: "do...while" },
+      ], correctAnswer: "a", explanation: "for...of iterates over iterable values (arrays, strings, Maps). for...in iterates over enumerable property keys." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `The JavaScript feature where an inner function retains access to its outer function's variables is called a ___.`,
+      correctAnswer: "closure", explanation: "A closure is created when a function retains access to its lexical scope even when executed outside that scope." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "hard",
+      question: `What is the difference between an arrow function and a regular function?`,
+      options: [
+        { id: "a", text: "Arrow functions do not have their own 'this' binding" },
+        { id: "b", text: "Arrow functions have their own 'this' binding" },
+        { id: "c", text: "Arrow functions cannot return values" },
+        { id: "d", text: "There is no difference" },
+      ], correctAnswer: "a", explanation: "Arrow functions inherit 'this' from their enclosing scope. Regular functions have their own 'this' determined by how they are called." });
+  }
+  // ── Objects / Advanced ──
+  else if (cat === "objects" || cat === "advanced") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `How do you create a class in modern JavaScript?`,
+      options: [
+        { id: "a", text: "class MyClass { }" },
+        { id: "b", text: "function MyClass() { }" },
+        { id: "c", text: "MyClass = class { }" },
+        { id: "d", text: "createClass('MyClass')" },
+      ], correctAnswer: "a", explanation: "The class syntax (ES6) provides a cleaner way to create constructor functions and prototype-based inheritance." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `In JavaScript, arrays and functions are objects.`,
+      correctAnswer: true, explanation: "Everything (except primitives) in JavaScript is an object. Arrays are array-like objects. Functions are callable objects." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "hard",
+      question: `What does the spread operator (...) do when used with objects?`,
+      options: [
+        { id: "a", text: "Creates a shallow copy with own enumerable properties" },
+        { id: "b", text: "Creates a deep copy of all nested properties" },
+        { id: "c", text: "Merges multiple objects in place" },
+        { id: "d", text: "Deletes properties from the object" },
+      ], correctAnswer: "a", explanation: "The spread operator creates a shallow copy. Nested objects are still referenced. For deep copies, use structuredClone() or libraries." });
+  }
+  // ── Async ──
+  else if (cat === "async") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What is a Promise in JavaScript?`,
+      options: [
+        { id: "a", text: "An object representing the eventual completion/failure of an async operation" },
+        { id: "b", text: "A function that runs synchronously" },
+        { id: "c", text: "A callback queue management system" },
+        { id: "d", text: "A method for error handling" },
+      ], correctAnswer: "a", explanation: "A Promise is an object representing the eventual result of an asynchronous operation. It has three states: pending, fulfilled, rejected." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `await can only be used inside functions marked with async.`,
+      correctAnswer: true, explanation: "The await keyword is only valid inside async functions. Top-level await is supported in ES modules." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "hard",
+      question: `What does Promise.all() do when one of its promises rejects?`,
+      options: [
+        { id: "a", text: "It rejects immediately with that error" },
+        { id: "b", text: "It waits for all promises to settle, then reports all errors" },
+        { id: "c", text: "It ignores the rejected promise and continues" },
+        { id: "d", text: "It retries the rejected promise automatically" },
+      ], correctAnswer: "a", explanation: "Promise.all() fails fast — it rejects immediately when any input promise rejects. Use Promise.allSettled() to wait for all regardless of outcome." });
+  }
+  // ── DOM / Web APIs ──
+  else if (cat === "dom" || cat === "web-apis") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which method selects an element by its CSS selector?`,
+      options: [
+        { id: "a", text: "document.querySelector()" },
+        { id: "b", text: "document.getElementById()" },
+        { id: "c", text: "document.select()" },
+        { id: "d", text: "document.find()" },
+      ], correctAnswer: "a", explanation: "querySelector() returns the first element matching a CSS selector. getElementById() is faster but only selects by ID." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `What is event delegation in JavaScript?`,
+      options: [
+        { id: "a", text: "Attaching one parent listener to handle events from multiple children" },
+        { id: "b", text: "Attaching separate listeners to each child element" },
+        { id: "c", text: "Preventing events from bubbling up the DOM" },
+        { id: "d", text: "Creating custom events programmatically" },
+      ], correctAnswer: "a", explanation: "Event delegation uses event bubbling — attach one listener to a parent and use event.target to determine which child triggered the event." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
+      question: `The browser API that allows web pages to store key-value data persistently is called ___.`,
+      correctAnswer: "localStorage", explanation: "localStorage stores key-value pairs in the browser with no expiration date. Data persists even after the browser is closed." });
+  }
+  // ── Tooling / Default ──
+  else {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which tool adds static type checking to JavaScript?`,
+      options: [
+        { id: "a", text: "TypeScript" },
+        { id: "b", text: "Babel" },
+        { id: "c", text: "Webpack" },
+        { id: "d", text: "ESLint" },
+      ], correctAnswer: "a", explanation: "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Babel transpiles JS features. ESLint finds code issues." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `JavaScript is a statically-typed language.`,
+      correctAnswer: false, explanation: "JavaScript is dynamically-typed. TypeScript adds optional static typing." });
+  }
+
+  // Standard JS questions
   qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
-    question: `What prevents this JavaScript code from causing unexpected behavior with ${clean}?`,
+    question: `What prevents unexpected behavior in JavaScript production code?`,
     options: [
-      { id: "a", text: "Using strict mode ('use strict') and proper error handling" },
-      { id: "b", text: "Using only global variables" },
-      { id: "c", text: "Avoiding functions altogether" },
-      { id: "d", text: "Using eval() for dynamic code" },
-    ], correctAnswer: "a",
-    explanation: "Strict mode catches common errors, prevents global leaks, and throws exceptions for unsafe actions. Global variables, avoiding functions, and eval() are all bad practices." });
+      { id: "a", text: "Using strict mode, proper error handling, and type validation" },
+      { id: "b", text: "Using only global variables for simplicity" },
+      { id: "c", text: "Using eval() for dynamic code execution" },
+      { id: "d", text: "Avoiding functions entirely" },
+    ], correctAnswer: "a", explanation: "Strict mode catches common errors, proper error handling prevents silent failures, and type validation catches type-related bugs early." });
+  qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "medium",
+    question: `The JavaScript mechanism that handles asynchronous callbacks, microtasks, and macrotasks is called the ___ ___.`,
+    correctAnswer: "event loop", explanation: "The event loop continuously checks the call stack and processes pending callbacks, microtasks (Promise callbacks), and macrotasks (setTimeout, I/O)." });
+
   return qs;
 }
 
 function genPythonExamQ(chName, prefix, idx) {
   const qs = [];
-  const clean = chName.toLowerCase();
+  const cat = pythonCategory(chName);
 
-  qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
-    question: `How do you define a function in Python for ${chName}?`,
-    options: [
-      { id: "a", text: "def function_name():" },
-      { id: "b", text: "function function_name()" },
-      { id: "c", text: "func function_name():" },
-      { id: "d", text: "define function_name():" },
-    ], correctAnswer: "a",
-    explanation: "Python uses the 'def' keyword followed by the function name and parentheses to define functions." });
-  qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
-    question: `Python uses indentation to define code blocks (for ${clean}).`,
-    correctAnswer: true,
-    explanation: "Python uses indentation (typically 4 spaces) to define code blocks instead of braces like C/Java/JavaScript." });
-  qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
-    question: `What is the Python list comprehension syntax for ${clean}?`,
-    options: [
-      { id: "a", text: "[expression for item in iterable if condition]" },
-      { id: "b", text: "for item in iterable: if condition: expression" },
-      { id: "c", text: "list(expression for item in iterable if condition)" },
-      { id: "d", text: "map(expression, filter(condition, iterable))" },
-    ], correctAnswer: "a",
-    explanation: "List comprehension syntax is [expr for item in iterable if condition]. It's Pythonic, readable, and generally faster than loops or map/filter." });
-  qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "medium",
-    question: `The Python keyword to handle exceptions (like try/catch) is: ___`,
-    correctAnswer: "except",
-    explanation: "Python uses try/except blocks. 'except' catches exceptions, similar to 'catch' in other languages." });
+  // ── Basics ──
+  if (cat === "basics") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `How do you define a function in Python?`,
+      options: [
+        { id: "a", text: "def function_name():" },
+        { id: "b", text: "function function_name()" },
+        { id: "c", text: "func function_name():" },
+        { id: "d", text: "define function_name():" },
+      ], correctAnswer: "a", explanation: "Python uses the 'def' keyword followed by the function name and parentheses to define functions." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `Python uses indentation (not braces) to define code blocks.`,
+      correctAnswer: true, explanation: "Python uses indentation (typically 4 spaces) to define code blocks instead of braces like C/Java/JavaScript." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "easy",
+      question: `The Python function that prints output to the console is: ___()`,
+      correctAnswer: "print", explanation: "print() is Python's built-in function for console output. F-strings (print(f'...')) provide clean string formatting." });
+  }
+  // ── Control flow / Data structures ──
+  else if (cat === "control-flow" || cat === "data-structures") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which Python data structure is ordered, mutable, and allows duplicate elements?`,
+      options: [
+        { id: "a", text: "List" },
+        { id: "b", text: "Set" },
+        { id: "c", text: "Tuple" },
+        { id: "d", text: "Dictionary" },
+      ], correctAnswer: "a", explanation: "Lists are ordered, mutable, and allow duplicates. Sets are unordered, mutable, and unique. Tuples are ordered, immutable. Dicts use key-value pairs." });
+    qs.push({ id: `${prefix}-mc2`, type: "multiple-choice", difficulty: "medium",
+      question: `What is the Python list comprehension syntax?`,
+      options: [
+        { id: "a", text: "[expression for item in iterable if condition]" },
+        { id: "b", text: "for item in iterable: if condition: expression" },
+        { id: "c", text: "list(expression for item in iterable)" },
+        { id: "d", text: "map(expression, filter(condition, iterable))" },
+      ], correctAnswer: "a", explanation: "List comprehension [expr for item in iterable if cond] is Pythonic, readable, and faster than equivalent for loops or map/filter." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `Dictionary keys in Python must be of an immutable type.`,
+      correctAnswer: true, explanation: "Dictionary keys must be hashable (immutable): strings, numbers, tuples. Lists and dictionaries cannot be keys." });
+  }
+  // ── Functions ──
+  else if (cat === "functions") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "medium",
+      question: `How do you define a function with default parameters in Python?`,
+      options: [
+        { id: "a", text: "def greet(name='Guest'):" },
+        { id: "b", text: "def greet(name='Guest')" },
+        { id: "c", text: "def greet(name = default 'Guest'):" },
+        { id: "d", text: "def greet(default name='Guest'):" },
+      ], correctAnswer: "a", explanation: "Default parameters use the syntax param=value in the function signature. They are evaluated once at definition time." });
+    qs.push({ id: `${prefix}-fb1`, type: "fill-blank", difficulty: "hard",
+      question: `The special parameter that captures excess keyword arguments is: ___`,
+      correctAnswer: "**kwargs", explanation: "**kwargs captures additional keyword arguments as a dictionary. *args captures positional arguments as a tuple." });
+  }
+  // ── OOP ──
+  else if (cat === "oop") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `What is the correct way to define a class in Python?`,
+      options: [
+        { id: "a", text: "class MyClass:" },
+        { id: "b", text: "class MyClass {}" },
+        { id: "c", text: "define MyClass:" },
+        { id: "d", text: "MyClass = class()" },
+      ], correctAnswer: "a", explanation: "Python uses 'class ClassName:' followed by indented methods. The __init__ method is the constructor." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `Python supports multiple inheritance.`,
+      correctAnswer: true, explanation: "Python supports multiple inheritance. The Method Resolution Order (MRO, accessible via ClassName.__mro__) determines which parent's method is called." });
+  }
+  // ── I/O and errors ──
+  else if (cat === "io-errors") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `Which Python keyword is used to handle exceptions (equivalent to catch)?`,
+      options: [
+        { id: "a", text: "except" },
+        { id: "b", text: "catch" },
+        { id: "c", text: "error" },
+        { id: "d", text: "handle" },
+      ], correctAnswer: "a", explanation: "Python uses try/except blocks. 'except' catches exceptions. Use 'finally' for cleanup code that always runs." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `The 'with' statement automatically closes files when the block exits.`,
+      correctAnswer: true, explanation: "The 'with' statement is a context manager. When used with open(), it automatically calls close() when the block exits, even if an exception occurs." });
+  }
+  // ── Async ──
+  else if (cat === "async") {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "hard",
+      question: `How do you run multiple coroutines concurrently in Python asyncio?`,
+      options: [
+        { id: "a", text: "asyncio.gather()" },
+        { id: "b", text: "asyncio.run()" },
+        { id: "c", text: "asyncio.wait_for()" },
+        { id: "d", text: "asyncio.sleep()" },
+      ], correctAnswer: "a", explanation: "asyncio.gather() runs multiple awaitables concurrently and returns results. asyncio.run() runs a single coroutine entry point." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "medium",
+      question: `Async functions in Python are defined with the 'async def' syntax.`,
+      correctAnswer: true, explanation: "Python uses 'async def' to define coroutines. Inside them, 'await' suspends execution until the awaited operation completes." });
+  }
+  // ── Default ──
+  else {
+    qs.push({ id: `${prefix}-mc1`, type: "multiple-choice", difficulty: "easy",
+      question: `How do you define a function in Python?`,
+      options: [
+        { id: "a", text: "def function_name():" },
+        { id: "b", text: "function function_name()" },
+        { id: "c", text: "func function_name():" },
+        { id: "d", text: "define function_name():" },
+      ], correctAnswer: "a", explanation: "Python uses the 'def' keyword followed by the function name and parentheses." });
+    qs.push({ id: `${prefix}-tf1`, type: "true-false", difficulty: "easy",
+      question: `Python uses indentation to define code blocks.`,
+      correctAnswer: true, explanation: "Python uses indentation (typically 4 spaces) instead of braces." });
+  }
+
+  // Standard Python questions
   qs.push({ id: `${prefix}-mc3`, type: "multiple-choice", difficulty: "hard",
-    question: `What is the best Python practice for ${clean} in production code?`,
+    question: `What is the best Python practice for production code?`,
     options: [
       { id: "a", text: "Use type hints, docstrings, and comprehensive testing" },
       { id: "b", text: "Write minimal code without documentation" },
       { id: "c", text: "Use global variables for simplicity" },
       { id: "d", text: "Avoid imports to keep code self-contained" },
-    ], correctAnswer: "a",
-    explanation: "Production Python should use type hints (for IDE support and mypy), docstrings (for documentation), and tests (for reliability). Minimal docs, globals, and avoiding imports are anti-patterns." });
+    ], correctAnswer: "a", explanation: "Production Python should use type hints (for mypy), docstrings (for documentation), and tests (for reliability)." });
+  qs.push({ id: `${prefix}-fb2`, type: "fill-blank", difficulty: "medium",
+    question: `Python's package manager used to install third-party packages is called: ___`,
+    correctAnswer: "pip", explanation: "pip (Pip Installs Packages) is Python's standard package manager. Use 'pip install package-name' to install packages from PyPI." });
+
   return qs;
 }
 
