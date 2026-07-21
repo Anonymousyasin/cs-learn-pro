@@ -17,37 +17,27 @@ import { courseRegistry } from "@/lib/courses";
 import type { Course } from "@/lib/courses/types";
 import { cn } from "@/lib/utils";
 
-const courseIcons: Record<string, typeof Code2> = {
-  html: Code2,
-  css: Palette,
-  javascript: Brain,
-  python: Terminal,
-  cs: Shield,
-};
+function getCourseIcon(id: string) {
+  switch (id) {
+    case "html": return Code2;
+    case "css": return Palette;
+    case "javascript": return Brain;
+    case "python": return Terminal;
+    case "cs": return Shield;
+    default: return Code2;
+  }
+}
 
-const courseColors: Record<string, string> = {
-  html: "from-orange-500/20 to-orange-600/5 border-orange-500/30",
-  css: "from-sky-400/20 to-sky-500/5 border-sky-400/30",
-  javascript: "from-yellow-400/20 to-yellow-500/5 border-yellow-400/30",
-  python: "from-emerald-400/20 to-emerald-500/5 border-emerald-400/30",
-  cs: "from-purple-400/20 to-purple-500/5 border-purple-400/30",
-};
-
-const courseGlows: Record<string, string> = {
-  html: "shadow-orange-500/10",
-  css: "shadow-sky-400/10",
-  javascript: "shadow-yellow-400/10",
-  python: "shadow-emerald-400/10",
-  cs: "shadow-purple-400/10",
-};
-
-const courseBadgeColors: Record<string, string> = {
-  html: "bg-orange-500/10 text-orange-400 border-orange-500/20",
-  css: "bg-sky-400/10 text-sky-400 border-sky-400/20",
-  javascript: "bg-yellow-400/10 text-yellow-400 border-yellow-400/20",
-  python: "bg-emerald-400/10 text-emerald-400 border-emerald-400/20",
-  cs: "bg-purple-400/10 text-purple-400 border-purple-400/20",
-};
+function getCourseColors(id: string) {
+  switch (id) {
+    case "html": return "from-orange-500/20 to-orange-600/5 border-orange-500/30 shadow-orange-500/10 bg-orange-500/10 text-orange-400 border-orange-500/20";
+    case "css": return "from-sky-400/20 to-sky-500/5 border-sky-400/30 shadow-sky-400/10 bg-sky-400/10 text-sky-400 border-sky-400/20";
+    case "javascript": return "from-yellow-400/20 to-yellow-500/5 border-yellow-400/30 shadow-yellow-400/10 bg-yellow-400/10 text-yellow-400 border-yellow-400/20";
+    case "python": return "from-emerald-400/20 to-emerald-500/5 border-emerald-400/30 shadow-emerald-400/10 bg-emerald-400/10 text-emerald-400 border-emerald-400/20";
+    case "cs": return "from-purple-400/20 to-purple-500/5 border-purple-400/30 shadow-purple-400/10 bg-purple-400/10 text-purple-400 border-purple-400/20";
+    default: return "";
+  }
+}
 
 export default function DashboardPage() {
   const [progress, setProgress] = useState(loadProgress());
@@ -219,7 +209,6 @@ export default function DashboardPage() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {courseRegistry.courses.map((course, i) => {
-            const Icon = courseIcons[course.id] || Code2;
             const done = course.chapters.filter((ch) => progress.completedChapters.includes(ch.id)).length;
             const pct = Math.round((done / course.chapters.length) * 100);
             const isContinueCourse = continueChapter?.course.id === course.id;
@@ -229,10 +218,8 @@ export default function DashboardPage() {
                 key={course.id}
                 href={`/courses/${course.id}`}
                 className={cn(
-                  "group relative overflow-hidden rounded-xl border p-5 transition-all duration-300",
-                  courseColors[course.id],
-                  courseGlows[course.id],
-                  "hover:scale-[1.02] hover:shadow-lg",
+                  "group relative overflow-hidden rounded-xl border p-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg",
+                  getCourseColors(course.id),
                   isContinueCourse && "ring-1 ring-accent-primary/30",
                   mounted && `animate-slide-up delay-${Math.min(i + 1, 6)}`
                 )}
@@ -249,13 +236,13 @@ export default function DashboardPage() {
                   <div className="mb-3 flex items-start justify-between">
                     <div className={cn(
                       "flex size-12 items-center justify-center rounded-xl",
-                      courseBadgeColors[course.id]
+                      getCourseColors(course.id)
                     )}>
-                      <Icon className="size-6" />
+                      {getCourseIcon(course.id)({ className: "size-6" })}
                     </div>
                     <Badge
                       variant="outline"
-                      className={cn("gap-1 border-0 text-xs font-medium", courseBadgeColors[course.id])}
+                      className={cn("gap-1 border-0 text-xs font-medium", getCourseColors(course.id))}
                     >
                       {course.difficulty === 1 ? "Beginner" : course.difficulty === 2 ? "Intermediate" : "Advanced"}
                     </Badge>
@@ -277,7 +264,7 @@ export default function DashboardPage() {
                           className="text-accent-primary transition-all duration-700"
                           strokeDasharray={`${2 * Math.PI * 20}`}
                           strokeDashoffset={`${2 * Math.PI * 20 * (1 - pct / 100)}`}
-                          style={{ stroke: courseColors[course.id]?.includes("orange") ? "#f97316" : courseColors[course.id]?.includes("sky") ? "#38bdf8" : courseColors[course.id]?.includes("yellow") ? "#eab308" : courseColors[course.id]?.includes("emerald") ? "#22c55e" : "#a78bfa" }}
+                          style={{ stroke: getCourseColors(course.id).includes("orange") ? "#f97316" : getCourseColors(course.id).includes("sky") ? "#38bdf8" : getCourseColors(course.id).includes("yellow") ? "#eab308" : getCourseColors(course.id).includes("emerald") ? "#22c55e" : "#a78bfa" }}
                         />
                       </svg>
                       <span className="absolute inset-0 flex items-center justify-center text-xs font-bold">
@@ -311,9 +298,9 @@ export default function DashboardPage() {
           <div className="flex items-center gap-4 sm:gap-6">
             <div className={cn(
               "flex size-14 shrink-0 items-center justify-center rounded-xl",
-              courseBadgeColors[continueChapter.course.id]
+              getCourseColors(continueChapter.course.id)
             )}>
-              {(courseIcons[continueChapter.course.id] || Code2)({ className: "size-7" })}
+              {getCourseIcon(continueChapter.course.id)({ className: "size-7" })}
             </div>
             <div className="min-w-0 flex-1">
               <Badge variant="secondary" className="mb-1.5 bg-accent-primary/10 text-accent-primary text-xs">
