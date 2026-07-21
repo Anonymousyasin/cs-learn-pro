@@ -35,7 +35,6 @@ export async function loadProgressFromSupabase(
   userId: string
 ): Promise<UserProgress | null> {
   const supabase = getSupabaseClient();
-  if (!supabase) return null;
 
   // Fetch profile
   const { data: profile } = await supabase
@@ -82,7 +81,6 @@ export async function saveProgressToSupabase(
   progress: UserProgress
 ): Promise<void> {
   const supabase = getSupabaseClient();
-  if (!supabase) return;
 
   // Update profile fields
   await supabase
@@ -107,7 +105,6 @@ export async function completeChapterInSupabase(
   xpReward: number
 ): Promise<void> {
   const supabase = getSupabaseClient();
-  if (!supabase) return;
 
   // Insert completed chapter (no-op if already exists due to unique constraint)
   await supabase.from("completed_chapters").upsert(
@@ -130,7 +127,6 @@ export async function recordExamInSupabase(
   xpEarned: number
 ): Promise<void> {
   const supabase = getSupabaseClient();
-  if (!supabase) return;
 
   await supabase.from("exam_results").insert({
     user_id: userId,
@@ -180,7 +176,6 @@ export async function loadReviewCardsFromSupabase(
   userId: string
 ): Promise<ReviewCardData[]> {
   const supabase = getSupabaseClient();
-  if (!supabase) return [];
 
   const { data } = await supabase
     .from("review_cards")
@@ -196,7 +191,6 @@ export async function saveReviewCardsToSupabase(
   cards: ReviewCardData[]
 ): Promise<void> {
   const supabase = getSupabaseClient();
-  if (!supabase) return;
 
   // Delete all existing cards for this user and re-insert
   await supabase.from("review_cards").delete().eq("user_id", userId);

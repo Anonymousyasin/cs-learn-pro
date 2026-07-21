@@ -25,10 +25,6 @@ export function SupabaseProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const supabase = getSupabaseClient();
-    if (!supabase) {
-      setState({ user: null, loading: false });
-      return;
-    }
 
     // Try to get existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -61,7 +57,6 @@ export function SupabaseProvider({ children }: { children: ReactNode }) {
 
   const signOut = useCallback(async () => {
     const supabase = getSupabaseClient();
-    if (!supabase) return;
     await supabase.auth.signOut();
     window.location.href = "/";
   }, []);

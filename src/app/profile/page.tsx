@@ -414,14 +414,24 @@ export default function ProfilePage() {
                 <Download className="size-4" />
                 Export Progress Data
               </Button>
-              <Button
-                variant="outline"
-                className="w-full justify-start gap-2 text-accent-danger hover:text-accent-danger"
-                onClick={signOut}
-              >
-                <LogOut className="size-4" />
-                Sign Out
-              </Button>
+              {isAnonymous ? (
+                <Button
+                  className="w-full justify-start gap-2"
+                  onClick={() => router.push("/auth")}
+                >
+                  <Shield className="size-4" />
+                  Link Account — Save Progress to Cloud
+                </Button>
+              ) : (
+                <Button
+                  variant="outline"
+                  className="w-full justify-start gap-2 text-accent-danger hover:text-accent-danger"
+                  onClick={signOut}
+                >
+                  <LogOut className="size-4" />
+                  Sign Out
+                </Button>
+              )}
             </CardContent>
           </Card>
         </TabsContent>

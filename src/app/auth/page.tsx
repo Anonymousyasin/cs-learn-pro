@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { motion } from "motion/react";
 import { getSupabaseClient } from "@/lib/supabase";
 import { useUser } from "@/lib/supabase-provider";
@@ -27,32 +26,6 @@ export default function AuthPage() {
           <div className="mx-auto mb-4 size-8 animate-spin rounded-full border-2 border-accent-primary/30 border-t-accent-primary" />
           <p className="text-text-secondary">Loading…</p>
         </div>
-      </div>
-    );
-  }
-
-  // Supabase not configured — show helpful message
-  if (!supabase) {
-    return (
-      <div className="mx-auto flex min-h-[60vh] max-w-md items-center p-4">
-        <Card className="w-full">
-          <CardHeader className="text-center">
-            <CardTitle>Supabase Not Configured</CardTitle>
-            <CardDescription>
-              Add <code className="rounded bg-bg-secondary px-1.5 py-0.5 text-sm">NEXT_PUBLIC_SUPABASE_URL</code> and{" "}
-              <code className="rounded bg-bg-secondary px-1.5 py-0.5 text-sm">NEXT_PUBLIC_SUPABASE_ANON_KEY</code>{" "}
-              to your Vercel environment variables.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            <p className="mb-4 text-sm text-text-secondary">
-              Your progress is still saved locally in your browser.
-            </p>
-            <Button variant="outline" onClick={() => router.push("/")}>
-              Back to Dashboard
-            </Button>
-          </CardContent>
-        </Card>
       </div>
     );
   }
