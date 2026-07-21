@@ -19,6 +19,14 @@ export default function AuthPage() {
   const { user, loading } = useUser();
   const supabase = getSupabaseClient();
 
+  if (!supabase) {
+    return (
+      <div className="mx-auto flex min-h-[60vh] max-w-md items-center justify-center p-4">
+        <p className="text-text-secondary">Loading…</p>
+      </div>
+    );
+  }
+
   const isAnonymous = user?.is_anonymous ?? true;
   const [mode, setMode] = useState<AuthMode>(isAnonymous ? "link" : "signin");
   const [email, setEmail] = useState("");

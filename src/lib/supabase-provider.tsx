@@ -24,6 +24,12 @@ export function SupabaseProvider({ children }: { children: ReactNode }) {
   const supabase = getSupabaseClient();
 
   useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setState({ user: null, loading: false });
+      return;
+    }
+
     // Try to get existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session?.user) {
@@ -51,14 +57,14 @@ export function SupabaseProvider({ children }: { children: ReactNode }) {
     });
 
     return () => subscription.unsubscribe();
-  }, [supabase]);
+  }, []);
 
   const signOut = useCallback(async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
     await supabase.auth.signOut();
-    // signOut clears session → onAuthStateChange fires → state resets
-    // Then signInAnonymously will fire on next mount
     window.location.href = "/";
-  }, [supabase]);
+  }, []);
 
   return (
     <AuthContext.Provider value={{ ...state, signOut }}>
