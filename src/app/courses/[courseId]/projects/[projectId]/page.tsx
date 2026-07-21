@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { courseRegistry } from "@/lib/courses";
 
 const difficultyLabel = ["", "Beginner", "Easy", "Intermediate", "Hard", "Advanced"];
@@ -42,11 +41,9 @@ export default async function ProjectDetailPage({
     <div className="mx-auto max-w-4xl space-y-6 p-4 pt-6 sm:p-6 lg:p-8">
       {/* Back */}
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon" asChild>
-          <Link href={`/courses/${courseId}/projects`}>
+        <Link href={`/courses/${courseId}/projects`} className="flex size-8 items-center justify-center rounded-lg hover:bg-muted hover:text-foreground transition-colors">
             <ArrowLeft className="size-4" />
           </Link>
-        </Button>
         <div>
           <h1 className="text-2xl font-bold">{project.title}</h1>
           <p className="text-sm text-muted-foreground">
@@ -196,18 +193,14 @@ export default async function ProjectDetailPage({
 
       {/* Actions */}
       <div className="flex gap-3">
-        <Button variant="outline" asChild>
-          <Link href={`/courses/${courseId}/projects`}>
-            <ArrowLeft className="mr-2 size-4" />
+        <Link href={`/courses/${courseId}/projects`} className="inline-flex items-center justify-center rounded-lg border border-border bg-background px-2.5 h-8 gap-1.5 text-sm font-medium hover:bg-muted hover:text-foreground transition-colors">
+            <ArrowLeft className="size-4" />
             Back to Projects
           </Link>
-        </Button>
-        <Button asChild>
-          <Link href={`/courses/${courseId}/chapters/${project.expectedConcepts[0] || course.chapters[0]?.id}`}>
+        <Link href={`/courses/${courseId}/chapters/${project.expectedConcepts[0] || course.chapters[0]?.id}`} className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-2.5 h-8 gap-1.5 text-sm font-medium hover:bg-primary/80 transition-colors">
             Start Learning
-            <Zap className="ml-2 size-4" />
+            <Zap className="size-4" />
           </Link>
-        </Button>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { courseRegistry } from "@/lib/courses";
 
 const difficultyLabel = ["", "Beginner", "Easy", "Intermediate", "Hard", "Advanced"];
@@ -39,11 +38,9 @@ export default async function ProjectsPage({
     <div className="mx-auto max-w-4xl space-y-6 p-4 pt-6 sm:p-6 lg:p-8">
       {/* Back & Header */}
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon" asChild>
-          <Link href={`/courses/${courseId}`}>
+        <Link href={`/courses/${courseId}`} className="flex size-8 items-center justify-center rounded-lg hover:bg-muted hover:text-foreground transition-colors">
             <ArrowLeft className="size-4" />
           </Link>
-        </Button>
         <div>
           <h1 className="text-2xl font-bold">Projects</h1>
           <p className="text-sm text-muted-foreground">
