@@ -37,6 +37,21 @@ const utilityItems = [
   { href: "/profile", icon: UserCircle, label: "Profile" },
 ];
 
+const courseAccents: Record<string, string> = {
+  html: "#f97316",
+  css: "#38bdf8",
+  javascript: "#eab308",
+  python: "#22c55e",
+  cs: "#a78bfa",
+};
+
+function getCourseColor(href: string): string | undefined {
+  for (const [key, color] of Object.entries(courseAccents)) {
+    if (href.includes(key)) return color;
+  }
+  return undefined;
+}
+
 export function Sidebar() {
   const pathname = usePathname();
   const progress = typeof window !== 'undefined' ? loadProgress() : null;
@@ -50,8 +65,8 @@ export function Sidebar() {
 
   return (
     <aside className="fixed left-0 top-0 z-30 hidden h-screen w-[var(--sidebar-width)] flex-col border-r border-border bg-bg-secondary md:flex">
-      {/* Brand */}
-      <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-border px-4">
+      {/* Brand — subtle gradient background */}
+      <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-border bg-gradient-to-r from-accent-primary-light via-bg-secondary to-bg-secondary px-4">
         <div className="flex size-8 items-center justify-center rounded-lg bg-accent-primary">
           <Brain className="size-4 text-white" />
         </div>
@@ -67,7 +82,6 @@ export function Sidebar() {
 
       {/* Navigation */}
       <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-3">
-        {/* Dashboard */}
         <div className="mb-1">
           {navItems.map((item) => (
             <SidebarNavItem
@@ -80,7 +94,6 @@ export function Sidebar() {
           ))}
         </div>
 
-        {/* Courses Section */}
         <div className="mb-1 mt-2">
           <div className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-text-muted">
             Courses
@@ -92,11 +105,11 @@ export function Sidebar() {
               icon={item.icon}
               label={item.label}
               isActive={isActive(item.href)}
+              dotColor={getCourseColor(item.href)}
             />
           ))}
         </div>
 
-        {/* Utility Section */}
         <div className="mb-1 mt-2">
           <div className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-text-muted">
             Tools
@@ -113,11 +126,10 @@ export function Sidebar() {
         </div>
       </nav>
 
-      {/* Footer */}
       <div className="shrink-0 border-t border-border p-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="flex items-center gap-1.5 rounded-md bg-accent-primary-light px-2 py-1">
+            <div className="flex items-center gap-1.5 rounded-md bg-accent-primary-light px-2 py-1 transition-all duration-200 hover:bg-accent-primary-light/80">
               <Zap className="size-3 text-accent-warning" />
               <span className="text-xs font-semibold text-accent-warning">
                 {streak}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import { motion } from "motion/react";
 import {
   Award, Lock, Star, Zap, Code2, BookOpen, Brain, Target, Flame,
   CheckCircle2, Trophy, Sparkles, Rocket, Shield, Globe, Layers,
@@ -258,6 +259,14 @@ const categoryConfig = {
   mastery: { label: "Mastery", icon: Trophy },
 };
 
+const rarityRank: Record<string, number> = {
+  legendary: 0,
+  epic: 1,
+  rare: 2,
+  uncommon: 3,
+  common: 4,
+};
+
 // ─── Page Component ──────────────────────────────────────────────
 export default function AchievementsPage() {
   const [progress, setProgress] = useState(loadProgress());
@@ -287,6 +296,18 @@ export default function AchievementsPage() {
 
   const categories = ["all", ...new Set(achievements.map((a) => a.category))] as string[];
   const filtered = activeTab === "all" ? achievements : achievements.filter((a) => a.category === activeTab);
+
+  // Sort by rarity (legendary first), then by progress percentage descending
+  const sorted = useMemo(() =>
+    [...filtered].sort((a, b) => {
+      const rankDiff = (rarityRank[a.rarity] ?? 9) - (rarityRank[b.rarity] ?? 9);
+      if (rankDiff !== 0) return rankDiff;
+      const aPct = a.max > 0 ? a.progress / a.max : 0;
+      const bPct = b.max > 0 ? b.progress / b.max : 0;
+      return bPct - aPct;
+    }),
+    [filtered]
+  );
 
   if (!loaded) {
     return (
@@ -380,7 +401,7 @@ export default function AchievementsPage() {
 
       {/* Achievement Cards */}
       <div className="space-y-3">
-        {filtered.map((achievement, i) => {
+        {sorted.map((achievement, i) => {
           const isEarned = achievement.earned;
           const isLocked = achievement.progress === 0;
           const progressPct = Math.min(Math.round((achievement.progress / achievement.max) * 100), 100);
@@ -389,85 +410,114 @@ export default function AchievementsPage() {
           const CatIcon = categoryConfig[achievement.category]?.icon || Trophy;
 
           return (
-            <Card
+            <motion.div
               key={achievement.id}
-              className={cn(
-                "glass glass-hover transition-all duration-300",
-                isEarned && "border-accent-warning/20 bg-gradient-to-r from-accent-warning/5 via-transparent to-transparent",
-                mounted && `animate-slide-up delay-${Math.min((i % 5) + 1, 6)}`
-              )}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.45,
+                delay: Math.min(i * 0.04, 0.5),
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
             >
-              <CardHeader className="p-4 sm:p-5">
-                <div className="flex items-start gap-4">
-                  {/* Icon */}
-                  <div className={cn(
-                    "flex size-12 shrink-0 items-center justify-center rounded-xl transition-all",
-                    isEarned ? "bg-accent-warning/10" : isLocked ? "bg-bg-tertiary" : config.bg
-                  )}>
-                    {isEarned ? (
-                      <div className="relative">
-                        <Icon className={cn("size-6", config.color)} />
-                        <Sparkles className="pointer-events-none absolute -right-2 -top-2 size-3 text-accent-warning" />
-                      </div>
-                    ) : (
-                      <Icon className={cn("size-6", isLocked ? "text-text-muted" : config.color)} />
-                    )}
+              <Card
+                className={cn(
+                  "relative glass glass-hover transition-all duration-300",
+                  isEarned && "border-accent-warning/20 bg-gradient-to-r from-accent-warning/5 via-transparent to-transparent"
+                )}
+              >
+                {/* Earned glow */}
+                {isEarned && (
+                  <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
+                    <motion.div
+                      className="absolute -inset-6 rounded-full bg-accent-warning/10 blur-3xl"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.05, 1] }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
                   </div>
+                )}
 
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <CardTitle className={cn("text-sm font-semibold", isEarned ? "text-accent-warning" : isLocked ? "text-text-muted" : "")}>
-                          {achievement.title}
-                        </CardTitle>
-                        <Badge variant="outline" className={cn("border-0 text-[10px] font-medium px-1.5 py-0.5", config.bg, config.color)}>
-                          {config.label}
+                <CardHeader className="relative p-4 sm:p-5">
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
+                    <div className={cn(
+                      "flex size-12 shrink-0 items-center justify-center rounded-xl transition-all",
+                      isEarned ? "bg-accent-warning/10" : isLocked ? "bg-bg-tertiary" : config.bg
+                    )}>
+                      {isEarned ? (
+                        <div className="relative">
+                          <Icon className={cn("size-6", config.color)} />
+                          <Sparkles className="pointer-events-none absolute -right-2 -top-2 size-3 text-accent-warning" />
+                        </div>
+                      ) : (
+                        <Icon className={cn("size-6", isLocked ? "text-text-muted" : config.color)} />
+                      )}
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <CardTitle className={cn("text-sm font-semibold", isEarned ? "text-accent-warning" : isLocked ? "text-text-muted" : "")}>
+                            {achievement.title}
+                          </CardTitle>
+                          <Badge variant="outline" className={cn("border-0 text-[10px] font-medium px-1.5 py-0.5", config.bg, config.color)}>
+                            {config.label}
+                          </Badge>
+                        </div>
+                        <Badge variant="secondary" className="gap-1 text-[10px] bg-bg-tertiary text-text-muted">
+                          <CatIcon className="size-3" />
+                          {categoryConfig[achievement.category]?.label}
                         </Badge>
                       </div>
-                      <Badge variant="secondary" className="gap-1 text-[10px] bg-bg-tertiary text-text-muted">
-                        <CatIcon className="size-3" />
-                        {categoryConfig[achievement.category]?.label}
-                      </Badge>
-                    </div>
-                    <CardDescription className="mt-0.5 text-xs">
-                      {achievement.description}
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-
-              {!isEarned && (
-                <CardContent className="px-4 pb-4 pt-0 sm:px-5 sm:pb-5">
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-xs">
-                      <span className="text-text-muted">
-                        {isLocked ? "Not started" : `${achievement.progress.toLocaleString()}/${achievement.max.toLocaleString()}`}
-                      </span>
-                      <span className={cn("font-medium", config.color)}>{progressPct}%</span>
-                    </div>
-                    <div className="relative h-2 overflow-hidden rounded-full bg-bg-tertiary">
-                      <div
-                        className={cn("h-full rounded-full transition-all duration-500", config.bg)}
-                        style={{ width: `${progressPct}%` }}
-                      />
+                      <CardDescription className="mt-0.5 text-xs">
+                        {achievement.description}
+                      </CardDescription>
                     </div>
                   </div>
-                </CardContent>
-              )}
+                </CardHeader>
 
-              {isEarned && (
-                <CardContent className="flex items-center justify-between px-4 pb-4 pt-0 sm:px-5 sm:pb-5">
-                  <Badge variant="secondary" className="gap-1.5 bg-accent-secondary/10 text-accent-secondary text-[10px]">
-                    <CheckCircle2 className="size-3" />
-                    Unlocked
-                  </Badge>
-                  <span className="flex items-center gap-1 text-[10px] text-accent-warning font-medium">
-                    <Sparkles className="size-3" />
-                    +{achievement.xpReward} XP
-                  </span>
-                </CardContent>
-              )}
-            </Card>
+                {!isEarned && (
+                  <CardContent className="relative px-4 pb-4 pt-0 sm:px-5 sm:pb-5">
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-xs">
+                        <span className="text-text-muted">
+                          {isLocked ? "Not started" : `${achievement.progress.toLocaleString()}/${achievement.max.toLocaleString()}`}
+                        </span>
+                        <span className={cn("font-medium", config.color)}>{progressPct}%</span>
+                      </div>
+                      <div className="relative h-2 overflow-hidden rounded-full bg-bg-tertiary">
+                        <motion.div
+                          className={cn("h-full rounded-full", config.bg)}
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${progressPct}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 + Math.min(i * 0.03, 0.3) }}
+                        />
+                      </div>
+                    </div>
+                  </CardContent>
+                )}
+
+                {isEarned && (
+                  <CardContent className="relative flex items-center justify-between px-4 pb-4 pt-0 sm:px-5 sm:pb-5">
+                    <Badge variant="secondary" className="gap-1.5 bg-accent-secondary/10 text-accent-secondary text-[10px]">
+                      <CheckCircle2 className="size-3" />
+                      Unlocked
+                    </Badge>
+                    <span className="flex items-center gap-1 text-[10px] text-accent-warning font-medium">
+                      <Sparkles className="size-3" />
+                      +{achievement.xpReward} XP
+                    </span>
+                  </CardContent>
+                )}
+              </Card>
+            </motion.div>
           );
         })}
       </div>

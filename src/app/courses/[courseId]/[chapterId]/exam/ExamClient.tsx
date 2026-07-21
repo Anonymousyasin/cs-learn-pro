@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import {
   BookOpen, CheckCircle2, XCircle, ArrowLeft,
@@ -208,48 +209,91 @@ function TakingScreen({
   onSubmit: () => void;
   courseColor: string;
 }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const answered = questions.filter((q) => answers[q.id] !== undefined).length;
   const allAnswered = answered === questions.length;
+  const currentQ = questions[currentIndex];
+
+  const goNext = useCallback(() => {
+    if (currentIndex < questions.length - 1) setCurrentIndex((i) => i + 1);
+  }, [currentIndex, questions.length]);
+
+  const goPrev = useCallback(() => {
+    if (currentIndex > 0) setCurrentIndex((i) => i - 1);
+  }, [currentIndex]);
 
   return (
     <div className="space-y-6">
-      {/* Progress bar */}
-      <div className="space-y-2">
+      {/* Header: progress bar + question counter */}
+      <div className="space-y-3">
         <div className="flex items-center justify-between text-sm">
           <span className="font-medium text-text-primary">Chapter Exam</span>
           <span className="text-text-muted">{answered} of {questions.length} answered</span>
         </div>
         <div className="h-2 overflow-hidden rounded-full bg-bg-tertiary">
-          <div
-            className="h-full rounded-full transition-all duration-300"
-            style={{ width: `${(answered / questions.length) * 100}%`, backgroundColor: courseColor }}
+          <motion.div
+            className="h-full rounded-full"
+            style={{ backgroundColor: courseColor }}
+            initial={{ width: 0 }}
+            animate={{ width: `${(answered / questions.length) * 100}%` }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           />
+        </div>
+        <div className="flex items-center justify-between text-xs text-text-muted">
+          <span>Question {currentIndex + 1} of {questions.length}</span>
+          <span className="capitalize">Difficulty: <DifficultyBadge difficulty={currentQ.difficulty} /></span>
         </div>
       </div>
 
-      {/* Questions */}
-      <div className="space-y-5">
-        {questions.map((q, i) => (
+      {/* Current question with motion transition */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentQ.id}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -30 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+        >
           <QuestionCard
-            key={q.id}
-            question={q}
-            index={i}
-            answer={answers[q.id]}
-            setAnswer={(val) => setAnswer(q.id, val)}
+            question={currentQ}
+            index={currentIndex}
+            answer={answers[currentQ.id]}
+            setAnswer={(val) => setAnswer(currentQ.id, val)}
           />
-        ))}
-      </div>
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Submit */}
-      <Button
-        className="w-full gap-2"
-        size="lg"
-        disabled={!allAnswered}
-        style={{ backgroundColor: allAnswered ? courseColor : undefined, color: allAnswered ? "#fff" : undefined }}
-        onClick={onSubmit}
-      >
-        {allAnswered ? "Submit Exam" : `Answer ${questions.length - answered} more question${questions.length - answered === 1 ? "" : "s"}`}
-      </Button>
+      {/* Navigation + Submit */}
+      <div className="flex items-center gap-3">
+        <Button
+          variant="outline"
+          className="flex-1"
+          disabled={currentIndex === 0}
+          onClick={goPrev}
+        >
+          Previous
+        </Button>
+
+        {currentIndex < questions.length - 1 ? (
+          <Button
+            className="flex-1"
+            style={{ backgroundColor: courseColor, color: "#fff" }}
+            onClick={goNext}
+          >
+            Next
+          </Button>
+        ) : (
+          <Button
+            className="flex-1 gap-2"
+            size="lg"
+            disabled={!allAnswered}
+            style={{ backgroundColor: allAnswered ? courseColor : undefined, color: allAnswered ? "#fff" : undefined }}
+            onClick={onSubmit}
+          >
+            {allAnswered ? "Submit Exam" : `Answer ${questions.length - answered} more question${questions.length - answered === 1 ? "" : "s"}`}
+          </Button>
+        )}
+      </div>
     </div>
   );
 }
@@ -449,6 +493,53 @@ function MatchPairs({ q, answer, setAnswer }: { q: MatchPairsQuestion; answer: R
   );
 }
 
+function AnimatedScore({ targetPercent, passed, courseColor }: { targetPercent: number; passed: boolean; courseColor: string }) {
+  const [displayed, setDisplayed] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const duration = 1200;
+    const step = 16;
+    const totalSteps = duration / step;
+    const increment = targetPercent / totalSteps;
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= targetPercent) {
+        setDisplayed(targetPercent);
+        clearInterval(timer);
+      } else {
+        setDisplayed(Math.round(start));
+      }
+    }, step);
+    return () => clearInterval(timer);
+  }, [targetPercent]);
+
+  return (
+    <div className="relative flex size-28 items-center justify-center">
+      <svg className="size-28 -rotate-90" viewBox="0 0 36 36">
+        <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--color-border)" strokeWidth="3" />
+        <motion.circle
+          cx="18" cy="18" r="15.5" fill="none"
+          stroke={passed ? "var(--color-accent-secondary)" : "#ef4444"}
+          strokeWidth="3"
+          strokeLinecap="round"
+          initial={{ strokeDasharray: "0 97.9" }}
+          animate={{ strokeDasharray: `${targetPercent * 0.979} 97.9` }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        />
+      </svg>
+      <motion.span
+        className={cn("absolute text-2xl font-bold", passed ? "text-accent-secondary" : "text-red-500")}
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
+      >
+        {displayed}%
+      </motion.span>
+    </div>
+  );
+}
+
 function ResultsScreen({
   passed, score, correctCount, totalQuestions, courseId,
   questions, answers, results, chapterId, xpReward,
@@ -459,98 +550,148 @@ function ResultsScreen({
   courseId: string; chapterId: string; xpReward: number; attempt: number; onRetry: () => void; courseColor: string;
 }) {
   const percent = Math.round(score * 100);
+  const wrongAnswers = questions.filter((q) => !results[q.id]);
 
   return (
-    <div className="space-y-6">
+    <motion.div
+      className="space-y-6"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
       {/* Result card */}
-      <Card className={cn("border-2", passed ? "border-accent-secondary/30" : "border-red-500/30")}>
-        <CardHeader className="text-center pb-4">
-          <div className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full" style={{ backgroundColor: passed ? "#22c55e15" : "#ef444415" }}>
-            {passed
-              ? <Trophy className="size-10 text-accent-secondary" />
-              : <XCircle className="size-10 text-red-500" />
-            }
-          </div>
-          <CardTitle className="text-2xl">{passed ? "Congratulations!" : "Not Quite"}</CardTitle>
-          <CardDescription className="text-base mt-1">
-            {passed
-              ? "You passed the chapter exam!"
-              : "You need 95% to pass. Review the material and try again."
-            }
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {/* Score circle */}
-          <div className="flex justify-center">
-            <div className="relative flex size-28 items-center justify-center">
-              <svg className="size-28 -rotate-90" viewBox="0 0 36 36">
-                <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--color-border)" strokeWidth="3" />
-                <circle
-                  cx="18" cy="18" r="15.5" fill="none"
-                  stroke={passed ? "var(--color-accent-secondary)" : "#ef4444"}
-                  strokeWidth="3"
-                  strokeDasharray={`${percent * 0.979} 97.9`}
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span className={cn("absolute text-2xl font-bold", passed ? "text-accent-secondary" : "text-red-500")}>
-                {percent}%
-              </span>
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
+      >
+        <Card className={cn("border-2", passed ? "border-accent-secondary/30" : "border-red-500/30")}>
+          <CardHeader className="text-center pb-4">
+            <motion.div
+              className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full"
+              style={{ backgroundColor: passed ? "#22c55e15" : "#ef444415" }}
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ type: "spring", stiffness: 180, damping: 14, delay: 0.15 }}
+            >
+              {passed
+                ? <Trophy className="size-10 text-accent-secondary" />
+                : <XCircle className="size-10 text-red-500" />
+              }
+            </motion.div>
+            <CardTitle className="text-2xl">{passed ? "Congratulations!" : "Not Quite"}</CardTitle>
+            <CardDescription className="text-base mt-1">
+              {passed
+                ? "You passed the chapter exam!"
+                : "You need 95% to pass. Review the material and try again."
+              }
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {/* Animated score circle */}
+            <div className="flex justify-center">
+              <AnimatedScore targetPercent={percent} passed={passed} courseColor={courseColor} />
             </div>
-          </div>
 
-          <div className="grid grid-cols-2 gap-3 text-center text-sm">
-            <div className="rounded-lg bg-bg-tertiary/50 p-3">
-              <p className="text-2xl font-bold text-accent-secondary">{correctCount}</p>
-              <p className="text-xs text-text-muted">Correct</p>
+            <div className="grid grid-cols-2 gap-3 text-center text-sm">
+              <motion.div
+                className="rounded-lg bg-bg-tertiary/50 p-3"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.3 }}
+              >
+                <motion.p
+                  className="text-2xl font-bold text-accent-secondary"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
+                >
+                  {correctCount}
+                </motion.p>
+                <p className="text-xs text-text-muted">Correct</p>
+              </motion.div>
+              <motion.div
+                className="rounded-lg bg-bg-tertiary/50 p-3"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.3 }}
+              >
+                <motion.p
+                  className="text-2xl font-bold text-red-500"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
+                >
+                  {totalQuestions - correctCount}
+                </motion.p>
+                <p className="text-xs text-text-muted">Incorrect</p>
+              </motion.div>
             </div>
-            <div className="rounded-lg bg-bg-tertiary/50 p-3">
-              <p className="text-2xl font-bold text-red-500">{totalQuestions - correctCount}</p>
-              <p className="text-xs text-text-muted">Incorrect</p>
-            </div>
-          </div>
 
-          {passed && (
-            <div className="rounded-xl border border-accent-secondary/20 bg-accent-secondary/5 p-4 text-center">
-              <p className="flex items-center justify-center gap-2 text-sm font-medium text-accent-secondary">
-                <Trophy className="size-4" />
-                +{xpReward} XP Earned
-              </p>
-            </div>
-          )}
-        </CardContent>
-      </Card>
+            {passed && (
+              <motion.div
+                className="rounded-xl border border-accent-secondary/20 bg-accent-secondary/5 p-4 text-center"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.3 }}
+              >
+                <p className="flex items-center justify-center gap-2 text-sm font-medium text-accent-secondary">
+                  <Trophy className="size-4" />
+                  +{xpReward} XP Earned
+                </p>
+              </motion.div>
+            )}
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Question Review */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Review Answers</CardTitle>
-          <CardDescription>See which questions you got right and wrong</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {questions.map((q, i) => {
-            const correct = results[q.id];
-            return (
-              <div key={q.id} className={cn("rounded-xl border p-4", correct ? "border-accent-secondary/20 bg-accent-secondary/[0.03]" : "border-red-500/20 bg-red-500/[0.03]")}>
-                <div className="flex items-start gap-3">
-                  {correct
-                    ? <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-accent-secondary" />
-                    : <XCircle className="mt-0.5 size-4 shrink-0 text-red-500" />
-                  }
-                  <div className="min-w-0 flex-1 space-y-2">
-                    <p className="text-sm font-medium text-text-primary">{i + 1}. {q.question}</p>
-                    <ReviewAnswer q={q} userAnswer={answers[q.id]} />
-                    <p className="text-xs leading-relaxed text-text-muted">{q.explanation}</p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.35 }}
+      >
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Review Answers</CardTitle>
+            <CardDescription>See which questions you got right and wrong</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {questions.map((q, i) => {
+              const correct = results[q.id];
+              return (
+                <motion.div
+                  key={q.id}
+                  initial={{ opacity: 0, x: correct ? 0 : -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + i * 0.08, duration: 0.3, ease: "easeOut" }}
+                  className={cn("rounded-xl border p-4", correct ? "border-accent-secondary/20 bg-accent-secondary/[0.03]" : "border-red-500/20 bg-red-500/[0.03]")}
+                >
+                  <div className="flex items-start gap-3">
+                    {correct
+                      ? <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-accent-secondary" />
+                      : <XCircle className="mt-0.5 size-4 shrink-0 text-red-500" />
+                    }
+                    <div className="min-w-0 flex-1 space-y-2">
+                      <p className="text-sm font-medium text-text-primary">{i + 1}. {q.question}</p>
+                      <ReviewAnswer q={q} userAnswer={answers[q.id]} />
+                      <p className="text-xs leading-relaxed text-text-muted">{q.explanation}</p>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-        </CardContent>
-      </Card>
+                </motion.div>
+              );
+            })}
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Actions */}
-      <div className="flex flex-col gap-3 sm:flex-row">
+      <motion.div
+        className="flex flex-col gap-3 sm:flex-row"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 + questions.length * 0.06, duration: 0.3 }}
+      >
         <Button variant="outline" className="flex-1 gap-2" onClick={onRetry}>
           <RotateCcw className="size-4" />
           Retry Exam (Attempt {attempt + 1})
@@ -561,8 +702,8 @@ function ResultsScreen({
             Back to Chapter
           </Button>
         </Link>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
