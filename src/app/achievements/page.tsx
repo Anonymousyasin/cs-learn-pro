@@ -11,9 +11,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
-import { loadProgress, getLevel } from "@/lib/progress";
+import { loadProgress, getLevel, useProgress } from "@/lib/progress";
 import { courseRegistry } from "@/lib/courses";
 import type { UserProgress } from "@/lib/progress";
+import { useUser } from "@/lib/supabase-provider";
 
 // ─── Achievement Definitions ────────────────────────────────────
 interface AchievementDef {
@@ -269,15 +270,12 @@ const rarityRank: Record<string, number> = {
 
 // ─── Page Component ──────────────────────────────────────────────
 export default function AchievementsPage() {
-  const [progress, setProgress] = useState(loadProgress());
-  const [loaded, setLoaded] = useState(false);
+  const { user } = useUser();
+  const { progress, loaded } = useProgress(user?.id);
   const [activeTab, setActiveTab] = useState<string>("all");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const p = loadProgress();
-    setProgress(p);
-    setLoaded(true);
     setMounted(true);
   }, []);
 

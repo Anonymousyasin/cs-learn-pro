@@ -173,49 +173,80 @@ export function getLevelProgress(xp: number): number {
 
 // ─── React Hook ──────────────────────────────────────────────────
 import { useState, useCallback, useEffect } from "react";
+import {
+  safeLoadProgress,
+  safeSaveProgress,
+  safeCompleteChapter,
+} from "./supabase-storage";
 
-export function useProgress() {
+export function useProgress(userId?: string | null) {
   const [progress, setProgress] = useState<UserProgress>(() => loadProgress());
   const [loaded, setLoaded] = useState(false);
+  const [syncing, setSyncing] = useState(false);
 
+  // Load from Supabase on mount (if userId available), fall back to localStorage
   useEffect(() => {
-    const p = loadProgress();
-    setProgress(p);
-    setLoaded(true);
-  }, []);
+    if (userId) {
+      setSyncing(true);
+      safeLoadProgress(userId).then((p) => {
+        setProgress(p);
+        setLoaded(true);
+        setSyncing(false);
+      });
+    } else {
+      setLoaded(true);
+    }
+  }, [userId]);
 
-  const save = useCallback((p: UserProgress) => {
-    setProgress(p);
-    saveProgress(p);
-  }, []);
+  const save = useCallback(
+    (p: UserProgress) => {
+      setProgress(p);
+      saveProgress(p);
+      if (userId) safeSaveProgress(userId, p);
+    },
+    [userId]
+  );
 
-  const completeChapterAction = useCallback((chapterId: string, xpReward: number) => {
-    setProgress((prev) => {
-      const updated = completeChapter(prev, chapterId, xpReward);
-      saveProgress(updated);
-      return updated;
-    });
-  }, []);
+  const completeChapterAction = useCallback(
+    (chapterId: string, xpReward: number) => {
+      setProgress((prev) => {
+        const updated = completeChapter(prev, chapterId, xpReward);
+        saveProgress(updated);
+        if (userId) {
+          safeCompleteChapter(userId, chapterId, xpReward);
+          safeSaveProgress(userId, updated);
+        }
+        return updated;
+      });
+    },
+    [userId]
+  );
 
-  const passExamAction = useCallback((chapterId: string, score: number, xpReward: number) => {
-    setProgress((prev) => {
-      const updated = passExam(prev, chapterId, score, xpReward);
-      saveProgress(updated);
-      return updated;
-    });
-  }, []);
+  const passExamAction = useCallback(
+    (chapterId: string, score: number, xpReward: number) => {
+      setProgress((prev) => {
+        const updated = passExam(prev, chapterId, score, xpReward);
+        saveProgress(updated);
+        if (userId) safeSaveProgress(userId, updated);
+        return updated;
+      });
+    },
+    [userId]
+  );
 
   const touch = useCallback(() => {
     setProgress((prev) => {
       const updated = updateStreak(prev);
       saveProgress(updated);
+      if (userId) safeSaveProgress(userId, updated);
       return updated;
     });
-  }, []);
+  }, [userId]);
 
   return {
     progress,
     loaded,
+    syncing,
     completeChapter: completeChapterAction,
     passExam: passExamAction,
     touch,

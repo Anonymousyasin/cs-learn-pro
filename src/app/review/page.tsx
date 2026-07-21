@@ -13,6 +13,12 @@ import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import { courseRegistry } from "@/lib/courses";
 import type { ExamQuestion } from "@/lib/courses/types";
+import { useUser } from "@/lib/supabase-provider";
+import {
+  loadReviewCardsFromSupabase,
+  saveReviewCardsToSupabase,
+  type ReviewCardData,
+} from "@/lib/supabase-storage";
 
 // ─── SM-2 Spaced Repetition ─────────────────────────────────────
 interface CardData {
@@ -112,19 +118,34 @@ function loadCards(): CardData[] {
     }
   } catch {}
   const fresh = generateCards();
-  saveCards(fresh);
+  saveCards(fresh, userId);
   return fresh;
 }
 
-function saveCards(cards: CardData[]) {
+function saveCards(cards: CardData[], userId?: string) {
   if (typeof window === "undefined") return;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cards));
+  if (userId) {
+    const remoteCards: ReviewCardData[] = cards.map((c) => ({
+      id: c.id,
+      chapterId: c.topic,
+      question: JSON.stringify(c.question),
+      answer: "",
+      strength: c.strength,
+      interval: c.interval,
+      easeFactor: c.ease,
+      nextReview: c.nextReview,
+    }));
+    // Fire-and-forget: don't block UI
+    saveReviewCardsToSupabase(userId, remoteCards);
+  }
 }
 
 // ─── Pages ───────────────────────────────────────────────────────
 type ReviewPhase = "list" | "session" | "done";
 
 export default function ReviewPage() {
+  const { user } = useUser();
   const [cards, setCards] = useState<CardData[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [phase, setPhase] = useState<ReviewPhase>("list");
@@ -132,12 +153,42 @@ export default function ReviewPage() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [sessionResults, setSessionResults] = useState<{ correct: number; total: number }>({ correct: 0, total: 0 });
 
-  // Load cards on mount
+  // Load cards on mount (Supabase + localStorage fallback)
   useEffect(() => {
-    const c = loadCards();
-    setCards(c);
-    setLoaded(true);
-  }, []);
+    async function init() {
+      if (user) {
+        try {
+          const remoteCards = await loadReviewCardsFromSupabase(user.id);
+          if (remoteCards.length > 0) {
+            // Convert remote format to local CardData
+            const localCards: CardData[] = remoteCards.map((rc) => {
+              const q = JSON.parse(rc.question) as ExamQuestion;
+              return {
+                id: rc.id,
+                topic: rc.chapterId,
+                question: q,
+                lastReviewed: Date.now(),
+                nextReview: rc.nextReview,
+                interval: rc.interval,
+                ease: rc.easeFactor,
+                repetitions: 0,
+                strength: rc.strength,
+              };
+            });
+            setCards(localCards);
+            saveCards(localCards); // sync to localStorage
+            setLoaded(true);
+            return;
+          }
+        } catch {}
+      }
+      // Fallback: load from localStorage
+      const c = loadCards();
+      setCards(c);
+      setLoaded(true);
+    }
+    init();
+  }, [user]);
 
   const dueCards = useMemo(() => {
     const now = Date.now();
@@ -170,7 +221,7 @@ export default function ReviewPage() {
 
       const newCards = cards.map((c) => (c.id === card.id ? updated : c));
       setCards(newCards);
-      saveCards(newCards);
+      saveCards(newCards, user?.id);
       setSessionResults((prev) => ({
         correct: prev.correct + (isCorrect ? 1 : 0),
         total: prev.total + 1,
@@ -183,7 +234,7 @@ export default function ReviewPage() {
         setShowAnswer(false);
       }
     },
-    [currentIdx, dueCards, cards]
+    [currentIdx, dueCards, cards, user]
   );
 
   if (!loaded) {

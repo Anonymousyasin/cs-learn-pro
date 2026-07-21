@@ -17,7 +17,8 @@ import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import { courseRegistry } from "@/lib/courses";
-import { loadProgress, getLevel } from "@/lib/progress";
+import { loadProgress, getLevel, useProgress } from "@/lib/progress";
+import { useUser } from "@/lib/supabase-provider";
 
 const totalChapters = courseRegistry.courses.reduce((s, c) => s + c.chapters.length, 0);
 
@@ -31,8 +32,8 @@ const recentBadges = [
 ];
 
 export default function ProfilePage() {
-  const [progress, setProgress] = useState(loadProgress());
-  const [loaded, setLoaded] = useState(false);
+  const { user } = useUser();
+  const { progress, loaded } = useProgress(user?.id);
   const [settings, setSettings] = useState({
     emailNotifications: true,
     darkMode: true,
@@ -41,8 +42,7 @@ export default function ProfilePage() {
   });
 
   useEffect(() => {
-    setProgress(loadProgress());
-    setLoaded(true);
+    // Settings already initialized
   }, []);
 
   const level = getLevel(progress.xp);

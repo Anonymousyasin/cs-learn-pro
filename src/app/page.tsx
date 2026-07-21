@@ -11,9 +11,10 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { loadProgress, getLevel, getLevelProgress, getXPToNextLevel } from "@/lib/progress";
+import { loadProgress, getLevel, getLevelProgress, getXPToNextLevel, useProgress } from "@/lib/progress";
 import { courseRegistry } from "@/lib/courses";
 import { cn } from "@/lib/utils";
+import { useUser } from "@/lib/supabase-provider";
 
 // ─── Helpers ─────────────────────────────────────────────────────
 
@@ -99,14 +100,17 @@ function getCourseAccent(id: string): CourseAccent {
 // ─── Page ────────────────────────────────────────────────────────
 
 export default function DashboardPage() {
-  const [progress, setProgress] = useState(loadProgress());
-  const [loaded, setLoaded] = useState(false);
+  const { user } = useUser();
+  const {
+    progress,
+    loaded,
+    getLevel: getLevelFn,
+    getLevelProgress: getLevelProgressFn,
+    getXPToNextLevel: getXPToNextLevelFn,
+  } = useProgress(user?.id);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const p = loadProgress();
-    setProgress(p);
-    setLoaded(true);
     setMounted(true);
   }, []);
 
@@ -123,9 +127,9 @@ export default function DashboardPage() {
     );
   }
 
-  const level = getLevel(progress.xp);
-  const levelProgress = getLevelProgress(progress.xp);
-  const xpToNext = getXPToNextLevel(progress.xp);
+  const level = getLevelFn();
+  const levelProgress = getLevelProgressFn();
+  const xpToNext = getXPToNextLevelFn();
 
   const completedCourses = courseRegistry.courses.filter((c) =>
     c.chapters.every((ch) => progress.completedChapters.includes(ch.id))

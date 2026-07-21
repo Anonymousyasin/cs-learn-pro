@@ -9,8 +9,9 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { courseRegistry } from "@/lib/courses";
-import { loadProgress } from "@/lib/progress";
+import { loadProgress, useProgress } from "@/lib/progress";
 import { cn } from "@/lib/utils";
+import { useUser } from "@/lib/supabase-provider";
 
 const difficultyLabel = ["", "Beginner", "Intermediate", "Advanced", "Expert", "Master"];
 
@@ -125,12 +126,12 @@ function ProgressBar({
 }
 
 export default function CoursesPage() {
-  const [progress, setProgress] = useState(loadProgress());
+  const { user } = useUser();
+  const { progress, loaded } = useProgress(user?.id);
   const [mounted, setMounted] = useState(false);
   const totalCourses = courseRegistry.courses.length;
 
   useEffect(() => {
-    setProgress(loadProgress());
     setMounted(true);
   }, []);
 

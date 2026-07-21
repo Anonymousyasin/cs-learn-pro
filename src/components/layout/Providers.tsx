@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { SupabaseProvider } from "@/lib/supabase-provider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +11,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       enableSystem={false}
       themes={["dark", "light", "sepia"]}
     >
-      {children}
+      <SupabaseProvider>{children}</SupabaseProvider>
     </ThemeProvider>
   );
 }
