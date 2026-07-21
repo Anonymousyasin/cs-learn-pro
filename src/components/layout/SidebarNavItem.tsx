@@ -25,7 +25,7 @@ export function SidebarNavItem({
       className={cn(
         "group relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
         isActive
-          ? "bg-accent text-accent-foreground shadow-[inset_0_0_16px_rgba(56,189,248,0.06)]"
+          ? "bg-accent text-accent-foreground shadow-[inset_0_0_16px_rgba(232,131,110,0.06)]"
           : "text-text-secondary hover:bg-bg-hover hover:text-text-primary"
       )}
     >

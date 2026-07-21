@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SidebarNavItem } from "./SidebarNavItem";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 import { loadProgress, getLevel } from "@/lib/progress";
 
 const navItems = [
@@ -138,7 +137,6 @@ export function Sidebar() {
             </div>
             <span className="text-[10px] text-text-muted">Lv.{level}</span>
           </div>
-          <ThemeSwitcher />
         </div>
       </div>
     </aside>
