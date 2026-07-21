@@ -572,7 +572,7 @@ function ResultsScreen({
               style={{ backgroundColor: passed ? "#22c55e15" : "#ef444415" }}
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
-              transition={{ type: "spring", stiffness: 180, damping: 14, delay: 0.15 }}
+              transition={{ type: "spring" as const, stiffness: 180, damping: 14, delay: 0.15 }}
             >
               {passed
                 ? <Trophy className="size-10 text-accent-secondary" />
@@ -604,7 +604,7 @@ function ResultsScreen({
                   className="text-2xl font-bold text-accent-secondary"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
+                  transition={{ delay: 0.8, type: "spring" as const, stiffness: 200 }}
                 >
                   {correctCount}
                 </motion.p>
@@ -620,7 +620,7 @@ function ResultsScreen({
                   className="text-2xl font-bold text-red-500"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
+                  transition={{ delay: 0.9, type: "spring" as const, stiffness: 200 }}
                 >
                   {totalQuestions - correctCount}
                 </motion.p>

@@ -67,7 +67,7 @@ export function CourseChapters({
                   <motion.div
                     initial={{ scale: 0, rotate: -90 }}
                     animate={{ scale: 1, rotate: 0 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
                   >
                     <CheckCircle2 className="size-5 text-accent-secondary" />
                   </motion.div>
@@ -75,7 +75,7 @@ export function CourseChapters({
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
                   >
                     <PlayCircle className="size-5 text-accent-primary" />
                   </motion.div>
@@ -83,7 +83,7 @@ export function CourseChapters({
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
                   >
                     <Lock className="size-5 text-text-muted" />
                   </motion.div>

@@ -53,7 +53,7 @@ export function MobileNav() {
                 <motion.div
                   layoutId="active-indicator"
                   className="absolute -top-1 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-accent-primary"
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  transition={{ type: "spring" as const, stiffness: 400, damping: 30 }}
                 />
               )}
 
@@ -67,8 +67,8 @@ export function MobileNav() {
                 }
                 transition={
                   active
-                    ? { type: "spring", stiffness: 500, damping: 12 }
-                    : { type: "spring", stiffness: 300, damping: 20 }
+                    ? { type: "spring" as const, stiffness: 500, damping: 12 }
+                    : { type: "spring" as const, stiffness: 300, damping: 20 }
                 }
               >
                 <Icon className="size-5" />

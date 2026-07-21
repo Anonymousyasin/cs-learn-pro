@@ -64,7 +64,7 @@ const containerVariants = {
     opacity: 1,
     transition: { staggerChildren: 0.1 },
   },
-};
+} as const;
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
@@ -72,18 +72,18 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: "spring", stiffness: 260, damping: 24 },
+    transition: { type: "spring" as const, stiffness: 260, damping: 24 },
   },
-};
+} as const;
 
 const headerVariants = {
   hidden: { opacity: 0, y: -12 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 200, damping: 20 },
+    transition: { type: "spring" as const, stiffness: 200, damping: 20 },
   },
-};
+} as const;
 
 function ProgressBar({
   pct,
@@ -203,7 +203,7 @@ export default function CoursesPage() {
                         theme.badgeStyle,
                       )}
                       whileHover={{ y: -4, scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                      transition={{ type: "spring" as const, stiffness: 300, damping: 15 }}
                     >
                       {theme.icon}
                     </motion.div>

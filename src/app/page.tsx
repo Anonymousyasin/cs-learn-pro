@@ -174,7 +174,7 @@ export default function DashboardPage() {
               <motion.div
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
-                transition={{ type: "spring", stiffness: 200, damping: 12, delay: 0.15 }}
+                transition={{ type: "spring" as const, stiffness: 200, damping: 12, delay: 0.15 }}
                 className="flex size-10 items-center justify-center rounded-xl bg-accent-primary/10"
               >
                 <Brain className="size-5 text-accent-primary" />
@@ -286,7 +286,7 @@ export default function DashboardPage() {
               variants={statVariants}
               custom={i}
               whileHover={{ scale: 1.05, y: -3 }}
-              transition={{ type: "spring", stiffness: 300, damping: 16 }}
+              transition={{ type: "spring" as const, stiffness: 300, damping: 16 }}
               className="group relative cursor-default overflow-hidden rounded-xl border border-border/50 bg-bg-card p-4 transition-colors hover:border-accent-primary/20"
             >
               {/* Hover glow */}
@@ -387,7 +387,7 @@ export default function DashboardPage() {
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 10, delay: 1 }}
+                      transition={{ type: "spring" as const, stiffness: 200, damping: 10, delay: 1 }}
                       className="inline-flex items-center gap-1 rounded-full bg-accent-warning/10 px-2.5 py-0.5 text-xs font-bold text-accent-warning"
                     >
                       <Zap className="size-3" /> +{cc.chapter.xpReward} XP
@@ -402,7 +402,7 @@ export default function DashboardPage() {
                     <motion.p
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 10, delay: 1.1 }}
+                      transition={{ type: "spring" as const, stiffness: 200, damping: 10, delay: 1.1 }}
                       className="flex items-center gap-1 text-sm font-bold text-accent-warning"
                     >
                       <Zap className="size-3.5" /> +{cc.chapter.xpReward} XP
