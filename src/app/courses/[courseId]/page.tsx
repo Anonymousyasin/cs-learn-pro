@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   FileCode, Palette, Code2, Terminal, Shield,
-  Clock, Star, Zap, Award, BookOpen,
+  Clock, Star, Zap, Award, BookOpen, ArrowRight,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -101,6 +101,43 @@ export default async function CoursePage({
           />
         </CardContent>
       </Card>
+
+      {/* Projects */}
+      {course.projects.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Hands-On Projects</CardTitle>
+            <CardDescription>
+              {course.projects.length} projects to reinforce what you&apos;ve learned
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Link
+              href={`/courses/${courseId}/projects`}
+              className="group flex items-center justify-between rounded-lg border p-4 transition-all hover:border-primary/50 hover:bg-muted/30"
+              style={{ borderColor: `${course.color}30` }}
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex size-10 items-center justify-center rounded-xl"
+                  style={{ backgroundColor: `${course.color}15` }}
+                >
+                  <Code2 className="size-5" style={{ color: course.color }} />
+                </div>
+                <div>
+                  <p className="font-medium group-hover:text-primary transition-colors">
+                    View All Projects
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {course.projects.length} projects &middot; Build real-world applications
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="size-5 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
+            </Link>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

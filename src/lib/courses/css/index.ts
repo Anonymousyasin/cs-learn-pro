@@ -1,5 +1,5 @@
 // Auto-generated course data - do not edit directly
-import { Course, Chapter, Section, ExamQuestion, MultipleChoiceQuestion, TrueFalseQuestion, FillBlankQuestion, CodeOrderQuestion, MatchPairsQuestion } from "../types";
+import { Course, Chapter, Section, ExamQuestion, MultipleChoiceQuestion, TrueFalseQuestion, FillBlankQuestion, CodeOrderQuestion, MatchPairsQuestion, Project } from "../types";
 
 const cssChapters: Chapter[] = [
   {
@@ -16095,6 +16095,9 @@ const cssChapters: Chapter[] = [
   },
 ];
 
+const cssProjects: Project[] = [
+];
+
 export const cssCourse: Course = {
   id: "css",
   title: "CSS",
@@ -16104,6 +16107,7 @@ export const cssCourse: Course = {
   color: "#38bdf8",
   difficulty: 1,
   chapters: cssChapters,
+  projects: cssProjects,
   totalXP: 1596,
   estimatedHours: 75,
 };

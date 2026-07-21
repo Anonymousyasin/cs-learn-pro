@@ -142,6 +142,23 @@ export interface Chapter {
   keyPoints: string[];
 }
 
+// ─── Project ────────────────────────────────────────────────────
+export interface Project {
+  id: string;                     // "js-calculator"
+  courseId: string;               // "javascript"
+  title: string;                  // "Build a Calculator"
+  description: string;            // What the project is about
+  difficulty: 1 | 2 | 3 | 4 | 5;
+  order: number;
+  learningObjectives: string[];   // "Use DOM selectors"
+  requirements: string[];         // "Display accepts user input"
+  hints: string[];
+  starterCode?: string;           // Optional starting code
+  expectedConcepts: string[];     // Chapter IDs this reinforces
+  estimatedMinutes: number;
+  xpReward: number;
+}
+
 // ─── Course ─────────────────────────────────────────────────────
 export interface Course {
   id: string;                     // "html"
@@ -152,6 +169,7 @@ export interface Course {
   color: string;                  // hex color for accents
   difficulty: 1 | 2 | 3 | 4 | 5;
   chapters: Chapter[];
+  projects: Project[];            // Hands-on projects
   totalXP: number;                // Sum of all chapter XP rewards
   estimatedHours: number;
 }
@@ -161,4 +179,5 @@ export interface CourseRegistry {
   courses: Course[];
   getCourse(id: string): Course | undefined;
   getChapter(courseId: string, chapterId: string): Chapter | undefined;
+  getProject(courseId: string, projectId: string): Project | undefined;
 }

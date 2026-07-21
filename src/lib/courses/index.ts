@@ -22,4 +22,8 @@ export const courseRegistry: CourseRegistry = {
     const course = this.getCourse(courseId);
     return course?.chapters.find((ch) => ch.id === chapterId);
   },
+  getProject(courseId: string, projectId: string) {
+    const course = this.getCourse(courseId);
+    return course?.projects.find((p) => p.id === projectId);
+  },
 };
