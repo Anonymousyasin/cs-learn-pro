@@ -9,11 +9,18 @@ import { Badge } from "@/components/ui/badge";
 import { courseRegistry } from "@/lib/courses";
 import { CourseChapters } from "@/components/course/CourseChapters";
 
-const iconMap: Record<string, typeof FileCode> = {
-  FileCode, Palette, Code2, Terminal, Shield,
-};
-
 const difficultyLabel = ["", "Beginner", "Intermediate", "Advanced", "Expert", "Master"];
+
+function getCourseIcon(icon: string) {
+  switch (icon) {
+    case "FileCode": return FileCode;
+    case "Palette": return Palette;
+    case "Code2": return Code2;
+    case "Terminal": return Terminal;
+    case "Shield": return Shield;
+    default: return FileCode;
+  }
+}
 
 export default async function CoursePage({
   params,
@@ -24,7 +31,7 @@ export default async function CoursePage({
   const course = courseRegistry.getCourse(courseId);
   if (!course) notFound();
 
-  const Icon = iconMap[course.icon] || FileCode;
+  const Icon = getCourseIcon(course.icon);
   const total = course.chapters.length;
 
   return (
