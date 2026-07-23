@@ -470,6 +470,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch2-practice",
               "title": "The Binary Number System Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -478,6 +479,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# The Binary Number System Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -1320,6 +1323,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch6-practice",
               "title": "Boolean Logic & Truth Tables Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -1328,6 +1332,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Boolean Logic & Truth Tables Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -2170,6 +2176,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch10-practice",
               "title": "Memory Hierarchy (Registers, Cache, RAM, Disk) Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -2178,6 +2185,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Memory Hierarchy (Registers, Cache, RAM, Disk) Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -3043,6 +3052,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch14-practice",
               "title": "Functions & Relations Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -3051,6 +3061,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Functions & Relations Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -3929,6 +3941,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch18-practice",
               "title": "Proof by Induction Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -3937,6 +3950,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Proof by Induction Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -4815,6 +4830,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch22-practice",
               "title": "Probability: Basic Concepts Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -4823,6 +4839,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Probability: Basic Concepts Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -5701,6 +5719,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch26-practice",
               "title": "Modular Arithmetic & Number Theory Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -5709,6 +5728,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Modular Arithmetic & Number Theory Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -6563,6 +6584,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch30-practice",
               "title": "What is an Algorithm? Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -6571,6 +6593,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# What is an Algorithm? Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -7412,6 +7436,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch34-practice",
               "title": "Asymptotic Analysis Rules Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -7420,6 +7445,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Asymptotic Analysis Rules Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -8269,6 +8296,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch38-practice",
               "title": "Bubble Sort & Selection Sort Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -8277,6 +8305,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Bubble Sort & Selection Sort Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -9115,6 +9145,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch42-practice",
               "title": "Heap Sort & Binary Heaps Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -9123,6 +9154,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Heap Sort & Binary Heaps Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -9972,6 +10005,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch46-practice",
               "title": "Sliding Window Technique Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -9980,6 +10014,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Sliding Window Technique Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -10820,6 +10856,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch50-practice",
               "title": "Singly Linked Lists Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -10828,6 +10865,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Singly Linked Lists Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -11670,6 +11709,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch54-practice",
               "title": "Deques & Priority Queues Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -11678,6 +11718,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Deques & Priority Queues Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -12531,6 +12573,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch58-practice",
               "title": "Trees: Terminology & Properties Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -12539,6 +12582,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Trees: Terminology & Properties Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -13381,6 +13426,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch62-practice",
               "title": "Balanced BSTs: AVL Trees Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -13389,6 +13435,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Balanced BSTs: AVL Trees Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -14231,6 +14279,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch66-practice",
               "title": "Suffix Trees & Suffix Arrays Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -14239,6 +14288,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Suffix Trees & Suffix Arrays Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -15090,6 +15141,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch70-practice",
               "title": "Dijkstra's Shortest Path Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -15098,6 +15150,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Dijkstra's Shortest Path Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -15936,6 +15990,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch74-practice",
               "title": "Minimum Spanning Trees (Prim's Algorithm) Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -15944,6 +15999,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Minimum Spanning Trees (Prim's Algorithm) Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -16795,6 +16852,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch78-practice",
               "title": "Strongly Connected Components (Kosaraju, Tarjan) Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -16803,6 +16861,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Strongly Connected Components (Kosaraju, Tarjan) Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -17642,6 +17702,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch82-practice",
               "title": "Dynamic Programming: Core Principles Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -17650,6 +17711,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Dynamic Programming: Core Principles Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -18517,6 +18580,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch86-practice",
               "title": "DP: Matrix Chain Multiplication Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -18525,6 +18589,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# DP: Matrix Chain Multiplication Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -19364,6 +19430,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch90-practice",
               "title": "Backtracking (N-Queens, Sudoku) Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -19372,6 +19439,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Backtracking (N-Queens, Sudoku) Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -20210,6 +20279,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch94-practice",
               "title": "Approximation Algorithms Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -20218,6 +20288,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Approximation Algorithms Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -21057,6 +21129,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch98-practice",
               "title": "Instruction Set Architecture (ISA) Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -21065,6 +21138,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Instruction Set Architecture (ISA) Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -21911,6 +21986,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch102-practice",
               "title": "Interrupts & I/O Systems Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -21919,6 +21995,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Interrupts & I/O Systems Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -22765,6 +22843,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch106-practice",
               "title": "Performance Measurement & Optimization Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -22773,6 +22852,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Performance Measurement & Optimization Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -23619,6 +23700,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch110-practice",
               "title": "Process Synchronization & Locks Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -23627,6 +23709,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Process Synchronization & Locks Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -24473,6 +24557,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch114-practice",
               "title": "File Systems & Storage Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -24481,6 +24566,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# File Systems & Storage Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -25327,6 +25414,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch118-practice",
               "title": "Networking: The OSI Model Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -25335,6 +25423,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Networking: The OSI Model Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -26181,6 +26271,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch122-practice",
               "title": "Congestion Control & Flow Control Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -26189,6 +26280,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Congestion Control & Flow Control Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -27044,6 +27137,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch126-practice",
               "title": "The Relational Model Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -27052,6 +27146,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# The Relational Model Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -27896,6 +27992,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch130-practice",
               "title": "Transactions & ACID Properties Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -27904,6 +28001,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Transactions & ACID Properties Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -28749,6 +28848,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch134-practice",
               "title": "Programming Language Paradigms Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -28757,6 +28857,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Programming Language Paradigms Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -29605,6 +29707,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch138-practice",
               "title": "Code Generation & Optimization Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -29613,6 +29716,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Code Generation & Optimization Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -30471,6 +30576,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch142-practice",
               "title": "Finite Automata & Regular Languages Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -30479,6 +30585,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Finite Automata & Regular Languages Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -31341,6 +31449,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch146-practice",
               "title": "Lambda Calculus Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -31349,6 +31458,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Lambda Calculus Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -32200,6 +32311,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch150-practice",
               "title": "Game Theory & Minimax Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -32208,6 +32320,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Game Theory & Minimax Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -33058,6 +33172,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch154-practice",
               "title": "Symmetric Encryption (AES, DES) Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -33066,6 +33181,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Symmetric Encryption (AES, DES) Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -33923,6 +34040,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch158-practice",
               "title": "Web Security: OWASP Top 10 Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -33931,6 +34049,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# Web Security: OWASP Top 10 Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {
@@ -34785,6 +34905,7 @@ const csChapters: Chapter[] = [
           },
           {
               "type": "exercise",
+              "id": "cs-ch162-practice",
               "title": "MapReduce & Big Data Practice",
               "description": "Apply what you've learned:",
               "instructions": [
@@ -34793,6 +34914,8 @@ const csChapters: Chapter[] = [
                   "Analyze time and space complexity",
                   "Compare with standard library implementations"
               ],
+              "code": "# MapReduce & Big Data Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f\"Result: {result}\")",
+              "correctOutput": "Result: ...",
               "hint": "Start simple, then add optimizations one at a time."
           },
           {

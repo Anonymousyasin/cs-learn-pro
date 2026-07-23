@@ -2585,16 +2585,17 @@ function genCourse(course) {
 // ─── Generate All ────────────────────────────────────────────────
 console.log("Generating course data...\n");
 
-// Clean output directory
+// Clean output directory (skip Python — hand-crafted chapters 1-40 are there)
 for (const course of courses) {
+  if (course.id === "python") continue; // hand-crafted content must not be overwritten
   const courseDir = path.join(outDir, course.id);
   if (fs.existsSync(courseDir)) {
     fs.rmSync(courseDir, { recursive: true });
   }
 }
 
-// Generate all 5 courses
-courses.forEach(genCourse);
+// Generate all courses (Python is hand-crafted — skip it)
+courses.filter(c => c.id !== "python").forEach(genCourse);
 
 // Generate index.ts
 const idx = `import { CourseRegistry, Course } from "./types";
