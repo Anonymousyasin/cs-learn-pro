@@ -1533,12 +1533,13 @@ function genCsSections(chName, idx) {
       ["Trade-off", "Easier to implement", "Better asymptotic behavior"],
     ]});
   } else if (idx % 4 === 2) {
-    s.push({ type: "exercise", title: `${chName} Practice`, description: "Apply what you've learned:", instructions: [
+    const practiceId = `cs-ch${idx}-practice`;
+    s.push({ type: "exercise", id: practiceId, title: `${chName} Practice`, description: "Apply what you've learned:", instructions: [
       "Implement the core concept from scratch",
       "Test with various inputs and edge cases",
       "Analyze time and space complexity",
       "Compare with standard library implementations",
-    ], hint: "Start simple, then add optimizations one at a time." });
+    ], code: `# ${chName} Practice\n# Implement the core concept described in this chapter\n\ndef practice_solution():\n    # TODO: Implement the solution\n    pass\n\n# Test your implementation\nresult = practice_solution()\nprint(f"Result: {result}")`, correctOutput: "Result: ...", hint: "Start simple, then add optimizations one at a time." });
   }
 
   s.push({ type: "callout", style: "warning", content: `⚠️ **Common Pitfall:** A common mistake with ${chName} is learning the theory without connecting it to practice. Always ask: "Where would I use this? What problem does it solve?" The best engineers understand both the "how" and the "why."` });
