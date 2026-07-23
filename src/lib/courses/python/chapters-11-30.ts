@@ -22,7 +22,7 @@ const ch11Sections: Section[] = [
     language: "python",
     caption: "Basic string method calls — each returns a new result without changing the original:",
     content:
-      'text = "  Hello, Python World!  "\n\nprint(text.lower())       # "  hello, python world!  "\nprint(text.upper())       # "  HELLO, PYTHON WORLD!  "\nprint(text.strip())       # "Hello, Python World!"\nprint(text.replace("World", "Universe"))  # "  Hello, Python Universe!  "\nprint(len(text))          # 26 (including spaces)',
+      'text = "  Hello, Python World!  "\n\nprint(text.lower())       # "  hello, python world!  "\nprint(text.upper())       # "  HELLO, PYTHON WORLD!  "\nprint(text.strip())       # "Hello, Python World!"\nprint(text.replace("World", "Universe"))  # "  Hello, Python Universe!  "\nprint(len(text))          # 24 (including spaces)',
   },
   {
     type: "text",
@@ -339,14 +339,14 @@ const ch12Sections: Section[] = [
   {
     type: "text",
     content:
-      "## Format Specifiers\n\nInside the curly braces, you can add a colon followed by a **format specifier** to control how values are displayed:\n\n```python\n# Decimal places\nprice = 49.995\nprint(f\"{price:.2f}\")         # \"50.00\"\n\n# Width and alignment\nprint(f\"|{\"hi\":>10}|\")        # \"|        hi|\"\nprint(f\"|{\"hi\":<10}|\")        # \"|hi        |\"\nprint(f\"|{\"hi\":^10}|\")        # \"|    hi    |\"\n\n# Thousands separator\nbig = 1234567\nprint(f\"{big:,}\")              # \"1,234,567\"\n\n# Percentage\nscore = 0.8765\nprint(f\"{score:.1%}\")           # \"87.7%\"\n\n# Zero-padding\nprint(f\"{42:05d}\")             # \"00042\"\n```",
+      "## Format Specifiers\n\nInside the curly braces, you can add a colon followed by a **format specifier** to control how values are displayed:\n\n```python\n# Decimal places\nprice = 49.995\nprint(f\"{price:.2f}\")         # \"50.00\"\n\n# Width and alignment\nprint(f\"|{'hi':>10}|\")        # \"|        hi|\"\nprint(f\"|{'hi':<10}|\")        # \"|hi        |\"\nprint(f\"|{'hi':^10}|\")        # \"|    hi    |\"\n\n# Thousands separator\nbig = 1234567\nprint(f\"{big:,}\")              # \"1,234,567\"\n\n# Percentage\nscore = 0.8765\nprint(f\"{score:.1%}\")           # \"87.7%\"\n\n# Zero-padding\nprint(f\"{42:05d}\")             # \"00042\"\n```",
   },
   {
     type: "code",
     language: "python",
     caption: "F-strings evaluate any Python expression inside the braces:",
     content:
-      'x = 7\ny = 3\n\n# Arithmetic expressions\nprint(f"{x} + {y} = {x + y}")\nprint(f"{x} squared = {x ** 2}")\n\n# Ternary inside f-string\nprint(f"{x} is {"even" if x % 2 == 0 else "odd"}")\n\n# List access\ncolors = ["red", "green", "blue"]\nprint(f"First color: {colors[0].upper()}")',
+      'x = 7\ny = 3\n\n# Arithmetic expressions\nprint(f"{x} + {y} = {x + y}")\nprint(f"{x} squared = {x ** 2}")\n\n# Ternary inside f-string\nprint(f"{x} is {\'even\' if x % 2 == 0 else \'odd\'}")\n\n# List access\ncolors = ["red", "green", "blue"]\nprint(f"First color: {colors[0].upper()}")',
   },
   {
     type: "text",
@@ -4370,7 +4370,7 @@ const ch25Sections: Section[] = [
     language: "python",
     caption: "Nested dictionaries:",
     content:
-      '# Dictionary containing dictionaries\nusers = {\n    "alice": {"age": 30, "email": "alice@example.com"},\n    "bob": {"age": 25, "email": "bob@example.com"},\n}\n\n# Access nested value\nprint(users["alice"]["email"])  # alice@example.com\n\n# Add a new user\nusers["charlie"] = {"age": 35, "email": "charlie@example.com"}\n\n# Iterate over nested dict\nfor username, info in users.items():\n    print(f"{username}: {info[\"email\"]}")\n\n# Dictionary with lists\ngrades = {\n    "math": [85, 90, 88],\n    "science": [92, 87, 95],\n}\nprint(sum(grades["math"]) / len(grades["math"]))  # 87.67',
+      '# Dictionary containing dictionaries\nusers = {\n    "alice": {"age": 30, "email": "alice@example.com"},\n    "bob": {"age": 25, "email": "bob@example.com"},\n}\n\n# Access nested value\nprint(users["alice"]["email"])  # alice@example.com\n\n# Add a new user\nusers["charlie"] = {"age": 35, "email": "charlie@example.com"}\n\n# Iterate over nested dict\nfor username, info in users.items():\n    print(f"{username}: {info[\'email\']}")\n\n# Dictionary with lists\ngrades = {\n    "math": [85, 90, 88],\n    "science": [92, 87, 95],\n}\nprint(sum(grades["math"]) / len(grades["math"]))  # 87.67',
   },
   {
     type: "comparison",

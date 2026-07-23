@@ -1178,10 +1178,10 @@ const ch4Exam: ExamQuestion[] = [
     type: "match-pairs",
     difficulty: "hard",
     question: "Match each expression to its result.",
-    leftItems: ["-9 // 4", "-9 % 4", "round(3.5)", "abs(-3 + 7)"],
-    rightItems: ["-3", "3", "4", "4"],
+    leftItems: ["-9 // 4", "-9 % 4", "round(3.5)", "abs(-3 + 5)"],
+    rightItems: ["-3", "3", "4", "2"],
     correctMatches: [[0, 0], [1, 1], [2, 2], [3, 3]],
-    explanation: "-9 // 4 = -3 (floor). -9 % 4 = 3. round(3.5) = 4 (banker's rounding to even). abs(-3 + 7) = abs(4) = 4.",
+    explanation: "-9 // 4 = -3 (floor). -9 % 4 = 3. round(3.5) = 4 (banker's rounding to even). abs(-3 + 5) = abs(2) = 2.",
   },
 ];
 
@@ -1515,10 +1515,10 @@ const ch5Exam: ExamQuestion[] = [
     type: "match-pairs",
     difficulty: "hard",
     question: "Match each input/conversion pattern to its correct result.",
-    leftItems: ['int("7") + 3', 'float("3.5") + 1', 'f"{5}" + "2"', 'int("100", 2)'],
-    rightItems: ["10", "4.5", '"52"', "4"],
+    leftItems: ['int("7") + 3', 'float("3.5") + 1', 'f"{5}" + "2"', 'int("111", 2)'],
+    rightItems: ["10", "4.5", '"52"', "7"],
     correctMatches: [[0, 0], [1, 1], [2, 2], [3, 3]],
-    explanation: "int('7') + 3 = 10. float('3.5') + 1 = 4.5. f'{5}' + '2' = '52'. int('100', 2) = 4 (binary to decimal).",
+    explanation: "int('7') + 3 = 10. float('3.5') + 1 = 4.5. f'{5}' + '2' = '52'. int('111', 2) = 7 (binary to decimal).",
   },
 ];
 
@@ -3114,7 +3114,7 @@ const ch10Sections: Section[] = [
     type: "code",
     language: "python",
     caption: "Checking if an item exists in a list with 'in':",
-    content: 'fruits = ["apple", "banana", "cherry"]\nprint(f"Is banana in list? {\"banana\" in fruits}")\nprint(f"Is grape in list? {\"grape\" in fruits}")\n\nif "apple" in fruits:\n    print("Apple is available!")',
+    content: 'fruits = ["apple", "banana", "cherry"]\nprint(f"Is banana in list? {\'banana\' in fruits}")\nprint(f"Is grape in list? {\'grape\' in fruits}")\n\nif "apple" in fruits:\n    print("Apple is available!")',
   },
   {
     type: "key-points",
