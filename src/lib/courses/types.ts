@@ -51,10 +51,12 @@ export interface ComparisonSection {
 
 export interface ExerciseSection {
   type: "exercise";
+  id: string;                    // Unique exercise ID within the chapter, e.g., "py1-ex3"
   title: string;
   description: string;
   instructions: string[];
-  expectedOutput?: string;
+  code: string;                  // Code snippet shown to the user
+  correctOutput: string;         // The exact expected output (trimmed, compared after trim)
   hint?: string;
 }
 

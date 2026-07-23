@@ -13,12 +13,17 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { useProgress } from "@/lib/progress";
+import { useProgress, areAllExercisesDone } from "@/lib/progress";
 import { toast } from "sonner";
 import type { Chapter, ExamQuestion, MultipleChoiceQuestion, TrueFalseQuestion, FillBlankQuestion, CodeOrderQuestion, MatchPairsQuestion } from "@/lib/courses/types";
 
 const PASS_THRESHOLD = 0.95;
-const QUESTIONS_PER_EXAM = 15;
+
+function getQuestionCount(chapterOrder: number): number {
+  if (chapterOrder <= 3) return 10;
+  if (chapterOrder <= 6) return 15;
+  return 20;
+}
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -32,7 +37,21 @@ function shuffle<T>(arr: T[]): T[] {
 type ExamPhase = "intro" | "taking" | "results";
 
 export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseColor: string }) {
-  const { passExam: savePassExam } = useProgress();
+  const { progress, passExam: savePassExam, completeChapter: saveCompleteChapter } = useProgress();
+
+  // Exercise gating: must complete all chapter exercises before taking the exam
+  const exerciseSections = useMemo(
+    () => chapter.sections.filter((s) => s.type === "exercise"),
+    [chapter.sections]
+  );
+  const allExercisesDone = useMemo(
+    () => {
+      if (exerciseSections.length === 0) return true; // no exercises = no gating
+      return areAllExercisesDone(progress, chapter.id, exerciseSections.length);
+    },
+    [progress, chapter.id, exerciseSections.length]
+  );
+
   const [phase, setPhase] = useState<ExamPhase>("intro");
   const [questions, setQuestions] = useState<ExamQuestion[]>([]);
   const [answers, setAnswers] = useState<Record<string, unknown>>({});
@@ -43,7 +62,8 @@ export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseC
 
   const startExam = useCallback(() => {
     const pool = chapter.examPool.length > 0 ? chapter.examPool : fallbackQuestions;
-    const selected = shuffle(pool).slice(0, Math.min(QUESTIONS_PER_EXAM, pool.length));
+    const questionCount = getQuestionCount(chapter.order);
+    const selected = shuffle(pool).slice(0, Math.min(questionCount, pool.length));
     setQuestions(selected);
     setAnswers({});
     setSubmitted(false);
@@ -71,6 +91,7 @@ export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseC
     setSubmitted(true);
     if (finalScore >= 0.95) {
       savePassExam(chapter.id, finalScore, chapter.xpReward);
+      saveCompleteChapter(chapter.id, chapter.xpReward);
       toast.success(`+${chapter.xpReward} XP earned!`, {
         description: `Passed ${chapter.title} exam with ${Math.round(finalScore * 100)}%`,
       });
@@ -79,7 +100,7 @@ export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseC
         description: "95% required to pass. Try again!",
       });
     }
-  }, [questions, answers, chapter.id, chapter.xpReward, savePassExam, chapter.title]);
+  }, [questions, answers, chapter.id, chapter.xpReward, savePassExam, saveCompleteChapter, chapter.title]);
 
   const retry = useCallback(() => {
     setAttempt((a) => a + 1);
@@ -90,12 +111,33 @@ export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseC
   const totalQuestions = questions.length;
   const correctCount = Object.values(results).filter(Boolean).length;
 
+  // Exercise gating: redirect to chapter if exercises not done
+  if (!allExercisesDone) {
+    return (
+      <div className="py-16 text-center">
+        <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-accent-warning/10">
+          <AlertTriangle className="size-7 text-accent-warning" />
+        </div>
+        <h2 className="mb-2 text-lg font-bold text-text-primary">Complete the Exercises First</h2>
+        <p className="mb-6 text-sm text-text-secondary">
+          You need to complete all {exerciseSections.length} exercises in this chapter before taking the exam.
+        </p>
+        <Link href={`/courses/${chapter.courseId}/${chapter.id}`}>
+          <Button className="gap-2 bg-accent-primary text-white hover:bg-accent-primary-hover">
+            Go Back to Chapter
+            <ArrowLeft className="size-4" />
+          </Button>
+        </Link>
+      </div>
+    );
+  }
+
   if (phase === "intro") {
     return (
       <IntroScreen
         chapterTitle={chapter.title}
         xpReward={chapter.xpReward}
-        questionCount={Math.min(QUESTIONS_PER_EXAM, chapter.examPool.length || QUESTIONS_PER_EXAM)}
+        questionCount={Math.min(getQuestionCount(chapter.order), chapter.examPool.length || getQuestionCount(chapter.order))}
         onStart={startExam}
         courseColor={courseColor}
       />

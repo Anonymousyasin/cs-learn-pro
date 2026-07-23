@@ -11,6 +11,8 @@ export interface UserProgress {
   totalExamsPassed: number;
   totalLessonsCompleted: number;
   lastExamResults: Record<string, { passed: boolean; score: number; date: number }>;
+  completedExercises: Record<string, string[]>;  // chapterId → exercise IDs completed
+  exerciseResults: Record<string, { exerciseId: string; correct: boolean; answer: string }[]>;
 }
 
 export type ChapterStatus = "locked" | "in-progress" | "completed";
@@ -28,6 +30,8 @@ const defaultProgress: UserProgress = {
   totalExamsPassed: 0,
   totalLessonsCompleted: 0,
   lastExamResults: {},
+  completedExercises: {},
+  exerciseResults: {},
 };
 
 export function loadProgress(): UserProgress {
@@ -171,6 +175,48 @@ export function getLevelProgress(xp: number): number {
   return (xp - currentLevelXP) / (nextLevelXP - currentLevelXP);
 }
 
+// ─── Exercise Tracking ──────────────────────────────────────────
+export function completeExercise(
+  progress: UserProgress,
+  chapterId: string,
+  exerciseId: string,
+  correct: boolean,
+  answer: string
+): UserProgress {
+  const chapterExercises = progress.completedExercises[chapterId] ?? [];
+  if (chapterExercises.includes(exerciseId)) return progress; // already recorded
+
+  return {
+    ...progress,
+    completedExercises: {
+      ...progress.completedExercises,
+      [chapterId]: [...chapterExercises, exerciseId],
+    },
+    exerciseResults: {
+      ...progress.exerciseResults,
+      [chapterId]: [
+        ...(progress.exerciseResults[chapterId] ?? []),
+        { exerciseId, correct, answer },
+      ],
+    },
+  };
+}
+
+export function getExercisesForChapter(
+  progress: UserProgress,
+  chapterId: string
+): string[] {
+  return progress.completedExercises[chapterId] ?? [];
+}
+
+export function areAllExercisesDone(
+  progress: UserProgress,
+  chapterId: string,
+  totalExercises: number
+): boolean {
+  return (progress.completedExercises[chapterId] ?? []).length >= totalExercises;
+}
+
 // ─── React Hook ──────────────────────────────────────────────────
 import { useState, useCallback, useEffect } from "react";
 import {
@@ -243,12 +289,32 @@ export function useProgress(userId?: string | null) {
     });
   }, [userId]);
 
+  const completeExerciseAction = useCallback(
+    (chapterId: string, exerciseId: string, correct: boolean, answer: string) => {
+      setProgress((prev) => {
+        const updated = completeExercise(prev, chapterId, exerciseId, correct, answer);
+        saveProgress(updated);
+        if (userId) safeSaveProgress(userId, updated);
+        return updated;
+      });
+    },
+    [userId]
+  );
+
+  const areExercisesDone = useCallback(
+    (chapterId: string, totalExercises: number) =>
+      areAllExercisesDone(progress, chapterId, totalExercises),
+    [progress]
+  );
+
   return {
     progress,
     loaded,
     syncing,
     completeChapter: completeChapterAction,
     passExam: passExamAction,
+    completeExercise: completeExerciseAction,
+    areExercisesDone,
     touch,
     getLevel: () => getLevel(progress.xp),
     getLevelProgress: () => getLevelProgress(progress.xp),
