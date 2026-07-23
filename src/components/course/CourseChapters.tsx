@@ -31,10 +31,10 @@ export function CourseChapters({
 
   return (
     <div className="space-y-1">
-      {chapters.map((chapter, i) => {
+          {chapters.map((chapter, i) => {
         const prevChapterId = i > 0 ? chapters[i - 1].id : undefined;
         const completed = progress.completedChapters.includes(chapter.id);
-        const status = getStatus(chapter.id, i, prevChapterId, progress.completedChapters);
+        const status = getStatus(chapter.id, i, prevChapterId, progress.completedChapters, chapter);
         const href = status === "locked" ? "#" : `/courses/${courseId}/${chapter.id}`;
 
         return (
@@ -170,14 +170,21 @@ function SkeletonChapter() {
   );
 }
 
-function getStatus(
-  chapterId: string,
-  index: number,
-  prevChapterId: string | undefined,
-  completedChapters: string[]
-): "locked" | "in-progress" | "completed" {
-  if (completedChapters.includes(chapterId)) return "completed";
-  if (index === 0) return "in-progress";
-  if (prevChapterId && completedChapters.includes(prevChapterId)) return "in-progress";
-  return "locked";
-}
+  function getStatus(
+    chapterId: string,
+    index: number,
+    prevChapterId: string | undefined,
+    completedChapters: string[],
+    chapter: Chapter
+  ): "locked" | "in-progress" | "completed" {
+    if (completedChapters.includes(chapterId)) return "completed";
+    if (index === 0) return "in-progress";
+    // Project chapters unlock via prerequisites, not sequential ordering
+    if (chapter.prerequisites && chapter.prerequisites.length > 0) {
+      const allPrereqsMet = chapter.prerequisites.every(p => completedChapters.includes(p));
+      return allPrereqsMet ? "in-progress" : "locked";
+    }
+    // Regular chapters (no explicit prereqs) use sequential unlocking
+    if (prevChapterId && completedChapters.includes(prevChapterId)) return "in-progress";
+    return "locked";
+  }
