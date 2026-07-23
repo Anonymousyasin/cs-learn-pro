@@ -26,6 +26,8 @@ function profileToProgress(profile: {
     totalExamsPassed: profile.total_exams_passed,
     totalLessonsCompleted: profile.total_lessons_completed,
     lastExamResults: profile.lastExamResults ?? {},
+    completedExercises: (profile as any).completedExercises ?? (profile as any).completed_exercises ?? {},
+    exerciseResults: (profile as any).exerciseResults ?? (profile as any).exercise_results ?? [],
   };
 }
 
