@@ -23,27 +23,20 @@ const ch1Sections: Section[] = [
     content:
       "**Try it yourself!** Open your terminal, type `python3` (or just `python`), and you'll enter the REPL. Type `print(\"Hello\")` and press Enter. The REPL runs your code immediately — it's the fastest way to experiment.",
   },
-  {
-    type: "text",
-    content:
-      "## The `print()` Function\n\n`print()` is Python's built-in function for displaying output. You can print text (called *strings*), numbers, or a mix of both. Python will show the output right on your screen.\n\n```python\nprint(\"Hello\")        # Prints: Hello\nprint(42)             # Prints: 42\nprint(\"The answer:\", 42)  # Prints: The answer: 42\n```",
-  },
+  { type: "text", content: "## The `print()` Function\n\n`print()` is Python's built-in function for displaying output. You can print text (called *strings*), numbers, or a mix of both. Python will show the output right on your screen." },
+  { type: "code", language: "python", content: "print(\"Hello\")        # Prints: Hello\nprint(42)             # Prints: 42\nprint(\"The answer:\", 42)  # Prints: The answer: 42" },
   {
     type: "code",
     language: "python",
     caption: "Printing multiple values — Python adds spaces between them:",
     content: 'print("My name is", "Python")\nprint("Year:", 2026)\nprint(10, 20, 30, "go!")',
   },
-  {
-    type: "text",
-    content:
-      "## Comments\n\nComments are notes in your code that Python ignores. Use `#` for single-line comments and `\"\"\"` (triple quotes) for multi-line comments or docstrings.\n\n```python\n# This is a single-line comment\nprint(\"Hello\")  # Comments can go after code\n\n\"\"\"\nThis is a multi-line comment.\nPython ignores everything inside.\n\"\"\"\n```\n\nComments help you (and others) understand what your code does. Use them liberally!",
-  },
-  {
-    type: "text",
-    content:
-      "## Basic Math\n\nPython works as a calculator right out of the box. You can perform arithmetic directly in the REPL or inside `print()`:\n\n```python\nprint(3 + 4)    # Addition → 7\nprint(10 - 3)   # Subtraction → 7\nprint(6 * 7)    # Multiplication → 42\nprint(15 / 4)   # Division → 3.75 (always returns a float)\n```\n\nPython follows the standard order of operations (PEMDAS): parentheses first, then exponents, then multiplication/division, then addition/subtraction.",
-  },
+  { type: "text", content: "## Comments\n\nComments are notes in your code that Python ignores. Use `#` for single-line comments and `\"\"\"` (triple quotes) for multi-line comments or docstrings." },
+  { type: "code", language: "python", content: "# This is a single-line comment\nprint(\"Hello\")  # Comments can go after code\n\n\"\"\"\nThis is a multi-line comment.\nPython ignores everything inside.\n\"\"\"" },
+  { type: "text", content: "Comments help you (and others) understand what your code does. Use them liberally!" },
+  { type: "text", content: "## Basic Math\n\nPython works as a calculator right out of the box. You can perform arithmetic directly in the REPL or inside `print()`:" },
+  { type: "code", language: "python", content: "print(3 + 4)    # Addition → 7\nprint(10 - 3)   # Subtraction → 7\nprint(6 * 7)    # Multiplication → 42\nprint(15 / 4)   # Division → 3.75 (always returns a float)" },
+  { type: "text", content: "Python follows the standard order of operations (PEMDAS): parentheses first, then exponents, then multiplication/division, then addition/subtraction." },
   {
     type: "comparison",
     title: "Comments vs Code",
@@ -70,6 +63,16 @@ const ch1Sections: Section[] = [
       "The REPL (`>>>`) runs code instantly line by line — ideal for quick experiments",
       "Python follows order of operations (PEMDAS) in math expressions",
     ],
+  },
+  {
+    id: "py1-fix1",
+    type: "fix-code",
+    title: "Fix the print() Call",
+    instructions: "The code below is **broken**. Fix it so it prints `Hello, Python!` correctly.",
+    brokenCode: `print("Hello, Python!"`,
+    correctCode: `print("Hello, Python!")`,
+    hints: ["Count the parentheses carefully.", "Every opening ( needs a closing )."],
+    explanation: "The original code was missing a closing parenthesis `)`. Every opening parenthesis in Python must have a matching closing parenthesis — otherwise Python raises a `SyntaxError`.",
   },
 ];
 
@@ -288,11 +291,8 @@ const ch1Exam: ExamQuestion[] = [
 // Topics: Dynamic typing, int/str/float/bool, type(), naming rules
 // ───────────────────────────────────────────────────────────────────
 const ch2Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## What Are Variables?\n\nVariables are named containers that store values. Think of them as labeled boxes where you can put data. Unlike many other languages, Python uses **dynamic typing** — you don't need to declare what type of data a variable holds. The type is inferred from the value you assign.\n\n```python\nname = \"Alice\"       # str — string (text)\nage = 25             # int — integer\nheight = 5.6         # float — decimal number\nis_student = True    # bool — boolean (True or False)\n```",
-  },
+  { type: "text", content: "## What Are Variables?\n\nVariables are named containers that store values. Think of them as labeled boxes where you can put data. Unlike many other languages, Python uses **dynamic typing** — you don't need to declare what type of data a variable holds. The type is inferred from the value you assign." },
+  { type: "code", language: "python", content: "name = \"Alice\"       # str — string (text)\nage = 25             # int — integer\nheight = 5.6         # float — decimal number\nis_student = True    # bool — boolean (True or False)" },
   {
     type: "code",
     language: "python",
@@ -332,11 +332,9 @@ const ch2Sections: Section[] = [
       ["Error detection", "At runtime", "At compile time"],
     ],
   },
-  {
-    type: "text",
-    content:
-      "## Dynamic Typing in Action\n\nBecause Python is dynamically typed, a variable can hold different types of values over its lifetime:\n\n```python\nvalue = 10          # value is int\nprint(value)\n\nvalue = \"ten\"       # now value is str — no error!\nprint(value)\n\nvalue = 10.0        # now value is float\nprint(value)\n```\n\nEach reassignment changes both the value and the type. The old value is discarded.",
-  },
+  { type: "text", content: "## Dynamic Typing in Action\n\nBecause Python is dynamically typed, a variable can hold different types of values over its lifetime:" },
+  { type: "code", language: "python", content: "value = 10          # value is int\nprint(value)\n\nvalue = \"ten\"       # now value is str — no error!\nprint(value)\n\nvalue = 10.0        # now value is float\nprint(value)" },
+  { type: "text", content: "Each reassignment changes both the value and the type. The old value is discarded." },
   {
     type: "callout",
     style: "warning",
@@ -353,6 +351,18 @@ const ch2Sections: Section[] = [
       "Variable names use `snake_case`, start with a letter or underscore, and cannot be reserved keywords",
     ],
   },
+  {
+    id: "py2-fix1",
+    type: "fix-code",
+    title: "Fix the Variable Assignment",
+    instructions: "The code has a syntax error. Fix it so the variable is properly assigned.",
+    brokenCode: `user_name = "Alice"
+print(user_name)`,
+    correctCode: `user_name = "Alice"
+print(user_name)`,
+    hints: ["Variable names can't have hyphens in Python.", "Use underscores instead."],
+    explanation: "Python variable names cannot contain hyphens (`-`). Use underscores `_` to separate words: `user_name` instead of `user-name`.",
+  }
 ];
 
 const ch2Exercises: ExerciseSection[] = [
@@ -570,11 +580,8 @@ const ch2Exam: ExamQuestion[] = [
 // Topics: Quotes, escape sequences, f-strings, len(), .upper/.lower/.strip/.replace
 // ───────────────────────────────────────────────────────────────────
 const ch3Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Strings in Python\n\nStrings are sequences of characters — letters, digits, symbols, and spaces — enclosed in quotes. They are one of the most common data types in Python.\n\nYou can use single quotes (`'`) or double quotes (`\"`) — Python treats them the same way:\n\n```python\nname = 'Alice'\ngreeting = \"Hello\"\nboth = \"Alice's book\"  # Double quotes let you include single quotes inside\n```",
-  },
+  { type: "text", content: "## Strings in Python\n\nStrings are sequences of characters — letters, digits, symbols, and spaces — enclosed in quotes. They are one of the most common data types in Python.\n\nYou can use single quotes (`'`) or double quotes (`\"`) — Python treats them the same way:" },
+  { type: "code", language: "python", content: "name = 'Alice'\ngreeting = \"Hello\"\nboth = \"Alice's book\"  # Double quotes let you include single quotes inside" },
   {
     type: "code",
     language: "python",
@@ -592,11 +599,9 @@ const ch3Sections: Section[] = [
     caption: "Escape sequences in action:",
     content: 'print("Line1\\nLine2")    # Newline\nprint("Col1\\tCol2")    # Tab\nprint("She said, \\"Hi!\\"")',
   },
-  {
-    type: "text",
-    content:
-      "## f-Strings (Formatted Strings)\n\nf-strings, introduced in Python 3.6, are the most modern and readable way to embed expressions inside strings. Just prefix your string with `f` or `F` and use `{ }` to insert variables or expressions:\n\n```python\nname = \"Alice\"\nage = 25\nprint(f\"{name} is {age} years old\")  # Alice is 25 years old\nprint(f\"Next year they will be {age + 1}\")  # Next year they will be 26\n```\n\nYou can put any Python expression inside the curly braces.",
-  },
+  { type: "text", content: "## f-Strings (Formatted Strings)\n\nf-strings, introduced in Python 3.6, are the most modern and readable way to embed expressions inside strings. Just prefix your string with `f` or `F` and use `{ }` to insert variables or expressions:" },
+  { type: "code", language: "python", content: "name = \"Alice\"\nage = 25\nprint(f\"{name} is {age} years old\")  # Alice is 25 years old\nprint(f\"Next year they will be {age + 1}\")  # Next year they will be 26" },
+  { type: "text", content: "You can put any Python expression inside the curly braces." },
   {
     type: "code",
     language: "python",
@@ -641,6 +646,18 @@ const ch3Sections: Section[] = [
       "Use `len()` to get the number of characters in a string",
     ],
   },
+  {
+    id: "py3-fix1",
+    type: "fix-code",
+    title: "Fix the String Concatenation",
+    instructions: "The code tries to combine a string and a number, which causes a TypeError. Fix it so it prints correctly.",
+    brokenCode: `age = 25
+print("I am " + age + " years old")`,
+    correctCode: `age = 25
+print(f"I am {age} years old")`,
+    hints: ["You can't concatenate strings and numbers directly.", "Try an f-string or convert age with str()."],
+    explanation: "Python doesn't allow `+` between `str` and `int`. Use an f-string (`f\"...{var}...\"`) or convert with `str(age)` to fix it.",
+  }
 ];
 
 const ch3Exercises: ExerciseSection[] = [
@@ -875,22 +892,16 @@ const ch4Sections: Section[] = [
     content:
       "**Remember the difference:** `/` always returns a `float` (decimal), while `//` returns an `int` (rounded down). Use `//` when you want integer division and `/` when you need the precise decimal result.",
   },
-  {
-    type: "text",
-    content:
-      "## Floor Division (`//`) and Modulo (`%`)\n\nFloor division divides and rounds **down** to the nearest integer. Modulo gives the **remainder** of that division. They are a perfect pair:\n\n```python\nprint(17 // 5)   # 3 — 5 goes into 17 three times\nprint(17 % 5)    # 2 — remainder is 17 - (5 * 3) = 2\n\n# With negative numbers:\nprint(-17 // 5)  # -4 — floor division rounds DOWN\nprint(-17 % 5)   # 3 — satisfies: (5 * -4) + 3 = -17\n```",
-  },
+  { type: "text", content: "## Floor Division (`//`) and Modulo (`%`)\n\nFloor division divides and rounds **down** to the nearest integer. Modulo gives the **remainder** of that division. They are a perfect pair:" },
+  { type: "code", language: "python", content: "print(17 // 5)   # 3 — 5 goes into 17 three times\nprint(17 % 5)    # 2 — remainder is 17 - (5 * 3) = 2\n\n# With negative numbers:\nprint(-17 // 5)  # -4 — floor division rounds DOWN\nprint(-17 % 5)   # 3 — satisfies: (5 * -4) + 3 = -17" },
   {
     type: "code",
     language: "python",
     caption: "Using modulo to check if a number is even or odd:",
     content: "num = 42\nif num % 2 == 0:\n    print(f\"{num} is even\")\nelse:\n    print(f\"{num} is odd\")\n\n# Modulo for clock arithmetic\nprint(f\"7 o'clock + 8 hours = {(7 + 8) % 12} o'clock\")",
   },
-  {
-    type: "text",
-    content:
-      "## Order of Operations (PEMDAS)\n\nPython follows the standard mathematical order of operations:\n\n1. **P**arentheses — `( )`\n2. **E**xponents — `**`\n3. **M**ultiplication and **D**ivision — `*`, `/`, `//`, `%`\n4. **A**ddition and **S**ubtraction — `+`, `-`\n\n```python\nprint(2 + 3 * 4)       # 2 + (3 * 4) = 14\nprint((2 + 3) * 4)     # (5) * 4 = 20\nprint(10 - 3 + 2)      # (10 - 3) + 2 = 9 (left to right)\nprint(2 ** 3 ** 2)     # 2 ** (3 ** 2) = 512 (right to left for **)\n```",
-  },
+  { type: "text", content: "## Order of Operations (PEMDAS)\n\nPython follows the standard mathematical order of operations:\n\n1. **P**arentheses — `( )`\n2. **E**xponents — `**`\n3. **M**ultiplication and **D**ivision — `*`, `/`, `//`, `%`\n4. **A**ddition and **S**ubtraction — `+`, `-`" },
+  { type: "code", language: "python", content: "print(2 + 3 * 4)       # 2 + (3 * 4) = 14\nprint((2 + 3) * 4)     # (5) * 4 = 20\nprint(10 - 3 + 2)      # (10 - 3) + 2 = 9 (left to right)\nprint(2 ** 3 ** 2)     # 2 ** (3 ** 2) = 512 (right to left for **)" },
   {
     type: "text",
     content:
@@ -923,6 +934,18 @@ const ch4Sections: Section[] = [
       "Use `round()`, `abs()`, `max()`, `min()` for common numeric operations",
     ],
   },
+  {
+    id: "py4-fix1",
+    type: "fix-code",
+    title: "Fix the Type Conversion",
+    instructions: "This code crashes when the user enters a decimal number. Fix it.",
+    brokenCode: `num = int(input("Enter a number: "))
+print(num * 2)`,
+    correctCode: `num = float(input("Enter a number: "))
+print(num * 2)`,
+    hints: ["What happens if the user types 3.5 instead of 3?", "There's a conversion that only works with whole numbers."],
+    explanation: "`int()` cannot convert a string containing a decimal point (e.g., `\"3.5\"`). Use `float()` when you need to accept decimal numbers.",
+  }
 ];
 
 const ch4Exercises: ExerciseSection[] = [
@@ -1190,11 +1213,9 @@ const ch4Exam: ExamQuestion[] = [
 // Topics: input(), int()/float() conversion, f-strings formatting
 // ───────────────────────────────────────────────────────────────────
 const ch5Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Getting User Input\n\nThe `input()` function lets your program ask the user for information. It pauses execution and waits for the user to type something and press Enter. Whatever the user types is returned as a **string**.\n\n```python\nname = input(\"What is your name? \")\nprint(f\"Hello, {name}!\")\n```\n\nWhen this runs, the user sees the prompt, types their name, and the program greets them.",
-  },
+  { type: "text", content: "## Getting User Input\n\nThe `input()` function lets your program ask the user for information. It pauses execution and waits for the user to type something and press Enter. Whatever the user types is returned as a **string**." },
+  { type: "code", language: "python", content: "name = input(\"What is your name? \")\nprint(f\"Hello, {name}!\")" },
+  { type: "text", content: "When this runs, the user sees the prompt, types their name, and the program greets them." },
   {
     type: "code",
     language: "python",
@@ -1207,33 +1228,25 @@ const ch5Sections: Section[] = [
     content:
       "**input() always returns a string!** Even if the user types a number like `42`, Python treats it as the string `\"42\"`. If you try to do math with it, you'll get an error. You must convert it first using `int()` or `float()`.",
   },
-  {
-    type: "text",
-    content:
-      "## Converting Input to Numbers\n\nTo use numeric input, convert the string to the right type:\n\n```python\nage_str = input(\"How old are you? \")\nage = int(age_str)           # Convert string → int\nprint(f\"Next year you will be {age + 1}\")\n\n# Or do it in one step:\nheight = float(input(\"Height in meters: \"))\nprint(f\"You are {height}m tall\")\n```\n\nIf the user types something that isn't a valid number, Python raises a `ValueError`.",
-  },
+  { type: "text", content: "## Converting Input to Numbers\n\nTo use numeric input, convert the string to the right type:" },
+  { type: "code", language: "python", content: "age_str = input(\"How old are you? \")\nage = int(age_str)           # Convert string → int\nprint(f\"Next year you will be {age + 1}\")\n\n# Or do it in one step:\nheight = float(input(\"Height in meters: \"))\nprint(f\"You are {height}m tall\")" },
+  { type: "text", content: "If the user types something that isn't a valid number, Python raises a `ValueError`." },
   {
     type: "code",
     language: "python",
     caption: "Converting input to numbers so you can do math:",
     content: '# Get two numbers from the user\nx = int(input("First number: "))\ny = int(input("Second number: "))\n\nprint(f"{x} + {y} = {x + y}")\nprint(f"{x} * {y} = {x * y}")',
   },
-  {
-    type: "text",
-    content:
-      "## Formatting with f-Strings\n\nf-strings can format numbers in various ways using format specifiers after a colon inside the curly braces:\n\n```python\nprice = 49.5\nprint(f\"Price: ${price:.2f}\")     # Price: $49.50\n\nscore = 0.8765\nprint(f\"Score: {score:.1%}\")      # Score: 87.7%\n\nnum = 1234567\nprint(f\"{num:,}\")                  # 1,234,567\n\nname = \"Ada\"\nprint(f\"{name:>10}\")              # '       Ada'\n```",
-  },
+  { type: "text", content: "## Formatting with f-Strings\n\nf-strings can format numbers in various ways using format specifiers after a colon inside the curly braces:" },
+  { type: "code", language: "python", content: "price = 49.5\nprint(f\"Price: ${price:.2f}\")     # Price: $49.50\n\nscore = 0.8765\nprint(f\"Score: {score:.1%}\")      # Score: 87.7%\n\nnum = 1234567\nprint(f\"{num:,}\")                  # 1,234,567\n\nname = \"Ada\"\nprint(f\"{name:>10}\")              # '       Ada'" },
   {
     type: "code",
     language: "python",
     caption: "Format specifiers make output cleaner:",
     content: 'product = "Widget"\nquantity = 3\nunit_price = 14.995\n\ntotal = quantity * unit_price\nprint(f"{product:10} {quantity:3} x ${unit_price:.2f} = ${total:.2f}")',
   },
-  {
-    type: "text",
-    content:
-      "## Getting Multiple Inputs\n\nYou can call `input()` multiple times to collect several pieces of information:\n\n```python\n# Three separate prompts\nname = input(\"Name: \")\nage = int(input(\"Age: \"))\ncity = input(\"City: \")\n\n# Or one line with split\ndata = input(\"Enter name, age: \")\nname, age_str = data.split(\", \")\nage = int(age_str)\n```",
-  },
+  { type: "text", content: "## Getting Multiple Inputs\n\nYou can call `input()` multiple times to collect several pieces of information:" },
+  { type: "code", language: "python", content: "# Three separate prompts\nname = input(\"Name: \")\nage = int(input(\"Age: \"))\ncity = input(\"City: \")\n\n# Or one line with split\ndata = input(\"Enter name, age: \")\nname, age_str = data.split(\", \")\nage = int(age_str)" },
   {
     type: "comparison",
     title: "String vs Number Input",
@@ -1260,6 +1273,20 @@ const ch5Sections: Section[] = [
       "Format specifiers go inside `{}` after a colon: `f\"{value:.2f}\"`",
     ],
   },
+  {
+    id: "py5-fix1",
+    type: "fix-code",
+    title: "Fix the Input Type",
+    instructions: "The code below tries to add two numbers from user input, but it crashes. Fix it.",
+    brokenCode: `a = input("First: ")
+b = input("Second: ")
+print(a + b)`,
+    correctCode: `a = int(input("First: "))
+b = int(input("Second: "))
+print(a + b)`,
+    hints: ["What type does input() return?", "Check the types before adding."],
+    explanation: "`input()` always returns a **string**. `\"3\" + \"5\"` is `\"35\"`, not `8`. Convert with `int()` or `float()` first.",
+  }
 ];
 
 const ch5Exercises: ExerciseSection[] = [
@@ -1527,11 +1554,9 @@ const ch5Exam: ExamQuestion[] = [
 // Topics: == != < > <= >=, True/False, and/or/not
 // ───────────────────────────────────────────────────────────────────
 const ch6Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## What Are Booleans?\n\nA **boolean** is a data type with only two possible values: `True` and `False`. Named after mathematician George Boole, booleans are the foundation of logic in programming.\n\n```python\nis_sunny = True\nis_raining = False\n\nprint(is_sunny)   # True\nprint(is_raining) # False\n```\n\nBooleans are the result of **comparison operators** — you rarely write `True` or `False` directly; instead, you compute them.",
-  },
+  { type: "text", content: "## What Are Booleans?\n\nA **boolean** is a data type with only two possible values: `True` and `False`. Named after mathematician George Boole, booleans are the foundation of logic in programming." },
+  { type: "code", language: "python", content: "is_sunny = True\nis_raining = False\n\nprint(is_sunny)   # True\nprint(is_raining) # False" },
+  { type: "text", content: "Booleans are the result of **comparison operators** — you rarely write `True` or `False` directly; instead, you compute them." },
   {
     type: "code",
     language: "python",
@@ -1549,11 +1574,8 @@ const ch6Sections: Section[] = [
     content:
       "**`==` vs `=`:** This is one of the most common beginner mistakes! Use `==` to compare values and `=` to assign values. Accidentally using `=` in a condition causes a syntax error in Python.",
   },
-  {
-    type: "text",
-    content:
-      "## Logical Operators: `and`, `or`, `not`\n\nLogical operators combine multiple boolean expressions:\n\n| Operator | What it does | Example | Result |\n|----------|-------------|---------|--------|\n| `and` | True only if **both** sides are True | `(5 > 3) and (10 > 5)` | `True` |\n| `or` | True if **either** side is True | `(5 > 3) or (10 < 5)` | `True` |\n| `not` | Inverts the boolean | `not (5 > 3)` | `False` |\n\n```python\ntemp = 28\nis_weekend = True\n\nprint(temp > 25 and is_weekend)  # True\nprint(temp > 30 or is_weekend)   # True\nprint(not is_weekend)            # False\n```",
-  },
+  { type: "text", content: "## Logical Operators: `and`, `or`, `not`\n\nLogical operators combine multiple boolean expressions:\n\n| Operator | What it does | Example | Result |\n|----------|-------------|---------|--------|\n| `and` | True only if **both** sides are True | `(5 > 3) and (10 > 5)` | `True` |\n| `or` | True if **either** side is True | `(5 > 3) or (10 < 5)` | `True` |\n| `not` | Inverts the boolean | `not (5 > 3)` | `False` |" },
+  { type: "code", language: "python", content: "temp = 28\nis_weekend = True\n\nprint(temp > 25 and is_weekend)  # True\nprint(temp > 30 or is_weekend)   # True\nprint(not is_weekend)            # False" },
   {
     type: "code",
     language: "python",
@@ -1572,11 +1594,8 @@ const ch6Sections: Section[] = [
       ["5 (lowest)", "or", "Logical OR"],
     ],
   },
-  {
-    type: "text",
-    content:
-      "## Truthiness\n\nIn Python, every value has an inherent **truthiness** — it can be treated as True or False:\n\n**Values considered `False`:**\n- `None`\n- `0`, `0.0`\n- Empty strings: `\"\"`\n- Empty collections: `[]`, `()`, `{}`\n\n**Everything else is `True`.**\n\n```python\nprint(bool(0))       # False\nprint(bool(1))       # True\nprint(bool(\"\"))      # False\nprint(bool(\"Hi\"))    # True\nprint(bool([]))      # False\nprint(bool([1, 2]))  # True\n```",
-  },
+  { type: "text", content: "## Truthiness\n\nIn Python, every value has an inherent **truthiness** — it can be treated as True or False:\n\n**Values considered `False`:**\n- `None`\n- `0`, `0.0`\n- Empty strings: `\"\"`\n- Empty collections: `[]`, `()`, `{}`\n\n**Everything else is `True`.**" },
+  { type: "code", language: "python", content: "print(bool(0))       # False\nprint(bool(1))       # True\nprint(bool(\"\"))      # False\nprint(bool(\"Hi\"))    # True\nprint(bool([]))      # False\nprint(bool([1, 2]))  # True" },
   {
     type: "callout",
     style: "tip",
@@ -1593,6 +1612,20 @@ const ch6Sections: Section[] = [
       "Never confuse `==` (comparison) with `=` (assignment)",
     ],
   },
+  {
+    id: "py6-fix1",
+    type: "fix-code",
+    title: "Fix the Comparison",
+    instructions: "The code below has a common mistake. Fix it to properly check if x equals 10.",
+    brokenCode: `x = 10
+if x = 10:
+    print("It is ten")`,
+    correctCode: `x = 10
+if x == 10:
+    print("It is ten")`,
+    hints: ["One equals sign vs two...", "= assigns, == compares."],
+    explanation: "`=` is for **assignment**, `==` is for **comparison**. Using `=` inside an `if` condition causes a `SyntaxError`.",
+  }
 ];
 
 const ch6Exercises: ExerciseSection[] = [
@@ -1860,33 +1893,27 @@ const ch6Exam: ExamQuestion[] = [
 // Topics: if, elif, else, nesting, indentation rules
 // ───────────────────────────────────────────────────────────────────
 const ch7Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Making Decisions with `if`\n\nThe `if` statement lets your program make decisions. If a condition is `True`, Python executes the indented block of code underneath it. If the condition is `False`, it skips that block.\n\n```python\nage = 18\nif age >= 18:\n    print(\"You can vote!\")\nprint(\"This always runs.\")\n```\n\nThe colon (`:`) at the end of the `if` line is required. The indented block (4 spaces by convention) is the code that runs when the condition is True.",
-  },
+  { type: "text", content: "## Making Decisions with `if`\n\nThe `if` statement lets your program make decisions. If a condition is `True`, Python executes the indented block of code underneath it. If the condition is `False`, it skips that block." },
+  { type: "code", language: "python", content: "age = 18\nif age >= 18:\n    print(\"You can vote!\")\nprint(\"This always runs.\")" },
+  { type: "text", content: "The colon (`:`) at the end of the `if` line is required. The indented block (4 spaces by convention) is the code that runs when the condition is True." },
   {
     type: "code",
     language: "python",
     caption: "Basic if statement — notice the colon and indentation:",
     content: 'score = 85\n\nif score >= 60:\n    print("You passed!")\n    print("Great job!")',
   },
-  {
-    type: "text",
-    content:
-      "## Adding `else`\n\nThe `else` clause runs when the `if` condition is `False`. It gives you two paths:\n\n```python\ntemperature = 30\n\nif temperature > 25:\n    print(\"It's hot outside!\")\nelse:\n    print(\"It's not too hot.\")\n```\n\nOne of the two blocks **always** runs — they are mutually exclusive.",
-  },
+  { type: "text", content: "## Adding `else`\n\nThe `else` clause runs when the `if` condition is `False`. It gives you two paths:" },
+  { type: "code", language: "python", content: "temperature = 30\n\nif temperature > 25:\n    print(\"It's hot outside!\")\nelse:\n    print(\"It's not too hot.\")" },
+  { type: "text", content: "One of the two blocks **always** runs — they are mutually exclusive." },
   {
     type: "code",
     language: "python",
     caption: "if/else creates two branches — only one executes:",
     content: 'grade = 55\n\nif grade >= 60:\n    print("Pass")\nelse:\n    print("Fail")\n\nprint("Done")',
   },
-  {
-    type: "text",
-    content:
-      "## Multiple Conditions with `elif`\n\nWhen you have more than two possibilities, use `elif` (short for \"else if\"):\n\n```python\nscore = 75\n\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelif score >= 60:\n    grade = \"D\"\nelse:\n    grade = \"F\"\n\nprint(f\"Grade: {grade}\")\n```\n\nPython checks conditions top to bottom. The **first** True condition runs its block, and the rest are skipped.",
-  },
+  { type: "text", content: "## Multiple Conditions with `elif`\n\nWhen you have more than two possibilities, use `elif` (short for \"else if\"):" },
+  { type: "code", language: "python", content: "score = 75\n\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelif score >= 60:\n    grade = \"D\"\nelse:\n    grade = \"F\"\n\nprint(f\"Grade: {grade}\")" },
+  { type: "text", content: "Python checks conditions top to bottom. The **first** True condition runs its block, and the rest are skipped." },
   {
     type: "code",
     language: "python",
@@ -1899,11 +1926,9 @@ const ch7Sections: Section[] = [
     content:
       "**Indentation is not optional in Python!** Unlike other languages that use braces `{}`, Python uses indentation to define code blocks. The standard is 4 spaces per level. Mixing tabs and spaces will cause an `IndentationError`.",
   },
-  {
-    type: "text",
-    content:
-      "## Nested Conditionals\n\nYou can put `if` statements inside other `if` statements — this is called **nesting**:\n\n```python\nage = 20\nhas_id = True\n\nif age >= 18:\n    if has_id:\n        print(\"Welcome to the venue!\")\n    else:\n        print(\"Need ID to enter\")\nelse:\n    print(\"Too young to enter\")\n```\n\nEach level of nesting adds 4 more spaces of indentation. Try to keep nesting to 2-3 levels max.",
-  },
+  { type: "text", content: "## Nested Conditionals\n\nYou can put `if` statements inside other `if` statements — this is called **nesting**:" },
+  { type: "code", language: "python", content: "age = 20\nhas_id = True\n\nif age >= 18:\n    if has_id:\n        print(\"Welcome to the venue!\")\n    else:\n        print(\"Need ID to enter\")\nelse:\n    print(\"Too young to enter\")" },
+  { type: "text", content: "Each level of nesting adds 4 more spaces of indentation. Try to keep nesting to 2-3 levels max." },
   {
     type: "comparison",
     title: "if/elif/else vs Nested if",
@@ -1937,6 +1962,20 @@ const ch7Sections: Section[] = [
       "Conditions short-circuit: once a condition matches, the rest of the chain is skipped",
     ],
   },
+  {
+    id: "py7-fix1",
+    type: "fix-code",
+    title: "Fix the If Statement",
+    instructions: "The if statement has a syntax error. Fix it.",
+    brokenCode: `score = 85
+if score >= 70
+    print("Passed")`,
+    correctCode: `score = 85
+if score >= 70:
+    print("Passed")`,
+    hints: ["Look at the end of the if line.", "Python uses a specific character to end the condition."],
+    explanation: "Every `if`, `elif`, and `else` line in Python must end with a colon `:`. The colon tells Python the condition block is starting.",
+  }
 ];
 
 const ch7Exercises: ExerciseSection[] = [
@@ -2258,11 +2297,9 @@ const ch7Exam: ExamQuestion[] = [
 // Topics: while, break, continue, infinite loops
 // ───────────────────────────────────────────────────────────────────
 const ch8Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Repeating with `while`\n\nA `while` loop repeats a block of code as long as a condition remains `True`. It's like an `if` statement that keeps running until the condition becomes `False`.\n\n```python\ncount = 1\nwhile count <= 5:\n    print(f\"Count: {count}\")\n    count = count + 1  # Don't forget this!\n\nprint(\"Done!\")\n```\n\nEvery while loop needs a way to make its condition eventually become `False` — otherwise it runs forever!",
-  },
+  { type: "text", content: "## Repeating with `while`\n\nA `while` loop repeats a block of code as long as a condition remains `True`. It's like an `if` statement that keeps running until the condition becomes `False`." },
+  { type: "code", language: "python", content: "count = 1\nwhile count <= 5:\n    print(f\"Count: {count}\")\n    count = count + 1  # Don't forget this!\n\nprint(\"Done!\")" },
+  { type: "text", content: "Every while loop needs a way to make its condition eventually become `False` — otherwise it runs forever!" },
   {
     type: "code",
     language: "python",
@@ -2275,22 +2312,16 @@ const ch8Sections: Section[] = [
     content:
       "**Infinite loop danger!** If you forget to update the loop variable (like `count += 1`), the condition stays True forever. Press Ctrl+C to stop an infinite loop in the terminal.",
   },
-  {
-    type: "text",
-    content:
-      "## Using `break` to Exit Early\n\nThe `break` statement immediately exits the loop, regardless of whether the condition is still True. It's useful when you find what you're looking for:\n\n```python\nsecret = 7\nwhile True:          # Looks infinite...\n    guess = int(input(\"Guess: \"))\n    if guess == secret:\n        print(\"Correct!\")\n        break        # ...but this stops it\n    print(\"Try again\")\n```",
-  },
+  { type: "text", content: "## Using `break` to Exit Early\n\nThe `break` statement immediately exits the loop, regardless of whether the condition is still True. It's useful when you find what you're looking for:" },
+  { type: "code", language: "python", content: "secret = 7\nwhile True:          # Looks infinite...\n    guess = int(input(\"Guess: \"))\n    if guess == secret:\n        print(\"Correct!\")\n        break        # ...but this stops it\n    print(\"Try again\")" },
   {
     type: "code",
     language: "python",
     caption: "break exits the loop immediately — useful for search patterns:",
     content: '# Find the first number divisible by 7\nnum = 1\nwhile True:\n    if num % 7 == 0:\n        print(f"Found: {num}")\n        break\n    num += 1\n\nprint(f"Took {num} iterations")',
   },
-  {
-    type: "text",
-    content:
-      "## Using `continue` to Skip Ahead\n\nThe `continue` statement skips the rest of the current iteration and jumps back to the condition check:\n\n```python\nnum = 0\nwhile num < 10:\n    num += 1\n    if num % 2 == 1:   # If num is odd\n        continue        # Skip the rest of this iteration\n    print(num)          # Only even numbers print\n\n# Output: 2, 4, 6, 8, 10\n```",
-  },
+  { type: "text", content: "## Using `continue` to Skip Ahead\n\nThe `continue` statement skips the rest of the current iteration and jumps back to the condition check:" },
+  { type: "code", language: "python", content: "num = 0\nwhile num < 10:\n    num += 1\n    if num % 2 == 1:   # If num is odd\n        continue        # Skip the rest of this iteration\n    print(num)          # Only even numbers print\n\n# Output: 2, 4, 6, 8, 10" },
   {
     type: "code",
     language: "python",
@@ -2330,6 +2361,21 @@ const ch8Sections: Section[] = [
       "Always update your loop variable to avoid infinite loops",
     ],
   },
+  {
+    id: "py8-fix1",
+    type: "fix-code",
+    title: "Fix the Infinite Loop",
+    instructions: "This while loop runs forever. Fix it so it stops after printing 1 to 5.",
+    brokenCode: `count = 1
+while count <= 5:
+    print(count)`,
+    correctCode: `count = 1
+while count <= 5:
+    print(count)
+    count += 1`,
+    hints: ["Nothing in the loop changes count.", "Add a line that increments count each iteration."],
+    explanation: "Without incrementing `count`, the condition `count <= 5` is always True. Add `count += 1` inside the loop.",
+  }
 ];
 
 const ch8Exercises: ExerciseSection[] = [
@@ -2651,16 +2697,11 @@ const ch8Exam: ExamQuestion[] = [
 // Topics: for x in range(), for item in list, range(start, stop, step)
 // ───────────────────────────────────────────────────────────────────
 const ch9Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Introduction to `for` Loops\n\nThe `for` loop in Python iterates over a sequence. Unlike `while` loops that run \"as long as a condition is True,\" `for` loops run \"once for each item in a collection.\"\n\n```python\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n```\n\nThis prints each fruit on its own line. The loop variable (`fruit`) takes on each value in the list, one at a time.",
-  },
-  {
-    type: "text",
-    content:
-      "## The `range()` Function\n\n`range()` generates a sequence of numbers. It's most commonly used with `for` loops:\n\n| Call | Generates |\n|------|-----------|\n| `range(5)` | `0, 1, 2, 3, 4` |\n| `range(2, 7)` | `2, 3, 4, 5, 6` |\n| `range(1, 10, 2)` | `1, 3, 5, 7, 9` |\n| `range(5, 0, -1)` | `5, 4, 3, 2, 1` |\n\n```python\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\nfor i in range(2, 7):\n    print(i)  # 2, 3, 4, 5, 6\n\nfor i in range(1, 10, 2):\n    print(i)  # 1, 3, 5, 7, 9\n```",
-  },
+  { type: "text", content: "## Introduction to `for` Loops\n\nThe `for` loop in Python iterates over a sequence. Unlike `while` loops that run \"as long as a condition is True,\" `for` loops run \"once for each item in a collection.\"" },
+  { type: "code", language: "python", content: "fruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)" },
+  { type: "text", content: "This prints each fruit on its own line. The loop variable (`fruit`) takes on each value in the list, one at a time." },
+  { type: "text", content: "## The `range()` Function\n\n`range()` generates a sequence of numbers. It's most commonly used with `for` loops:\n\n| Call | Generates |\n|------|-----------|\n| `range(5)` | `0, 1, 2, 3, 4` |\n| `range(2, 7)` | `2, 3, 4, 5, 6` |\n| `range(1, 10, 2)` | `1, 3, 5, 7, 9` |\n| `range(5, 0, -1)` | `5, 4, 3, 2, 1` |" },
+  { type: "code", language: "python", content: "for i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\nfor i in range(2, 7):\n    print(i)  # 2, 3, 4, 5, 6\n\nfor i in range(1, 10, 2):\n    print(i)  # 1, 3, 5, 7, 9" },
   {
     type: "code",
     language: "python",
@@ -2673,22 +2714,17 @@ const ch9Sections: Section[] = [
     content:
       "**range(stop) starts at 0 and stops BEFORE stop.** `range(5)` gives `0, 1, 2, 3, 4` — five numbers, NOT including 5. With two arguments, `range(start, stop)` also excludes the stop value.",
   },
-  {
-    type: "text",
-    content:
-      "## Iterating Over Lists\n\nThe `for` loop shines when working with collections. You can iterate directly over the items:\n\n```python\ncolors = [\"red\", \"green\", \"blue\"]\nfor color in colors:\n    print(f\"- {color}\")\n\n# Get index with enumerate()\nfor i, color in enumerate(colors):\n    print(f\"{i}: {color}\")\n```",
-  },
+  { type: "text", content: "## Iterating Over Lists\n\nThe `for` loop shines when working with collections. You can iterate directly over the items:" },
+  { type: "code", language: "python", content: "colors = [\"red\", \"green\", \"blue\"]\nfor color in colors:\n    print(f\"- {color}\")\n\n# Get index with enumerate()\nfor i, color in enumerate(colors):\n    print(f\"{i}: {color}\")" },
   {
     type: "code",
     language: "python",
     caption: "Iterating over a list — clean and readable:",
     content: 'students = ["Alice", "Bob", "Charlie"]\nscores = [85, 92, 78]\n\n# Using enumerate\nfor i, student in enumerate(students):\n    print(f"{student}: {scores[i]}")\n\nprint()\n\n# Using zip\nfor student, score in zip(students, scores):\n    print(f"{student}: {score}")',
   },
-  {
-    type: "text",
-    content:
-      "## Nested For Loops\n\nYou can put loops inside other loops. The inner loop runs **completely** for each iteration of the outer loop:\n\n```python\nfor i in range(1, 4):\n    for j in range(1, 4):\n        print(f\"{i} x {j} = {i * j}\")\n    print()  # Blank line between tables\n```\n\nThis creates a multiplication table for 1, 2, and 3.",
-  },
+  { type: "text", content: "## Nested For Loops\n\nYou can put loops inside other loops. The inner loop runs **completely** for each iteration of the outer loop:" },
+  { type: "code", language: "python", content: "for i in range(1, 4):\n    for j in range(1, 4):\n        print(f\"{i} x {j} = {i * j}\")\n    print()  # Blank line between tables" },
+  { type: "text", content: "This creates a multiplication table for 1, 2, and 3." },
   {
     type: "code",
     language: "python",
@@ -2706,11 +2742,9 @@ const ch9Sections: Section[] = [
       ["Use case", "User input, search algorithms", "Iterate over range, list, string"],
     ],
   },
-  {
-    type: "text",
-    content:
-      "## Loop Variables and Naming\n\nChoose descriptive names for loop variables:\n\n```python\n# Good — describes each item\nfor student in students:\n    print(student)\n\n# Ok for single characters (common in math)\nfor i in range(10):\n    print(i)\n\n# Bad — unclear\nfor x in y:\n    print(x)  # What is x? What is y?\n```\n\nUsing meaningful variable names makes your code self-documenting.",
-  },
+  { type: "text", content: "## Loop Variables and Naming\n\nChoose descriptive names for loop variables:" },
+  { type: "code", language: "python", content: "# Good — describes each item\nfor student in students:\n    print(student)\n\n# Ok for single characters (common in math)\nfor i in range(10):\n    print(i)\n\n# Bad — unclear\nfor x in y:\n    print(x)  # What is x? What is y?" },
+  { type: "text", content: "Using meaningful variable names makes your code self-documenting." },
   {
     type: "key-points",
     points: [
@@ -2721,6 +2755,20 @@ const ch9Sections: Section[] = [
       "Nested for loops create a complete inner iteration for each outer iteration",
     ],
   },
+  {
+    id: "py9-fix1",
+    type: "fix-code",
+    title: "Fix the Loop Indentation",
+    instructions: "The indentation is wrong. Fix it so only the print statement is inside the loop.",
+    brokenCode: `for i in range(3):
+print(i)
+print("Done")`,
+    correctCode: `for i in range(3):
+    print(i)
+print("Done")`,
+    hints: ["Python uses indentation to define blocks.", "Which line should be indented to be inside the loop?"],
+    explanation: "Python uses **indentation** (4 spaces) to define code blocks. The `print(i)` must be indented under the `for` to be inside the loop.",
+  }
 ];
 
 const ch9Exercises: ExerciseSection[] = [
@@ -3042,33 +3090,25 @@ const ch9Exam: ExamQuestion[] = [
 // Topics: [ ] indexing, slicing [start:end], append/pop/sort/len, list concatenation
 // ───────────────────────────────────────────────────────────────────
 const ch10Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## What Are Lists?\n\nA **list** is an ordered collection of items, enclosed in square brackets `[]`. Lists can hold any type of data — numbers, strings, booleans, or even other lists. They are **mutable**, meaning you can change their contents after creation.\n\n```python\nnumbers = [1, 2, 3, 4, 5]\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nmixed = [42, \"hello\", True, 3.14]\nempty = []\nprint(numbers, names, mixed, empty)\n```",
-  },
+  { type: "text", content: "## What Are Lists?\n\nA **list** is an ordered collection of items, enclosed in square brackets `[]`. Lists can hold any type of data — numbers, strings, booleans, or even other lists. They are **mutable**, meaning you can change their contents after creation." },
+  { type: "code", language: "python", content: "numbers = [1, 2, 3, 4, 5]\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nmixed = [42, \"hello\", True, 3.14]\nempty = []\nprint(numbers, names, mixed, empty)" },
   {
     type: "code",
     language: "python",
     caption: "Creating lists with different types of items:",
     content: '# A list of numbers\nscores = [95, 87, 73, 91, 84]\nprint(f"Scores: {scores}")\n\n# A list of strings\nfruits = ["apple", "banana", "cherry"]\nprint(f"Fruits: {fruits}")',
   },
-  {
-    type: "text",
-    content:
-      "## Indexing\n\nEach item in a list has an **index** — its position number. Python uses **0-based indexing**, meaning the first item is at index 0:\n\n```python\nfruits = [\"apple\", \"banana\", \"cherry\", \"date\"]\n# index:    0        1         2        3\n# negative: -4       -3       -2       -1\n\nprint(fruits[0])   # apple\nprint(fruits[2])   # cherry\nprint(fruits[-1])  # date  (last item)\nprint(fruits[-2])  # cherry (second-to-last)\n```\n\nNegative indices count from the end. Index `-1` is always the last item.",
-  },
+  { type: "text", content: "## Indexing\n\nEach item in a list has an **index** — its position number. Python uses **0-based indexing**, meaning the first item is at index 0:" },
+  { type: "code", language: "python", content: "fruits = [\"apple\", \"banana\", \"cherry\", \"date\"]\n# index:    0        1         2        3\n# negative: -4       -3       -2       -1\n\nprint(fruits[0])   # apple\nprint(fruits[2])   # cherry\nprint(fruits[-1])  # date  (last item)\nprint(fruits[-2])  # cherry (second-to-last)" },
+  { type: "text", content: "Negative indices count from the end. Index `-1` is always the last item." },
   {
     type: "code",
     language: "python",
     caption: "Indexing in action — positive and negative indices:",
     content: 'colors = ["red", "green", "blue", "yellow"]\nprint(f"First: {colors[0]}")\nprint(f"Last:  {colors[-1]}")\nprint(f"Second to last: {colors[-2]}")',
   },
-  {
-    type: "text",
-    content:
-      "## Slicing\n\nSlicing lets you extract a portion of a list using `[start:end]`. The start is inclusive, the end is **exclusive** (just like `range`):\n\n```python\nnumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\nprint(numbers[2:6])    # [2, 3, 4, 5] — indices 2 through 5\nprint(numbers[:4])     # [0, 1, 2, 3] — from start to index 3\nprint(numbers[6:])     # [6, 7, 8, 9] — from index 6 to end\nprint(numbers[::2])    # [0, 2, 4, 6, 8] — every other\nprint(numbers[::-1])   # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] — reversed\n```",
-  },
+  { type: "text", content: "## Slicing\n\nSlicing lets you extract a portion of a list using `[start:end]`. The start is inclusive, the end is **exclusive** (just like `range`):" },
+  { type: "code", language: "python", content: "numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\nprint(numbers[2:6])    # [2, 3, 4, 5] — indices 2 through 5\nprint(numbers[:4])     # [0, 1, 2, 3] — from start to index 3\nprint(numbers[6:])     # [6, 7, 8, 9] — from index 6 to end\nprint(numbers[::2])    # [0, 2, 4, 6, 8] — every other\nprint(numbers[::-1])   # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] — reversed" },
   {
     type: "code",
     language: "python",
@@ -3092,11 +3132,8 @@ const ch10Sections: Section[] = [
     content:
       "**`.sort()` modifies the list in place — it returns `None`!** Don't do `x = mylist.sort()` — that sets x to `None`. Either sort in place (`mylist.sort()`) or create a sorted copy (`sorted(mylist)`). Same caution applies to `.append()` and `.pop()`.",
   },
-  {
-    type: "text",
-    content:
-      "## List Concatenation and Repetition\n\nYou can combine and repeat lists with `+` and `*`:\n\n```python\nlist1 = [1, 2, 3]\nlist2 = [4, 5, 6]\ncombined = list1 + list2\nprint(combined)     # [1, 2, 3, 4, 5, 6]\n\nrepeated = [0] * 5\nprint(repeated)     # [0, 0, 0, 0, 0]\n\nmatrix = [[1, 2], [3, 4]]  # Lists can contain lists!\nprint(matrix[0][1])  # 2 (row 0, column 1)\n```",
-  },
+  { type: "text", content: "## List Concatenation and Repetition\n\nYou can combine and repeat lists with `+` and `*`:" },
+  { type: "code", language: "python", content: "list1 = [1, 2, 3]\nlist2 = [4, 5, 6]\ncombined = list1 + list2\nprint(combined)     # [1, 2, 3, 4, 5, 6]\n\nrepeated = [0] * 5\nprint(repeated)     # [0, 0, 0, 0, 0]\n\nmatrix = [[1, 2], [3, 4]]  # Lists can contain lists!\nprint(matrix[0][1])  # 2 (row 0, column 1)" },
   {
     type: "comparison",
     title: "Lists vs Strings",
@@ -3126,6 +3163,18 @@ const ch10Sections: Section[] = [
       "Lists can be concatenated with `+` and checked for membership with `in`",
     ],
   },
+  {
+    id: "py10-fix1",
+    type: "fix-code",
+    title: "Fix the List Index",
+    instructions: "The code tries to access the last element but crashes with an IndexError. Fix it.",
+    brokenCode: `fruits = ["apple", "banana", "cherry"]
+print(fruits[3])`,
+    correctCode: `fruits = ["apple", "banana", "cherry"]
+print(fruits[-1])`,
+    hints: ["Lists are 0-indexed in Python.", "How can you access the last element without knowing the length?"],
+    explanation: "List indices start at **0**. `fruits[3]` would be the 4th element, but there are only 3 items (indices 0, 1, 2). Use `-1` to access the last element.",
+  }
 ];
 
 const ch10Exercises: ExerciseSection[] = [

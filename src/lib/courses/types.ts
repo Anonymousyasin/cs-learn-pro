@@ -65,10 +65,22 @@ export interface KeyPointsSection {
   points: string[];
 }
 
+export interface FixCodeSection {
+  type: "fix-code";
+  id: string;                    // e.g. "py1-fix1" — used to track completion
+  title: string;                 // e.g. "Fix the Syntax Error"
+  instructions: string;          // What's wrong and what the user should fix
+  brokenCode: string;            // Code with deliberate issues
+  correctCode: string;           // The fixed version — compared line-by-line
+  hints?: string[];              // Progressive hints (shown one at a time)
+  explanation: string;           // Why the fix works — shown after success
+}
+
 export type Section =
   | TextSection | CodeSection | CalloutSection | ListSection
   | ImageSection | FormulaSection | InteractiveSection
-  | ComparisonSection | ExerciseSection | KeyPointsSection;
+  | ComparisonSection | ExerciseSection | KeyPointsSection
+  | FixCodeSection;
 
 // ─── Exam Question Types ────────────────────────────────────────
 export type ExamDifficulty = "easy" | "medium" | "hard";

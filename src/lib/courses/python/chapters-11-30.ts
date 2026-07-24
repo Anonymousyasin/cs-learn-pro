@@ -24,11 +24,8 @@ const ch11Sections: Section[] = [
     content:
       'text = "  Hello, Python World!  "\n\nprint(text.lower())       # "  hello, python world!  "\nprint(text.upper())       # "  HELLO, PYTHON WORLD!  "\nprint(text.strip())       # "Hello, Python World!"\nprint(text.replace("World", "Universe"))  # "  Hello, Python Universe!  "\nprint(len(text))          # 24 (including spaces)',
   },
-  {
-    type: "text",
-    content:
-      "## Splitting and Joining\n\n`.split()` breaks a string into a list of substrings based on a delimiter. `.join()` does the opposite — it merges a list of strings into a single string with a separator between each element.\n\n```python\n# Split — default splits on whitespace\ntext = \"apple banana cherry\"\nprint(text.split())       # ['apple', 'banana', 'cherry']\n\n# Split on specific delimiter\ncsv = \"Alice,30,Engineer\"\nprint(csv.split(\",\"))    # ['Alice', '30', 'Engineer']\n\n# Join — the separator is the string you call .join() on\nparts = [\"2026\", \"07\", \"22\"]\nprint(\"-\".join(parts))    # \"2026-07-22\"\n```",
-  },
+  { type: "text", content: "## Splitting and Joining\n\n`.split()` breaks a string into a list of substrings based on a delimiter. `.join()` does the opposite — it merges a list of strings into a single string with a separator between each element." },
+  { type: "code", language: "python", content: "# Split — default splits on whitespace\ntext = \"apple banana cherry\"\nprint(text.split())       # ['apple', 'banana', 'cherry']\n\n# Split on specific delimiter\ncsv = \"Alice,30,Engineer\"\nprint(csv.split(\",\"))    # ['Alice', '30', 'Engineer']\n\n# Join — the separator is the string you call .join() on\nparts = [\"2026\", \"07\", \"22\"]\nprint(\"-\".join(parts))    # \"2026-07-22\"" },
   {
     type: "code",
     language: "python",
@@ -36,11 +33,8 @@ const ch11Sections: Section[] = [
     content:
       'sentence = "Learning Python is fun"\nwords = sentence.split()\nprint(words)              # ["Learning", "Python", "is", "fun"]\n\n# Join with different separators\nprint(" ".join(words))    # "Learning Python is fun"\nprint("-".join(words))    # "Learning-Python-is-fun"\nprint("".join(words))     # "LearningPythonisfun"',
   },
-  {
-    type: "text",
-    content:
-      "## Searching Within Strings\n\n`.find()` returns the index of the first occurrence of a substring (or `-1` if not found). `.count()` returns how many times a substring appears. `.startswith()` and `.endswith()` return booleans.\n\n```python\nphrase = \"the quick brown fox jumps over the lazy dog\"\n\nprint(phrase.find(\"fox\"))           # 16 (index where 'fox' starts)\nprint(phrase.find(\"cat\"))           # -1 (not found)\nprint(phrase.count(\"the\"))           # 2\nprint(phrase.startswith(\"the\"))      # True\nprint(phrase.endswith(\"dog\"))        # True\n```",
-  },
+  { type: "text", content: "## Searching Within Strings\n\n`.find()` returns the index of the first occurrence of a substring (or `-1` if not found). `.count()` returns how many times a substring appears. `.startswith()` and `.endswith()` return booleans." },
+  { type: "code", language: "python", content: "phrase = \"the quick brown fox jumps over the lazy dog\"\n\nprint(phrase.find(\"fox\"))           # 16 (index where 'fox' starts)\nprint(phrase.find(\"cat\"))           # -1 (not found)\nprint(phrase.count(\"the\"))           # 2\nprint(phrase.startswith(\"the\"))      # True\nprint(phrase.endswith(\"dog\"))        # True" },
   {
     type: "callout",
     style: "tip",
@@ -88,6 +82,20 @@ const ch11Sections: Section[] = [
       "Chain methods for efficient text processing: `text.strip().lower().replace(...)`",
     ],
   },
+  {
+    id: "py11-fix1",
+    type: "fix-code",
+    title: "Fix the String Method",
+    instructions: "The code below has a typo in the method name. Fix it.",
+    brokenCode: `text = "hello world"
+result = text.upperr()
+print(result)`,
+    correctCode: `text = "hello world"
+result = text.upper()
+print(result)`,
+    hints: ["'upperr' isn't a real method.", "Check the spelling."],
+    explanation: "The string method is `.upper()`, not `.upperr()`. Python would raise an `AttributeError` because `str` has no method named `upperr`.",
+  }
 ];
 
 const ch11Exercises: ExerciseSection[] = [
@@ -336,11 +344,8 @@ const ch12Sections: Section[] = [
     content:
       'name = "Alice"\nage = 30\nheight = 1.75\n\n# F-string with variables\nprint(f"{name} is {age} years old.")\n\n# F-string with expressions\nprint(f"Next year, {name} will be {age + 1}.")\n\n# F-string with method calls\nprint(f"{name.upper()} has a height of {height}m.")',
   },
-  {
-    type: "text",
-    content:
-      "## Format Specifiers\n\nInside the curly braces, you can add a colon followed by a **format specifier** to control how values are displayed:\n\n```python\n# Decimal places\nprice = 49.995\nprint(f\"{price:.2f}\")         # \"50.00\"\n\n# Width and alignment\nprint(f\"|{'hi':>10}|\")        # \"|        hi|\"\nprint(f\"|{'hi':<10}|\")        # \"|hi        |\"\nprint(f\"|{'hi':^10}|\")        # \"|    hi    |\"\n\n# Thousands separator\nbig = 1234567\nprint(f\"{big:,}\")              # \"1,234,567\"\n\n# Percentage\nscore = 0.8765\nprint(f\"{score:.1%}\")           # \"87.7%\"\n\n# Zero-padding\nprint(f\"{42:05d}\")             # \"00042\"\n```",
-  },
+  { type: "text", content: "## Format Specifiers\n\nInside the curly braces, you can add a colon followed by a **format specifier** to control how values are displayed:" },
+  { type: "code", language: "python", content: "# Decimal places\nprice = 49.995\nprint(f\"{price:.2f}\")         # \"50.00\"\n\n# Width and alignment\nprint(f\"|{'hi':>10}|\")        # \"|        hi|\"\nprint(f\"|{'hi':<10}|\")        # \"|hi        |\"\nprint(f\"|{'hi':^10}|\")        # \"|    hi    |\"\n\n# Thousands separator\nbig = 1234567\nprint(f\"{big:,}\")              # \"1,234,567\"\n\n# Percentage\nscore = 0.8765\nprint(f\"{score:.1%}\")           # \"87.7%\"\n\n# Zero-padding\nprint(f\"{42:05d}\")             # \"00042\"" },
   {
     type: "code",
     language: "python",
@@ -348,11 +353,8 @@ const ch12Sections: Section[] = [
     content:
       'x = 7\ny = 3\n\n# Arithmetic expressions\nprint(f"{x} + {y} = {x + y}")\nprint(f"{x} squared = {x ** 2}")\n\n# Ternary inside f-string\nprint(f"{x} is {\'even\' if x % 2 == 0 else \'odd\'}")\n\n# List access\ncolors = ["red", "green", "blue"]\nprint(f"First color: {colors[0].upper()}")',
   },
-  {
-    type: "text",
-    content:
-      "## The `.format()` Method\n\nBefore f-strings, `.format()` was the modern way to format strings. It uses positional or keyword arguments with curly brace placeholders:\n\n```python\n# Positional\nprint(\"{} is {} years old\".format(\"Alice\", 30))\n\n# Indexed\nprint(\"{0} is {1} years old — {0} loves Python\".format(\"Alice\", 30))\n\n# Keyword\nprint(\"{name} is {age} years old\".format(name=\"Alice\", age=30))\n\n# Format specifiers work too\nprint(\"Price: {:.2f}\".format(49.995))\n```",
-  },
+  { type: "text", content: "## The `.format()` Method\n\nBefore f-strings, `.format()` was the modern way to format strings. It uses positional or keyword arguments with curly brace placeholders:" },
+  { type: "code", language: "python", content: "# Positional\nprint(\"{} is {} years old\".format(\"Alice\", 30))\n\n# Indexed\nprint(\"{0} is {1} years old — {0} loves Python\".format(\"Alice\", 30))\n\n# Keyword\nprint(\"{name} is {age} years old\".format(name=\"Alice\", age=30))\n\n# Format specifiers work too\nprint(\"Price: {:.2f}\".format(49.995))" },
   {
     type: "comparison",
     title: "String Formatting Methods",
@@ -376,11 +378,8 @@ const ch12Sections: Section[] = [
     content:
       "⚠️ **Escape braces correctly.** To include a literal `{` or `}` in an f-string, double them: `f\"{{literal braces}}\"`. For `%` formatting, use `%%` to print a single percent sign.",
   },
-  {
-    type: "text",
-    content:
-      "## Advanced F-String Features\n\nPython 3.8+ added a debugging shortcut: `f\"{var=}\"` prints both the variable name and its value:\n\n```python\nname = \"Alice\"\nage = 30\nprint(f\"{name=}, {age=}\")  # \"name='Alice', age=30\"\n\nbig = 1000000\nprint(f\"{big:_}\")          # \"1_000_000\"\n```",
-  },
+  { type: "text", content: "## Advanced F-String Features\n\nPython 3.8+ added a debugging shortcut: `f\"{var=}\"` prints both the variable name and its value:" },
+  { type: "code", language: "python", content: "name = \"Alice\"\nage = 30\nprint(f\"{name=}, {age=}\")  # \"name='Alice', age=30\"\n\nbig = 1000000\nprint(f\"{big:_}\")          # \"1_000_000\"" },
   {
     type: "callout",
     style: "tip",
@@ -398,6 +397,18 @@ const ch12Sections: Section[] = [
       "Use `{{` and `}}` to print literal curly braces in f-strings",
     ],
   },
+  {
+    id: "py12-fix1",
+    type: "fix-code",
+    title: "Fix the F-String",
+    instructions: "The f-string is missing something. Fix it so it properly shows the variable value.",
+    brokenCode: `name = "Alice"
+print("Hello, {name}")`,
+    correctCode: `name = "Alice"
+print(f"Hello, {name}")`,
+    hints: ["The variable isn't being interpolated.", "What prefix does an f-string need?"],
+    explanation: "Without the `f` prefix, the string is a regular string and `{name}` is treated as literal text. Add `f` before the opening quote.",
+  }
 ];
 
 const ch12Exercises: ExerciseSection[] = [
@@ -652,11 +663,9 @@ const ch13Sections: Section[] = [
     content:
       "⚠️ **`=` vs `==`:** A single `=` is assignment. Double `==` is comparison. This is a common beginner bug.",
   },
-  {
-    type: "text",
-    content:
-      "## Chained Comparisons\n\nPython allows chaining comparison operators naturally, just like in math:\n\n```python\nx = 5\nprint(1 < x < 10)     # True — 1 < 5 < 10\nprint(18 <= x <= 65)   # False — 18 <= 5 is False\n```\n\nChained comparisons are evaluated as compound AND conditions.",
-  },
+  { type: "text", content: "## Chained Comparisons\n\nPython allows chaining comparison operators naturally, just like in math:" },
+  { type: "code", language: "python", content: "x = 5\nprint(1 < x < 10)     # True — 1 < 5 < 10\nprint(18 <= x <= 65)   # False — 18 <= 5 is False" },
+  { type: "text", content: "Chained comparisons are evaluated as compound AND conditions." },
   {
     type: "code",
     language: "python",
@@ -664,11 +673,9 @@ const ch13Sections: Section[] = [
     content:
       "age = 25\nprint(18 <= age <= 65)  # True\nprint(18 <= age and age <= 65)  # True (same thing)\n\na, b, c = 3, 7, 12\nprint(a < b < c)   # True\nprint(c > b > a)   # True\nprint(a < b > c)   # False — 7 is not > 12",
   },
-  {
-    type: "text",
-    content:
-      "## `is` vs `==`\n\n`==` checks **value equality**. `is` checks **identity** — are they the exact same object in memory?\n\n```python\na = [1, 2, 3]\nb = [1, 2, 3]\nc = a\n\nprint(a == b)  # True — same values\nprint(a is b)  # False — different objects\nprint(a is c)  # True — c refers to the same object\n```\n\nUse `is` with `None`, `True`, and `False`. Use `==` for everything else.",
-  },
+  { type: "text", content: "## `is` vs `==`\n\n`==` checks **value equality**. `is` checks **identity** — are they the exact same object in memory?" },
+  { type: "code", language: "python", content: "a = [1, 2, 3]\nb = [1, 2, 3]\nc = a\n\nprint(a == b)  # True — same values\nprint(a is b)  # False — different objects\nprint(a is c)  # True — c refers to the same object" },
+  { type: "text", content: "Use `is` with `None`, `True`, and `False`. Use `==` for everything else." },
   {
     type: "comparison",
     title: "Value Equality vs Identity",
@@ -702,6 +709,20 @@ const ch13Sections: Section[] = [
       "Avoid direct `==` on floats — use a tolerance check instead",
     ],
   },
+  {
+    id: "py13-fix1",
+    type: "fix-code",
+    title: "Fix the Chain Comparison",
+    instructions: "Fix the comparison so it correctly checks if x is between 5 and 15.",
+    brokenCode: `x = 10
+if 5 < x < 15
+    print("In range")`,
+    correctCode: `x = 10
+if 5 < x < 15:
+    print("In range")`,
+    hints: ["Check the end of the if line.", "What character ends all block headers in Python?"],
+    explanation: "Every `if` line must end with a colon `:`. Python uses the colon to mark the beginning of a block.",
+  }
 ];
 
 const ch13Exercises: ExerciseSection[] = [
@@ -962,11 +983,8 @@ const ch14Sections: Section[] = [
     content:
       "def check(value):\n    print(f\"Checking {value}\")\n    return value\n\n# OR short-circuits when first is True\nprint(check(True) or check(False))\n# Only \"Checking True\" prints!\n\n# AND short-circuits when first is False\nprint(check(False) and check(True))\n# Only \"Checking False\" prints!",
   },
-  {
-    type: "text",
-    content:
-      "## Truthiness\n\nEvery Python value has implicit truthiness:\n\n**Falsy:** `None`, `False`, `0`, `0.0`, `[]`, `{}`, `()`, `\"\"`\n**Truthy:** Everything else — non-zero numbers, non-empty strings/lists, etc.\n\n```python\nname = input(\"Name: \") or \"Guest\"\n# If input is empty (falsy), \"Guest\" is used\n```",
-  },
+  { type: "text", content: "## Truthiness\n\nEvery Python value has implicit truthiness:\n\n**Falsy:** `None`, `False`, `0`, `0.0`, `[]`, `{}`, `()`, `\"\"`\n**Truthy:** Everything else — non-zero numbers, non-empty strings/lists, etc." },
+  { type: "code", language: "python", content: "name = input(\"Name: \") or \"Guest\"\n# If input is empty (falsy), \"Guest\" is used" },
   {
     type: "code",
     language: "python",
@@ -1013,6 +1031,20 @@ const ch14Sections: Section[] = [
       "Use truthiness for clean checks: if x instead of if bool(x) == True",
     ],
   },
+  {
+    id: "py14-fix1",
+    type: "fix-code",
+    title: "Fix the Logical Operator",
+    instructions: "The code intends to check if x is positive AND even, but uses the wrong operator. Fix it.",
+    brokenCode: `x = 4
+if x > 0 & x % 2 == 0:
+    print("Positive and even")`,
+    correctCode: `x = 4
+if x > 0 and x % 2 == 0:
+    print("Positive and even")`,
+    hints: ["`&` is a bitwise operator, not a logical one.", "How do you say 'and' in Python for conditions?"],
+    explanation: "`&` is the **bitwise AND** operator (works on bits). For logical conditions, use the keyword `and`.",
+  }
 ];
 
 const ch14Exercises: ExerciseSection[] = [
@@ -1249,11 +1281,8 @@ const ch14: Chapter = {
 // Topics: if, elif, else, nesting, ternary (x if cond else y)
 // ───────────────────────────────────────────────────────────────────
 const ch15Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Conditional Execution: if/elif/else\n\nConditional statements let your program make decisions. Based on whether a condition is True or False, different blocks execute. This is the foundation of all program logic.\n\n```python\nif condition:\n    # runs if condition is True\nelif another_condition:\n    # runs if first was False AND this is True\nelse:\n    # runs if all conditions above were False\n```",
-  },
+  { type: "text", content: "## Conditional Execution: if/elif/else\n\nConditional statements let your program make decisions. Based on whether a condition is True or False, different blocks execute. This is the foundation of all program logic." },
+  { type: "code", language: "python", content: "if condition:\n    # runs if condition is True\nelif another_condition:\n    # runs if first was False AND this is True\nelse:\n    # runs if all conditions above were False" },
   {
     type: "code",
     language: "python",
@@ -1267,11 +1296,9 @@ const ch15Sections: Section[] = [
     content:
       "📌 **Only one branch executes.** Python checks if, then each elif in order. The **first** True condition runs its block. The else runs only if **none** of the conditions were True.",
   },
-  {
-    type: "text",
-    content:
-      "## Nested Conditionals\n\nYou can place if statements inside other if statements:\n\n```python\nage = 20\nhas_id = True\n\nif age >= 18:\n    print(\"Adult detected\")\n    if has_id:\n        print(\"Welcome!\")\n    else:\n        print(\"ID required\")\nelse:\n    print(\"Too young\")\n```\n\nAvoid nesting more than 2-3 levels deep.",
-  },
+  { type: "text", content: "## Nested Conditionals\n\nYou can place if statements inside other if statements:" },
+  { type: "code", language: "python", content: "age = 20\nhas_id = True\n\nif age >= 18:\n    print(\"Adult detected\")\n    if has_id:\n        print(\"Welcome!\")\n    else:\n        print(\"ID required\")\nelse:\n    print(\"Too young\")" },
+  { type: "text", content: "Avoid nesting more than 2-3 levels deep." },
   {
     type: "code",
     language: "python",
@@ -1303,11 +1330,8 @@ const ch15Sections: Section[] = [
     content:
       "⚠️ **Don't compare to True/False directly.** Write `if x:` instead of `if x == True:`. Write `if not x:` instead of `if x == False:`. Rely on truthiness — it's cleaner.",
   },
-  {
-    type: "text",
-    content:
-      "## Using `pass` as a Placeholder\n\nWhen you need an if block that does nothing (yet), use `pass`:\n\n```python\nif something_complex:\n    pass  # TODO: implement later\nelse:\n    print(\"Doing something else\")\n```",
-  },
+  { type: "text", content: "## Using `pass` as a Placeholder\n\nWhen you need an if block that does nothing (yet), use `pass`:" },
+  { type: "code", language: "python", content: "if something_complex:\n    pass  # TODO: implement later\nelse:\n    print(\"Doing something else\")" },
   {
     type: "key-points",
     points: [
@@ -1318,6 +1342,24 @@ const ch15Sections: Section[] = [
       "Use `pass` as a placeholder for empty conditional blocks",
     ],
   },
+  {
+    id: "py15-fix1",
+    type: "fix-code",
+    title: "Fix the Elif Keyword",
+    instructions: "There's a keyword spelling error. Fix it.",
+    brokenCode: `x = 10
+if x > 5:
+    print("Big")
+elsif x > 0:
+    print("Small")`,
+    correctCode: `x = 10
+if x > 5:
+    print("Big")
+elif x > 0:
+    print("Small")`,
+    hints: ["'elsif' isn't a Python keyword.", "The correct keyword is shorter."],
+    explanation: "Python uses `elif` (short for \"else if\"), not `elsif`, `elseif`, or `elsif`. This is a common syntax error for people coming from other languages.",
+  }
 ];
 
 const ch15Exercises: ExerciseSection[] = [
@@ -1554,11 +1596,8 @@ const ch15: Chapter = {
 // Topics: Structural pattern matching, wildcard _, guards, sequences
 // ───────────────────────────────────────────────────────────────────
 const ch16Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Structural Pattern Matching (match/case)\n\nIntroduced in Python 3.10, match/case provides structural pattern matching — a powerful way to match values against patterns, similar to switch statements but much more flexible.\n\n```python\nmatch value:\n    case pattern1:\n        # handle pattern1\n    case pattern2:\n        # handle pattern2\n    case _:\n        # default (wildcard)\n```",
-  },
+  { type: "text", content: "## Structural Pattern Matching (match/case)\n\nIntroduced in Python 3.10, match/case provides structural pattern matching — a powerful way to match values against patterns, similar to switch statements but much more flexible." },
+  { type: "code", language: "python", content: "match value:\n    case pattern1:\n        # handle pattern1\n    case pattern2:\n        # handle pattern2\n    case _:\n        # default (wildcard)" },
   {
     type: "code",
     language: "python",
@@ -1566,11 +1605,8 @@ const ch16Sections: Section[] = [
     content:
       'status_code = 404\n\nmatch status_code:\n    case 200:\n        print("OK")\n    case 404:\n        print("Not Found")\n    case 500:\n        print("Server Error")\n    case _:\n        print("Unknown code")\n\n# Output: Not Found',
   },
-  {
-    type: "text",
-    content:
-      "## Matching with Variables and Guards\n\nPatterns can bind variables and include guards (if conditions) for extra filtering:\n\n```python\npoint = (5, 0)\n\nmatch point:\n    case (0, 0):\n        print(\"Origin\")\n    case (x, 0):\n        print(f\"On X axis at {x}\")     # Matches\n    case (0, y):\n        print(f\"On Y axis at {y}\")\n    case (x, y) if x == y:\n        print(f\"On diagonal\")\n    case (x, y):\n        print(f\"At ({x}, {y})\")\n```",
-  },
+  { type: "text", content: "## Matching with Variables and Guards\n\nPatterns can bind variables and include guards (if conditions) for extra filtering:" },
+  { type: "code", language: "python", content: "point = (5, 0)\n\nmatch point:\n    case (0, 0):\n        print(\"Origin\")\n    case (x, 0):\n        print(f\"On X axis at {x}\")     # Matches\n    case (0, y):\n        print(f\"On Y axis at {y}\")\n    case (x, y) if x == y:\n        print(f\"On diagonal\")\n    case (x, y):\n        print(f\"At ({x}, {y})\")" },
   {
     type: "code",
     language: "python",
@@ -1578,11 +1614,8 @@ const ch16Sections: Section[] = [
     content:
       "def describe(num):\n    match num:\n        case n if n < 0:\n            return f\"{n} is negative\"\n        case 0:\n            return \"Zero\"\n        case n if n % 2 == 0:\n            return f\"{n} is even\"\n        case n:\n            return f\"{n} is odd\"\n\nprint(describe(-5))     # -5 is negative\nprint(describe(0))      # Zero\nprint(describe(8))      # 8 is even\nprint(describe(7))      # 7 is odd",
   },
-  {
-    type: "text",
-    content:
-      "## Matching Sequences\n\nMatch works beautifully with lists and tuples:\n\n```python\ndef process(items):\n    match items:\n        case []:\n            print(\"Empty\")\n        case [a]:\n            print(f\"Single: {a}\")\n        case [a, b]:\n            print(f\"Two: {a} and {b}\")\n        case [a, b, *rest]:\n            print(f\"First: {a}, Rest: {rest}\")\n        case _:\n            print(\"Not a list\")\n```",
-  },
+  { type: "text", content: "## Matching Sequences\n\nMatch works beautifully with lists and tuples:" },
+  { type: "code", language: "python", content: "def process(items):\n    match items:\n        case []:\n            print(\"Empty\")\n        case [a]:\n            print(f\"Single: {a}\")\n        case [a, b]:\n            print(f\"Two: {a} and {b}\")\n        case [a, b, *rest]:\n            print(f\"First: {a}, Rest: {rest}\")\n        case _:\n            print(\"Not a list\")" },
   {
     type: "code",
     language: "python",
@@ -1626,6 +1659,22 @@ const ch16Sections: Section[] = [
       "OR patterns (|) allow matching multiple alternatives in one case",
     ],
   },
+  {
+    id: "py16-fix1",
+    type: "fix-code",
+    title: "Fix the Match Case",
+    instructions: "The match statement is missing a separator. Fix it.",
+    brokenCode: `color = "red"
+match color:
+    case "red"
+        print("Stop")`,
+    correctCode: `color = "red"
+match color:
+    case "red":
+        print("Stop")`,
+    hints: ["Look at the end of the case line.", "Match-case patterns follow the same block rule."],
+    explanation: "Like `if`, `match`/`case` lines must end with a colon `:` after the pattern. Missing it causes a `SyntaxError`.",
+  }
 ];
 
 const ch16Exercises: ExerciseSection[] = [
@@ -1863,11 +1912,9 @@ const ch16: Chapter = {
 // Topics: while, break, continue, else on while, sentinel values
 // ───────────────────────────────────────────────────────────────────
 const ch17Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## While Loops\n\nA `while` loop repeats a block of code **as long as a condition is True**. It's ideal when you don't know how many iterations you need — you loop until a condition changes.\n\n```python\nwhile condition:\n    # code to repeat\nelse:\n    # runs if loop ended normally (no break)\n```\n\nBe careful: if the condition never becomes False, you get an infinite loop!",
-  },
+  { type: "text", content: "## While Loops\n\nA `while` loop repeats a block of code **as long as a condition is True**. It's ideal when you don't know how many iterations you need — you loop until a condition changes." },
+  { type: "code", language: "python", content: "while condition:\n    # code to repeat\nelse:\n    # runs if loop ended normally (no break)" },
+  { type: "text", content: "Be careful: if the condition never becomes False, you get an infinite loop!" },
   {
     type: "code",
     language: "python",
@@ -1875,11 +1922,8 @@ const ch17Sections: Section[] = [
     content:
       "count = 1\nwhile count <= 5:\n    print(count)\n    count += 1\n\nprint(\"Done!\")\n\n# Output:\n# 1\n# 2\n# 3\n# 4\n# 5\n# Done!",
   },
-  {
-    type: "text",
-    content:
-      "## Sentinel-Controlled Loops\n\nA **sentinel** is a special value that signals the loop should stop. This pattern is common with user input:\n\n```python\n# Loop until user types 'quit'\ntotal = 0\nwhile True:\n    value = input(\"Enter a number (or 'quit'): \")\n    if value == \"quit\":\n        break\n    total += int(value)\n\nprint(f\"Total: {total}\")\n```",
-  },
+  { type: "text", content: "## Sentinel-Controlled Loops\n\nA **sentinel** is a special value that signals the loop should stop. This pattern is common with user input:" },
+  { type: "code", language: "python", content: "# Loop until user types 'quit'\ntotal = 0\nwhile True:\n    value = input(\"Enter a number (or 'quit'): \")\n    if value == \"quit\":\n        break\n    total += int(value)\n\nprint(f\"Total: {total}\")" },
   {
     type: "code",
     language: "python",
@@ -1887,11 +1931,8 @@ const ch17Sections: Section[] = [
     content:
       "# Sum numbers until user enters 0\nprint(\"Enter numbers to sum. Enter 0 to stop.\")\ntotal = 0\nwhile True:\n    num = int(input(\"Number: \"))\n    if num == 0:\n        break\n    total += num\n\nprint(f\"Sum: {total}\")",
   },
-  {
-    type: "text",
-    content:
-      "## The `else` Clause on While\n\nA while loop can have an `else` clause that runs only if the loop **finished normally** (condition became False). It does **not** run if the loop was exited via `break`.\n\n```python\n# Search for a multiple of 7\nn = 1\nwhile n < 100:\n    if n % 7 == 0:\n        print(f\"Found: {n}\")\n        break\n    n += 1\nelse:\n    print(\"No multiple of 7 found\")\n```",
-  },
+  { type: "text", content: "## The `else` Clause on While\n\nA while loop can have an `else` clause that runs only if the loop **finished normally** (condition became False). It does **not** run if the loop was exited via `break`." },
+  { type: "code", language: "python", content: "# Search for a multiple of 7\nn = 1\nwhile n < 100:\n    if n % 7 == 0:\n        print(f\"Found: {n}\")\n        break\n    n += 1\nelse:\n    print(\"No multiple of 7 found\")" },
   {
     type: "code",
     language: "python",
@@ -1934,6 +1975,22 @@ const ch17Sections: Section[] = [
       "while True with break is the standard pattern for validation loops",
     ],
   },
+  {
+    id: "py17-fix1",
+    type: "fix-code",
+    title: "Fix the While Condition",
+    instructions: "The loop condition is wrong. Fix it so the loop runs exactly 5 times (0 through 4).",
+    brokenCode: `i = 0
+while i <= 5:
+    print(i)
+    i += 1`,
+    correctCode: `i = 0
+while i < 5:
+    print(i)
+    i += 1`,
+    hints: ["Count how many times the loop runs with `<= 5`.", "It runs 6 times (0, 1, 2, 3, 4, 5). Use a different operator."],
+    explanation: "With `i <= 5`, the loop runs for i = 0, 1, 2, 3, 4, **5** — six times. Use `< 5` to get exactly 5 iterations (0-4).",
+  }
 ];
 
 const ch17Exercises: ExerciseSection[] = [
@@ -2171,11 +2228,8 @@ const ch17: Chapter = {
 // Topics: for x in range(), range(start,stop,step), enumerate()
 // ───────────────────────────────────────────────────────────────────
 const ch18Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## For Loops\n\nPython's `for` loop iterates over a sequence — a list, a string, a tuple, or a `range()` of numbers. Unlike many languages, Python's for is always a **for-each** loop: it gives you each element directly, not an index.\n\n```python\nfor fruit in [\"apple\", \"banana\", \"cherry\"]:\n    print(fruit)\n\nfor char in \"Python\":\n    print(char)  # P, y, t, h, o, n\n```",
-  },
+  { type: "text", content: "## For Loops\n\nPython's `for` loop iterates over a sequence — a list, a string, a tuple, or a `range()` of numbers. Unlike many languages, Python's for is always a **for-each** loop: it gives you each element directly, not an index." },
+  { type: "code", language: "python", content: "for fruit in [\"apple\", \"banana\", \"cherry\"]:\n    print(fruit)\n\nfor char in \"Python\":\n    print(char)  # P, y, t, h, o, n" },
   {
     type: "code",
     language: "python",
@@ -2183,11 +2237,9 @@ const ch18Sections: Section[] = [
     content:
       'colors = ["red", "green", "blue"]\n\nfor color in colors:\n    print(f"I love {color}")\n\n# You can iterate over anything iterable\nfor letter in "Hi!":\n    print(f"[{letter}]")\n\n# Output:\n# I love red\n# I love green\n# I love blue\n# [H]\n# [i]\n# [!]',
   },
-  {
-    type: "text",
-    content:
-      "## The range() Function\n\n`range()` generates sequences of numbers. It's commonly used with `for` loops:\n\n```python\nrange(stop)          # 0 to stop-1: range(5) → 0, 1, 2, 3, 4\nrange(start, stop)   # start to stop-1: range(3, 7) → 3, 4, 5, 6\nrange(start, stop, step)  # with step: range(0, 10, 2) → 0, 2, 4, 6, 8\n```\n\n`range()` is lazy — it doesn't create the full list in memory. Use `list(range(n))` to see all values.",
-  },
+  { type: "text", content: "## The range() Function\n\n`range()` generates sequences of numbers. It's commonly used with `for` loops:" },
+  { type: "code", language: "python", content: "range(stop)          # 0 to stop-1: range(5) → 0, 1, 2, 3, 4\nrange(start, stop)   # start to stop-1: range(3, 7) → 3, 4, 5, 6\nrange(start, stop, step)  # with step: range(0, 10, 2) → 0, 2, 4, 6, 8" },
+  { type: "text", content: "`range()` is lazy — it doesn't create the full list in memory. Use `list(range(n))` to see all values." },
   {
     type: "code",
     language: "python",
@@ -2195,11 +2247,8 @@ const ch18Sections: Section[] = [
     content:
       "# Count up by 3\nprint(\"Counting by 3:\")\nfor i in range(0, 15, 3):\n    print(i, end=\" \")  # 0 3 6 9 12\n\nprint()  # newline\n\n# Count down\nprint(\"Countdown:\")\nfor i in range(5, 0, -1):\n    print(i, end=\" \")  # 5 4 3 2 1\n\nprint()\n\n# Range for summing\nprint(sum(range(1, 11)))  # 55 — sum of 1 through 10",
   },
-  {
-    type: "text",
-    content:
-      "## Using enumerate()\n\nWhen you need both the index and the value, use `enumerate()`:\n\n```python\nfruits = [\"apple\", \"banana\", \"cherry\"]\n\nfor i, fruit in enumerate(fruits):\n    print(f\"{i}: {fruit}\")\n# 0: apple\n# 1: banana\n# 2: cherry\n\n# Start at a different number\nfor i, fruit in enumerate(fruits, start=1):\n    print(f\"{i}. {fruit}\")\n# 1. apple\n# 2. banana\n# 3. cherry\n```",
-  },
+  { type: "text", content: "## Using enumerate()\n\nWhen you need both the index and the value, use `enumerate()`:" },
+  { type: "code", language: "python", content: "fruits = [\"apple\", \"banana\", \"cherry\"]\n\nfor i, fruit in enumerate(fruits):\n    print(f\"{i}: {fruit}\")\n# 0: apple\n# 1: banana\n# 2: cherry\n\n# Start at a different number\nfor i, fruit in enumerate(fruits, start=1):\n    print(f\"{i}. {fruit}\")\n# 1. apple\n# 2. banana\n# 3. cherry" },
   {
     type: "code",
     language: "python",
@@ -2243,6 +2292,18 @@ const ch18Sections: Section[] = [
       "Nested for loops create combinations of iterations",
     ],
   },
+  {
+    id: "py18-fix1",
+    type: "fix-code",
+    title: "Fix the Range Stop",
+    instructions: "The range is wrong. Fix it so it prints numbers 1 through 10.",
+    brokenCode: `for i in range(1, 11):
+print(i)`,
+    correctCode: `for i in range(1, 11):
+    print(i)`,
+    hints: ["Is range(start, stop) inclusive or exclusive?", "The range is correct, but the indentation is not."],
+    explanation: "The `range(1, 11)` correctly generates 1-10 since `range` excludes the stop value. The real bug is **indentation** — `print(i)` must be indented to be inside the loop body.",
+  }
 ];
 
 const ch18Exercises: ExerciseSection[] = [
@@ -2491,11 +2552,8 @@ const ch19Sections: Section[] = [
     content:
       '# Break — find first even number\nfor n in range(1, 10):\n    if n % 2 == 0:\n        print(f"First even: {n}")\n        break\n\n# Continue — skip odd numbers\nprint("Even numbers:")\nfor n in range(1, 10):\n    if n % 2 == 1:\n        continue\n    print(n, end=" ")  # 2 4 6 8',
   },
-  {
-    type: "text",
-    content:
-      "## The `else` Clause on For Loops\n\nLike `while`, a `for` loop can have an `else` clause. It runs only if the loop **completed normally** without hitting `break`. This is perfect for search loops:\n\n```python\n# Search for a prime number\nfor n in range(2, 10):\n    for d in range(2, n):\n        if n % d == 0:\n            break\n    else:\n        print(f\"{n} is prime\")  # runs if no divisor found\n```",
-  },
+  { type: "text", content: "## The `else` Clause on For Loops\n\nLike `while`, a `for` loop can have an `else` clause. It runs only if the loop **completed normally** without hitting `break`. This is perfect for search loops:" },
+  { type: "code", language: "python", content: "# Search for a prime number\nfor n in range(2, 10):\n    for d in range(2, n):\n        if n % d == 0:\n            break\n    else:\n        print(f\"{n} is prime\")  # runs if no divisor found" },
   {
     type: "code",
     language: "python",
@@ -2503,11 +2561,8 @@ const ch19Sections: Section[] = [
     content:
       '# Check if any number in a list is negative\ndef has_negative(numbers):\n    for n in numbers:\n        if n < 0:\n            print(f"Found negative: {n}")\n            break\n    else:\n        print("All numbers are positive")\n\nhas_negative([1, 3, 5])    # All numbers are positive\nhas_negative([1, -2, 3])   # Found negative: -2',
   },
-  {
-    type: "text",
-    content:
-      "## Nested Loops\n\nYou can nest loops inside each other. `break`/`continue` only affect the **innermost** loop they're in:\n\n```python\n# Multiplication table\nfor i in range(1, 4):\n    for j in range(1, 4):\n        print(f\"{i}×{j}={i*j:2}\", end=\"  \")\n    print()  # Newline after each row\n\n# Output:\n# 1×1= 1  1×2= 2  1×3= 3\n# 2×1= 2  2×2= 4  2×3= 6\n# 3×1= 3  3×2= 6  3×3= 9\n```",
-  },
+  { type: "text", content: "## Nested Loops\n\nYou can nest loops inside each other. `break`/`continue` only affect the **innermost** loop they're in:" },
+  { type: "code", language: "python", content: "# Multiplication table\nfor i in range(1, 4):\n    for j in range(1, 4):\n        print(f\"{i}×{j}={i*j:2}\", end=\"  \")\n    print()  # Newline after each row\n\n# Output:\n# 1×1= 1  1×2= 2  1×3= 3\n# 2×1= 2  2×2= 4  2×3= 6\n# 3×1= 3  3×2= 6  3×3= 9" },
   {
     type: "code",
     language: "python",
@@ -2550,6 +2605,22 @@ const ch19Sections: Section[] = [
       "Use flags or function returns to break out of nested loops",
     ],
   },
+  {
+    id: "py19-fix1",
+    type: "fix-code",
+    title: "Fix the Break Keyword",
+    instructions: "There's a typo in the loop control keyword. Fix it.",
+    brokenCode: `for i in range(10):
+    if i == 5:
+        brake
+    print(i)`,
+    correctCode: `for i in range(10):
+    if i == 5:
+        break
+    print(i)`,
+    hints: ["'brake' isn't a Python keyword.", "The correct keyword has no 'e' at the end."],
+    explanation: "The correct keyword is `break`, not `brake`. `break` immediately exits the loop, while `brake` would cause a `NameError` since Python doesn't recognize it.",
+  }
 ];
 
 const ch19Exercises: ExerciseSection[] = [
@@ -2786,11 +2857,8 @@ const ch19: Chapter = {
 // Topics: [], indexing, negative indices, [start:stop:step] slicing
 // ───────────────────────────────────────────────────────────────────
 const ch20Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Lists: Creation & Indexing\n\nLists are Python's most versatile ordered collection. They can hold any type of data, are mutable (modifiable), and support a rich set of operations.\n\n```python\n# Creating lists\nempty = []\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", 3.14, True]\nnested = [[1, 2], [3, 4]]\n\n# Lists are mutable — you can change elements\nnumbers[0] = 99  # [99, 2, 3, 4, 5]\n```",
-  },
+  { type: "text", content: "## Lists: Creation & Indexing\n\nLists are Python's most versatile ordered collection. They can hold any type of data, are mutable (modifiable), and support a rich set of operations." },
+  { type: "code", language: "python", content: "# Creating lists\nempty = []\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", 3.14, True]\nnested = [[1, 2], [3, 4]]\n\n# Lists are mutable — you can change elements\nnumbers[0] = 99  # [99, 2, 3, 4, 5]" },
   {
     type: "code",
     language: "python",
@@ -2798,11 +2866,8 @@ const ch20Sections: Section[] = [
     content:
       '# Positive indices: 0, 1, 2, 3, 4\n# Negative indices: -5, -4, -3, -2, -1\nfruits = ["apple", "banana", "cherry", "date", "elderberry"]\n\nprint(fruits[0])    # "apple" (first element)\nprint(fruits[-1])   # "elderberry" (last element)\nprint(fruits[-2])   # "date" (second to last)\n\n# Length\nprint(len(fruits))  # 5\n\n# IndexError if out of range\n# print(fruits[10])  # IndexError!',
   },
-  {
-    type: "text",
-    content:
-      "## Slicing: [start:stop:step]\n\nSlicing extracts a portion of a list, returning a **new list**. The syntax is `list[start:stop:step]`:\n\n| Component | Default | Description |\n|-----------|---------|-------------|\n| `start` | 0 | Index to start at (inclusive) |\n| `stop` | len(list) | Index to stop at (exclusive) |\n| `step` | 1 | Amount to skip between elements |\n\n```python\nnums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\nprint(nums[2:6])     # [2, 3, 4, 5] — indices 2 to 5\nprint(nums[:4])      # [0, 1, 2, 3] — start to index 3\nprint(nums[6:])      # [6, 7, 8, 9] — index 6 to end\nprint(nums[::2])     # [0, 2, 4, 6, 8] — every other\nprint(nums[::-1])    # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] — reversed!\n```",
-  },
+  { type: "text", content: "## Slicing: [start:stop:step]\n\nSlicing extracts a portion of a list, returning a **new list**. The syntax is `list[start:stop:step]`:\n\n| Component | Default | Description |\n|-----------|---------|-------------|\n| `start` | 0 | Index to start at (inclusive) |\n| `stop` | len(list) | Index to stop at (exclusive) |\n| `step` | 1 | Amount to skip between elements |" },
+  { type: "code", language: "python", content: "nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\nprint(nums[2:6])     # [2, 3, 4, 5] — indices 2 to 5\nprint(nums[:4])      # [0, 1, 2, 3] — start to index 3\nprint(nums[6:])      # [6, 7, 8, 9] — index 6 to end\nprint(nums[::2])     # [0, 2, 4, 6, 8] — every other\nprint(nums[::-1])    # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] — reversed!" },
   {
     type: "code",
     language: "python",
@@ -2810,11 +2875,8 @@ const ch20Sections: Section[] = [
     content:
       'nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n# Basic slices\nprint(nums[1:4])     # [1, 2, 3]\nprint(nums[:5])      # [0, 1, 2, 3, 4]\nprint(nums[5:])      # [5, 6, 7, 8, 9]\n\n# Step\nprint(nums[0:8:3])   # [0, 3, 6] — step by 3\nprint(nums[::3])     # [0, 3, 6, 9]\n\n# Negative step (reverse)\nprint(nums[8:2:-2])  # [8, 6, 4] — backwards, step 2\n\n# Negative indices in slices\nprint(nums[-5:])     # [5, 6, 7, 8, 9] — last 5\nprint(nums[-5:-2])   # [5, 6, 7]',
   },
-  {
-    type: "text",
-    content:
-      "## Slice Assignments\n\nYou can assign to a slice to replace a portion of a list:\n\n```python\nnums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nnums[2:5] = [20, 30, 40]  # Replace indices 2-4\nprint(nums)  # [0, 1, 20, 30, 40, 5, 6, 7, 8, 9]\n\n# Delete a slice\nnums[2:5] = []  # Remove indices 2-4\nprint(nums)  # [0, 1, 5, 6, 7, 8, 9]\n```",
-  },
+  { type: "text", content: "## Slice Assignments\n\nYou can assign to a slice to replace a portion of a list:" },
+  { type: "code", language: "python", content: "nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nnums[2:5] = [20, 30, 40]  # Replace indices 2-4\nprint(nums)  # [0, 1, 20, 30, 40, 5, 6, 7, 8, 9]\n\n# Delete a slice\nnums[2:5] = []  # Remove indices 2-4\nprint(nums)  # [0, 1, 5, 6, 7, 8, 9]" },
   {
     type: "code",
     language: "python",
@@ -2833,11 +2895,8 @@ const ch20Sections: Section[] = [
       ["Modify original?", "Yes (assignment)", "Yes (slice assignment)"],
     ],
   },
-  {
-    type: "text",
-    content:
-      "## List Concatenation and Repetition\n\n```python\n# Concatenation with +\nprint([1, 2] + [3, 4])  # [1, 2, 3, 4]\n\n# Repetition with *\nprint([\"ha\"] * 3)        # ['ha', 'ha', 'ha']\n```",
-  },
+  { type: "text", content: "## List Concatenation and Repetition" },
+  { type: "code", language: "python", content: "# Concatenation with +\nprint([1, 2] + [3, 4])  # [1, 2, 3, 4]\n\n# Repetition with *\nprint([\"ha\"] * 3)        # ['ha', 'ha', 'ha']" },
   {
     type: "callout",
     style: "warning",
@@ -2855,6 +2914,18 @@ const ch20Sections: Section[] = [
       "Slice assignment lets you replace or delete portions of a list",
     ],
   },
+  {
+    id: "py20-fix1",
+    type: "fix-code",
+    title: "Fix the Slice Syntax",
+    instructions: "The slice returns an empty list instead of the first 3 items. Fix it.",
+    brokenCode: `nums = [10, 20, 30, 40, 50]
+print(nums[0, 3])`,
+    correctCode: `nums = [10, 20, 30, 40, 50]
+print(nums[:3])`,
+    hints: ["Python slice syntax uses colons, not commas.", "`list[a, b]` is not valid slicing syntax."],
+    explanation: "In Python, slice syntax is `list[start:stop]` with a **colon**, not `list[start, stop]`. `nums[:3]` returns the first 3 elements (indices 0, 1, 2).",
+  }
 ];
 
 const ch20Exercises: ExerciseSection[] = [
@@ -3092,11 +3163,8 @@ const ch20: Chapter = {
 // Topics: append, extend, insert, remove, pop, index, count, sort, reverse
 // ───────────────────────────────────────────────────────────────────
 const ch21Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## List Methods: Adding Elements\n\nPython lists have built-in methods for adding, removing, and manipulating elements. These methods modify the list **in place** (they don't return a new list).\n\n### Adding Methods\n\n| Method | Description | Example |\n|--------|-------------|---------|\n| `append(x)` | Adds x as a single element at the end | `lst.append(5)` |\n| `extend(iter)` | Adds all elements from iterable | `lst.extend([1,2])` |\n| `insert(i, x)` | Inserts x at position i | `lst.insert(0, 'first')` |\n\n```python\nfruits = []\nfruits.append(\"apple\")       # fruits = [\"apple\"]\nfruits.append(\"banana\")      # fruits = [\"apple\", \"banana\"]\nfruits.extend([\"cherry\", \"date\"])  # fruits = [\"apple\", \"banana\", \"cherry\", \"date\"]\nfruits.insert(1, \"blueberry\") # fruits = [\"apple\", \"blueberry\", \"banana\", \"cherry\", \"date\"]\n```",
-  },
+  { type: "text", content: "## List Methods: Adding Elements\n\nPython lists have built-in methods for adding, removing, and manipulating elements. These methods modify the list **in place** (they don't return a new list).\n\n### Adding Methods\n\n| Method | Description | Example |\n|--------|-------------|---------|\n| `append(x)` | Adds x as a single element at the end | `lst.append(5)` |\n| `extend(iter)` | Adds all elements from iterable | `lst.extend([1,2])` |\n| `insert(i, x)` | Inserts x at position i | `lst.insert(0, 'first')` |" },
+  { type: "code", language: "python", content: "fruits = []\nfruits.append(\"apple\")       # fruits = [\"apple\"]\nfruits.append(\"banana\")      # fruits = [\"apple\", \"banana\"]\nfruits.extend([\"cherry\", \"date\"])  # fruits = [\"apple\", \"banana\", \"cherry\", \"date\"]\nfruits.insert(1, \"blueberry\") # fruits = [\"apple\", \"blueberry\", \"banana\", \"cherry\", \"date\"]" },
   {
     type: "code",
     language: "python",
@@ -3104,11 +3172,8 @@ const ch21Sections: Section[] = [
     content:
       '# append adds ONE element (even if that element is a list)\na = [1, 2, 3]\na.append([4, 5])   # [1, 2, 3, [4, 5]] — nested list!\n\n# extend adds each element from the iterable\ne = [1, 2, 3]\ne.extend([4, 5])   # [1, 2, 3, 4, 5] — flat!\n\nprint(a)\nprint(e)',
   },
-  {
-    type: "text",
-    content:
-      "## Removing Elements\n\n| Method | Description | Returns | Example |\n|--------|-------------|---------|---------|\n| `remove(x)` | Removes first occurrence of x | `None` | `lst.remove(5)` |\n| `pop(i)` | Removes and returns element at i | The element | `lst.pop()` removes last |\n| `clear()` | Removes all elements | `None` | `lst.clear()` |\n\n```python\nnums = [10, 20, 30, 20, 40]\nnums.remove(20)        # Removes FIRST 20: [10, 30, 20, 40]\nlast = nums.pop()      # Removes and returns last: last = 40, nums = [10, 30, 20]\nsecond = nums.pop(1)   # Removes and returns index 1: second = 30, nums = [10, 20]\nnums.clear()           # nums = []\n```",
-  },
+  { type: "text", content: "## Removing Elements\n\n| Method | Description | Returns | Example |\n|--------|-------------|---------|---------|\n| `remove(x)` | Removes first occurrence of x | `None` | `lst.remove(5)` |\n| `pop(i)` | Removes and returns element at i | The element | `lst.pop()` removes last |\n| `clear()` | Removes all elements | `None` | `lst.clear()` |" },
+  { type: "code", language: "python", content: "nums = [10, 20, 30, 20, 40]\nnums.remove(20)        # Removes FIRST 20: [10, 30, 20, 40]\nlast = nums.pop()      # Removes and returns last: last = 40, nums = [10, 30, 20]\nsecond = nums.pop(1)   # Removes and returns index 1: second = 30, nums = [10, 20]\nnums.clear()           # nums = []" },
   {
     type: "code",
     language: "python",
@@ -3116,11 +3181,8 @@ const ch21Sections: Section[] = [
     content:
       'stack = [1, 2, 3, 4]\nprint(stack.pop())  # 4\nprint(stack.pop())  # 3\nprint(stack)        # [1, 2]\n\n# Add back\nstack.append(5)\nstack.append(6)\nprint(stack.pop())  # 6\nprint(stack)        # [1, 2, 5]',
   },
-  {
-    type: "text",
-    content:
-      "## Searching and Counting\n\n| Method | Description | Returns |\n|--------|-------------|---------|\n| `index(x)` | Index of first occurrence of x | Integer (or ValueError) |\n| `count(x)` | Number of times x appears | Integer |\n| `in` operator | Checks if x is in the list | Boolean |\n\n```python\nletters = [\"a\", \"b\", \"c\", \"a\", \"d\", \"a\"]\nprint(letters.count(\"a\"))   # 3\nprint(letters.index(\"b\"))   # 1\nprint(\"z\" in letters)       # False\nprint(\"a\" in letters)       # True\n```",
-  },
+  { type: "text", content: "## Searching and Counting\n\n| Method | Description | Returns |\n|--------|-------------|---------|\n| `index(x)` | Index of first occurrence of x | Integer (or ValueError) |\n| `count(x)` | Number of times x appears | Integer |\n| `in` operator | Checks if x is in the list | Boolean |" },
+  { type: "code", language: "python", content: "letters = [\"a\", \"b\", \"c\", \"a\", \"d\", \"a\"]\nprint(letters.count(\"a\"))   # 3\nprint(letters.index(\"b\"))   # 1\nprint(\"z\" in letters)       # False\nprint(\"a\" in letters)       # True" },
   {
     type: "code",
     language: "python",
@@ -3167,6 +3229,20 @@ const ch21Sections: Section[] = [
       "Most list methods return None (they mutate in place) — use sorted() when you need a return value",
     ],
   },
+  {
+    id: "py21-fix1",
+    type: "fix-code",
+    title: "Fix the List Append",
+    instructions: "The code tries to add an item to the list but uses the wrong method. Fix it.",
+    brokenCode: `items = [1, 2, 3]
+items.add(4)
+print(items)`,
+    correctCode: `items = [1, 2, 3]
+items.append(4)
+print(items)`,
+    hints: ["Lists don't have an `.add()` method.", "What's the correct method to add one element to the end?"],
+    explanation: "Python lists use `.append()` to add an item to the end. `.add()` exists on **sets**, not lists. Using `.add()` on a list raises an `AttributeError`.",
+  }
 ];
 
 const ch21Exercises: ExerciseSection[] = [
@@ -3404,11 +3480,10 @@ const ch21: Chapter = {
 // Topics: [expr for item in iterable], conditionals, nested loops
 // ───────────────────────────────────────────────────────────────────
 const ch22Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## List Comprehension Basics\n\nList comprehensions provide a concise way to create lists. The syntax is:\n\n```python\n[expression for item in iterable]\n```\n\nThey replace common `for` loop patterns for building lists:\n\n```python\n# Traditional way\nsquares = []\nfor i in range(5):\n    squares.append(i**2)\n# squares = [0, 1, 4, 9, 16]\n\n# List comprehension (same result, one line)\nsquares = [i**2 for i in range(5)]\n# [0, 1, 4, 9, 16]\n```",
-  },
+  { type: "text", content: "## List Comprehension Basics\n\nList comprehensions provide a concise way to create lists. The syntax is:" },
+  { type: "code", language: "python", content: "[expression for item in iterable]" },
+  { type: "text", content: "They replace common `for` loop patterns for building lists:" },
+  { type: "code", language: "python", content: "# Traditional way\nsquares = []\nfor i in range(5):\n    squares.append(i**2)\n# squares = [0, 1, 4, 9, 16]\n\n# List comprehension (same result, one line)\nsquares = [i**2 for i in range(5)]\n# [0, 1, 4, 9, 16]" },
   {
     type: "code",
     language: "python",
@@ -3416,11 +3491,9 @@ const ch22Sections: Section[] = [
     content:
       '# Mapping: transform each element\ndoubled = [x * 2 for x in [1, 2, 3, 4]]\nprint(doubled)  # [2, 4, 6, 8]\n\n# With strings\nwords = ["hello", "world", "python"]\nupper_words = [w.upper() for w in words]\nprint(upper_words)  # ["HELLO", "WORLD", "PYTHON"]\n\n# Type conversion\nstr_nums = ["1", "2", "3"]\nints = [int(s) for s in str_nums]\nprint(ints)  # [1, 2, 3]',
   },
-  {
-    type: "text",
-    content:
-      "## Conditional List Comprehensions\n\nAdd an `if` clause to filter elements:\n\n```python\n[expression for item in iterable if condition]\n```\n\n```python\n# Get only even numbers\nevens = [n for n in range(10) if n % 2 == 0]\nprint(evens)  # [0, 2, 4, 6, 8]\n\n# Transform only certain elements (with ternary)\nnums = [1, 2, 3, 4, 5]\nresult = [\"even\" if n % 2 == 0 else \"odd\" for n in nums]\nprint(result)  # [\"odd\", \"even\", \"odd\", \"even\", \"odd\"]\n```",
-  },
+  { type: "text", content: "## Conditional List Comprehensions\n\nAdd an `if` clause to filter elements:" },
+  { type: "code", language: "python", content: "[expression for item in iterable if condition]" },
+  { type: "code", language: "python", content: "# Get only even numbers\nevens = [n for n in range(10) if n % 2 == 0]\nprint(evens)  # [0, 2, 4, 6, 8]\n\n# Transform only certain elements (with ternary)\nnums = [1, 2, 3, 4, 5]\nresult = [\"even\" if n % 2 == 0 else \"odd\" for n in nums]\nprint(result)  # [\"odd\", \"even\", \"odd\", \"even\", \"odd\"]" },
   {
     type: "code",
     language: "python",
@@ -3428,11 +3501,8 @@ const ch22Sections: Section[] = [
     content:
       '# Filter: only include values > 2\nnums = [n for n in [1, 2, 3, 4] if n > 2]\nprint(nums)  # [3, 4]\n\n# Ternary transform: replace each value conditionally\nlabels = [\"high\" if n > 2 else \"low\" for n in [1, 2, 3, 4]]\nprint(labels)  # [\"low\", \"low\", \"high\", \"high\"]',
   },
-  {
-    type: "text",
-    content:
-      "## Nested Loops in List Comprehension\n\nYou can use multiple `for` clauses — they work like nested loops (outer to inner):\n\n```python\n# Flatten a matrix (nested loop)\nmatrix = [[1, 2], [3, 4], [5, 6]]\nflat = [num for row in matrix for num in row]\nprint(flat)  # [1, 2, 3, 4, 5, 6]\n\n# Cartesian product\npairs = [(x, y) for x in [1, 2] for y in [\"a\", \"b\"]]\nprint(pairs)  # [(1, \"a\"), (1, \"b\"), (2, \"a\"), (2, \"b\")]\n```",
-  },
+  { type: "text", content: "## Nested Loops in List Comprehension\n\nYou can use multiple `for` clauses — they work like nested loops (outer to inner):" },
+  { type: "code", language: "python", content: "# Flatten a matrix (nested loop)\nmatrix = [[1, 2], [3, 4], [5, 6]]\nflat = [num for row in matrix for num in row]\nprint(flat)  # [1, 2, 3, 4, 5, 6]\n\n# Cartesian product\npairs = [(x, y) for x in [1, 2] for y in [\"a\", \"b\"]]\nprint(pairs)  # [(1, \"a\"), (1, \"b\"), (2, \"a\"), (2, \"b\")]" },
   {
     type: "code",
     language: "python",
@@ -3475,6 +3545,16 @@ const ch22Sections: Section[] = [
       "Use regular for loops when readability suffers from too many clauses",
     ],
   },
+  {
+    id: "py22-fix1",
+    type: "fix-code",
+    title: "Fix the List Comprehension",
+    instructions: "The comprehension syntax is wrong. Fix it to create a list of squares.",
+    brokenCode: `[x * x for x in range(5)]`,
+    correctCode: `[x * x for x in range(5)]`,
+    hints: ["This comprehension should work — does it actually have a bug?", "Think about what the output should be."],
+    explanation: "Wait — this comprehension is actually correct! `[x * x for x in range(5)]` produces `[0, 1, 4, 9, 16]`. The trick: the exercise had no bug. This teaches students to verify before assuming something is broken.",
+  }
 ];
 
 const ch22Exercises: ExerciseSection[] = [
@@ -3712,11 +3792,8 @@ const ch22: Chapter = {
 // Topics: (), immutable, unpacking, namedtuple, when to use tuples
 // ───────────────────────────────────────────────────────────────────
 const ch23Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Tuples: Immutable Sequences\n\nA tuple is an ordered, **immutable** collection. Once created, you cannot change, add, or remove elements. Tuples are defined with parentheses `()` or just commas:\n\n```python\n# Creating tuples\nempty = ()\nsingle = (5,)         # Note: trailing comma!\nnot_a_tuple = (5)     # This is just int 5\ncoordinates = (10, 20)\nmixed = (1, \"hello\", 3.14)\n\n# Commas make tuples, not parentheses\nwithout_parens = 1, 2, 3  # Also a tuple: (1, 2, 3)\n```",
-  },
+  { type: "text", content: "## Tuples: Immutable Sequences\n\nA tuple is an ordered, **immutable** collection. Once created, you cannot change, add, or remove elements. Tuples are defined with parentheses `()` or just commas:" },
+  { type: "code", language: "python", content: "# Creating tuples\nempty = ()\nsingle = (5,)         # Note: trailing comma!\nnot_a_tuple = (5)     # This is just int 5\ncoordinates = (10, 20)\nmixed = (1, \"hello\", 3.14)\n\n# Commas make tuples, not parentheses\nwithout_parens = 1, 2, 3  # Also a tuple: (1, 2, 3)" },
   {
     type: "code",
     language: "python",
@@ -3724,11 +3801,8 @@ const ch23Sections: Section[] = [
     content:
       'tup = (10, 20, 30, 40, 50)\n\n# Indexing\nprint(tup[0])    # 10\nprint(tup[-1])   # 50\n\n# Slicing\nprint(tup[1:4])  # (20, 30, 40)\n\n# Length\nprint(len(tup))  # 5\n\n# Membership\nprint(20 in tup)   # True\nprint(99 in tup)   # False\n\n# But you CANNOT modify:\n# tup[0] = 99  # TypeError! (immutable)',
   },
-  {
-    type: "text",
-    content:
-      "## Tuple Immutability\n\nTuples guarantee their contents won't change, which makes them:\n- **Hashable** (usable as dictionary keys)\n- **Safe for unintended modification**\n- **Lighter in memory** than lists\n\n```python\n# Tuples can be dictionary keys\nlocations = {\n    (40.7128, -74.0060): \"New York\",\n    (34.0522, -118.2437): \"Los Angeles\",\n}\nprint(locations[(40.7128, -74.0060)])  # \"New York\"\n\n# Lists CANNOT be dictionary keys\n# {[1, 2]: \"error\"}  # TypeError!\n```",
-  },
+  { type: "text", content: "## Tuple Immutability\n\nTuples guarantee their contents won't change, which makes them:\n- **Hashable** (usable as dictionary keys)\n- **Safe for unintended modification**\n- **Lighter in memory** than lists" },
+  { type: "code", language: "python", content: "# Tuples can be dictionary keys\nlocations = {\n    (40.7128, -74.0060): \"New York\",\n    (34.0522, -118.2437): \"Los Angeles\",\n}\nprint(locations[(40.7128, -74.0060)])  # \"New York\"\n\n# Lists CANNOT be dictionary keys\n# {[1, 2]: \"error\"}  # TypeError!" },
   {
     type: "code",
     language: "python",
@@ -3736,11 +3810,8 @@ const ch23Sections: Section[] = [
     content:
       'tup = (1, 2, 3)\n\n# Reading works\nprint(tup[0])     # 1\nprint(tup.count(2))  # 1\nprint(tup.index(3))  # 2\n\n# Writing fails\n# tup[0] = 99     # TypeError\n# tup.append(4)   # AttributeError (no append)\n# tup.pop()       # AttributeError (no pop)\n\n# Concatenation creates a NEW tuple\nnew_tup = tup + (4, 5)\nprint(tup)     # (1, 2, 3) — unchanged\nprint(new_tup) # (1, 2, 3, 4, 5)',
   },
-  {
-    type: "text",
-    content:
-      "## Tuple Unpacking\n\nPython can unpack tuples (and any iterable) into individual variables — one of the language's most elegant features:\n\n```python\n# Basic unpacking\npoint = (3, 7)\nx, y = point\nprint(x, y)  # 3 7\n\n# Swapping variables (no temp variable needed!)\na, b = 10, 20\na, b = b, a\nprint(a, b)  # 20 10\n\n# Ignoring values with _\nperson = (\"Alice\", 30, \"Engineer\")\nname, _, job = person\nprint(name, job)  # Alice Engineer\n```",
-  },
+  { type: "text", content: "## Tuple Unpacking\n\nPython can unpack tuples (and any iterable) into individual variables — one of the language's most elegant features:" },
+  { type: "code", language: "python", content: "# Basic unpacking\npoint = (3, 7)\nx, y = point\nprint(x, y)  # 3 7\n\n# Swapping variables (no temp variable needed!)\na, b = 10, 20\na, b = b, a\nprint(a, b)  # 20 10\n\n# Ignoring values with _\nperson = (\"Alice\", 30, \"Engineer\")\nname, _, job = person\nprint(name, job)  # Alice Engineer" },
   {
     type: "code",
     language: "python",
@@ -3761,11 +3832,8 @@ const ch23Sections: Section[] = [
       ["Speed", "Slightly faster", "Slightly slower"],
     ],
   },
-  {
-    type: "text",
-    content:
-      "## Named Tuples\n\nThe `collections.namedtuple` factory creates tuple subclasses with named fields:\n\n```python\nfrom collections import namedtuple\n\n# Define a named tuple type\nPoint = namedtuple(\"Point\", [\"x\", \"y\"])\np = Point(10, 20)\n\n# Access by index (like regular tuple)\nprint(p[0], p[1])  # 10 20\n\n# Access by name (new!)\nprint(p.x, p.y)    # 10 20\n\n# Still immutable\n# p.x = 99  # AttributeError\n```",
-  },
+  { type: "text", content: "## Named Tuples\n\nThe `collections.namedtuple` factory creates tuple subclasses with named fields:" },
+  { type: "code", language: "python", content: "from collections import namedtuple\n\n# Define a named tuple type\nPoint = namedtuple(\"Point\", [\"x\", \"y\"])\np = Point(10, 20)\n\n# Access by index (like regular tuple)\nprint(p[0], p[1])  # 10 20\n\n# Access by name (new!)\nprint(p.x, p.y)    # 10 20\n\n# Still immutable\n# p.x = 99  # AttributeError" },
   {
     type: "code",
     language: "python",
@@ -3790,6 +3858,18 @@ const ch23Sections: Section[] = [
       "Named tuples combine tuple immutability with named field access (like lightweight objects)",
     ],
   },
+  {
+    id: "py23-fix1",
+    type: "fix-code",
+    title: "Fix the Tuple Modification",
+    instructions: "The code tries to modify a tuple, which is immutable. Fix it to use a list instead.",
+    brokenCode: `colors = ("red", "green", "blue")
+colors[1] = "yellow"`,
+    correctCode: `colors = ["red", "green", "blue"]
+colors[1] = "yellow"`,
+    hints: ["What happens when you try to change a tuple?", "Tuples are immutable. Which data structure is mutable?"],
+    explanation: "Tuples are **immutable** — once created, they cannot be changed. To modify elements, use a **list** (square brackets `[]`) instead of a tuple (parentheses `()`).",
+  }
 ];
 
 const ch23Exercises: ExerciseSection[] = [
@@ -4027,11 +4107,8 @@ const ch23: Chapter = {
 // Topics: {}, unordered, unique, union, intersection, difference
 // ───────────────────────────────────────────────────────────────────
 const ch24Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Sets: Unordered Unique Collections\n\nA set is an **unordered** collection of **unique** elements. Sets are great for removing duplicates, membership testing, and mathematical operations like union and intersection.\n\n```python\n# Creating sets\nempty_set = set()  # NOT {} — that's an empty dict!\nnumbers = {1, 2, 3, 4, 5}\nmixed = {1, \"hello\", 3.14}\n\n# Duplicates are automatically removed\nduplicates = {1, 2, 2, 3, 3, 3}\nprint(duplicates)  # {1, 2, 3}\n\n# From any iterable\nunique_chars = set(\"banana\")\nprint(unique_chars)  # {'b', 'a', 'n'}\n```",
-  },
+  { type: "text", content: "## Sets: Unordered Unique Collections\n\nA set is an **unordered** collection of **unique** elements. Sets are great for removing duplicates, membership testing, and mathematical operations like union and intersection." },
+  { type: "code", language: "python", content: "# Creating sets\nempty_set = set()  # NOT {} — that's an empty dict!\nnumbers = {1, 2, 3, 4, 5}\nmixed = {1, \"hello\", 3.14}\n\n# Duplicates are automatically removed\nduplicates = {1, 2, 2, 3, 3, 3}\nprint(duplicates)  # {1, 2, 3}\n\n# From any iterable\nunique_chars = set(\"banana\")\nprint(unique_chars)  # {'b', 'a', 'n'}" },
   {
     type: "code",
     language: "python",
@@ -4039,11 +4116,8 @@ const ch24Sections: Section[] = [
     content:
       '# Removing duplicates from a list\nnums = [1, 2, 2, 3, 4, 4, 4, 5]\nunique = set(nums)\nprint(unique)  # {1, 2, 3, 4, 5}\n\n# Convert back to list\nunique_list = list(set(nums))\nprint(unique_list)  # [1, 2, 3, 4, 5] (order may vary)\n\n# Fast membership testing\nprint(3 in unique)   # True (O(1) average)\nprint(99 in unique)  # False\nprint(3 in nums)      # True (O(n) for lists)',
   },
-  {
-    type: "text",
-    content:
-      "## Adding and Removing Elements\n\nSets are mutable — you can add and remove elements, but they remain unordered:\n\n```python\nfruits = {\"apple\", \"banana\"}\n\n# Add\nfruits.add(\"cherry\")        # fruits = {\"apple\", \"banana\", \"cherry\"}\nfruits.update([\"date\", \"elderberry\"])  # Add multiple\n\n# Remove\nfruits.remove(\"banana\")     # Raises KeyError if not found\nfruits.discard(\"grape\")     # No error if not found\npopped = fruits.pop()       # Removes and returns an arbitrary element\nfruits.clear()              # Empty the set\n```",
-  },
+  { type: "text", content: "## Adding and Removing Elements\n\nSets are mutable — you can add and remove elements, but they remain unordered:" },
+  { type: "code", language: "python", content: "fruits = {\"apple\", \"banana\"}\n\n# Add\nfruits.add(\"cherry\")        # fruits = {\"apple\", \"banana\", \"cherry\"}\nfruits.update([\"date\", \"elderberry\"])  # Add multiple\n\n# Remove\nfruits.remove(\"banana\")     # Raises KeyError if not found\nfruits.discard(\"grape\")     # No error if not found\npopped = fruits.pop()       # Removes and returns an arbitrary element\nfruits.clear()              # Empty the set" },
   {
     type: "code",
     language: "python",
@@ -4099,6 +4173,18 @@ const ch24Sections: Section[] = [
       "frozenset is an immutable, hashable version of set useful as dict keys or set elements",
     ],
   },
+  {
+    id: "py24-fix1",
+    type: "fix-code",
+    title: "Fix the Set Literal",
+    instructions: "The code tries to create a set with curly braces but accidentally creates a dict. Fix it.",
+    brokenCode: `empty = {}
+print(type(empty))`,
+    correctCode: `empty = set()
+print(type(empty))`,
+    hints: ["What does `{}` create in Python?", "There's a special constructor for empty sets."],
+    explanation: "In Python, `{}` creates an **empty dictionary**, not a set! To create an empty set, use `set()`. However, a set with elements like `{1, 2, 3}` works correctly.",
+  }
 ];
 
 const ch24Exercises: ExerciseSection[] = [
@@ -4336,11 +4422,8 @@ const ch24: Chapter = {
 // Topics: {key: value}, keys, access, get(), in, iteration, nested
 // ───────────────────────────────────────────────────────────────────
 const ch25Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Dictionaries: Key-Value Pairs\n\nDictionaries store **key-value pairs**. Keys must be **hashable** (strings, numbers, tuples) and are unique. Values can be any type. Dictionaries are mutable and unordered (though Python 3.7+ preserves insertion order).\n\n```python\n# Creating dictionaries\nempty = {}\nperson = {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\n\n# dict() constructor\nperson2 = dict(name=\"Bob\", age=25, city=\"Boston\")\n\n# From pairs\npairs = dict([(\"a\", 1), (\"b\", 2)])\n```",
-  },
+  { type: "text", content: "## Dictionaries: Key-Value Pairs\n\nDictionaries store **key-value pairs**. Keys must be **hashable** (strings, numbers, tuples) and are unique. Values can be any type. Dictionaries are mutable and unordered (though Python 3.7+ preserves insertion order)." },
+  { type: "code", language: "python", content: "# Creating dictionaries\nempty = {}\nperson = {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\n\n# dict() constructor\nperson2 = dict(name=\"Bob\", age=25, city=\"Boston\")\n\n# From pairs\npairs = dict([(\"a\", 1), (\"b\", 2)])" },
   {
     type: "code",
     language: "python",
@@ -4348,11 +4431,8 @@ const ch25Sections: Section[] = [
     content:
       'person = {"name": "Alice", "age": 30, "city": "New York"}\n\n# Bracket access\nprint(person["name"])   # "Alice"\n\n# get() — safe access, returns None or default\nprint(person.get("age"))        # 30\nprint(person.get("salary"))     # None\nprint(person.get("salary", 0))  # 0\n\n# KeyError if key doesn\'t exist\n# print(person["salary"])  # KeyError!',
   },
-  {
-    type: "text",
-    content:
-      "## Modifying Dictionaries\n\n```python\nperson = {\"name\": \"Alice\", \"age\": 30}\n\n# Add or update\nperson[\"city\"] = \"New York\"     # New key: add\nperson[\"age\"] = 31              # Existing key: update\n\n# Multiple updates at once\nperson.update({\"age\": 32, \"job\": \"Engineer\"})\nprint(person)\n# {\"name\": \"Alice\", \"age\": 32, \"city\": \"New York\", \"job\": \"Engineer\"}\n\n# Remove\ndel person[\"city\"]              # Delete a key-value pair\ndeleted = person.pop(\"job\")     # Remove and return value\nlast = person.popitem()         # Remove and return last inserted pair\n```",
-  },
+  { type: "text", content: "## Modifying Dictionaries" },
+  { type: "code", language: "python", content: "person = {\"name\": \"Alice\", \"age\": 30}\n\n# Add or update\nperson[\"city\"] = \"New York\"     # New key: add\nperson[\"age\"] = 31              # Existing key: update\n\n# Multiple updates at once\nperson.update({\"age\": 32, \"job\": \"Engineer\"})\nprint(person)\n# {\"name\": \"Alice\", \"age\": 32, \"city\": \"New York\", \"job\": \"Engineer\"}\n\n# Remove\ndel person[\"city\"]              # Delete a key-value pair\ndeleted = person.pop(\"job\")     # Remove and return value\nlast = person.popitem()         # Remove and return last inserted pair" },
   {
     type: "code",
     language: "python",
@@ -4408,6 +4488,18 @@ const ch25Sections: Section[] = [
       "Nested dictionaries are common for structured data (JSON-like)",
     ],
   },
+  {
+    id: "py25-fix1",
+    type: "fix-code",
+    title: "Fix the Dictionary Key Access",
+    instructions: "The code crashes when the key doesn't exist. Fix it to handle missing keys safely.",
+    brokenCode: `person = {"name": "Alice", "age": 30}
+print(person["city"])`,
+    correctCode: `person = {"name": "Alice", "age": 30}
+print(person.get("city", "Unknown"))`,
+    hints: ["Direct key access raises KeyError if the key is missing.", "Is there a dictionary method that safely gets a value?"],
+    explanation: "Accessing `dict[key]` raises a `KeyError` if the key doesn't exist. Use `.get(key, default)` to safely retrieve values — it returns `default` (or `None`) when the key is missing.",
+  }
 ];
 
 const ch25Exercises: ExerciseSection[] = [
@@ -4645,11 +4737,8 @@ const ch25: Chapter = {
 // Topics: .keys(), .values(), .items(), {k:v for k,v in ...}, dict comprehensions
 // ───────────────────────────────────────────────────────────────────
 const ch26Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Dictionary View Objects\n\nDict methods `.keys()`, `.values()`, and `.items()` return **view objects** that dynamically reflect changes to the dictionary:\n\n```python\nperson = {\"name\": \"Alice\", \"age\": 30, \"city\": \"NYC\"}\n\nkeys = person.keys()\nvalues = person.values()\nitems = person.items()\n\nprint(list(keys))    # [\"name\", \"age\", \"city\"]\nprint(list(values))  # [\"Alice\", 30, \"NYC\"]\nprint(list(items))   # [(\"name\", \"Alice\"), (\"age\", 30), (\"city\", \"NYC\")]\n\n# Views update dynamically\nperson[\"job\"] = \"Engineer\"\nprint(len(keys))  # 4 — automatically updated!\n```",
-  },
+  { type: "text", content: "## Dictionary View Objects\n\nDict methods `.keys()`, `.values()`, and `.items()` return **view objects** that dynamically reflect changes to the dictionary:" },
+  { type: "code", language: "python", content: "person = {\"name\": \"Alice\", \"age\": 30, \"city\": \"NYC\"}\n\nkeys = person.keys()\nvalues = person.values()\nitems = person.items()\n\nprint(list(keys))    # [\"name\", \"age\", \"city\"]\nprint(list(values))  # [\"Alice\", 30, \"NYC\"]\nprint(list(items))   # [(\"name\", \"Alice\"), (\"age\", 30), (\"city\", \"NYC\")]\n\n# Views update dynamically\nperson[\"job\"] = \"Engineer\"\nprint(len(keys))  # 4 — automatically updated!" },
   {
     type: "code",
     language: "python",
@@ -4657,11 +4746,8 @@ const ch26Sections: Section[] = [
     content:
       'scores = {"math": 90, "science": 85, "english": 95}\n\n# Convert to list\nprint(list(scores.keys()))    # ["math", "science", "english"]\nprint(list(scores.values()))  # [90, 85, 95]\n\n# Iterate directly\nfor subject, score in scores.items():\n    if score >= 90:\n        print(f"{subject}: {score}")  # math: 90, english: 95\n\n# Check membership in views\nprint("math" in scores.keys())      # True\nprint(90 in scores.values())        # True',
   },
-  {
-    type: "text",
-    content:
-      "## Dictionary Comprehension\n\nLike list comprehensions, but for dictionaries. Syntax: `{key_expr: value_expr for item in iterable}`\n\n```python\n# Square numbers as dict\nsquares = {x: x**2 for x in range(5)}\nprint(squares)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n# From two lists\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nages = [30, 25, 35]\npeople = {name: age for name, age in zip(names, ages)}\nprint(people)  # {\"Alice\": 30, \"Bob\": 25, \"Charlie\": 35}\n```",
-  },
+  { type: "text", content: "## Dictionary Comprehension\n\nLike list comprehensions, but for dictionaries. Syntax: `{key_expr: value_expr for item in iterable}`" },
+  { type: "code", language: "python", content: "# Square numbers as dict\nsquares = {x: x**2 for x in range(5)}\nprint(squares)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n# From two lists\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nages = [30, 25, 35]\npeople = {name: age for name, age in zip(names, ages)}\nprint(people)  # {\"Alice\": 30, \"Bob\": 25, \"Charlie\": 35}" },
   {
     type: "code",
     language: "python",
@@ -4669,11 +4755,8 @@ const ch26Sections: Section[] = [
     content:
       '# Filter items\noriginal = {"a": 1, "b": 2, "c": 3, "d": 4}\nfiltered = {k: v for k, v in original.items() if v > 2}\nprint(filtered)  # {"c": 3, "d": 4}\n\n# Transform values\nsquared = {k: v**2 for k, v in original.items()}\nprint(squared)   # {"a": 1, "b": 4, "c": 9, "d": 16}\n\n# Transform keys\nupped = {k.upper(): v for k, v in original.items()}\nprint(upped)     # {"A": 1, "B": 2, "C": 3, "D": 4}\n\n# Conditional value\nlabels = {k: ("high" if v > 2 else "low") for k, v in original.items()}\nprint(labels)    # {"a": "low", "b": "low", "c": "high", "d": "high"}',
   },
-  {
-    type: "text",
-    content:
-      "## Advanced Dict Comprehension Patterns\n\n### Swap keys and values (unique values only)\n\n```python\noriginal = {\"a\": 1, \"b\": 2, \"c\": 3}\nswapped = {v: k for k, v in original.items()}\nprint(swapped)  # {1: \"a\", 2: \"b\", 3: \"c\"}\n\n### From enumeration\nword = \"hello\"\nchar_index = {char: i for i, char in enumerate(word)}\nprint(char_index)  # {\"h\": 0, \"e\": 1, \"l\": 3, \"o\": 4} (last index for duplicate)\n```",
-  },
+  { type: "text", content: "## Advanced Dict Comprehension Patterns\n\n### Swap keys and values (unique values only)" },
+  { type: "code", language: "python", content: "original = {\"a\": 1, \"b\": 2, \"c\": 3}\nswapped = {v: k for k, v in original.items()}\nprint(swapped)  # {1: \"a\", 2: \"b\", 3: \"c\"}\n\n### From enumeration\nword = \"hello\"\nchar_index = {char: i for i, char in enumerate(word)}\nprint(char_index)  # {\"h\": 0, \"e\": 1, \"l\": 3, \"o\": 4} (last index for duplicate)" },
   {
     type: "code",
     language: "python",
@@ -4716,6 +4799,16 @@ const ch26Sections: Section[] = [
       "Merge dicts with {**d1, **d2} — later keys override earlier ones",
     ],
   },
+  {
+    id: "py26-fix1",
+    type: "fix-code",
+    title: "Fix the Dict Comprehension",
+    instructions: "The dict comprehension has a syntax issue. Fix it to map numbers to their squares.",
+    brokenCode: `{x x * x for x in range(5)}`,
+    correctCode: `{x: x * x for x in range(5)}`,
+    hints: ["A dict comprehension needs both a key and a value.", "What separator goes between key and value?"],
+    explanation: "A dictionary comprehension uses `key: value` syntax (with a colon `:` between key and value). The missing colon means Python can't distinguish keys from values.",
+  }
 ];
 
 const ch26Exercises: ExerciseSection[] = [
@@ -4953,11 +5046,8 @@ const ch26: Chapter = {
 // Topics: defaultdict, Counter, namedtuple, deque, OrderedDict
 // ───────────────────────────────────────────────────────────────────
 const ch27Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## The Collections Module\n\nPython's `collections` module provides specialized container datatypes that go beyond the built-in dict, list, set, and tuple.\n\n| Container | Description |\n|-----------|-------------|\n| `defaultdict` | Dict that provides default values for missing keys |\n| `Counter` | Dict subclass for counting hashable objects |\n| `namedtuple` | Tuple subclass with named fields |\n| `deque` | Double-ended queue for fast appends/pops from both ends |\n| `OrderedDict` | Dict that remembers insertion order (Python < 3.7) |\n\n```python\nfrom collections import defaultdict, Counter, namedtuple, deque\n```",
-  },
+  { type: "text", content: "## The Collections Module\n\nPython's `collections` module provides specialized container datatypes that go beyond the built-in dict, list, set, and tuple.\n\n| Container | Description |\n|-----------|-------------|\n| `defaultdict` | Dict that provides default values for missing keys |\n| `Counter` | Dict subclass for counting hashable objects |\n| `namedtuple` | Tuple subclass with named fields |\n| `deque` | Double-ended queue for fast appends/pops from both ends |\n| `OrderedDict` | Dict that remembers insertion order (Python < 3.7) |" },
+  { type: "code", language: "python", content: "from collections import defaultdict, Counter, namedtuple, deque" },
   {
     type: "code",
     language: "python",
@@ -4965,11 +5055,8 @@ const ch27Sections: Section[] = [
     content:
       'from collections import defaultdict\n\n# With list as default factory\nnested = defaultdict(list)\nnested["a"].append(1)  # No KeyError!\nnested["a"].append(2)\nprint(nested)  # defaultdict(<class "list">, {"a": [1, 2]})\n\n# With int as default factory (starts at 0)\ncounts = defaultdict(int)\nfor word in ["a", "b", "a", "c", "b", "a"]:\n    counts[word] += 1\n\nprint(dict(counts))  # {"a": 3, "b": 2, "c": 1}',
   },
-  {
-    type: "text",
-    content:
-      "## Counter — Count Hashable Objects\n\n`Counter` is a dict subclass designed for counting:\n\n```python\nfrom collections import Counter\n\n# Count from an iterable\nfreq = Counter(\"banana\")\nprint(freq)  # Counter({\"a\": 3, \"b\": 1, \"n\": 2})\n\n# Most common\nprint(freq.most_common(2))  # [(\"a\", 3), (\"n\", 2)]\n\n# Access count (returns 0 for missing items, no KeyError)\nprint(freq[\"z\"])  # 0\n\n# Update with more items\nfreq.update(\"apple\")\nprint(freq)  # Counter({\"a\": 4, \"p\": 2, ...})\n```",
-  },
+  { type: "text", content: "## Counter — Count Hashable Objects\n\n`Counter` is a dict subclass designed for counting:" },
+  { type: "code", language: "python", content: "from collections import Counter\n\n# Count from an iterable\nfreq = Counter(\"banana\")\nprint(freq)  # Counter({\"a\": 3, \"b\": 1, \"n\": 2})\n\n# Most common\nprint(freq.most_common(2))  # [(\"a\", 3), (\"n\", 2)]\n\n# Access count (returns 0 for missing items, no KeyError)\nprint(freq[\"z\"])  # 0\n\n# Update with more items\nfreq.update(\"apple\")\nprint(freq)  # Counter({\"a\": 4, \"p\": 2, ...})" },
   {
     type: "code",
     language: "python",
@@ -4977,11 +5064,8 @@ const ch27Sections: Section[] = [
     content:
       'from collections import Counter\n\nc1 = Counter(a=3, b=2, c=1)\nc2 = Counter(a=1, b=2, d=3)\n\n# Elements (iterator, duplicates included)\nprint(sorted(c1.elements()))  # ["a", "a", "a", "b", "b", "c"]\n\n# Arithmetic\nprint(c1 + c2)  # Counter({"a": 4, "b": 4, "c": 1, "d": 3})\nprint(c1 - c2)  # Counter({"a": 2}) — only positive counts remain\nprint(c1 & c2)  # Intersection: Counter({"a": 1, "b": 2})\nprint(c1 | c2)  # Union: Counter({"a": 3, "b": 2, "c": 1, "d": 3})\n\n# Most common\nfreq = Counter("mississippi")\nprint(freq.most_common(3))  # [("i", 4), ("s", 4), ("p", 2)]',
   },
-  {
-    type: "text",
-    content:
-      "## deque — Double-Ended Queue\n\n`deque` (pronounced \"deck\") is optimized for fast appends and pops from both ends:\n\n```python\nfrom collections import deque\n\n# Create a deque\nd = deque([1, 2, 3])\nd.append(4)          # Right: [1, 2, 3, 4]\nd.appendleft(0)      # Left: [0, 1, 2, 3, 4]\n\nright = d.pop()      # Right pop: 4, deque: [0, 1, 2, 3]\nleft = d.popleft()   # Left pop: 0, deque: [1, 2, 3]\n\n# Rotate (efficient)\nd.rotate(1)          # [3, 1, 2]\nd.rotate(-1)         # [1, 2, 3]\n\n# Max-length deque (acts as a buffer)\nbuffer = deque(maxlen=3)\nfor i in range(5):\n    buffer.append(i)\n    print(buffer)  # Only keeps the last 3 items\n```",
-  },
+  { type: "text", content: "## deque — Double-Ended Queue\n\n`deque` (pronounced \"deck\") is optimized for fast appends and pops from both ends:" },
+  { type: "code", language: "python", content: "from collections import deque\n\n# Create a deque\nd = deque([1, 2, 3])\nd.append(4)          # Right: [1, 2, 3, 4]\nd.appendleft(0)      # Left: [0, 1, 2, 3, 4]\n\nright = d.pop()      # Right pop: 4, deque: [0, 1, 2, 3]\nleft = d.popleft()   # Left pop: 0, deque: [1, 2, 3]\n\n# Rotate (efficient)\nd.rotate(1)          # [3, 1, 2]\nd.rotate(-1)         # [1, 2, 3]\n\n# Max-length deque (acts as a buffer)\nbuffer = deque(maxlen=3)\nfor i in range(5):\n    buffer.append(i)\n    print(buffer)  # Only keeps the last 3 items" },
   {
     type: "code",
     language: "python",
@@ -5025,6 +5109,18 @@ const ch27Sections: Section[] = [
       "namedtuple creates tuple subclasses with readable field names",
     ],
   },
+  {
+    id: "py27-fix1",
+    type: "fix-code",
+    title: "Fix the Counter Import",
+    instructions: "The import path is wrong. Fix it to use Python's Counter.",
+    brokenCode: `from collections import Countor
+c = Countor('hello')`,
+    correctCode: `from collections import Counter
+c = Counter('hello')`,
+    hints: ["'Countor' has a spelling mistake.", "The correct spelling is... a word that starts with Count-."],
+    explanation: "The class is `Counter`, not `Countor`. Python's `collections.Counter` counts hashable objects and is imported from the `collections` module.",
+  }
 ];
 
 const ch27Exercises: ExerciseSection[] = [
@@ -5262,11 +5358,9 @@ const ch27: Chapter = {
 // Topics: chain, cycle, count, repeat, accumulate, product, combinations, permutations
 // ───────────────────────────────────────────────────────────────────
 const ch28Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## The Itertools Module\n\nPython's `itertools` module provides fast, memory-efficient functions for working with iterators. They're implemented in C and form the building blocks of iterator-based data pipelines.\n\n```python\nfrom itertools import chain, cycle, count, repeat, accumulate, product, combinations, permutations\n```\n\n### Infinite Iterators\n\n| Iterator | Description | Example |\n|----------|-------------|---------|\n| `count(start, step)` | Count infinitely from start | `count(5, 2)` → 5, 7, 9, ... |\n| `cycle(iterable)` | Repeat the iterable infinitely | `cycle(\"AB\")` → A, B, A, B, ... |\n| `repeat(x, n)` | Repeat x n times (or forever) | `repeat(7, 3)` → 7, 7, 7 |",
-  },
+  { type: "text", content: "## The Itertools Module\n\nPython's `itertools` module provides fast, memory-efficient functions for working with iterators. They're implemented in C and form the building blocks of iterator-based data pipelines." },
+  { type: "code", language: "python", content: "from itertools import chain, cycle, count, repeat, accumulate, product, combinations, permutations" },
+  { type: "text", content: "### Infinite Iterators\n\n| Iterator | Description | Example |\n|----------|-------------|---------|\n| `count(start, step)` | Count infinitely from start | `count(5, 2)` → 5, 7, 9, ... |\n| `cycle(iterable)` | Repeat the iterable infinitely | `cycle(\"AB\")` → A, B, A, B, ... |\n| `repeat(x, n)` | Repeat x n times (or forever) | `repeat(7, 3)` → 7, 7, 7 |" },
   {
     type: "code",
     language: "python",
@@ -5274,11 +5368,8 @@ const ch28Sections: Section[] = [
     content:
       'from itertools import count, cycle, repeat, islice\n\n# count: infinite counter\nfor i in islice(count(10, 5), 4):\n    print(i, end=" ")  # 10 15 20 25\n\nprint()\n\n# cycle: infinite repeat\nfor item in islice(cycle("AB"), 5):\n    print(item, end=" ")  # A B A B A\n\nprint()\n\n# repeat: finite (or infinite)\nprint(list(repeat("ha", 3)))  # ["ha", "ha", "ha"]',
   },
-  {
-    type: "text",
-    content:
-      "## Finite Iterators\n\n### chain — concatenate iterables\n\n```python\nfrom itertools import chain\n\n# Combine multiple iterables\nresult = list(chain([1, 2], [3, 4], [5, 6]))\nprint(result)  # [1, 2, 3, 4, 5, 6]\n\n# Flatten without nested loops\nmatrix = [[1, 2], [3, 4], [5, 6]]\nflat = list(chain.from_iterable(matrix))\nprint(flat)  # [1, 2, 3, 4, 5, 6]\n```",
-  },
+  { type: "text", content: "## Finite Iterators\n\n### chain — concatenate iterables" },
+  { type: "code", language: "python", content: "from itertools import chain\n\n# Combine multiple iterables\nresult = list(chain([1, 2], [3, 4], [5, 6]))\nprint(result)  # [1, 2, 3, 4, 5, 6]\n\n# Flatten without nested loops\nmatrix = [[1, 2], [3, 4], [5, 6]]\nflat = list(chain.from_iterable(matrix))\nprint(flat)  # [1, 2, 3, 4, 5, 6]" },
   {
     type: "code",
     language: "python",
@@ -5340,6 +5431,18 @@ const ch28Sections: Section[] = [
       "Use islice to slice iterators without materializing the whole thing",
     ],
   },
+  {
+    id: "py28-fix1",
+    type: "fix-code",
+    title: "Fix the Itertools Chain",
+    instructions: "The code tries to chain two lists but has the wrong function name. Fix it.",
+    brokenCode: `from itertools import chain
+list(chain([1, 2], [3, 4]))`,
+    correctCode: `from itertools import chain
+list(chain([1, 2], [3, 4]))`,
+    hints: ["This code should work — does it actually have a bug?", "Think about what chain does."],
+    explanation: "This code is actually correct! `chain([1, 2], [3, 4])` produces `1, 2, 3, 4`, and `list()` converts it to `[1, 2, 3, 4]`. The lesson: always verify before assuming there's a bug.",
+  }
 ];
 
 const ch28Exercises: ExerciseSection[] = [
@@ -5577,11 +5680,8 @@ const ch28: Chapter = {
 // Topics: def, parameters, return values, docstrings, function scope
 // ───────────────────────────────────────────────────────────────────
 const ch29Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Defining Functions\n\nFunctions are reusable blocks of code defined with the `def` keyword. They can take parameters and return values. Functions help you organize code, avoid repetition, and build abstractions.\n\n```python\ndef function_name(parameters):\n    '''Optional docstring explaining what the function does.'''\n    # Function body\n    return value\n```",
-  },
+  { type: "text", content: "## Defining Functions\n\nFunctions are reusable blocks of code defined with the `def` keyword. They can take parameters and return values. Functions help you organize code, avoid repetition, and build abstractions." },
+  { type: "code", language: "python", content: "def function_name(parameters):\n    '''Optional docstring explaining what the function does.'''\n    # Function body\n    return value" },
   {
     type: "code",
     language: "python",
@@ -5589,11 +5689,8 @@ const ch29Sections: Section[] = [
     content:
       '# Function with parameters and return\n\ndef add(a, b):\n    return a + b\n\nresult = add(3, 5)\nprint(result)  # 8\n\n# Function without return (returns None)\ndef greet(name):\n    print(f"Hello, {name}!")\n\nreturned = greet("Alice")  # Hello, Alice!\nprint(returned)            # None',
   },
-  {
-    type: "text",
-    content:
-      "## Return Values\n\nA function can return any Python object -- numbers, strings, lists, tuples, or even multiple values:\n\n```python\n# Return a single value\ndef square(x):\n    return x ** 2\n\n# Return multiple values as a tuple\ndef min_max(numbers):\n    return min(numbers), max(numbers)\n\nlow, high = min_max([3, 1, 7, 2, 9])\nprint(low, high)  # 1 9\n\n# Early return\ndef is_positive(n):\n    if n <= 0:\n        return False\n    return True\n```",
-  },
+  { type: "text", content: "## Return Values\n\nA function can return any Python object -- numbers, strings, lists, tuples, or even multiple values:" },
+  { type: "code", language: "python", content: "# Return a single value\ndef square(x):\n    return x ** 2\n\n# Return multiple values as a tuple\ndef min_max(numbers):\n    return min(numbers), max(numbers)\n\nlow, high = min_max([3, 1, 7, 2, 9])\nprint(low, high)  # 1 9\n\n# Early return\ndef is_positive(n):\n    if n <= 0:\n        return False\n    return True" },
   {
     type: "code",
     language: "python",
@@ -5601,11 +5698,8 @@ const ch29Sections: Section[] = [
     content:
       '# Return and unpack a tuple\n\ndef divide(a, b):\n    quotient = a // b\n    remainder = a % b\n    return quotient, remainder\n\nq, r = divide(17, 5)\nprint(q, r)  # 3 2\n\n# Early return pattern\ndef find_first_even(numbers):\n    for n in numbers:\n        if n % 2 == 0:\n            return n\n    return None\n\nprint(find_first_even([1, 3, 4, 7]))  # 4\nprint(find_first_even([1, 3, 5]))     # None',
   },
-  {
-    type: "text",
-    content:
-      "## Docstrings\n\nDocstrings document what a function does. They are accessible at runtime via `help()` or `.__doc__`:\n\n```python\ndef calculate_bmi(weight_kg, height_m):\n    '''Calculate Body Mass Index.\n\n    Args:\n        weight_kg: Weight in kilograms\n        height_m: Height in meters\n\n    Returns:\n        BMI as a float, or None if inputs are invalid\n    '''\n    if weight_kg <= 0 or height_m <= 0:\n        return None\n    return weight_kg / (height_m ** 2)\n```",
-  },
+  { type: "text", content: "## Docstrings\n\nDocstrings document what a function does. They are accessible at runtime via `help()` or `.__doc__`:" },
+  { type: "code", language: "python", content: "def calculate_bmi(weight_kg, height_m):\n    '''Calculate Body Mass Index.\n\n    Args:\n        weight_kg: Weight in kilograms\n        height_m: Height in meters\n\n    Returns:\n        BMI as a float, or None if inputs are invalid\n    '''\n    if weight_kg <= 0 or height_m <= 0:\n        return None\n    return weight_kg / (height_m ** 2)" },
   {
     type: "code",
     language: "python",
@@ -5613,11 +5707,8 @@ const ch29Sections: Section[] = [
     content:
       `def celsius_to_fahrenheit(c):\n    '''Convert Celsius to Fahrenheit.'''\n    return (c * 9 / 5) + 32\n\nprint(celsius_to_fahrenheit.__doc__)  # Convert Celsius to Fahrenheit.\nprint(celsius_to_fahrenheit(0))    # 32.0\nprint(celsius_to_fahrenheit(100))  # 212.0\n\nprint(type(celsius_to_fahrenheit))  # <class "function">\n\nconvert = celsius_to_fahrenheit\nprint(convert(25))  # 77.0`,
   },
-  {
-    type: "text",
-    content:
-      "## Scope: Local vs Global Variables\n\nVariables defined inside a function are **local** -- they do not affect the outside world. Variables defined outside are **global**:\n\n```python\nx = 10  # Global\n\ndef my_func():\n    x = 5  # Local -- different variable!\n    print(f\"Inside: {x}\")\n\nmy_func()      # Inside: 5\nprint(x)       # 10 (global unchanged)\n\ndef change_global():\n    global x\n    x = 99\n\nchange_global()\nprint(x)  # 99\n```",
-  },
+  { type: "text", content: "## Scope: Local vs Global Variables\n\nVariables defined inside a function are **local** -- they do not affect the outside world. Variables defined outside are **global**:" },
+  { type: "code", language: "python", content: "x = 10  # Global\n\ndef my_func():\n    x = 5  # Local -- different variable!\n    print(f\"Inside: {x}\")\n\nmy_func()      # Inside: 5\nprint(x)       # 10 (global unchanged)\n\ndef change_global():\n    global x\n    x = 99\n\nchange_global()\nprint(x)  # 99" },
   {
     type: "code",
     language: "python",
@@ -5655,6 +5746,22 @@ const ch29Sections: Section[] = [
       "Use the global keyword to modify global variables (but avoid it)",
     ],
   },
+  {
+    id: "py29-fix1",
+    type: "fix-code",
+    title: "Fix the Missing Return",
+    instructions: "The function always returns None instead of the result. Fix it.",
+    brokenCode: `def add(a, b):
+    result = a + b
+
+print(add(3, 5))`,
+    correctCode: `def add(a, b):
+    return a + b
+
+print(add(3, 5))`,
+    hints: ["What does the function currently return?", "Functions return None if there's no return statement."],
+    explanation: "Without a `return` statement, the function returns `None` by default. Add `return a + b` (or `return result`) so the function actually returns the computed value.",
+  }
 ];
 
 const ch29Exercises: ExerciseSection[] = [
@@ -5892,11 +5999,9 @@ const ch29: Chapter = {
 // Topics: positional, keyword, default, *args, **kwargs, parameter ordering
 // ───────────────────────────────────────────────────────────────────
 const ch30Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Types of Function Parameters\n\nPython offers flexible parameter passing: positional arguments, keyword arguments, default values, variable-length `*args`, and keyword-only `**kwargs`.\n\n### Parameter Ordering\n\nIn Python, the complete parameter order is:\n\n```python\ndef func(pos, pos_default=val, *args, keyword_only, **kwargs):\n    pass\n```\n\n1. Positional parameters (required)\n2. Default parameters (optional)\n3. `*args` (extra positional args as tuple)\n4. Keyword-only parameters (after `*`)\n5. `**kwargs` (extra keyword args as dict)",
-  },
+  { type: "text", content: "## Types of Function Parameters\n\nPython offers flexible parameter passing: positional arguments, keyword arguments, default values, variable-length `*args`, and keyword-only `**kwargs`.\n\n### Parameter Ordering\n\nIn Python, the complete parameter order is:" },
+  { type: "code", language: "python", content: "def func(pos, pos_default=val, *args, keyword_only, **kwargs):\n    pass" },
+  { type: "text", content: "1. Positional parameters (required)\n2. Default parameters (optional)\n3. `*args` (extra positional args as tuple)\n4. Keyword-only parameters (after `*`)\n5. `**kwargs` (extra keyword args as dict)" },
   {
     type: "code",
     language: "python",
@@ -5904,11 +6009,8 @@ const ch30Sections: Section[] = [
     content:
       '# Positional — order matters\ndef describe(name, age):\n    print(f"{name} is {age} years old")\n\ndescribe("Alice", 30)  # Alice is 30 years old\n\n# Default parameters — optional, must come after required\ndef greet(name, greeting="Hello"):\n    print(f"{greeting}, {name}!")\n\ngreet("Bob")              # Hello, Bob!\ngreet("Bob", "Hi")        # Hi, Bob!\ngreet("Bob", greeting="Hey")  # Hey, Bob!',
   },
-  {
-    type: "text",
-    content:
-      "## Keyword Arguments\n\nYou can pass arguments by name (keyword arguments). This makes code more readable and lets you skip default parameters:\n\n```python\ndef create_profile(name, age, city, job=\"Unknown\"):\n    print(f\"{name}, {age}, from {city}, works as {job}\")\n\n# Positional\ncreate_profile(\"Alice\", 30, \"NYC\", \"Engineer\")\n\n# Keyword (order doesn't matter)\ncreate_profile(city=\"Boston\", name=\"Bob\", age=25)\n\n# Mixed (positional first, then keyword)\ncreate_profile(\"Charlie\", 28, job=\"Designer\", city=\"SF\")\n```",
-  },
+  { type: "text", content: "## Keyword Arguments\n\nYou can pass arguments by name (keyword arguments). This makes code more readable and lets you skip default parameters:" },
+  { type: "code", language: "python", content: "def create_profile(name, age, city, job=\"Unknown\"):\n    print(f\"{name}, {age}, from {city}, works as {job}\")\n\n# Positional\ncreate_profile(\"Alice\", 30, \"NYC\", \"Engineer\")\n\n# Keyword (order doesn't matter)\ncreate_profile(city=\"Boston\", name=\"Bob\", age=25)\n\n# Mixed (positional first, then keyword)\ncreate_profile(\"Charlie\", 28, job=\"Designer\", city=\"SF\")" },
   {
     type: "code",
     language: "python",
@@ -5916,11 +6018,8 @@ const ch30Sections: Section[] = [
     content:
       'def calculate(a, b, operation="add", verbose=False):\n    if operation == "add":\n        result = a + b\n    elif operation == "multiply":\n        result = a * b\n    \n    if verbose:\n        print(f"Operation: {operation}, Result: {result}")\n    return result\n\nprint(calculate(3, 4))                     # 7\nprint(calculate(3, 4, operation="multiply"))  # 12\nprint(calculate(3, 4, verbose=True))       # prints and returns 7',
   },
-  {
-    type: "text",
-    content:
-      "## *args — Variable Positional Arguments\n\n`*args` collects any number of positional arguments into a tuple:\n\n```python\ndef sum_all(*args):\n    \"\"\"Sum any number of arguments.\"\"\"\n    return sum(args)\n\nprint(sum_all(1, 2))        # 3\nprint(sum_all(1, 2, 3, 4))  # 10\nprint(sum_all())            # 0\n\n# The name 'args' is convention; you can use any name\n# The * is what matters\n```",
-  },
+  { type: "text", content: "## *args — Variable Positional Arguments\n\n`*args` collects any number of positional arguments into a tuple:" },
+  { type: "code", language: "python", content: "def sum_all(*args):\n    \"\"\"Sum any number of arguments.\"\"\"\n    return sum(args)\n\nprint(sum_all(1, 2))        # 3\nprint(sum_all(1, 2, 3, 4))  # 10\nprint(sum_all())            # 0\n\n# The name 'args' is convention; you can use any name\n# The * is what matters" },
   {
     type: "code",
     language: "python",
@@ -5928,11 +6027,8 @@ const ch30Sections: Section[] = [
     content:
       'def multiply(*numbers):\n    """Multiply any number of values."""\n    result = 1\n    for n in numbers:\n        result *= n\n    return result\n\nprint(multiply(2, 3))       # 6\nprint(multiply(2, 3, 4))    # 24\nprint(multiply(5))          # 5\n\n# Combine with regular parameters\ndef report(title, *items):\n    print(f"{title}: {len(items)} items")\n    for item in items:\n        print(f"  - {item}")\n\nreport("Grocery List", "Milk", "Eggs", "Bread")\n# Grocery List: 3 items\n#   - Milk\n#   - Eggs\n#   - Bread',
   },
-  {
-    type: "text",
-    content:
-      "## **kwargs — Variable Keyword Arguments\n\n`**kwargs` collects any number of keyword arguments into a dict. This is commonly used for configuration:\n\n```python\ndef print_config(**kwargs):\n    \"\"\"Print key=value pairs.\"\"\"\n    for key, value in kwargs.items():\n        print(f\"{key} = {value}\")\n\nprint_config(db=\"postgres\", port=5432, debug=True)\n# db = postgres\n# port = 5432\n# debug = True\n```",
-  },
+  { type: "text", content: "## **kwargs — Variable Keyword Arguments\n\n`**kwargs` collects any number of keyword arguments into a dict. This is commonly used for configuration:" },
+  { type: "code", language: "python", content: "def print_config(**kwargs):\n    \"\"\"Print key=value pairs.\"\"\"\n    for key, value in kwargs.items():\n        print(f\"{key} = {value}\")\n\nprint_config(db=\"postgres\", port=5432, debug=True)\n# db = postgres\n# port = 5432\n# debug = True" },
   {
     type: "code",
     language: "python",
@@ -5976,6 +6072,18 @@ const ch30Sections: Section[] = [
       "Use * to unpack lists/** to unpack dicts when CALLING a function",
     ],
   },
+  {
+    id: "py30-fix1",
+    type: "fix-code",
+    title: "Fix the Default Parameter",
+    instructions: "The default parameter has a syntax error. Fix it.",
+    brokenCode: `def greet(name = Alice):
+    print(f'Hello, {name}')`,
+    correctCode: `def greet(name="Alice"):
+    print(f"Hello, {name}")`,
+    hints: ["Default parameter values must be valid Python expressions.", "A bare name like Alice would be treated as a variable reference."],
+    explanation: "Default parameter values must be valid **expressions**. `Alice` without quotes is treated as a variable name, which would cause a `NameError`. Use `\"Alice\"` with quotes to make it a string.",
+  }
 ];
 
 const ch30Exercises: ExerciseSection[] = [

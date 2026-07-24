@@ -60,8 +60,11 @@ export default function ChapterClient({
   }, [isLocked, chapter.prerequisites, progress.completedChapters]);
 
   // ── Exercise State ──────────────────────────────────────────
+  type TrackedSection = Extract<Section, { type: "exercise" | "fix-code" }>;
   const exerciseSections = useMemo(
-    () => chapter.sections.filter((s): s is Section & { type: "exercise" } => s.type === "exercise"),
+    () => chapter.sections.filter(
+      (s): s is TrackedSection => s.type === "exercise" || s.type === "fix-code"
+    ),
     [chapter.sections]
   );
 

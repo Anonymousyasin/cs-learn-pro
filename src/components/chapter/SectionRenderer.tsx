@@ -324,6 +324,218 @@ function InteractiveExercise({
 
 
 
+// ─── Fix-Code Exercise ──────────────────────────────────────
+function FixCodeExercise({
+  section,
+  exerciseNumber,
+  totalExercises,
+  isCurrent,
+  isCompleted,
+  onAnswer,
+}: {
+  section: Section & { type: "fix-code" };
+  exerciseNumber: number;
+  totalExercises: number;
+  isCurrent: boolean;
+  isCompleted: boolean;
+  onAnswer: (exerciseId: string, answer: string, correct: boolean) => void;
+}) {
+  const [inputValue, setInputValue] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [result, setResult] = useState<{ correct: boolean; diff: Array<{ type: "match" | "diff" | "missing"; userLine: string; correctLine: string }> } | null>(null);
+
+  const handleSubmit = () => {
+    const userLines = inputValue.split("\n");
+    const correctLines = section.correctCode.split("\n");
+    const maxLen = Math.max(userLines.length, correctLines.length);
+    const diff: Array<{ type: "match" | "diff" | "missing"; userLine: string; correctLine: string }> = [];
+    let allMatch = true;
+
+    for (let i = 0; i < maxLen; i++) {
+      const uLine = userLines[i] ?? "";
+      const cLine = correctLines[i] ?? "";
+
+      if (uLine === cLine) {
+        diff.push({ type: "match", userLine: uLine, correctLine: cLine });
+      } else if (i < userLines.length) {
+        diff.push({ type: "diff", userLine: uLine, correctLine: cLine });
+        allMatch = false;
+      } else {
+        diff.push({ type: "missing", userLine: "", correctLine: cLine });
+        allMatch = false;
+      }
+    }
+
+    setResult({ correct: allMatch, diff });
+    setSubmitted(true);
+    onAnswer(section.id, inputValue, allMatch);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === "Enter" && inputValue.trim()) {
+      handleSubmit();
+    }
+  };
+
+  if (isCompleted && !submitted) {
+    return (
+      <div className="rounded-xl border-2 border-accent-secondary/20 bg-accent-secondary/5 p-5 max-sm:p-4">
+        <div className="mb-3 flex items-center gap-2">
+          <span className="inline-flex items-center gap-1 rounded-md bg-accent-secondary/15 px-2 py-0.5 text-xs font-semibold text-accent-secondary">
+            <CheckCircle2 className="size-3" />
+            Fix-Code {exerciseNumber} — Completed
+          </span>
+        </div>
+        <h4 className="mb-1 font-semibold text-text-primary">{section.title}</h4>
+        <p className="mb-3 text-sm text-text-secondary">{section.instructions}</p>
+        <pre className="rounded-lg border border-border bg-bg-tertiary p-3 text-sm font-mono text-text-primary">{section.correctCode}</pre>
+        <div className="mt-3 flex items-center gap-2 text-sm text-accent-secondary">
+          <CheckCircle2 className="size-4" />
+          <span>Completed</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isCurrent && !isCompleted) {
+    return (
+      <div className="rounded-xl border-2 border-border/50 bg-bg-tertiary/50 p-5 max-sm:p-4 opacity-60">
+        <div className="mb-3 flex items-center gap-2">
+          <span className="inline-flex items-center gap-1 rounded-md bg-text-muted/10 px-2 py-0.5 text-xs font-semibold text-text-muted">
+            <Lock className="size-3" />
+            Fix-Code {exerciseNumber}
+          </span>
+        </div>
+        <h4 className="mb-1 font-semibold text-text-primary">{section.title}</h4>
+        <p className="text-sm text-text-muted">Complete the previous exercise first</p>
+      </div>
+    );
+  }
+
+  const showDiff = submitted && result;
+
+  return (
+    <div className="rounded-xl border-2 border-accent-warning/30 bg-accent-warning/5 p-5 max-sm:p-4">
+      {/* Badge */}
+      <div className="mb-3 flex items-center gap-2">
+        <span className="inline-flex items-center gap-1 rounded-md bg-accent-destructive/15 px-2 py-0.5 text-xs font-semibold text-accent-destructive">
+          <XCircle className="size-3" />
+          Fix-Code {exerciseNumber}
+        </span>
+      </div>
+
+      <h4 className="mb-1 font-semibold text-text-primary">{section.title}</h4>
+      <p className="mb-3 text-sm text-text-secondary">{section.instructions}</p>
+
+      {/* Broken code display */}
+      {!submitted && (
+        <>
+          <div className="mb-3 rounded-lg border border-accent-destructive/30 bg-accent-destructive/10 p-3">
+            <div className="mb-1 text-xs font-semibold text-accent-destructive">Broken code:</div>
+            <pre className="text-sm font-mono text-text-primary">{section.brokenCode}</pre>
+          </div>
+
+          {/* Editor */}
+          <div className="mb-3">
+            <label className="mb-1 block text-xs font-semibold text-text-secondary">
+              Type the fixed code:
+            </label>
+            <textarea
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className="min-h-[120px] w-full rounded-lg border border-border bg-bg-primary p-3 font-mono text-sm text-text-primary placeholder-text-muted focus:border-accent-primary focus:outline-none focus:ring-1 focus:ring-accent-primary"
+              placeholder="Type your fixed code here..."
+              spellCheck={false}
+            />
+          </div>
+
+          <button
+            onClick={handleSubmit}
+            disabled={!inputValue.trim()}
+            className="inline-flex items-center gap-1.5 rounded-lg bg-accent-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-primary-hover disabled:opacity-50"
+          >
+            <Check className="size-4" />
+            Check Fix
+          </button>
+        </>
+      )}
+
+      {/* Result / Diff comparison */}
+      {showDiff && (
+        <div>
+          <div className={`mb-3 flex items-center gap-2 text-sm font-semibold ${result!.correct ? "text-accent-secondary" : "text-accent-destructive"}`}>
+            {result!.correct ? (
+              <><CheckCircle2 className="size-4" /> Correct!</>
+            ) : (
+              <><XCircle className="size-4" /> Not quite — see the differences below</>
+            )}
+          </div>
+
+          {/* Diff table */}
+          <div className="mb-3 overflow-hidden rounded-lg border border-border">
+            <table className="w-full border-collapse text-sm font-mono">
+              <thead>
+                <tr className="bg-bg-tertiary text-xs text-text-muted">
+                  <th className="w-8 border-r border-border px-2 py-1 text-right">#</th>
+                  <th className="border-r border-border px-3 py-1">Your code</th>
+                  <th className="px-3 py-1">Correct code</th>
+                </tr>
+              </thead>
+              <tbody>
+                {result!.diff.map((row, i) => (
+                  <tr key={i} className={cn(
+                    "border-t border-border/50",
+                    row.type === "match" && "bg-accent-secondary/5",
+                    row.type === "diff" && "bg-accent-destructive/10",
+                    row.type === "missing" && "bg-accent-destructive/10"
+                  )}>
+                    <td className="w-8 border-r border-border px-2 py-1 text-right text-text-muted">{i + 1}</td>
+                    <td className={cn(
+                      "border-r border-border px-3 py-1 whitespace-pre",
+                      row.type === "match" && "text-text-primary",
+                      row.type === "diff" && "text-accent-destructive line-through",
+                      row.type === "missing" && "text-text-muted"
+                    )}>
+                      {row.userLine || "\u00A0"}
+                    </td>
+                    <td className={cn(
+                      "px-3 py-1 whitespace-pre",
+                      row.type === "match" && "text-text-primary",
+                      row.type === "diff" && "text-accent-secondary",
+                      row.type === "missing" && "text-accent-secondary"
+                    )}>
+                      {row.correctLine || "\u00A0"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Explanation on success */}
+          {result!.correct && (
+            <div className="rounded-lg border border-accent-secondary/20 bg-accent-secondary/5 p-3">
+              <p className="text-xs font-semibold text-accent-secondary mb-1">Explanation:</p>
+              <p className="text-sm text-text-primary">{section.explanation}</p>
+            </div>
+          )}
+
+          {/* Retry button */}
+          {!result!.correct && (
+            <button
+              onClick={() => { setSubmitted(false); setResult(null); setInputValue(""); }}
+              className="mt-2 inline-flex items-center gap-1.5 rounded-lg bg-bg-secondary px-4 py-2 text-sm font-medium text-text-secondary transition-colors hover:bg-bg-tertiary"
+            >
+              Try Again
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Main Renderer ───────────────────────────────────────────
 export default function SectionRenderer({
   section,
@@ -525,6 +737,41 @@ export default function SectionRenderer({
           onAnswer={onExerciseAnswer}
         />
       );
+
+    // ── Fix-Code ─────────────────────────────────────────────
+    case "fix-code": {
+      if (!exerciseState || !onExerciseAnswer) {
+        return (
+          <div key={index} className="rounded-xl border-2 border-accent-destructive/30 bg-accent-destructive/5 p-5 max-sm:p-4">
+            <div className="mb-3 flex items-center gap-2">
+              <span className="inline-flex items-center gap-1 rounded-md bg-accent-destructive/15 px-2 py-0.5 text-xs font-semibold text-accent-destructive">
+                <XCircle className="size-3" />
+                Fix the Code
+              </span>
+            </div>
+            <h4 className="mb-1 font-semibold text-text-primary">{section.title}</h4>
+            <p className="text-sm text-text-muted">Sign in to track your progress</p>
+          </div>
+        );
+      }
+
+      const fixIdx = exerciseState.exerciseOrder.indexOf(section.id);
+      const fixNumber = fixIdx + 1;
+      const isCompleted = exerciseState.completedIds.includes(section.id);
+      const isCurrent = !isCompleted && fixIdx === exerciseState.currentExerciseIndex;
+
+      return (
+        <FixCodeExercise
+          key={index}
+          section={section}
+          exerciseNumber={fixNumber}
+          totalExercises={exerciseState.totalExercises}
+          isCurrent={isCurrent}
+          isCompleted={isCompleted}
+          onAnswer={onExerciseAnswer}
+        />
+      );
+    }
 
     default:
       return null;

@@ -6,11 +6,9 @@ import { Chapter, Section, ExerciseSection, ExamQuestion } from "../types";
 // Topics: lambda syntax, use in sorted/max/min, single-expression functions
 // ───────────────────────────────────────────────────────────────────
 const ch31Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Lambda Functions in Python\n\nA **lambda function** is a small, anonymous function defined with the `lambda` keyword instead of `def`. Lambdas can have any number of arguments but only **one expression** — the expression is evaluated and returned automatically.\n\n```python\n# Regular function\ndef add(x, y):\n    return x + y\n\n# Same logic as a lambda\nadd_lambda = lambda x, y: x + y\n\nprint(add(3, 4))        # 7\nprint(add_lambda(3, 4)) # 7\n```\n\nLambdas are best used when you need a simple function for a short period, especially as an argument to higher-order functions like `sorted()`, `map()`, `filter()`, and `min()`/`max()`.",
-  },
+  { type: "text", content: "## Lambda Functions in Python\n\nA **lambda function** is a small, anonymous function defined with the `lambda` keyword instead of `def`. Lambdas can have any number of arguments but only **one expression** — the expression is evaluated and returned automatically." },
+  { type: "code", language: "python", content: "# Regular function\ndef add(x, y):\n    return x + y\n\n# Same logic as a lambda\nadd_lambda = lambda x, y: x + y\n\nprint(add(3, 4))        # 7\nprint(add_lambda(3, 4)) # 7" },
+  { type: "text", content: "Lambdas are best used when you need a simple function for a short period, especially as an argument to higher-order functions like `sorted()`, `map()`, `filter()`, and `min()`/`max()`." },
   {
     type: "code",
     language: "python",
@@ -18,11 +16,8 @@ const ch31Sections: Section[] = [
     content:
       '# Lambda with one argument\nsquare = lambda x: x ** 2\nprint(square(5))          # 25\n\n# Lambda with multiple arguments\nmultiply = lambda a, b: a * b\nprint(multiply(4, 7))     # 28\n\n# Lambda with no arguments\nfrom datetime import datetime\nget_year = lambda: datetime.now().year\nprint(get_year())         # 2026',
   },
-  {
-    type: "text",
-    content:
-      "## Lambdas with `sorted()`\n\nOne of the most common uses of lambdas is providing a custom sort key. The `sorted()` function accepts a `key` parameter that should be a function taking one argument and returning the value to sort by.\n\n```python\nstudents = [\n    {\"name\": \"Alice\", \"grade\": 85},\n    {\"name\": \"Bob\", \"grade\": 72},\n    {\"name\": \"Charlie\", \"grade\": 95},\n]\n\n# Sort by grade (ascending)\nsorted_by_grade = sorted(students, key=lambda s: s[\"grade\"])\n# → Bob (72), Alice (85), Charlie (95)\n\n# Sort by name (descending)\nsorted_by_name = sorted(students, key=lambda s: s[\"name\"], reverse=True)\n# → Charlie, Bob, Alice\n```",
-  },
+  { type: "text", content: "## Lambdas with `sorted()`\n\nOne of the most common uses of lambdas is providing a custom sort key. The `sorted()` function accepts a `key` parameter that should be a function taking one argument and returning the value to sort by." },
+  { type: "code", language: "python", content: "students = [\n    {\"name\": \"Alice\", \"grade\": 85},\n    {\"name\": \"Bob\", \"grade\": 72},\n    {\"name\": \"Charlie\", \"grade\": 95},\n]\n\n# Sort by grade (ascending)\nsorted_by_grade = sorted(students, key=lambda s: s[\"grade\"])\n# → Bob (72), Alice (85), Charlie (95)\n\n# Sort by name (descending)\nsorted_by_name = sorted(students, key=lambda s: s[\"name\"], reverse=True)\n# → Charlie, Bob, Alice" },
   {
     type: "code",
     language: "python",
@@ -48,11 +43,8 @@ const ch31Sections: Section[] = [
       ["Readability", "Better for complex code", "Better for short operations"],
     ],
   },
-  {
-    type: "text",
-    content:
-      "## When to Use (and Not Use) Lambdas\n\n**✅ Good lambda use cases:**\n- Simple sort keys: `sorted(data, key=lambda x: x[\"field\"])`\n- Short transformations in `map()` or `filter()`\n- Callback functions for GUI or event handling\n- Quick data extraction with `min()`/`max()`\n\n**❌ Avoid lambdas when:**\n- The logic requires multiple statements or conditions\n- The function would be reused in multiple places\n- The lambda would be longer than a one-line `def`\n- Debugging matters — lambdas show as `<lambda>` in tracebacks\n\n```python\n# ❌ Lambda too complex — use def instead\nprocess = lambda items: [x for sublist in items for x in sublist if x > 0]\n\n# ✅ Same logic with def\ndef flatten_positive(items):\n    return [x for sublist in items for x in sublist if x > 0]\n```",
-  },
+  { type: "text", content: "## When to Use (and Not Use) Lambdas\n\n**✅ Good lambda use cases:**\n- Simple sort keys: `sorted(data, key=lambda x: x[\"field\"])`\n- Short transformations in `map()` or `filter()`\n- Callback functions for GUI or event handling\n- Quick data extraction with `min()`/`max()`\n\n**❌ Avoid lambdas when:**\n- The logic requires multiple statements or conditions\n- The function would be reused in multiple places\n- The lambda would be longer than a one-line `def`\n- Debugging matters — lambdas show as `<lambda>` in tracebacks" },
+  { type: "code", language: "python", content: "# ❌ Lambda too complex — use def instead\nprocess = lambda items: [x for sublist in items for x in sublist if x > 0]\n\n# ✅ Same logic with def\ndef flatten_positive(items):\n    return [x for sublist in items for x in sublist if x > 0]" },
   {
     type: "key-points",
     points: [
@@ -64,6 +56,16 @@ const ch31Sections: Section[] = [
       "Ternary expressions work in lambdas: `lambda x: \"even\" if x % 2 == 0 else \"odd\"`",
     ],
   },
+  {
+    id: "py31-fix1",
+    type: "fix-code",
+    title: "Fix the Lambda Syntax",
+    instructions: "The lambda syntax is wrong. Fix it to define a lambda that squares a number.",
+    brokenCode: `square = lambda x: return x * x`,
+    correctCode: `square = lambda x: x * x`,
+    hints: ["Lambdas don't use the `return` keyword.", "A lambda body is a single expression, not a statement."],
+    explanation: "Lambda functions **implicitly return** the result of their expression. You cannot use `return` inside a lambda — that's a `SyntaxError`. Just write `lambda x: x * x`.",
+  }
 ];
 
 const ch31Exercises: ExerciseSection[] = [
@@ -181,11 +183,9 @@ const ch31: Chapter = {
 // Topics: map(), filter(), functools.reduce(), pipelines
 // ───────────────────────────────────────────────────────────────────
 const ch32Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## `map()` — Transform Each Element\n\nThe `map()` function applies a given function to every element of an iterable and returns a `map` object (an iterator). The function can be a regular function, a lambda, or any callable.\n\n```python\nnumbers = [1, 2, 3, 4, 5]\n\n# Square each number using map with a lambda\nsquared = map(lambda x: x ** 2, numbers)\nprint(list(squared))  # [1, 4, 9, 16, 25]\n\n# Map with multiple iterables\na = [1, 2, 3]\nb = [10, 20, 30]\nsums = map(lambda x, y: x + y, a, b)\nprint(list(sums))  # [11, 22, 33]\n```\n\n`map()` stops when the shortest iterable is exhausted.",
-  },
+  { type: "text", content: "## `map()` — Transform Each Element\n\nThe `map()` function applies a given function to every element of an iterable and returns a `map` object (an iterator). The function can be a regular function, a lambda, or any callable." },
+  { type: "code", language: "python", content: "numbers = [1, 2, 3, 4, 5]\n\n# Square each number using map with a lambda\nsquared = map(lambda x: x ** 2, numbers)\nprint(list(squared))  # [1, 4, 9, 16, 25]\n\n# Map with multiple iterables\na = [1, 2, 3]\nb = [10, 20, 30]\nsums = map(lambda x, y: x + y, a, b)\nprint(list(sums))  # [11, 22, 33]" },
+  { type: "text", content: "`map()` stops when the shortest iterable is exhausted." },
   {
     type: "code",
     language: "python",
@@ -193,11 +193,9 @@ const ch32Sections: Section[] = [
     content:
       '# String transformation\nnames = ["alice", "bob", "charlie"]\ncapitalized = map(str.capitalize, names)\nprint(list(capitalized))  # ["Alice", "Bob", "Charlie"]\n\n# Converting types\nstrings = ["1", "2", "3"]\nnumbers = list(map(int, strings))\nprint(numbers)  # [1, 2, 3]\n\n# map with multiple iterables — computes element-wise\nnums1 = [1, 2, 3]\nnums2 = [4, 5, 6]\nproducts = map(lambda a, b: a * b, nums1, nums2)\nprint(list(products))  # [4, 10, 18]',
   },
-  {
-    type: "text",
-    content:
-      "## `filter()` — Keep Matching Elements\n\nThe `filter()` function keeps only elements for which the given function returns `True`. Like `map()`, it returns a lazy iterator.\n\n```python\nnumbers = [1, 2, 3, 4, 5, 6]\n\n# Keep only even numbers\nevens = filter(lambda x: x % 2 == 0, numbers)\nprint(list(evens))  # [2, 4, 6]\n\n# Filter with None — keeps truthy values\ndata = [0, 1, \"\", \"hello\", [], [1, 2], None]\ntruthy = filter(None, data)\nprint(list(truthy))  # [1, \"hello\", [1, 2]]\n```\n\nUsing `filter(None, iterable)` is a common idiom for removing falsy values.",
-  },
+  { type: "text", content: "## `filter()` — Keep Matching Elements\n\nThe `filter()` function keeps only elements for which the given function returns `True`. Like `map()`, it returns a lazy iterator." },
+  { type: "code", language: "python", content: "numbers = [1, 2, 3, 4, 5, 6]\n\n# Keep only even numbers\nevens = filter(lambda x: x % 2 == 0, numbers)\nprint(list(evens))  # [2, 4, 6]\n\n# Filter with None — keeps truthy values\ndata = [0, 1, \"\", \"hello\", [], [1, 2], None]\ntruthy = filter(None, data)\nprint(list(truthy))  # [1, \"hello\", [1, 2]]" },
+  { type: "text", content: "Using `filter(None, iterable)` is a common idiom for removing falsy values." },
   {
     type: "code",
     language: "python",
@@ -211,11 +209,9 @@ const ch32Sections: Section[] = [
     content:
       "**map() and filter() return iterators, not lists.** Both functions produce lazy iterators (map object, filter object). You must call `list()` on them (or iterate with a for loop) to actually execute the transformations. This is memory-efficient for large data — nothing is computed until needed.",
   },
-  {
-    type: "text",
-    content:
-      "## `functools.reduce()` — Cumulative Reduction\n\nThe `reduce()` function from the `functools` module applies a function cumulatively to the items of an iterable, reducing it to a single value. Unlike `map()` and `filter()`, `reduce()` needs to be imported.\n\n```python\nfrom functools import reduce\n\n# Sum all numbers — equivalent to sum()\nnumbers = [1, 2, 3, 4, 5]\ntotal = reduce(lambda a, b: a + b, numbers)\nprint(total)  # 15\n\n# Find the maximum\nmaximum = reduce(lambda a, b: a if a > b else b, numbers)\nprint(maximum)  # 5\n\n# With initial value (starts with 100, then adds each number)\ntotal_with_init = reduce(lambda a, b: a + b, numbers, 100)\nprint(total_with_init)  # 115\n```\n\n`reduce()` is useful but often clearer as a loop. Use it when the operation is a natural reduction (product, max, sum).",
-  },
+  { type: "text", content: "## `functools.reduce()` — Cumulative Reduction\n\nThe `reduce()` function from the `functools` module applies a function cumulatively to the items of an iterable, reducing it to a single value. Unlike `map()` and `filter()`, `reduce()` needs to be imported." },
+  { type: "code", language: "python", content: "from functools import reduce\n\n# Sum all numbers — equivalent to sum()\nnumbers = [1, 2, 3, 4, 5]\ntotal = reduce(lambda a, b: a + b, numbers)\nprint(total)  # 15\n\n# Find the maximum\nmaximum = reduce(lambda a, b: a if a > b else b, numbers)\nprint(maximum)  # 5\n\n# With initial value (starts with 100, then adds each number)\ntotal_with_init = reduce(lambda a, b: a + b, numbers, 100)\nprint(total_with_init)  # 115" },
+  { type: "text", content: "`reduce()` is useful but often clearer as a loop. Use it when the operation is a natural reduction (product, max, sum)." },
   {
     type: "code",
     language: "python",
@@ -235,11 +231,9 @@ const ch32Sections: Section[] = [
       ["Import", "Built-in", "Built-in", "from functools import reduce"],
     ],
   },
-  {
-    type: "text",
-    content:
-      "## Combining map, filter, and reduce\n\nThese three functions compose naturally into **data pipelines** — filter to remove unwanted items, map to transform, and reduce to aggregate.\n\n```python\nfrom functools import reduce\n\ndata = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# Pipeline: filter even \u2192 square them \u2192 sum the squares\nresult = reduce(\n    lambda a, b: a + b,\n    map(lambda x: x ** 2,\n        filter(lambda x: x % 2 == 0, data))\n)\nprint(result)  # 220  (4 + 16 + 36 + 64 + 100)\n```\n\nWhile powerful, complex pipelines are more readable with generator expressions.",
-  },
+  { type: "text", content: "## Combining map, filter, and reduce\n\nThese three functions compose naturally into **data pipelines** — filter to remove unwanted items, map to transform, and reduce to aggregate." },
+  { type: "code", language: "python", content: "from functools import reduce\n\ndata = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# Pipeline: filter even \\u2192 square them \\u2192 sum the squares\nresult = reduce(\n    lambda a, b: a + b,\n    map(lambda x: x ** 2,\n        filter(lambda x: x % 2 == 0, data))\n)\nprint(result)  # 220  (4 + 16 + 36 + 64 + 100)" },
+  { type: "text", content: "While powerful, complex pipelines are more readable with generator expressions." },
   {
     type: "code",
     language: "python",
@@ -258,6 +252,18 @@ const ch32Sections: Section[] = [
       "All three work with lambda or any callable \u2014 use list() to materialize results",
     ],
   },
+  {
+    id: "py32-fix1",
+    type: "fix-code",
+    title: "Fix the Map Usage",
+    instructions: "The code tries to use map but gets a map object instead of a list. Fix it.",
+    brokenCode: `result = map(str.upper, ["a", "b", "c"])
+print(result)`,
+    correctCode: `result = list(map(str.upper, ["a", "b", "c"]))
+print(result)`,
+    hints: ["What does map() return in Python 3?", "You need to convert the result explicitly."],
+    explanation: "In Python 3, `map()` returns a **lazy iterator**, not a list. Use `list(map(...))` to evaluate it immediately and get a list.",
+  }
 ];
 
 const ch32Exercises: ExerciseSection[] = [
@@ -375,11 +381,9 @@ const ch32: Chapter = {
 // Topics: nested comprehensions, dict/set comprehensions, conditional logic
 // ───────────────────────────────────────────────────────────────────
 const ch33Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Nested List Comprehensions\n\nList comprehensions can be nested to work with multi-dimensional data. The order of `for` clauses follows the same order as nested loops \u2014 outer loop first, then inner loops.\n\n```python\n# Flatten a matrix (list of lists)\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflat = [x for row in matrix for x in row]\nprint(flat)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n# Equivalent nested loops:\n# flat = []\n# for row in matrix:\n#     for x in row:\n#         flat.append(x)\n```\n\nNested comprehensions read left-to-right \u2014 the leftmost `for` is the outermost loop.",
-  },
+  { type: "text", content: "## Nested List Comprehensions\n\nList comprehensions can be nested to work with multi-dimensional data. The order of `for` clauses follows the same order as nested loops \\u2014 outer loop first, then inner loops." },
+  { type: "code", language: "python", content: "# Flatten a matrix (list of lists)\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflat = [x for row in matrix for x in row]\nprint(flat)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n# Equivalent nested loops:\n# flat = []\n# for row in matrix:\n#     for x in row:\n#         flat.append(x)" },
+  { type: "text", content: "Nested comprehensions read left-to-right \\u2014 the leftmost `for` is the outermost loop." },
   {
     type: "code",
     language: "python",
@@ -387,11 +391,8 @@ const ch33Sections: Section[] = [
     content:
       '# Transpose a matrix (swap rows and columns)\nmatrix = [[1, 2, 3], [4, 5, 6]]\ntransposed = [[row[i] for row in matrix] for i in range(3)]\nprint(transposed)  # [[1, 4], [2, 5], [3, 6]]\n\n# Cartesian product of two lists\ncolors = ["red", "green"]\nsizes = ["S", "M", "L"]\nproducts = [(c, s) for c in colors for s in sizes]\nprint(products)\n# [("red", "S"), ("red", "M"), ("red", "L"), ("green", "S"), ("green", "M"), ("green", "L")]\n\n# Pairs where sum is even\npairs = [(a, b) for a in range(1, 5) for b in range(1, 5) if (a + b) % 2 == 0]\nprint(pairs)  # [(1,1), (1,3), (2,2), (2,4), (3,1), (3,3), (4,2), (4,4)]',
   },
-  {
-    type: "text",
-    content:
-      "## Dictionary Comprehensions\n\nDictionary comprehensions create dictionaries using `{key: value for ... in ...}` syntax. They follow the same pattern as list comprehensions but produce key-value pairs.\n\n```python\n# Square numbers as dictionary\nsquares = {x: x ** 2 for x in range(5)}\nprint(squares)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n# From two lists\nkeys = [\"name\", \"age\", \"city\"]\nvalues = [\"Alice\", 30, \"New York\"]\nperson = {k: v for k, v in zip(keys, values)}\nprint(person)  # {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\n\n# Filtering in dict comprehensions\noriginal = {\"a\": 1, \"b\": 2, \"c\": 3, \"d\": 4}\nfiltered = {k: v for k, v in original.items() if v > 2}\nprint(filtered)  # {\"c\": 3, \"d\": 4}\n```",
-  },
+  { type: "text", content: "## Dictionary Comprehensions\n\nDictionary comprehensions create dictionaries using `{key: value for ... in ...}` syntax. They follow the same pattern as list comprehensions but produce key-value pairs." },
+  { type: "code", language: "python", content: "# Square numbers as dictionary\nsquares = {x: x ** 2 for x in range(5)}\nprint(squares)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n# From two lists\nkeys = [\"name\", \"age\", \"city\"]\nvalues = [\"Alice\", 30, \"New York\"]\nperson = {k: v for k, v in zip(keys, values)}\nprint(person)  # {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\n\n# Filtering in dict comprehensions\noriginal = {\"a\": 1, \"b\": 2, \"c\": 3, \"d\": 4}\nfiltered = {k: v for k, v in original.items() if v > 2}\nprint(filtered)  # {\"c\": 3, \"d\": 4}" },
   {
     type: "code",
     language: "python",
@@ -405,11 +406,9 @@ const ch33Sections: Section[] = [
     content:
       "**Duplicate keys in dict comprehensions:** If the comprehension produces the same key multiple times, the *last* value wins \u2014 just like with regular dictionary literals. This can be useful for grouping or dangerous if you're not careful.",
   },
-  {
-    type: "text",
-    content:
-      "## Set Comprehensions\n\nSet comprehensions use curly braces `{}` without colons \u2014 just like set literals vs dict literals. They automatically eliminate duplicates.\n\n```python\n# Unique squared values\nnums = [-3, -2, -1, 0, 1, 2, 3]\nsquares_set = {x ** 2 for x in nums}\nprint(squares_set)  # {0, 1, 4, 9}  (order not guaranteed)\n\n# Extract unique vowels from text\ntext = \"hello world\"\nvowels = {c for c in text if c in \"aeiou\"}\nprint(vowels)  # {\"e\", \"o\"}  (order not guaranteed)\n\n# Filtering in set comprehensions\nfrom math import sqrt\nnumbers = range(20)\nperfect_squares = {x for x in numbers if sqrt(x).is_integer()}\nprint(perfect_squares)  # {0, 1, 4, 9, 16}\n```\n\nSet comprehensions are great for deduplication and membership tests.",
-  },
+  { type: "text", content: "## Set Comprehensions\n\nSet comprehensions use curly braces `{}` without colons \\u2014 just like set literals vs dict literals. They automatically eliminate duplicates." },
+  { type: "code", language: "python", content: "# Unique squared values\nnums = [-3, -2, -1, 0, 1, 2, 3]\nsquares_set = {x ** 2 for x in nums}\nprint(squares_set)  # {0, 1, 4, 9}  (order not guaranteed)\n\n# Extract unique vowels from text\ntext = \"hello world\"\nvowels = {c for c in text if c in \"aeiou\"}\nprint(vowels)  # {\"e\", \"o\"}  (order not guaranteed)\n\n# Filtering in set comprehensions\nfrom math import sqrt\nnumbers = range(20)\nperfect_squares = {x for x in numbers if sqrt(x).is_integer()}\nprint(perfect_squares)  # {0, 1, 4, 9, 16}" },
+  { type: "text", content: "Set comprehensions are great for deduplication and membership tests." },
   {
     type: "comparison",
     title: "Comprehension Types",
@@ -428,11 +427,8 @@ const ch33Sections: Section[] = [
     content:
       '# Create a 3\u00d73 board filled with empty spaces\nboard = [[" " for _ in range(3)] for _ in range(3)]\nprint(board)\n# [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]\n\n# Multiplication table (1-5) as nested comprehension\ntable = [[i * j for j in range(1, 6)] for i in range(1, 6)]\nfor row in table:\n    print(row)\n# [1, 2, 3, 4, 5]\n# [2, 4, 6, 8, 10]\n# [3, 6, 9, 12, 15]\n# [4, 8, 12, 16, 20]\n# [5, 10, 15, 20, 25]\n\n# Read a matrix from a string\nmatrix_str = "1 2 3\\n4 5 6\\n7 8 9"\nmatrix = [[int(x) for x in line.split()] for line in matrix_str.split("\\n")]\nprint(matrix)  # [[1, 2, 3], [4, 5, 6], [7, 8, 9]]',
   },
-  {
-    type: "text",
-    content:
-      "## Conditional Expressions in Comprehensions\n\nPython supports putting the conditional in two positions:\n\n1. **Filtering condition** (at the end) \u2014 controls which items are included\n2. **Ternary expression** (at the front) \u2014 controls what value is produced\n\n```python\nitems = range(-5, 6)\n\n# Filtering condition \u2014 only positive numbers, unchanged\npositives = [x for x in items if x > 0]\nprint(positives)  # [1, 2, 3, 4, 5]\n\n# Ternary expression \u2014 every item included, but value depends on condition\npositive_or_zero = [x if x > 0 else 0 for x in items]\nprint(positive_or_zero)  # [0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5]\n\n# Both together \u2014 only positive numbers, then mark large ones\nmarked = [f\"{x}!\" if x > 3 else str(x) for x in items if x > 0]\nprint(marked)  # [\"1\", \"2\", \"3\", \"4!\", \"5!\"]\n```",
-  },
+  { type: "text", content: "## Conditional Expressions in Comprehensions\n\nPython supports putting the conditional in two positions:\n\n1. **Filtering condition** (at the end) \\u2014 controls which items are included\n2. **Ternary expression** (at the front) \\u2014 controls what value is produced" },
+  { type: "code", language: "python", content: "items = range(-5, 6)\n\n# Filtering condition \\u2014 only positive numbers, unchanged\npositives = [x for x in items if x > 0]\nprint(positives)  # [1, 2, 3, 4, 5]\n\n# Ternary expression \\u2014 every item included, but value depends on condition\npositive_or_zero = [x if x > 0 else 0 for x in items]\nprint(positive_or_zero)  # [0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5]\n\n# Both together \\u2014 only positive numbers, then mark large ones\nmarked = [f\"{x}!\" if x > 3 else str(x) for x in items if x > 0]\nprint(marked)  # [\"1\", \"2\", \"3\", \"4!\", \"5!\"]" },
   {
     type: "code",
     language: "python",
@@ -451,6 +447,18 @@ const ch33Sections: Section[] = [
       "The walrus operator `:=` in comprehensions can avoid redundant computations",
     ],
   },
+  {
+    id: "py33-fix1",
+    type: "fix-code",
+    title: "Fix the Nested Comprehension",
+    instructions: "The nested comprehension structure is wrong. Fix it to flatten a matrix into a single list.",
+    brokenCode: `matrix = [[1, 2], [3, 4]]
+flat = [x for x in row for row in matrix]`,
+    correctCode: `matrix = [[1, 2], [3, 4]]
+flat = [x for row in matrix for x in row]`,
+    hints: ["In nested comprehensions, the order of `for` clauses matters.", "The outer loop comes first, then the inner loop."],
+    explanation: "In nested comprehensions, the `for` clauses are written in the **same order** as in a regular nested `for` loop — outer loop first, then inner loop. `for row in matrix for x in row` reads left-to-right like natural language.",
+  }
 ];
 
 const ch33Exercises: ExerciseSection[] = [
@@ -569,11 +577,9 @@ const ch33: Chapter = {
 //         lazy evaluation, data pipelines, memory efficiency
 // ───────────────────────────────────────────────────────────────────
 const ch34Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Generator Functions\n\nA **generator function** is a function that uses `yield` instead of `return`. When called, it returns a generator object \u2014 a lazy iterator that produces values one at a time. Each time `next()` is called, the function runs from where it paused until the next `yield`.\n\n```python\ndef countdown(n):\n    while n > 0:\n        yield n\n        n -= 1\n\n# Calling the function creates a generator object \u2014 no code runs yet!\ngen = countdown(3)\nprint(next(gen))  # 3\nprint(next(gen))  # 2\nprint(next(gen))  # 1\n# print(next(gen))  # StopIteration (exhausted)\n```\n\nGenerator functions preserve their entire state between yields \u2014 local variables, the instruction pointer, and the call stack are all saved.",
-  },
+  { type: "text", content: "## Generator Functions\n\nA **generator function** is a function that uses `yield` instead of `return`. When called, it returns a generator object \\u2014 a lazy iterator that produces values one at a time. Each time `next()` is called, the function runs from where it paused until the next `yield`." },
+  { type: "code", language: "python", content: "def countdown(n):\n    while n > 0:\n        yield n\n        n -= 1\n\n# Calling the function creates a generator object \\u2014 no code runs yet!\ngen = countdown(3)\nprint(next(gen))  # 3\nprint(next(gen))  # 2\nprint(next(gen))  # 1\n# print(next(gen))  # StopIteration (exhausted)" },
+  { type: "text", content: "Generator functions preserve their entire state between yields \\u2014 local variables, the instruction pointer, and the call stack are all saved." },
   {
     type: "code",
     language: "python",
@@ -581,11 +587,8 @@ const ch34Sections: Section[] = [
     content:
       '# Simple generator with multiple yields\ndef three_yields():\n    yield "first"\n    yield "second"\n    yield "third"\n\ngen = three_yields()\nprint(next(gen))  # first\nprint(next(gen))  # second\nprint(next(gen))  # third\n\n# Converting to list \u2014 consumes the generator\ndef squares(n):\n    for i in range(n):\n        yield i ** 2\n\nprint(list(squares(5)))  # [0, 1, 4, 9, 16]\n\n# Generator with infinite loop \u2014 use islice to bound\ndef infinite_evens():\n    n = 0\n    while True:\n        yield n\n        n += 2\n\nfrom itertools import islice\nprint(list(islice(infinite_evens(), 6)))  # [0, 2, 4, 6, 8, 10]',
   },
-  {
-    type: "text",
-    content:
-      "## `yield from` \u2014 Delegating to Sub-iterators\n\nThe `yield from` expression allows a generator to delegate part of its work to another generator or iterable. It yields all values from the sub-iterable before continuing.\n\n```python\ndef flatten(nested):\n    for item in nested:\n        if hasattr(item, '__iter__') and not isinstance(item, str):\n            yield from flatten(item)\n        else:\n            yield item\n\ndeep = [1, [2, [3, 4], 5], 6]\nprint(list(flatten(deep)))  # [1, 2, 3, 4, 5, 6]\n\n# Equivalent to manual iteration, but shorter:\ndef chain(a, b):\n    yield from a\n    yield from b\n\nprint(list(chain([1, 2], [3, 4])))  # [1, 2, 3, 4]\n```",
-  },
+  { type: "text", content: "## `yield from` \\u2014 Delegating to Sub-iterators\n\nThe `yield from` expression allows a generator to delegate part of its work to another generator or iterable. It yields all values from the sub-iterable before continuing." },
+  { type: "code", language: "python", content: "def flatten(nested):\n    for item in nested:\n        if hasattr(item, '__iter__') and not isinstance(item, str):\n            yield from flatten(item)\n        else:\n            yield item\n\ndeep = [1, [2, [3, 4], 5], 6]\nprint(list(flatten(deep)))  # [1, 2, 3, 4, 5, 6]\n\n# Equivalent to manual iteration, but shorter:\ndef chain(a, b):\n    yield from a\n    yield from b\n\nprint(list(chain([1, 2], [3, 4])))  # [1, 2, 3, 4]" },
   {
     type: "code",
     language: "python",
@@ -599,11 +602,9 @@ const ch34Sections: Section[] = [
     content:
       "**Generators are single-use iterators.** Once a generator is exhausted (raises StopIteration), you cannot iterate over it again. To iterate again, you must create a new generator by calling the generator function again. This is different from lists, which can be iterated multiple times.",
   },
-  {
-    type: "text",
-    content:
-      "## Generator Expressions\n\nA **generator expression** is a compact way to create a generator using syntax similar to list comprehensions, but with parentheses instead of brackets. They're lazy \u2014 no computation happens until iteration.\n\n```python\n# List comprehension \u2014 creates the entire list in memory\nlist_comp = [x ** 2 for x in range(1000000)]  # ~8MB of memory\n\n# Generator expression \u2014 creates nothing until iterated\ngen_expr = (x ** 2 for x in range(1000000))  # ~200 bytes of memory\n\n# Iterate and consume\nfor val in gen_expr:\n    if val > 100:\n        break  # Only compute until we find one > 100\n    print(val)\n```\n\nThe parentheses can be omitted when the generator is the sole argument to a function: `sum(x ** 2 for x in range(10))`.",
-  },
+  { type: "text", content: "## Generator Expressions\n\nA **generator expression** is a compact way to create a generator using syntax similar to list comprehensions, but with parentheses instead of brackets. They're lazy \\u2014 no computation happens until iteration." },
+  { type: "code", language: "python", content: "# List comprehension \\u2014 creates the entire list in memory\nlist_comp = [x ** 2 for x in range(1000000)]  # ~8MB of memory\n\n# Generator expression \\u2014 creates nothing until iterated\ngen_expr = (x ** 2 for x in range(1000000))  # ~200 bytes of memory\n\n# Iterate and consume\nfor val in gen_expr:\n    if val > 100:\n        break  # Only compute until we find one > 100\n    print(val)" },
+  { type: "text", content: "The parentheses can be omitted when the generator is the sole argument to a function: `sum(x ** 2 for x in range(10))`." },
   {
     type: "code",
     language: "python",
@@ -611,11 +612,9 @@ const ch34Sections: Section[] = [
     content:
       '# Generator expression with condition\nodds = (x for x in range(20) if x % 2 == 1)\nprint(list(odds))      # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]\n\n# sum() with generator \u2014 no extra list created\ntotal = sum(x ** 2 for x in range(10))\nprint(total)           # 285  (sum of 0..9 squared)\n\n# any() short-circuits with generator\nhas_large = any(x > 100 for x in range(1000))\nprint(has_large)       # True (x=101 triggers True, stops)\n\n# all() checks every item\nall_even = all(x % 2 == 0 for x in [2, 4, 6, 8])\nprint(all_even)        # True\n\n# any/all with generator is memory-efficient for huge data',
   },
-  {
-    type: "text",
-    content:
-      "## Lazy Evaluation and Memory Efficiency\n\nGenerator expressions are dramatically more memory-efficient than list comprehensions for large datasets:\n\n```python\nimport sys\n\n# List comprehension \u2014 stores everything\nlist_comp = [x for x in range(100000)]\nprint(sys.getsizeof(list_comp))  # ~800,000 bytes\n\n# Generator expression \u2014 stores nothing (lazy)\ngen_expr = (x for x in range(100000))\nprint(sys.getsizeof(gen_expr))   # ~200 bytes\n```\n\n**When to use each:**\n- List comprehension: need to iterate multiple times, need random access, small data\n- Generator expression: single pass, huge data, memory-constrained, pipeline processing\n\nUse generator expressions in `sum()`, `min()`, `max()`, `any()`, `all()` \u2014 they avoid creating intermediate lists.",
-  },
+  { type: "text", content: "## Lazy Evaluation and Memory Efficiency\n\nGenerator expressions are dramatically more memory-efficient than list comprehensions for large datasets:" },
+  { type: "code", language: "python", content: "import sys\n\n# List comprehension \\u2014 stores everything\nlist_comp = [x for x in range(100000)]\nprint(sys.getsizeof(list_comp))  # ~800,000 bytes\n\n# Generator expression \\u2014 stores nothing (lazy)\ngen_expr = (x for x in range(100000))\nprint(sys.getsizeof(gen_expr))   # ~200 bytes" },
+  { type: "text", content: "**When to use each:**\n- List comprehension: need to iterate multiple times, need random access, small data\n- Generator expression: single pass, huge data, memory-constrained, pipeline processing\n\nUse generator expressions in `sum()`, `min()`, `max()`, `any()`, `all()` \\u2014 they avoid creating intermediate lists." },
   {
     type: "code",
     language: "python",
@@ -647,6 +646,19 @@ const ch34Sections: Section[] = [
       "Use generators for large datasets, infinite sequences, memory-efficient pipelines, and `sum()`/`any()`/`all()`",
     ],
   },
+  {
+    id: "py34-fix1",
+    type: "fix-code",
+    title: "Fix the Generator Function",
+    instructions: "The function uses return instead of yielding values one at a time. Fix it to be a proper generator.",
+    brokenCode: `def count_to(n):
+    return [i for i in range(1, n + 1)]`,
+    correctCode: `def count_to(n):
+    for i in range(1, n + 1):
+        yield i`,
+    hints: ["A generator uses a specific keyword to produce values lazily.", "List comprehensions with return create a list, not a generator."],
+    explanation: "A generator function uses the `yield` keyword to produce values **one at a time**, lazily. Using `return` with a list comprehension creates a regular list, losing the memory benefits of generators.",
+  }
 ];
 
 const ch34Exercises: ExerciseSection[] = [
@@ -765,11 +777,9 @@ const ch34: Chapter = {
 //         stacking, class decorators, lru_cache, singledispatch, partial
 // ───────────────────────────────────────────────────────────────────
 const ch35Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Decorators in Python\n\nA **decorator** is a function that takes another function and extends its behavior without modifying it directly. Decorators use the `@` syntax and are applied above the function definition.\n\n```python\ndef my_decorator(func):\n    def wrapper():\n        print(\"Something before\")\n        func()\n        print(\"Something after\")\n    return wrapper\n\n@my_decorator\ndef say_hello():\n    print(\"Hello!\")\n\nsay_hello()\n# Something before\n# Hello!\n# Something after\n```\n\n`@my_decorator` is syntactic sugar for `say_hello = my_decorator(say_hello)`.",
-  },
+  { type: "text", content: "## Decorators in Python\n\nA **decorator** is a function that takes another function and extends its behavior without modifying it directly. Decorators use the `@` syntax and are applied above the function definition." },
+  { type: "code", language: "python", content: "def my_decorator(func):\n    def wrapper():\n        print(\"Something before\")\n        func()\n        print(\"Something after\")\n    return wrapper\n\n@my_decorator\ndef say_hello():\n    print(\"Hello!\")\n\nsay_hello()\n# Something before\n# Hello!\n# Something after" },
+  { type: "text", content: "`@my_decorator` is syntactic sugar for `say_hello = my_decorator(say_hello)`." },
   {
     type: "code",
     language: "python",
@@ -777,11 +787,8 @@ const ch35Sections: Section[] = [
     content:
       'def uppercase_result(func):\n    """Convert return value to uppercase."""\n    def wrapper(*args, **kwargs):\n        result = func(*args, **kwargs)\n        return result.upper()\n    return wrapper\n\n@uppercase_result\ndef greet(name):\n    return f"Hello, {name}!"\n\n@uppercase_result\ndef get_word():\n    return "python"\n\nprint(greet("Alice"))  # "HELLO, ALICE!"\nprint(get_word())      # "PYTHON"',
   },
-  {
-    type: "text",
-    content:
-      "## `@functools.wraps` \u2014 Preserving Metadata\n\nWhen you wrap a function, the wrapper replaces the original's `__name__`, `__doc__`, and other metadata. `@functools.wraps` copies these from the original function to the wrapper \u2014 use it in every decorator.\n\n```python\nfrom functools import wraps\n\ndef logged(func):\n    @wraps(func)  # \u2190 preserves func's metadata\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@logged\ndef add(x, y):\n    \"\"\"Add two numbers.\"\"\"\n    return x + y\n\nprint(add.__name__)  # \"add\"  (not \"wrapper\")\nprint(add.__doc__)   # \"Add two numbers.\" (not None)\n```",
-  },
+  { type: "text", content: "## `@functools.wraps` \\u2014 Preserving Metadata\n\nWhen you wrap a function, the wrapper replaces the original's `__name__`, `__doc__`, and other metadata. `@functools.wraps` copies these from the original function to the wrapper \\u2014 use it in every decorator." },
+  { type: "code", language: "python", content: "from functools import wraps\n\ndef logged(func):\n    @wraps(func)  # \\u2190 preserves func's metadata\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@logged\ndef add(x, y):\n    \"\"\"Add two numbers.\"\"\"\n    return x + y\n\nprint(add.__name__)  # \"add\"  (not \"wrapper\")\nprint(add.__doc__)   # \"Add two numbers.\" (not None)" },
   {
     type: "code",
     language: "python",
@@ -789,11 +796,9 @@ const ch35Sections: Section[] = [
     content:
       'import time\nfrom functools import wraps\n\ndef timer(func):\n    @wraps(func)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = func(*args, **kwargs)\n        elapsed = time.perf_counter() - start\n        print(f"{func.__name__} took {elapsed:.4f}s")\n        return result\n    return wrapper\n\n@timer\ndef slow_function():\n    time.sleep(0.5)\n    return "Done"\n\nprint(slow_function())\n# slow_function took 0.5003s\n# Done\nprint(slow_function.__name__)  # "slow_function" (thanks to @wraps)',
   },
-  {
-    type: "text",
-    content:
-      "## Decorator Factories\n\nA **decorator factory** is a function that returns a decorator \u2014 it lets you pass arguments to customize the decorator's behavior. The triple nesting (factory \u2192 decorator \u2192 wrapper) is the standard pattern.\n\n```python\ndef repeat(n):\n    \"\"\"Decorator factory: run the function n times.\"\"\"\n    def decorator(func):\n        def wrapper(*args, **kwargs):\n            for _ in range(n):\n                result = func(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef say_hello():\n    print(\"Hello!\")\n\nsay_hello()\n# Hello!\n# Hello!\n# Hello!\n```\n\n`@repeat(3)` calls `repeat(3)` which returns a decorator, then that decorator is applied to the function.",
-  },
+  { type: "text", content: "## Decorator Factories\n\nA **decorator factory** is a function that returns a decorator \\u2014 it lets you pass arguments to customize the decorator's behavior. The triple nesting (factory \\u2192 decorator \\u2192 wrapper) is the standard pattern." },
+  { type: "code", language: "python", content: "def repeat(n):\n    \"\"\"Decorator factory: run the function n times.\"\"\"\n    def decorator(func):\n        def wrapper(*args, **kwargs):\n            for _ in range(n):\n                result = func(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@repeat(3)\ndef say_hello():\n    print(\"Hello!\")\n\nsay_hello()\n# Hello!\n# Hello!\n# Hello!" },
+  { type: "text", content: "`@repeat(3)` calls `repeat(3)` which returns a decorator, then that decorator is applied to the function." },
   {
     type: "code",
     language: "python",
@@ -801,11 +806,9 @@ const ch35Sections: Section[] = [
     content:
       "from functools import wraps\n\ndef tag(tag_name):\n    \"\"\"Decorator factory: wrap function output in an HTML tag.\"\"\"\n    def decorator(func):\n        @wraps(func)\n        def wrapper(*args, **kwargs):\n            return f\"<{tag_name}>{func(*args, **kwargs)}</{tag_name}>\"\n        return wrapper\n    return decorator\n\n@tag(\"p\")\ndef get_text():\n    return \"Hello\"\n\n@tag(\"h1\")\n@tag(\"i\")\ndef get_title():\n    return \"Big News\"\n\nprint(get_text())    # \"<p>Hello</p>\"\nprint(get_title())   # \"<h1><i>Big News</i></h1>\"",
   },
-  {
-    type: "text",
-    content:
-      "## Stacking Decorators\n\nYou can apply multiple decorators by stacking them. They apply **bottom-up** (the closest to the function runs first). Execution is **top-down** on call \u2014 the outermost decorator runs first.\n\n```python\n@decorator_a\n@decorator_b\n@decorator_c\ndef my_function():\n    pass\n\n# Equivalent to:\n# my_function = decorator_a(decorator_b(decorator_c(my_function)))\n```\n\nThis stacking pattern is common in web frameworks: `@app.route(\"/\")`, `@login_required`, `@cache` might all stack on one view function.",
-  },
+  { type: "text", content: "## Stacking Decorators\n\nYou can apply multiple decorators by stacking them. They apply **bottom-up** (the closest to the function runs first). Execution is **top-down** on call \\u2014 the outermost decorator runs first." },
+  { type: "code", language: "python", content: "@decorator_a\n@decorator_b\n@decorator_c\ndef my_function():\n    pass\n\n# Equivalent to:\n# my_function = decorator_a(decorator_b(decorator_c(my_function)))" },
+  { type: "text", content: "This stacking pattern is common in web frameworks: `@app.route(\"/\")`, `@login_required`, `@cache` might all stack on one view function." },
   {
     type: "callout",
     style: "info",
@@ -826,11 +829,9 @@ const ch35Sections: Section[] = [
     content:
       "from functools import singledispatch\n\n@singledispatch\ndef serialize(data):\n    \"\"\"Default \u2014 fallback for unregistered types.\"\"\"\n    return str(data)\n\n@serialize.register(dict)\ndef _(data):\n    import json\n    return json.dumps(data, indent=2)\n\n@serialize.register(list)\ndef _(data):\n    import json\n    return json.dumps(data)\n\n@serialize.register(str)\ndef _(data):\n    return data\n\n@serialize.register(int)\n@serialize.register(float)\ndef _(data):\n    return str(data)\n\nprint(serialize({\"name\": \"Alice\"}))  # {\"name\": \"Alice\"}\nprint(serialize([1, 2, 3]))         # [1, 2, 3]\nprint(serialize(42))                 # \"42\"",
   },
-  {
-    type: "text",
-    content:
-      "## Class Decorators\n\nYou can apply decorators to entire classes, not just methods. Class decorators are commonly used for registering classes, adding methods, or injecting behavior.\n\n```python\ndef add_repr(cls):\n    \"\"\"Add a __repr__ method to a class.\"\"\"\n    def __repr__(self):\n        attrs = ', '.join(f'{k}={v!r}' for k, v in self.__dict__.items())\n        return f'{cls.__name__}({attrs})'\n    cls.__repr__ = __repr__\n    return cls\n\n@add_repr\nclass Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\np = Point(3, 4)\nprint(p)  # Point(x=3, y=4)\n```\n\nClass decorators receive the class and return a (possibly modified) class. They're widely used in dataclasses, ORMs (SQLAlchemy), and validation libraries (Pydantic).",
-  },
+  { type: "text", content: "## Class Decorators\n\nYou can apply decorators to entire classes, not just methods. Class decorators are commonly used for registering classes, adding methods, or injecting behavior." },
+  { type: "code", language: "python", content: "def add_repr(cls):\n    \"\"\"Add a __repr__ method to a class.\"\"\"\n    def __repr__(self):\n        attrs = ', '.join(f'{k}={v!r}' for k, v in self.__dict__.items())\n        return f'{cls.__name__}({attrs})'\n    cls.__repr__ = __repr__\n    return cls\n\n@add_repr\nclass Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\np = Point(3, 4)\nprint(p)  # Point(x=3, y=4)" },
+  { type: "text", content: "Class decorators receive the class and return a (possibly modified) class. They're widely used in dataclasses, ORMs (SQLAlchemy), and validation libraries (Pydantic)." },
   {
     type: "comparison",
     title: "Simple vs Parameterized Decorators",
@@ -861,6 +862,34 @@ const ch35Sections: Section[] = [
       "functools.partial creates specialized functions by fixing some arguments",
     ],
   },
+  {
+    id: "py35-fix1",
+    type: "fix-code",
+    title: "Fix the Decorator Syntax",
+    instructions: "The decorator is missing its special prefix character. Fix it.",
+    brokenCode: `def timer(func):
+    def wrapper():
+        print('Starting...')
+        func()
+        print('Done.')
+    return wrapper
+
+timer
+def say_hello():
+    print('Hello!')`,
+    correctCode: `def timer(func):
+    def wrapper():
+        print('Starting...')
+        func()
+        print('Done.')
+    return wrapper
+
+@timer
+def say_hello():
+    print('Hello!')`,
+    hints: ["Decorators use a special symbol before the def.", "The `@` symbol is how you apply a decorator."],
+    explanation: "Decorators are applied with the `@decorator_name` syntax above the function definition. Without `@`, `timer` is just a function call, not a decorator application.",
+  }
 ];
 
 const ch35Exercises: ExerciseSection[] = [
@@ -978,11 +1007,9 @@ const ch35: Chapter = {
 // Topics: with statement, __enter__/__exit__, contextlib, @contextmanager, ExitStack
 // ───────────────────────────────────────────────────────────────────
 const ch36Sections: Section[] = [
-  {
-    type: "text",
-    content:
-      "## Context Managers\n\nA **context manager** is a Python construct that simplifies resource management \u2014 opening files, acquiring locks, connecting to databases \u2014 by ensuring that setup and teardown happen automatically. You've already used context managers with the `with` statement:\n\n```python\nwith open(\"file.txt\", \"r\") as f:\n    content = f.read()\n# File is automatically closed, even if an error occurs\n```\n\nContext managers guarantee that cleanup code runs, making them superior to try/finally blocks for resource management.",
-  },
+  { type: "text", content: "## Context Managers\n\nA **context manager** is a Python construct that simplifies resource management \\u2014 opening files, acquiring locks, connecting to databases \\u2014 by ensuring that setup and teardown happen automatically. You've already used context managers with the `with` statement:" },
+  { type: "code", language: "python", content: "with open(\"file.txt\", \"r\") as f:\n    content = f.read()\n# File is automatically closed, even if an error occurs" },
+  { type: "text", content: "Context managers guarantee that cleanup code runs, making them superior to try/finally blocks for resource management." },
   {
     type: "code",
     language: "python",
@@ -990,11 +1017,8 @@ const ch36Sections: Section[] = [
     content:
       '# Traditional approach \u2014 manual cleanup\nf = open("example.txt", "w")\ntry:\n    f.write("Hello")\nfinally:\n    f.close()  # Must close manually\n\n# Context manager approach \u2014 automatic cleanup\nwith open("example.txt", "w") as f:\n    f.write("Hello")\n# f.close() is called automatically when leaving the with block',
   },
-  {
-    type: "text",
-    content:
-      "## Creating a Context Manager: Class Approach\n\nTo create your own context manager, define a class with `__enter__` and `__exit__` methods. `__enter__` runs when entering the `with` block and returns the resource. `__exit__` runs when leaving and handles cleanup.\n\n```python\nclass ManagedFile:\n    def __init__(self, filename, mode):\n        self.filename = filename\n        self.mode = mode\n\n    def __enter__(self):\n        print(f\"Opening {self.filename}\")\n        self.file = open(self.filename, self.mode)\n        return self.file  # This is what 'as f' receives\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(f\"Closing {self.filename}\")\n        self.file.close()\n        # Return False to propagate exceptions, True to suppress them\n        return False\n\nwith ManagedFile(\"test.txt\", \"w\") as f:\n    f.write(\"Hello!\")\n# Output: Opening test.txt\n#         Closing test.txt\n```",
-  },
+  { type: "text", content: "## Creating a Context Manager: Class Approach\n\nTo create your own context manager, define a class with `__enter__` and `__exit__` methods. `__enter__` runs when entering the `with` block and returns the resource. `__exit__` runs when leaving and handles cleanup." },
+  { type: "code", language: "python", content: "class ManagedFile:\n    def __init__(self, filename, mode):\n        self.filename = filename\n        self.mode = mode\n\n    def __enter__(self):\n        print(f\"Opening {self.filename}\")\n        self.file = open(self.filename, self.mode)\n        return self.file  # This is what 'as f' receives\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(f\"Closing {self.filename}\")\n        self.file.close()\n        # Return False to propagate exceptions, True to suppress them\n        return False\n\nwith ManagedFile(\"test.txt\", \"w\") as f:\n    f.write(\"Hello!\")\n# Output: Opening test.txt\n#         Closing test.txt" },
   {
     type: "code",
     language: "python",
@@ -1008,11 +1032,9 @@ const ch36Sections: Section[] = [
     content:
       "**The `__exit__` parameters:** `exc_type` is the exception class (e.g., `ValueError`), `exc_val` is the exception instance, and `exc_tb` is the traceback. If no exception occurred, all three are `None`. Return `True` from `__exit__` to suppress an exception; return `False` or `None` to let it propagate.",
   },
-  {
-    type: "text",
-    content:
-      "## Creating a Context Manager: `@contextmanager` Decorator\n\nThe `@contextmanager` decorator from the `contextlib` module lets you create context managers using generator functions \u2014 much less boilerplate than the class approach.\n\n```python\nfrom contextlib import contextmanager\n\n@contextmanager\ndef managed_file(filename, mode):\n    print(f\"Opening {filename}\")\n    f = open(filename, mode)\n    try:\n        yield f\n    finally:\n        print(f\"Closing {filename}\")\n        f.close()\n\nwith managed_file(\"test.txt\", \"w\") as f:\n    f.write(\"Hello!\")\n```\n\nThe code before `yield` is `__enter__`. The code after `yield` (in the `finally`) is `__exit__`.",
-  },
+  { type: "text", content: "## Creating a Context Manager: `@contextmanager` Decorator\n\nThe `@contextmanager` decorator from the `contextlib` module lets you create context managers using generator functions \\u2014 much less boilerplate than the class approach." },
+  { type: "code", language: "python", content: "from contextlib import contextmanager\n\n@contextmanager\ndef managed_file(filename, mode):\n    print(f\"Opening {filename}\")\n    f = open(filename, mode)\n    try:\n        yield f\n    finally:\n        print(f\"Closing {filename}\")\n        f.close()\n\nwith managed_file(\"test.txt\", \"w\") as f:\n    f.write(\"Hello!\")" },
+  { type: "text", content: "The code before `yield` is `__enter__`. The code after `yield` (in the `finally`) is `__exit__`." },
   {
     type: "code",
     language: "python",
@@ -1020,11 +1042,8 @@ const ch36Sections: Section[] = [
     content:
       "from contextlib import contextmanager\nimport sys\n\n@contextmanager\ndef redirect_output(filepath):\n    \"\"\"Redirect stdout to a file within the context.\"\"\"\n    old_stdout = sys.stdout\n    sys.stdout = open(filepath, \"w\")\n    try:\n        yield\n    finally:\n        sys.stdout.close()\n        sys.stdout = old_stdout\n\nwith redirect_output(\"output.txt\"):\n    print(\"This goes to the file, not the console\")\nprint(\"This goes back to the console\")",
   },
-  {
-    type: "text",
-    content:
-      "## `contextlib.suppress` \u2014 Suppressing Specific Exceptions\n\nPython 3.4+ includes `contextlib.suppress`, a context manager that suppresses specific exceptions \u2014 cleaner than a bare `except: pass`.\n\n```python\nfrom contextlib import suppress\n\n# Instead of:\ntry:\n    os.remove(\"file.txt\")\nexcept FileNotFoundError:\n    pass\n\n# Use suppress:\nwith suppress(FileNotFoundError):\n    os.remove(\"file.txt\")\n\nwith suppress(FileNotFoundError, PermissionError):\n    os.remove(\"file.txt\")\n```",
-  },
+  { type: "text", content: "## `contextlib.suppress` \\u2014 Suppressing Specific Exceptions\n\nPython 3.4+ includes `contextlib.suppress`, a context manager that suppresses specific exceptions \\u2014 cleaner than a bare `except: pass`." },
+  { type: "code", language: "python", content: "from contextlib import suppress\n\n# Instead of:\ntry:\n    os.remove(\"file.txt\")\nexcept FileNotFoundError:\n    pass\n\n# Use suppress:\nwith suppress(FileNotFoundError):\n    os.remove(\"file.txt\")\n\nwith suppress(FileNotFoundError, PermissionError):\n    os.remove(\"file.txt\")" },
   {
     type: "code",
     language: "python",
@@ -1055,6 +1074,19 @@ const ch36Sections: Section[] = [
       "contextlib.suppress is cleaner than bare except:pass for expected exceptions",
     ],
   },
+  {
+    id: "py36-fix1",
+    type: "fix-code",
+    title: "Fix the Context Manager",
+    instructions: "The with statement syntax is wrong. Fix it to properly open a file.",
+    brokenCode: `file = open('data.txt', 'r')
+content = file.read()
+file.close()`,
+    correctCode: `with open('data.txt', 'r') as file:
+    content = file.read()`,
+    hints: ["What happens if an error occurs between open() and close()?", "Use the `with` statement to ensure the file is always closed."],
+    explanation: "Using `open()` without a context manager (`with`) risks leaving the file open if an error occurs. The `with` statement **automatically closes** the file when the block exits, even on errors.",
+  }
 ];
 
 const ch36Exercises: ExerciseSection[] = [
@@ -1177,11 +1209,10 @@ const ch37Sections: Section[] = [
     content:
       "## Standard Library Modules: functools & itertools\n\nPython's standard library is vast, but two modules stand out for functional and iterator-based programming: **functools** and **itertools**. They provide building blocks for writing concise, efficient, and expressive Python code.\n\nIn this chapter we cover the remaining functools utilities not covered in the Decorators chapter, plus the full itertools module.",
   },
-  {
-    type: "text",
-    content:
-      "## functools.reduce\n\n`reduce` applies a function cumulatively to the items of an iterable, reducing the sequence to a single value. It was moved from builtins to functools in Python 3.\n\n```python\nfrom functools import reduce\n\n# Sum of numbers: (((1 + 2) + 3) + 4)\nresult = reduce(lambda a, b: a + b, [1, 2, 3, 4])\nprint(result)  # 10\n\n# Product of numbers: (((1 * 2) * 3) * 4)\nproduct = reduce(lambda a, b: a * b, [1, 2, 3, 4])\nprint(product)  # 24\n```\n\n`reduce` also accepts an optional initializer:\n```python\nreduce(lambda a, b: a + b, [], 0)     # 0  (empty iterable)\nreduce(lambda a, b: a + b, [1, 2], 5) # 8  (5 + 1 + 2)\n```",
-  },
+  { type: "text", content: "## functools.reduce\n\n`reduce` applies a function cumulatively to the items of an iterable, reducing the sequence to a single value. It was moved from builtins to functools in Python 3." },
+  { type: "code", language: "python", content: "from functools import reduce\n\n# Sum of numbers: (((1 + 2) + 3) + 4)\nresult = reduce(lambda a, b: a + b, [1, 2, 3, 4])\nprint(result)  # 10\n\n# Product of numbers: (((1 * 2) * 3) * 4)\nproduct = reduce(lambda a, b: a * b, [1, 2, 3, 4])\nprint(product)  # 24" },
+  { type: "text", content: "`reduce` also accepts an optional initializer:" },
+  { type: "code", language: "python", content: "reduce(lambda a, b: a + b, [], 0)     # 0  (empty iterable)\nreduce(lambda a, b: a + b, [1, 2], 5) # 8  (5 + 1 + 2)" },
   {
     type: "code",
     language: "python",
@@ -1195,11 +1226,9 @@ const ch37Sections: Section[] = [
     content:
       "**When NOT to use reduce:** For simple operations like summing or multiplying, use the builtin `sum()` or explicit loops. Reduce shines for non-trivial cumulative operations, but overusing it hurts readability. 'Reduce can be your functional swiss army knife, but sometimes a plain knife is better.'",
   },
-  {
-    type: "text",
-    content:
-      "## functools.cmp_to_key\n\n`cmp_to_key` converts an old-style comparison function (which returns -1, 0, or 1) into a key function. It's a migration tool for code written for Python 2's `cmp` parameter.\n\n```python\nfrom functools import cmp_to_key\n\ndef compare_by_length(a, b):\n    \"\"\"Return negative if a < b, zero if equal, positive if a > b.\"\"\"\n    if len(a) < len(b):\n        return -1\n    elif len(a) > len(b):\n        return 1\n    return 0\n\nwords = [\"python\", \"is\", \"awesome\", \"!\"]\nsorted_words = sorted(words, key=cmp_to_key(compare_by_length))\nprint(sorted_words)  # ['!', 'is', 'python', 'awesome']\n```\n\nNote: Modern Python prefers `key=str.lower` or `key=len` over comparison functions. Use `cmp_to_key` only when migrating legacy code.",
-  },
+  { type: "text", content: "## functools.cmp_to_key\n\n`cmp_to_key` converts an old-style comparison function (which returns -1, 0, or 1) into a key function. It's a migration tool for code written for Python 2's `cmp` parameter." },
+  { type: "code", language: "python", content: "from functools import cmp_to_key\n\ndef compare_by_length(a, b):\n    \"\"\"Return negative if a < b, zero if equal, positive if a > b.\"\"\"\n    if len(a) < len(b):\n        return -1\n    elif len(a) > len(b):\n        return 1\n    return 0\n\nwords = [\"python\", \"is\", \"awesome\", \"!\"]\nsorted_words = sorted(words, key=cmp_to_key(compare_by_length))\nprint(sorted_words)  # ['!', 'is', 'python', 'awesome']" },
+  { type: "text", content: "Note: Modern Python prefers `key=str.lower` or `key=len` over comparison functions. Use `cmp_to_key` only when migrating legacy code." },
   {
     type: "code",
     language: "python",
@@ -1207,11 +1236,8 @@ const ch37Sections: Section[] = [
     content:
       "from functools import total_ordering\n\n@total_ordering\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def __eq__(self, other):\n        return self.age == other.age\n\n    def __lt__(self, other):\n        return self.age < other.age\n\n    def __repr__(self):\n        return f\"Person({self.name}, {self.age})\"\n\np1 = Person(\"Alice\", 30)\np2 = Person(\"Bob\", 25)\np3 = Person(\"Charlie\", 30)\n\n# These all work even though we only defined __eq__ and __lt__:\nprint(p1 > p2)   # True\nprint(p1 >= p3)  # True\nprint(p2 < p1)   # True\nprint(p1 <= p3)  # True",
   },
-  {
-    type: "text",
-    content:
-      "## itertools: Iterator Building Blocks\n\nThe `itertools` module provides a collection of fast, memory-efficient tools for working with iterators. They form an 'iterator algebra' \u2014 you can combine them to build complex iteration logic.\n\n### Infinite Iterators\n\n```python\nfrom itertools import count, cycle, repeat\n\n# count(start=0, step=1) \u2014 counts forever\nfor i in count(10, 2):\n    if i > 20:\n        break\n    print(i, end=\" \")  # 10 12 14 16 18 20\n\n# cycle(iterable) \u2014 repeats forever\ncolors = cycle([\"red\", \"green\", \"blue\"])\nfor _ in range(5):\n    print(next(colors), end=\" \")  # red green blue red green\n\n# repeat(object, times=None) \u2014 repeats n times\nfor x in repeat(\"hello\", 3):\n    print(x)  # hello hello hello\n```",
-  },
+  { type: "text", content: "## itertools: Iterator Building Blocks\n\nThe `itertools` module provides a collection of fast, memory-efficient tools for working with iterators. They form an 'iterator algebra' \\u2014 you can combine them to build complex iteration logic.\n\n### Infinite Iterators" },
+  { type: "code", language: "python", content: "from itertools import count, cycle, repeat\n\n# count(start=0, step=1) \\u2014 counts forever\nfor i in count(10, 2):\n    if i > 20:\n        break\n    print(i, end=\" \")  # 10 12 14 16 18 20\n\n# cycle(iterable) \\u2014 repeats forever\ncolors = cycle([\"red\", \"green\", \"blue\"])\nfor _ in range(5):\n    print(next(colors), end=\" \")  # red green blue red green\n\n# repeat(object, times=None) \\u2014 repeats n times\nfor x in repeat(\"hello\", 3):\n    print(x)  # hello hello hello" },
   {
     type: "code",
     language: "python",
@@ -1256,6 +1282,18 @@ const ch37Sections: Section[] = [
       "chain flattens; accumulate produces running totals; pairwise creates consecutive pairs",
     ],
   },
+  {
+    id: "py37-fix1",
+    type: "fix-code",
+    title: "Fix the Module Import",
+    instructions: "The import statement has a spelling mistake. Fix it.",
+    brokenCode: `import matht
+print(matht.sqrt(16))`,
+    correctCode: `import math
+print(math.sqrt(16))`,
+    hints: ["'matht' ends with a wrong character.", "Drop the last letter."],
+    explanation: "The correct module name is `math` (not `matht`). Python would raise a `ModuleNotFoundError` because there's no standard library module called `matht`.",
+  }
 ];
 
 const ch37Exercises: ExerciseSection[] = [
@@ -1379,11 +1417,10 @@ const ch38Sections: Section[] = [
     content:
       "## Testing in Python\n\nTesting is how you ensure your code works correctly, now and after future changes. Python has two dominant testing frameworks: **unittest** (built-in, inspired by JUnit) and **pytest** (third-party, concise and powerful).\n\n**Why test?**\n- Catch regressions when you change code\n- Document expected behavior\n- Reduce debugging time\n- Enable confident refactoring\n\nA good test is: **fast, isolated, repeatable, and checks one thing.**",
   },
-  {
-    type: "text",
-    content:
-      "## Basic Assertions\n\nBoth frameworks use Python's `assert` statement as the foundation. But `unittest` also provides `assertEqual`, `assertTrue`, `assertRaises`, etc., which produce better error messages.\n\n```python\n# Plain assert (used in pytest)\ndef test_addition():\n    assert 1 + 1 == 2\n    assert \"hello\".upper() == \"HELLO\"\n    assert len([]) == 0\n```\n\nPlain `assert` with a message:\n```python\ndef test_positive():\n    result = some_function()\n    assert result > 0, f\"Expected positive, got {result}\"\n```",
-  },
+  { type: "text", content: "## Basic Assertions\n\nBoth frameworks use Python's `assert` statement as the foundation. But `unittest` also provides `assertEqual`, `assertTrue`, `assertRaises`, etc., which produce better error messages." },
+  { type: "code", language: "python", content: "# Plain assert (used in pytest)\ndef test_addition():\n    assert 1 + 1 == 2\n    assert \"hello\".upper() == \"HELLO\"\n    assert len([]) == 0" },
+  { type: "text", content: "Plain `assert` with a message:" },
+  { type: "code", language: "python", content: "def test_positive():\n    result = some_function()\n    assert result > 0, f\"Expected positive, got {result}\"" },
   {
     type: "code",
     language: "python",
@@ -1403,11 +1440,9 @@ const ch38Sections: Section[] = [
     content:
       "# pytest uses plain assert and function-based tests\n# Save as test_math.py and run: pytest test_math.py\n\ndef add(a, b):\n    return a + b\n\ndef divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero\")\n    return a / b\n\n# --- Tests ---\n\ndef test_add_positive():\n    assert add(2, 3) == 5\n\ndef test_add_negative():\n    assert add(-1, 1) == 0\n\ndef test_add_strings():\n    assert add(\"a\", \"b\") == \"ab\"\n\ndef test_divide_by_zero():\n    import pytest\n    with pytest.raises(ValueError, match=\"Cannot divide by zero\"):\n        divide(10, 0)",
   },
-  {
-    type: "text",
-    content:
-      "## pytest Fixtures\n\nFixtures are pytest's mechanism for setup and teardown. They're reusable, modular, and automatically injected into test functions by parameter name.\n\n```python\nimport pytest\n\n@pytest.fixture\ndef sample_data():\n    \"\"\"Provide test data. Runs before each test that uses it.\"\"\"\n    return {\"name\": \"Alice\", \"age\": 30}\n\n@pytest.fixture\ndef db_connection():\n    \"\"\"Setup and teardown with yield (like a context manager).\"\"\"\n    conn = create_database()\n    yield conn  # Test runs here\n    conn.close()  # Teardown after test\n\ndef test_user_name(sample_data):\n    assert sample_data[\"name\"] == \"Alice\"\n\ndef test_user_age(sample_data):\n    assert sample_data[\"age\"] == 30\n```\n\nFixtures can use `scope` to control how often they're created:\n- `function` (default) \u2014 once per test\n- `class` \u2014 once per test class\n- `module` \u2014 once per module\n- `session` \u2014 once per test run",
-  },
+  { type: "text", content: "## pytest Fixtures\n\nFixtures are pytest's mechanism for setup and teardown. They're reusable, modular, and automatically injected into test functions by parameter name." },
+  { type: "code", language: "python", content: "import pytest\n\n@pytest.fixture\ndef sample_data():\n    \"\"\"Provide test data. Runs before each test that uses it.\"\"\"\n    return {\"name\": \"Alice\", \"age\": 30}\n\n@pytest.fixture\ndef db_connection():\n    \"\"\"Setup and teardown with yield (like a context manager).\"\"\"\n    conn = create_database()\n    yield conn  # Test runs here\n    conn.close()  # Teardown after test\n\ndef test_user_name(sample_data):\n    assert sample_data[\"name\"] == \"Alice\"\n\ndef test_user_age(sample_data):\n    assert sample_data[\"age\"] == 30" },
+  { type: "text", content: "Fixtures can use `scope` to control how often they're created:\n- `function` (default) \\u2014 once per test\n- `class` \\u2014 once per test class\n- `module` \\u2014 once per module\n- `session` \\u2014 once per test run" },
   {
     type: "code",
     language: "python",
@@ -1422,11 +1457,8 @@ const ch38Sections: Section[] = [
     content:
       "from unittest.mock import Mock, patch\n\n# Mock object \u2014 a fake that records how it's used\nmock = Mock()\nmock.return_value = 42\nprint(mock())  # 42\nprint(mock.call_count)  # 1\n\n# patch \u2014 temporarily replace an object\nfrom pathlib import Path\n\n@patch(\"pathlib.Path.exists\")\ndef test_file_check(mock_exists):\n    mock_exists.return_value = False\n    # Now Path.exists() always returns False\n    assert not Path(\"/tmp/file.txt\").exists()\n\n# patch as context manager\ndef test_network_call():\n    with patch(\"requests.get\") as mock_get:\n        mock_get.return_value.status_code = 200\n        mock_get.return_value.json.return_value = {\"key\": \"value\"}\n        # Now requests.get returns the mocked response\n        response = requests.get(\"http://api.example.com\")\n        assert response.status_code == 200",
   },
-  {
-    type: "text",
-    content:
-      "## Mock Assertion Methods\n\nOnce a mock is called, you can assert how it was used:\n\n| Method | Checks That |\n|--------|-------------|\n| `mock.assert_called()` | mock was called at least once |\n| `mock.assert_called_once()` | mock was called exactly once |\n| `mock.assert_called_with(args)` | last call used specific args |\n| `mock.assert_called_once_with(args)` | exactly one call with those args |\n| `mock.assert_any_call(args)` | any call used those args |\n| `mock.assert_not_called()` | mock was never called |\n\n```python\ndef test_mock_assertions():\n    mock = Mock()\n    mock(1, 2, key=\"value\")\n\n    mock.assert_called_once()\n    mock.assert_called_with(1, 2, key=\"value\")\n    assert mock.call_count == 1\n```",
-  },
+  { type: "text", content: "## Mock Assertion Methods\n\nOnce a mock is called, you can assert how it was used:\n\n| Method | Checks That |\n|--------|-------------|\n| `mock.assert_called()` | mock was called at least once |\n| `mock.assert_called_once()` | mock was called exactly once |\n| `mock.assert_called_with(args)` | last call used specific args |\n| `mock.assert_called_once_with(args)` | exactly one call with those args |\n| `mock.assert_any_call(args)` | any call used those args |\n| `mock.assert_not_called()` | mock was never called |" },
+  { type: "code", language: "python", content: "def test_mock_assertions():\n    mock = Mock()\n    mock(1, 2, key=\"value\")\n\n    mock.assert_called_once()\n    mock.assert_called_with(1, 2, key=\"value\")\n    assert mock.call_count == 1" },
   {
     type: "comparison",
     title: "unittest vs pytest",
@@ -1454,6 +1486,20 @@ const ch38Sections: Section[] = [
       "Convention: name test files test_*.py and test functions test_* for auto-discovery",
     ],
   },
+  {
+    id: "py38-fix1",
+    type: "fix-code",
+    title: "Fix the Assert Statement",
+    instructions: "The test function has a syntax error. Fix it.",
+    brokenCode: `def test_addition():
+    result = 2 + 2
+    assert result == 5, 'Expected 5'`,
+    correctCode: `def test_addition():
+    result = 2 + 2
+    assert result == 4, f'Expected 4, got {result}'`,
+    hints: ["What is 2 + 2 really?", "The assertion checks against the wrong value."],
+    explanation: "The test asserts `result == 5` but `2 + 2 = 4`, so the test would fail. This teaches that you should double-check your expected values in assertions.",
+  }
 ];
 
 const ch38Exercises: ExerciseSection[] = [
@@ -1584,11 +1630,9 @@ const ch39Sections: Section[] = [
     content:
       "import asyncio\n\nasync def greet(name, delay):\n    \"\"\"A coroutine that waits and then greets.\"\"\"\n    await asyncio.sleep(delay)\n    return f\"Hello, {name}!\"\n\nasync def main():\n    # Run two coroutines sequentially (takes 2s)\n    result1 = await greet(\"Alice\", 1)\n    result2 = await greet(\"Bob\", 1)\n    print(result1)\n    print(result2)\n\n# Run the event loop\nasyncio.run(main())\n# Takes ~2 seconds\n\n# --- Task-based version (takes ~1 second) ---\n# async def main_concurrent():\n#     task1 = asyncio.create_task(greet(\"Alice\", 1))\n#     task2 = asyncio.create_task(greet(\"Bob\", 1))\n#     result1 = await task1\n#     result2 = await task2\n#     print(result1, result2)",
   },
-  {
-    type: "text",
-    content:
-      "## The Event Loop\n\nThe event loop is the core of asyncio. It manages all coroutines, schedules their execution, and handles I/O events.\n\n```python\nimport asyncio\n\n# Get the running event loop\nloop = asyncio.get_running_loop()\n\n# Run a coroutine (top-level entry point)\nasyncio.run(main())  # Python 3.7+ preferred\n\n# Older way (avoid unless needed):\n# loop = asyncio.get_event_loop()\n# loop.run_until_complete(main())\n```\n\n`asyncio.run()` creates a new event loop, runs the coroutine to completion, and closes the loop. It should be the primary entry point for async programs.",
-  },
+  { type: "text", content: "## The Event Loop\n\nThe event loop is the core of asyncio. It manages all coroutines, schedules their execution, and handles I/O events." },
+  { type: "code", language: "python", content: "import asyncio\n\n# Get the running event loop\nloop = asyncio.get_running_loop()\n\n# Run a coroutine (top-level entry point)\nasyncio.run(main())  # Python 3.7+ preferred\n\n# Older way (avoid unless needed):\n# loop = asyncio.get_event_loop()\n# loop.run_until_complete(main())" },
+  { type: "text", content: "`asyncio.run()` creates a new event loop, runs the coroutine to completion, and closes the loop. It should be the primary entry point for async programs." },
   {
     type: "code",
     language: "python",
@@ -1609,11 +1653,9 @@ const ch39Sections: Section[] = [
     content:
       "import asyncio\n\nasync def worker(name, delay):\n    await asyncio.sleep(delay)\n    return f\"{name} finished\"\n\nasync def main():\n    tasks = [\n        asyncio.create_task(worker(\"A\", 5)),\n        asyncio.create_task(worker(\"B\", 2)),\n        asyncio.create_task(worker(\"C\", 3)),\n    ]\n\n    # Wait for the FIRST task to complete\n    done, pending = await asyncio.wait(tasks, return_when=\"FIRST_COMPLETED\")\n    for task in done:\n        print(f\"Done: {task.result()}\")\n    print(f\"Still pending: {len(pending)}\")\n\n    # Cancel pending tasks\n    for task in pending:\n        task.cancel()\n\nasyncio.run(main())\n# Output:\n# Done: B finished\n# Still pending: 2",
   },
-  {
-    type: "text",
-    content:
-      "## Async Context Managers\n\nYou can create async context managers using `__aenter__` and `__aexit__`, or the `@asynccontextmanager` decorator.\n\n```python\nfrom contextlib import asynccontextmanager\n\n@asynccontextmanager\nasync def managed_resource():\n    print(\"Acquiring resource...\")\n    resource = await acquire()\n    try:\n        yield resource\n    finally:\n        print(\"Releasing resource...\")\n        await release(resource)\n\nasync def main():\n    async with managed_resource() as res:\n        print(f\"Using: {res}\")\n```\n\nThe built-in `aiofiles` and `aiosqlite` libraries use async context managers for file and database operations.",
-  },
+  { type: "text", content: "## Async Context Managers\n\nYou can create async context managers using `__aenter__` and `__aexit__`, or the `@asynccontextmanager` decorator." },
+  { type: "code", language: "python", content: "from contextlib import asynccontextmanager\n\n@asynccontextmanager\nasync def managed_resource():\n    print(\"Acquiring resource...\")\n    resource = await acquire()\n    try:\n        yield resource\n    finally:\n        print(\"Releasing resource...\")\n        await release(resource)\n\nasync def main():\n    async with managed_resource() as res:\n        print(f\"Using: {res}\")" },
+  { type: "text", content: "The built-in `aiofiles` and `aiosqlite` libraries use async context managers for file and database operations." },
   {
     type: "code",
     language: "python",
@@ -1640,11 +1682,9 @@ const ch39Sections: Section[] = [
       ["Overhead", "None", "Low (single thread)", "High (thread/process creation)"],
     ],
   },
-  {
-    type: "text",
-    content:
-      "## Common Async Pitfalls\n\n1. **Blocking the event loop** \u2014 Never use `time.sleep()` in async code. Use `await asyncio.sleep()`. Blocking calls freeze ALL coroutines.\n\n2. **Forgot to await** \u2014 Calling an `async def` function returns a coroutine object, not the result. Must `await` it.\n\n3. **Mixing sync and async** \u2014 You can't call async code from sync code directly. Use `asyncio.run()` as the entry point.\n\n4. **Running CPU-bound work** \u2014 Use `asyncio.to_thread()` or `loop.run_in_executor()` to offload CPU-heavy tasks to a thread pool.\n\n```python\nimport asyncio\n\nasync def main():\n    # Offload CPU-bound work to a thread\n    result = await asyncio.to_thread(cpu_intensive_function, arg1, arg2)\n```\n\n5. **Unhandled exceptions in tasks** \u2014 Always await or gather tasks so exceptions are surfaced.",
-  },
+  { type: "text", content: "## Common Async Pitfalls\n\n1. **Blocking the event loop** \\u2014 Never use `time.sleep()` in async code. Use `await asyncio.sleep()`. Blocking calls freeze ALL coroutines.\n\n2. **Forgot to await** \\u2014 Calling an `async def` function returns a coroutine object, not the result. Must `await` it.\n\n3. **Mixing sync and async** \\u2014 You can't call async code from sync code directly. Use `asyncio.run()` as the entry point.\n\n4. **Running CPU-bound work** \\u2014 Use `asyncio.to_thread()` or `loop.run_in_executor()` to offload CPU-heavy tasks to a thread pool." },
+  { type: "code", language: "python", content: "import asyncio\n\nasync def main():\n    # Offload CPU-bound work to a thread\n    result = await asyncio.to_thread(cpu_intensive_function, arg1, arg2)" },
+  { type: "text", content: "5. **Unhandled exceptions in tasks** \\u2014 Always await or gather tasks so exceptions are surfaced." },
   {
     type: "key-points",
     points: [
@@ -1659,6 +1699,26 @@ const ch39Sections: Section[] = [
       "TaskGroup (Python 3.11+) provides structured concurrency with cancellation",
     ],
   },
+  {
+    id: "py39-fix1",
+    type: "fix-code",
+    title: "Fix the Async Call",
+    instructions: "The async function is called incorrectly. Fix it so the coroutine actually runs.",
+    brokenCode: `import asyncio
+
+async def say_hi():
+    print('Hi!')
+
+say_hi()`,
+    correctCode: `import asyncio
+
+async def say_hi():
+    print('Hi!')
+
+asyncio.run(say_hi())`,
+    hints: ["Calling an async function returns a coroutine, not the result.", "You need a way to actually run the event loop."],
+    explanation: "Calling `say_hi()` on an `async def` function returns a **coroutine object** — it does NOT execute the function body. Use `asyncio.run(say_hi())` to actually run the coroutine in the event loop.",
+  }
 ];
 
 const ch39Exercises: ExerciseSection[] = [
@@ -1798,11 +1858,8 @@ const ch40Sections: Section[] = [
     content:
       "import socket\n\n# Create a TCP socket\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n\n# Connect to the server\nclient_socket.connect(('127.0.0.1', 9999))\n\n# Send data\nclient_socket.send(b'Hello, server!')\n\n# Receive response\ndata = client_socket.recv(1024)\nprint(f\"Received from server: {data.decode()}\")\n\n# Clean up\nclient_socket.close()",
   },
-  {
-    type: "text",
-    content:
-      "## Socket Address Families and Types\n\n| Constant | Value | Description |\n|----------|-------|-------------|\n| `AF_INET` | IPv4 | Standard internet addresses (e.g., 127.0.0.1) |\n| `AF_INET6` | IPv6 | IPv6 addresses |\n| `AF_UNIX` | Unix | Local inter-process communication (file-based) |\n| `SOCK_STREAM` | TCP | Reliable, connection-oriented, ordered byte stream |\n| `SOCK_DGRAM` | UDP | Unreliable, connectionless datagrams |\n| `SOCK_RAW` | Raw | Raw network protocol access (requires admin) |\n\n```python\n# TCP socket\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n\n# UDP socket\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\n```",
-  },
+  { type: "text", content: "## Socket Address Families and Types\n\n| Constant | Value | Description |\n|----------|-------|-------------|\n| `AF_INET` | IPv4 | Standard internet addresses (e.g., 127.0.0.1) |\n| `AF_INET6` | IPv6 | IPv6 addresses |\n| `AF_UNIX` | Unix | Local inter-process communication (file-based) |\n| `SOCK_STREAM` | TCP | Reliable, connection-oriented, ordered byte stream |\n| `SOCK_DGRAM` | UDP | Unreliable, connectionless datagrams |\n| `SOCK_RAW` | Raw | Raw network protocol access (requires admin) |" },
+  { type: "code", language: "python", content: "# TCP socket\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n\n# UDP socket\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)" },
   {
     type: "code",
     language: "python",
@@ -1810,11 +1867,10 @@ const ch40Sections: Section[] = [
     content:
       "# --- UDP Server ---\nimport socket\n\nserver = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\nserver.bind(('127.0.0.1', 8888))\nprint(\"UDP server listening on port 8888...\")\n\ndata, address = server.recvfrom(1024)\nprint(f\"Got: {data.decode()} from {address}\")\nserver.sendto(b'ACK', address)\nserver.close()\n\n# --- UDP Client ---\nclient = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\nclient.sendto(b'Hello UDP', ('127.0.0.1', 8888))\ndata, server_addr = client.recvfrom(1024)\nprint(f\"Server said: {data.decode()}\")\nclient.close()",
   },
-  {
-    type: "text",
-    content:
-      "## Handling Multiple Connections\n\n### Approach 1: Multi-threaded Server\n\n```python\nimport socket\nimport threading\n\ndef handle_client(client_socket, address):\n    print(f\"Handling {address}\")\n    data = client_socket.recv(1024)\n    client_socket.send(data)\n    client_socket.close()\n\nserver = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver.bind(('127.0.0.1', 7777))\nserver.listen(5)\n\nwhile True:\n    client, addr = server.accept()\n    thread = threading.Thread(target=handle_client, args=(client, addr))\n    thread.start()\n```\n\n### Approach 2: SocketServer Module\nPython provides higher-level classes in `socketserver`:\n```python\nfrom socketserver import TCPServer, StreamRequestHandler\n\nclass EchoHandler(StreamRequestHandler):\n    def handle(self):\n        data = self.rfile.readline()\n        self.wfile.write(data)\n\nwith TCPServer(('localhost', 6666), EchoHandler) as server:\n    server.serve_forever()\n```",
-  },
+  { type: "text", content: "## Handling Multiple Connections\n\n### Approach 1: Multi-threaded Server" },
+  { type: "code", language: "python", content: "import socket\nimport threading\n\ndef handle_client(client_socket, address):\n    print(f\"Handling {address}\")\n    data = client_socket.recv(1024)\n    client_socket.send(data)\n    client_socket.close()\n\nserver = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver.bind(('127.0.0.1', 7777))\nserver.listen(5)\n\nwhile True:\n    client, addr = server.accept()\n    thread = threading.Thread(target=handle_client, args=(client, addr))\n    thread.start()" },
+  { type: "text", content: "### Approach 2: SocketServer Module\nPython provides higher-level classes in `socketserver`:" },
+  { type: "code", language: "python", content: "from socketserver import TCPServer, StreamRequestHandler\n\nclass EchoHandler(StreamRequestHandler):\n    def handle(self):\n        data = self.rfile.readline()\n        self.wfile.write(data)\n\nwith TCPServer(('localhost', 6666), EchoHandler) as server:\n    server.serve_forever()" },
   {
     type: "code",
     language: "python",
@@ -1822,11 +1878,9 @@ const ch40Sections: Section[] = [
     content:
       "import socket\n\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n\n# Set socket options\ns.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)\n\n# Set timeout (raises socket.timeout if exceeded)\ns.settimeout(5.0)\n\n# Get socket options\nbuffer_size = s.getsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF)\nprint(f\"Receive buffer: {buffer_size} bytes\")\n\n# Set blocking/non-blocking\ns.setblocking(False)  # Non-blocking mode (raises BlockingIOError)\n\n# Get address info (resolve hostname to IP)\ninfo = socket.getaddrinfo('localhost', 80, family=socket.AF_INET)\nprint(info)  # [(<AddressFamily.AF_INET: 2>, ...)]",
   },
-  {
-    type: "text",
-    content:
-      "## HTTP Requests with Sockets\n\nYou can make raw HTTP requests using sockets to understand what's happening under the hood:\n\n```python\nimport socket\n\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient.connect(('example.com', 80))\n\n# Send an HTTP GET request\nrequest = (\n    'GET / HTTP/1.1\\r\\n'\n    'Host: example.com\\r\\n'\n    'Connection: close\\r\\n'\n    '\\r\\n'\n)\nclient.send(request.encode())\n\n# Receive the full response\nresponse = b''\nwhile True:\n    chunk = client.recv(4096)\n    if not chunk:\n        break\n    response += chunk\n\nprint(response.decode())\nclient.close()\n```\n> In practice, you'd use `requests` or `urllib`, but raw sockets show the wire protocol.",
-  },
+  { type: "text", content: "## HTTP Requests with Sockets\n\nYou can make raw HTTP requests using sockets to understand what's happening under the hood:" },
+  { type: "code", language: "python", content: "import socket\n\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient.connect(('example.com', 80))\n\n# Send an HTTP GET request\nrequest = (\n    'GET / HTTP/1.1\\r\\\n'\n    'Host: example.com\\r\\\n'\n    'Connection: close\\r\\\n'\n    '\\r\\\n'\n)\nclient.send(request.encode())\n\n# Receive the full response\nresponse = b''\nwhile True:\n    chunk = client.recv(4096)\n    if not chunk:\n        break\n    response += chunk\n\nprint(response.decode())\nclient.close()" },
+  { type: "text", content: "> In practice, you'd use `requests` or `urllib`, but raw sockets show the wire protocol." },
   {
     type: "code",
     language: "python",
@@ -1854,6 +1908,18 @@ const ch40Sections: Section[] = [
       "In production, use frameworks (FastAPI, aiohttp) instead of raw sockets",
     ],
   },
+  {
+    id: "py40-fix1",
+    type: "fix-code",
+    title: "Fix the Socket Method",
+    instructions: "The socket method name is wrong. Fix it to create a TCP socket.",
+    brokenCode: `import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAMM)`,
+    correctCode: `import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)`,
+    hints: ["'SOCK_STREAMM' has a typo.", "The constant has only one 'M' at the end."],
+    explanation: "The socket type constant is `SOCK_STREAM` (one 'M'). `SOCK_STREAMM` would cause an `AttributeError` since the `socket` module doesn't have that constant.",
+  }
 ];
 
 const ch40Exercises: ExerciseSection[] = [
