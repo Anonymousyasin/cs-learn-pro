@@ -90,7 +90,7 @@ export default async function CoursePage({
         <CardHeader>
           <CardTitle>Course Content</CardTitle>
           <CardDescription>
-            {total} chapters &middot; Pass the exam with 95% to unlock the next chapter
+            {total} chapters &middot; Pass the exam to unlock the next chapter
           </CardDescription>
         </CardHeader>
         <CardContent>

@@ -231,7 +231,7 @@ export default function ChapterClient({
               </p>
               <p className="text-xs text-text-muted">
                 {allExercisesDone
-                  ? "Pass with 95% to unlock the next chapter"
+                  ? "Pass the exam to unlock the next chapter"
                   : `Exercises done: ${completedIds.length} / ${exerciseSections.length}`}
               </p>
             </div>

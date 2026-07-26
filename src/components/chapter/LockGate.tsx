@@ -30,7 +30,7 @@ export default function LockGate({
         to unlock <strong className="text-text-primary">{chapterTitle}</strong>.
       </p>
       <p className="mb-6 text-xs text-text-muted">
-        You need to pass the exam with 95% or higher to proceed.
+        You need to pass the exam to unlock this chapter.
       </p>
       <Link href={`/courses/${courseId}/${requiredChapterId}`}>
         <Button className="gap-2 bg-accent-primary text-white hover:bg-accent-primary-hover">
