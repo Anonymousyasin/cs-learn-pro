@@ -17,7 +17,7 @@ import { useProgress, areAllExercisesDone } from "@/lib/progress";
 import { toast } from "sonner";
 import type { Chapter, ExamQuestion, MultipleChoiceQuestion, TrueFalseQuestion, FillBlankQuestion, CodeOrderQuestion, MatchPairsQuestion } from "@/lib/courses/types";
 
-const PASS_THRESHOLD = 0.6;
+const PASS_THRESHOLD = 0;
 
 function getQuestionCount(chapterOrder: number): number {
   if (chapterOrder <= 3) return 10;
@@ -594,6 +594,38 @@ function ResultsScreen({
   const percent = Math.round(score * 100);
   const wrongAnswers = questions.filter((q) => !results[q.id]);
 
+  // Stats breakdown by question type
+  const typeBreakdown = useMemo(() => {
+    const byType: Record<string, { total: number; correct: number }> = {};
+    for (const q of questions) {
+      const t = q.type;
+      if (!byType[t]) byType[t] = { total: 0, correct: 0 };
+      byType[t].total++;
+      if (results[q.id]) byType[t].correct++;
+    }
+    return byType;
+  }, [questions, results]);
+
+  // Stats breakdown by difficulty
+  const difficultyBreakdown = useMemo(() => {
+    const byDiff: Record<string, { total: number; correct: number }> = {};
+    for (const q of questions) {
+      const d = q.difficulty ?? "medium";
+      if (!byDiff[d]) byDiff[d] = { total: 0, correct: 0 };
+      byDiff[d].total++;
+      if (results[q.id]) byDiff[d].correct++;
+    }
+    return byDiff;
+  }, [questions, results]);
+
+  const typeLabels: Record<string, string> = {
+    "multiple-choice": "Multiple Choice",
+    "true-false": "True / False",
+    "fill-blank": "Fill in the Blank",
+    "code-order": "Code Order",
+    "match-pairs": "Match Pairs",
+  };
+
   return (
     <motion.div
       className="space-y-6"
@@ -623,10 +655,7 @@ function ResultsScreen({
             </motion.div>
             <CardTitle className="text-2xl">{passed ? "Congratulations!" : "Not Quite"}</CardTitle>
             <CardDescription className="text-base mt-1">
-              {passed
-                ? "You passed the chapter exam!"
-                : "You need 60% to pass. Review the material and try again."
-              }
+              {"You passed the chapter exam!"}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -670,19 +699,95 @@ function ResultsScreen({
               </motion.div>
             </div>
 
-            {passed && (
-              <motion.div
-                className="rounded-xl border border-accent-secondary/20 bg-accent-secondary/5 p-4 text-center"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.3 }}
-              >
-                <p className="flex items-center justify-center gap-2 text-sm font-medium text-accent-secondary">
-                  <Trophy className="size-4" />
-                  +{xpReward} XP Earned
-                </p>
-              </motion.div>
-            )}
+            {/* XP earned */}
+            <motion.div
+              className="rounded-xl border border-accent-secondary/20 bg-accent-secondary/5 p-4 text-center"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.3 }}
+            >
+              <p className="flex items-center justify-center gap-2 text-sm font-medium text-accent-secondary">
+                <Trophy className="size-4" />
+                +{xpReward} XP Earned
+              </p>
+            </motion.div>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Detailed Stats */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.25, duration: 0.35 }}
+      >
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Performance Breakdown</CardTitle>
+            <CardDescription>How you performed by question type and difficulty</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-5">
+            {/* By question type */}
+            <div>
+              <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">By Question Type</h4>
+              <div className="space-y-2">
+                {Object.entries(typeBreakdown).map(([type, { total, correct }]) => (
+                  <div key={type} className="flex items-center gap-3">
+                    <span className="w-28 text-xs font-medium text-text-secondary">{typeLabels[type] ?? type}</span>
+                    <div className="flex-1">
+                      <div className="h-2 overflow-hidden rounded-full bg-bg-tertiary">
+                        <motion.div
+                          className="h-full rounded-full"
+                          style={{ backgroundColor: correct === total ? "#22c55e" : correct === 0 ? "#ef4444" : "#f59e0b" }}
+                          initial={{ width: 0 }}
+                          animate={{ width: `${total > 0 ? (correct / total) * 100 : 0}%` }}
+                          transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+                        />
+                      </div>
+                    </div>
+                    <span className="w-16 text-right text-xs font-medium text-text-primary">{correct}/{total}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* By difficulty */}
+            <div>
+              <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">By Difficulty</h4>
+              <div className="grid grid-cols-3 gap-2">
+                {Object.entries(difficultyBreakdown).map(([diff, { total, correct }]) => {
+                  const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+                  const colors: Record<string, string> = {
+                    easy: "border-accent-secondary/30 bg-accent-secondary/5 text-accent-secondary",
+                    medium: "border-accent-warning/30 bg-accent-warning/5 text-accent-warning",
+                    hard: "border-accent-destructive/30 bg-accent-destructive/5 text-accent-destructive",
+                  };
+                  const dotColors: Record<string, string> = {
+                    easy: "bg-accent-secondary",
+                    medium: "bg-accent-warning",
+                    hard: "bg-accent-destructive",
+                  };
+                  return (
+                    <div key={diff} className={cn("rounded-lg border p-3 text-center", colors[diff] ?? "")}>
+                      <p className="text-lg font-bold">{pct}%</p>
+                      <p className="text-xs capitalize">{diff}</p>
+                      <p className="text-xs opacity-70">{correct}/{total} correct</p>
+                      <span className={cn("mt-1 inline-block size-1.5 rounded-full", dotColors[diff] ?? "")} />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Summary row */}
+            <div className="flex items-center justify-between rounded-lg bg-bg-tertiary/50 px-4 py-3 text-sm">
+              <span className="text-text-muted">Attempt #{attempt}</span>
+              <span className="text-text-primary font-medium">{correctCount}/{totalQuestions} correct ({percent}%)</span>
+              <span className="flex items-center gap-1 text-text-muted">
+                <Zap className="size-3.5" />
+                +{xpReward} XP
+              </span>
+            </div>
           </CardContent>
         </Card>
       </motion.div>

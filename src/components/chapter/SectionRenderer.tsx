@@ -309,8 +309,19 @@ function InteractiveExercise({
         </div>
       )}
 
-      {/* Hint */}
-      {section.hint && (
+      {/* Deep explanation on correct answer (using hint content) */}
+      {result?.correct && section.hint && (
+        <div className="mt-3 rounded-lg border border-accent-info/20 bg-accent-info/5 p-3">
+          <p className="mb-1 flex items-center gap-1 text-xs font-semibold text-accent-info">
+            <BookMarked className="size-3" />
+            Why this works
+          </p>
+          <p className="text-sm text-text-secondary">{section.hint}</p>
+        </div>
+      )}
+
+      {/* Hint (before answering) */}
+      {!result && section.hint && (
         <details className="mt-3">
           <summary className="cursor-pointer text-xs font-medium text-accent-primary">
             Need a hint?
