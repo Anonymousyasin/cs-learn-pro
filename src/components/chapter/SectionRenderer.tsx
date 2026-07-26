@@ -7,9 +7,7 @@ import {
   Info,
   AlertTriangle,
   BookMarked,
-  ListChecks,
   Terminal,
-  Quote,
   Copy,
   Check,
   CheckCircle2,
@@ -109,7 +107,12 @@ function ScrollFade({ children }: { children: ReactNode }) {
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      // Clipboard API may fail (insecure context, etc.)
+    }
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
   };
@@ -119,7 +122,7 @@ function CopyButton({ text }: { text: string }) {
       onClick={handleCopy}
       className={cn(
         "flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all",
-        "opacity-0 group-hover:opacity-100 focus-visible:opacity-100 sm:opacity-0 sm:group-hover:opacity-100",
+        "opacity-0 group-hover:opacity-100 focus-visible:opacity-100 group-hover:opacity-100",
         "bg-bg-secondary/80 text-text-muted hover:bg-bg-secondary hover:text-text-secondary",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary"
       )}
@@ -230,6 +233,7 @@ function InteractiveExercise({
       <div className="mb-4 overflow-hidden rounded-lg border border-border bg-bg-tertiary">
         <div className="flex items-center justify-between border-b border-border/50 px-4 py-1.5">
           <span className="text-xs font-medium text-text-muted">Python</span>
+          {/* Note: exercise language is currently Python; add `language` to ExerciseSection type to make dynamic */}
         </div>
         <pre className="p-4 text-sm font-mono leading-relaxed text-text-primary">
           <code>{section.code}</code>

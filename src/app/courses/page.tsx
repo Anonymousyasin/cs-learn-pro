@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { courseRegistry } from "@/lib/courses";
-import { loadProgress, useProgress } from "@/lib/progress";
+import { useProgress } from "@/lib/progress";
 import { cn } from "@/lib/utils";
 import { useUser } from "@/lib/supabase-provider";
 

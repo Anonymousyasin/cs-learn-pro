@@ -14,6 +14,10 @@ function profileToProgress(profile: {
   total_exams_passed: number;
   total_lessons_completed: number;
   completedChapters?: string[];
+  completedExercises?: Record<string, string[]>;
+  completed_exercises?: Record<string, string[]>;
+  exerciseResults?: Record<string, { exerciseId: string; correct: boolean; answer: string }[]>;
+  exercise_results?: Record<string, { exerciseId: string; correct: boolean; answer: string }[]>;
   lastExamResults?: Record<string, { passed: boolean; score: number; date: number }>;
 }): UserProgress {
   return {
@@ -26,8 +30,8 @@ function profileToProgress(profile: {
     totalExamsPassed: profile.total_exams_passed,
     totalLessonsCompleted: profile.total_lessons_completed,
     lastExamResults: profile.lastExamResults ?? {},
-    completedExercises: (profile as any).completedExercises ?? (profile as any).completed_exercises ?? {},
-    exerciseResults: (profile as any).exerciseResults ?? (profile as any).exercise_results ?? [],
+    completedExercises: profile.completedExercises ?? profile.completed_exercises ?? {},
+    exerciseResults: profile.exerciseResults ?? profile.exercise_results ?? [],
   };
 }
 

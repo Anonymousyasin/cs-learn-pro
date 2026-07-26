@@ -1,5 +1,7 @@
 "use client";
 
+import { EXAM_PASS_THRESHOLD, MAX_EXERCISE_RESULTS_PER_CHAPTER } from "./constants";
+
 // ─── Types ───────────────────────────────────────────────────────
 export interface UserProgress {
   completedChapters: string[];   // ["html-ch1", "html-ch2", ...]
@@ -147,7 +149,7 @@ export function passExam(
     totalExamsPassed: updated.totalExamsPassed + 1,
     lastExamResults: {
       ...updated.lastExamResults,
-      [chapterId]: { passed: score >= 0.95, score, date: Date.now() },
+      [chapterId]: { passed: score >= EXAM_PASS_THRESHOLD, score, date: Date.now() },
     },
   };
 }
@@ -197,7 +199,7 @@ export function completeExercise(
       [chapterId]: [
         ...(progress.exerciseResults[chapterId] ?? []),
         { exerciseId, correct, answer },
-      ],
+      ].slice(-MAX_EXERCISE_RESULTS_PER_CHAPTER),
     },
   };
 }

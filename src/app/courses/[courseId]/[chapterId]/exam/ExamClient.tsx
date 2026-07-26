@@ -14,10 +14,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useProgress, areAllExercisesDone } from "@/lib/progress";
+import { useUser } from "@/lib/supabase-provider";
+import { EXAM_PASS_THRESHOLD } from "@/lib/constants";
 import { toast } from "sonner";
 import type { Chapter, ExamQuestion, MultipleChoiceQuestion, TrueFalseQuestion, FillBlankQuestion, CodeOrderQuestion, MatchPairsQuestion } from "@/lib/courses/types";
-
-const PASS_THRESHOLD = 0;
 
 function getQuestionCount(chapterOrder: number): number {
   if (chapterOrder <= 3) return 10;
@@ -37,7 +37,9 @@ function shuffle<T>(arr: T[]): T[] {
 type ExamPhase = "intro" | "taking" | "results";
 
 export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseColor: string }) {
-  const { progress, passExam: savePassExam, completeChapter: saveCompleteChapter } = useProgress();
+  const { user } = useUser();
+  const userId = user?.id ?? null;
+  const { progress, passExam: savePassExam, completeChapter: saveCompleteChapter } = useProgress(userId);
 
   // Exercise gating: must complete all chapter exercises before taking the exam
   const exerciseSections = useMemo(
@@ -89,7 +91,7 @@ export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseC
     const finalScore = correct / questions.length;
     setScore(finalScore);
     setSubmitted(true);
-    if (finalScore >= 0.95) {
+    if (finalScore >= EXAM_PASS_THRESHOLD) {
       savePassExam(chapter.id, finalScore, chapter.xpReward);
       saveCompleteChapter(chapter.id, chapter.xpReward);
       toast.success(`+${chapter.xpReward} XP earned!`, {
@@ -97,7 +99,7 @@ export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseC
       });
     } else {
       toast.error(`Score: ${Math.round(finalScore * 100)}%`, {
-        description: "95% required to pass. Try again!",
+        description: `${Math.round(EXAM_PASS_THRESHOLD * 100)}% required to pass. Try again!`,
       });
     }
   }, [questions, answers, chapter.id, chapter.xpReward, savePassExam, saveCompleteChapter, chapter.title]);
@@ -107,7 +109,7 @@ export function ExamClient({ chapter, courseColor }: { chapter: Chapter; courseC
     startExam();
   }, [startExam]);
 
-  const passed = score >= PASS_THRESHOLD;
+  const passed = score >= EXAM_PASS_THRESHOLD;
   const totalQuestions = questions.length;
   const correctCount = Object.values(results).filter(Boolean).length;
 
@@ -209,7 +211,7 @@ function IntroScreen({
             </div>
             <div className="flex items-center gap-2">
               <AlertTriangle className="size-3.5 text-accent-warning" />
-              <span><strong>95%</strong> required to pass</span>
+              <span><strong>Any score</strong> passes</span>
             </div>
             <div className="flex items-center gap-2">
               <RotateCcw className="size-3.5 text-accent-info" />
@@ -509,10 +511,21 @@ function CodeOrder({ q, answer, setAnswer }: { q: CodeOrderQuestion; answer: num
 
 function MatchPairs({ q, answer, setAnswer }: { q: MatchPairsQuestion; answer: Record<string, string> | undefined; setAnswer: (v: Record<string, string>) => void }) {
   const matches = answer || {};
+  const hasAnySelection = Object.keys(matches).length > 0;
 
   return (
     <div className="space-y-3">
-      <p className="text-xs text-text-muted">Select the matching description for each concept.</p>
+      <div className="flex items-center justify-between">
+        <p className="text-xs text-text-muted">Select the matching description for each concept.</p>
+        {hasAnySelection && (
+          <button
+            onClick={() => setAnswer({})}
+            className="text-xs text-accent-primary hover:text-accent-primary-hover transition-colors"
+          >
+            Clear all
+          </button>
+        )}
+      </div>
       {q.leftItems.map((item, i) => (
         <div key={i} className="flex items-center gap-3">
           <span className="min-w-0 flex-1 rounded-lg border border-border bg-bg-tertiary/50 px-3 py-2.5 text-sm font-medium text-text-primary">
@@ -521,10 +534,19 @@ function MatchPairs({ q, answer, setAnswer }: { q: MatchPairsQuestion; answer: R
           <ChevronRight className="size-4 shrink-0 text-text-muted" />
           <select
             value={matches[item] || ""}
-            onChange={(e) => setAnswer({ ...matches, [item]: e.target.value })}
+            onChange={(e) => {
+              const val = e.target.value;
+              const next = { ...matches };
+              if (val === "") {
+                delete next[item];
+              } else {
+                next[item] = val;
+              }
+              setAnswer(next);
+            }}
             className="min-w-0 flex-1 rounded-lg border border-border bg-bg-tertiary/50 px-3 py-2.5 text-sm text-text-secondary focus:border-accent-primary focus:outline-none"
           >
-            <option value="" disabled>Select...</option>
+            <option value="">—</option>
             {q.rightItems.map((ritem, j) => (
               <option key={j} value={ritem}>{ritem}</option>
             ))}
@@ -890,12 +912,25 @@ function ReviewAnswer({ q, userAnswer }: { q: ExamQuestion; userAnswer: unknown 
     );
   }
   if (q.type === "code-order") {
-    const isCorrect = Array.isArray(userAnswer) && userAnswer.length === q.correctOrder.length && userAnswer.every((v, i) => v === q.correctOrder[i]);
+    const userOrder = userAnswer as number[] | undefined;
+    const isCorrect = Array.isArray(userOrder) && userOrder.length === q.correctOrder.length && userOrder.every((v, i) => v === q.correctOrder[i]);
     return (
       <div className="space-y-1 text-xs">
         <p className={isCorrect ? "text-accent-secondary" : "text-red-500"}>
-          {isCorrect ? "Correct order!" : "Incorrect order — see explanation below"}
+          {isCorrect ? "Correct order!" : "Incorrect order"}
         </p>
+        {!isCorrect && userOrder && (
+          <div className="space-y-0.5 mt-1">
+            <p className="text-text-muted font-medium">Your order:</p>
+            {userOrder.map((idx, i) => (
+              <p key={i} className="text-text-secondary">{i + 1}. {q.codeLines[idx]}</p>
+            ))}
+            <p className="text-text-muted font-medium mt-2">Correct order:</p>
+            {q.correctOrder.map((idx, i) => (
+              <p key={i} className="text-accent-secondary">{i + 1}. {q.codeLines[idx]}</p>
+            ))}
+          </div>
+        )}
       </div>
     );
   }
@@ -906,8 +941,22 @@ function ReviewAnswer({ q, userAnswer }: { q: ExamQuestion; userAnswer: unknown 
     return (
       <div className="space-y-1 text-xs">
         <p className={allCorrect ? "text-accent-secondary" : "text-red-500"}>
-          {allCorrect ? "All matched correctly!" : "Some matches are incorrect — see explanation below"}
+          {allCorrect ? "All matched correctly!" : "Some matches are incorrect"}
         </p>
+        {!allCorrect && (
+          <div className="space-y-0.5 mt-1">
+            {pairs.map((p, i) => {
+              const userMatch = matches?.[p.left] ?? "(unmatched)";
+              const correct = userMatch === p.right;
+              return (
+                <p key={i} className={correct ? "text-accent-secondary" : "text-red-500"}>
+                  <span className="text-text-muted">{p.left}</span> → {userMatch}
+                  {!correct && <span className="text-text-muted"> (expected: {p.right})</span>}
+                </p>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }

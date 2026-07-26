@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useProgress } from "@/lib/progress";
+import { useUser } from "@/lib/supabase-provider";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/lib/courses/types";
 
@@ -19,7 +20,8 @@ export function CourseChapters({
   chapters: Chapter[];
   courseColor: string;
 }) {
-  const { progress, loaded } = useProgress();
+  const { user } = useUser();
+  const { progress, loaded } = useProgress(user?.id ?? null);
 
   if (!loaded) {
     return <div className="space-y-1">
@@ -35,6 +37,9 @@ export function CourseChapters({
         const prevChapterId = i > 0 ? chapters[i - 1].id : undefined;
         const completed = progress.completedChapters.includes(chapter.id);
         const status = getStatus(chapter.id, i, prevChapterId, progress.completedChapters, chapter);
+        const exerciseSectionCount = chapter.sections.filter((s) => s.type === "exercise" || s.type === "fix-code").length;
+        const completedExerciseCount = (progress.completedExercises[chapter.id] ?? []).length;
+        const exerciseProgress = exerciseSectionCount > 0 ? completedExerciseCount / exerciseSectionCount : 0;
         const href = status === "locked" ? "#" : `/courses/${courseId}/${chapter.id}`;
 
         return (
@@ -125,7 +130,7 @@ export function CourseChapters({
                         key={si}
                         className={cn(
                           "h-1 rounded-full transition-colors duration-300",
-                          si < Math.ceil(chapter.sections.length * (completed ? 1 : 0.3))
+                          si < Math.ceil(chapter.sections.length * (completed ? 1 : exerciseProgress))
                             ? "bg-accent-primary"
                             : "bg-bg-tertiary"
                         )}

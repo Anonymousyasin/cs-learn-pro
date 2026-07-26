@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { loadProgress, getLevel, getLevelProgress, getXPToNextLevel, useProgress } from "@/lib/progress";
+import { getLevel, getLevelProgress, getXPToNextLevel, useProgress } from "@/lib/progress";
 import { courseRegistry } from "@/lib/courses";
 import { cn } from "@/lib/utils";
 import { useUser } from "@/lib/supabase-provider";
