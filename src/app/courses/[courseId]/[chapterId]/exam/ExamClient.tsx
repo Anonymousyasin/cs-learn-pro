@@ -17,7 +17,7 @@ import { useProgress, areAllExercisesDone } from "@/lib/progress";
 import { toast } from "sonner";
 import type { Chapter, ExamQuestion, MultipleChoiceQuestion, TrueFalseQuestion, FillBlankQuestion, CodeOrderQuestion, MatchPairsQuestion } from "@/lib/courses/types";
 
-const PASS_THRESHOLD = 0.95;
+const PASS_THRESHOLD = 0.6;
 
 function getQuestionCount(chapterOrder: number): number {
   if (chapterOrder <= 3) return 10;
@@ -625,7 +625,7 @@ function ResultsScreen({
             <CardDescription className="text-base mt-1">
               {passed
                 ? "You passed the chapter exam!"
-                : "You need 95% to pass. Review the material and try again."
+                : "You need 60% to pass. Review the material and try again."
               }
             </CardDescription>
           </CardHeader>
