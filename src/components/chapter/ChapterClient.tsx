@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useEffect } from "react";
 import { useProgress, areAllExercisesDone } from "@/lib/progress";
 import { useUser } from "@/lib/supabase-provider";
 import type { Chapter, Section } from "@/lib/courses/types";
@@ -39,6 +39,7 @@ export default function ChapterClient({
   const {
     progress,
     completeExercise: saveExercise,
+    completeChapter: saveCompleteChapter,
     passExam,
   } = useProgress(userId);
 
@@ -96,6 +97,25 @@ export default function ChapterClient({
     },
     [saveExercise, chapter.id]
   );
+
+  // ── Auto-complete chapter when all exercises are done ────────
+  // The exam is fully optional: finishing the exercises (or, for
+  // content-only chapters, simply opening the chapter) marks it
+  // complete and unlocks the next chapter.
+  useEffect(() => {
+    if (
+      allExercisesDone &&
+      !progress.completedChapters.includes(chapter.id)
+    ) {
+      saveCompleteChapter(chapter.id, chapter.xpReward);
+    }
+  }, [
+    allExercisesDone,
+    progress.completedChapters,
+    chapter.id,
+    chapter.xpReward,
+    saveCompleteChapter,
+  ]);
 
   // ── Render ──────────────────────────────────────────────────
   if (isLocked) {

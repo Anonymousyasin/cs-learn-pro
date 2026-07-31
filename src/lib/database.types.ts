@@ -68,8 +68,10 @@ export type Database = {
       }
       profiles: {
         Row: {
+          completed_exercises: Json | null
           created_at: string
           current_streak: number
+          exercise_results: Json | null
           id: string
           last_active: string
           longest_streak: number
@@ -80,8 +82,10 @@ export type Database = {
           xp: number
         }
         Insert: {
+          completed_exercises?: Json | null
           created_at?: string
           current_streak?: number
+          exercise_results?: Json | null
           id: string
           last_active?: string
           longest_streak?: number
@@ -92,8 +96,10 @@ export type Database = {
           xp?: number
         }
         Update: {
+          completed_exercises?: Json | null
           created_at?: string
           current_streak?: number
+          exercise_results?: Json | null
           id?: string
           last_active?: string
           longest_streak?: number

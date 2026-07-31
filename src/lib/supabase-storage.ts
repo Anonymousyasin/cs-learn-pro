@@ -2,6 +2,7 @@
 
 import { getSupabaseClient } from "./supabase";
 import type { UserProgress } from "./progress";
+import type { Json } from "./database.types";
 
 // ─── Profile ↔ UserProgress ───────────────────────────────────
 
@@ -99,6 +100,8 @@ export async function saveProgressToSupabase(
       streak_start: new Date(progress.streakStart).toISOString(),
       total_exams_passed: progress.totalExamsPassed,
       total_lessons_completed: progress.totalLessonsCompleted,
+      completed_exercises: progress.completedExercises as unknown as Json,
+      exercise_results: progress.exerciseResults as unknown as Json,
     })
     .eq("id", userId);
 }
